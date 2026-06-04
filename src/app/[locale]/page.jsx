@@ -68,7 +68,7 @@ export default function HomePage({ params: { locale } }) {
     {
       title: "Negocios e Inversión",
       desc: "Impuestos, constitución de empresas y oportunidades comerciales.",
-      url: "/blog/impuestos-extranjeros-paraguay",
+      url: "/negocios",
       icon: <Briefcase className="w-5 h-5 text-purple-600" />,
       bg: "bg-purple-50"
     },

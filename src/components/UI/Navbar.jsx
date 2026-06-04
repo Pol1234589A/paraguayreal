@@ -2,12 +2,14 @@
 
 import React, { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Globe, Menu, X } from 'lucide-react';
 
-export default function Navbar({ locale = 'es', t }) {
+export default function Navbar({ locale = 'es' }) {
   const pathname = usePathname();
   const router = useRouter();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const t = useTranslations();
 
   const translate = (key, defaultVal) => t ? t(key) : defaultVal;
 
@@ -19,7 +21,7 @@ export default function Navbar({ locale = 'es', t }) {
     { label: translate("Navigation.moving", "Mudarse"), url: "/blog/como-obtener-residencia-permanente-paraguay", isNew: false },
     { label: translate("Navigation.business", "Negocios"), url: "/negocios", isNew: false },
     { label: translate("Navigation.cities", "Ciudades"), url: "/ciudades/asuncion", isNew: false },
-    { label: translate("Navigation.blog", "Blog"), url: "/blog/cuanto-cuesta-vivir-en-paraguay-2025", isNew: false }
+    { label: translate("Navigation.blog", "Blog"), url: "/blog", isNew: false }
   ];
 
   // Language switcher handler
@@ -34,16 +36,16 @@ export default function Navbar({ locale = 'es', t }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm w-full select-none">
+    <header className="sticky top-0 z-[9999] bg-white border-b border-slate-100 shadow-sm w-full select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
         {/* Logo */}
-        <a href={`/${locale}`} className="flex items-center gap-2 group cursor-pointer">
+        <a href={`/${locale}`} className="flex items-center gap-2.5 group cursor-pointer">
+          <div className="w-7 h-7 rounded-lg overflow-hidden border border-slate-100 shadow-sm flex items-center justify-center bg-white group-hover:border-emerald-200 transition">
+            <img src="/logo.png" alt="ParaguayReal Logo" className="w-full h-full object-cover scale-110" />
+          </div>
           <span className="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-emerald-600 transition">
             Paraguay<span className="text-emerald-600">Real</span>
-          </span>
-          <span className="text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 px-1.5 py-0.5 rounded font-bold">
-            PY 🇵🇾
           </span>
         </a>
 
@@ -101,7 +103,7 @@ export default function Navbar({ locale = 'es', t }) {
 
       {/* Mobile menu panel */}
       {isMobileOpen && (
-        <div className="lg:hidden border-t border-slate-100 bg-white px-4 py-6 space-y-4 animate-slideDown shadow-xl absolute top-16 left-0 right-0 z-40">
+        <div className="lg:hidden border-t border-slate-100 bg-white px-4 py-6 space-y-4 animate-slideDown shadow-xl absolute top-16 left-0 right-0 z-[9999]">
           <nav className="flex flex-col gap-3.5">
             {navLinks.map((link, idx) => (
               <a

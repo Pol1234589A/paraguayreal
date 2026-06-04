@@ -45,9 +45,21 @@ export default function PlacePopup({ place }) {
           )}
         </div>
 
-        <div className="flex gap-1.5 pt-2 border-t border-slate-100">
-          <DirectionsButton url={place.googleMapsDirections} label="Cómo llegar" />
-          <GoogleMapsButton url={place.googleMapsUrl} label="Google Maps" variant="outline" />
+        <div className="flex flex-col gap-1.5 pt-2 border-t border-slate-100">
+          <div className="flex gap-1.5">
+            <DirectionsButton url={place.googleMapsDirections} label="Cómo llegar" />
+            <GoogleMapsButton url={place.googleMapsUrl} label="Google Maps" variant="outline" />
+          </div>
+          {place.website && (
+            <a
+              href={place.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full mt-1 text-center text-emerald-600 hover:text-emerald-700 font-bold border border-emerald-100 hover:border-emerald-200 bg-emerald-50 hover:bg-emerald-100/50 rounded-lg py-1.5 px-3 transition text-[10px] flex items-center justify-center gap-1 shadow-sm"
+            >
+              <span>Ver Guía Geografía Sagrada</span>
+            </a>
+          )}
         </div>
       </div>
     </div>

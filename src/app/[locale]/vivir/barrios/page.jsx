@@ -65,13 +65,13 @@ export default function BarriosPage({ params: { locale } }) {
           <div className="space-y-2">
             <h4 className="font-bold text-slate-900">¿Dónde viven la mayoría de los extranjeros?</h4>
             <p>
-              **Villa Morra** y el eje de la **Avenida Aviadores del Chaco (Manora, Ycua Sati)** son las zonas preferidas debido a la inmensa cantidad de servicios, oficinas corporativas, gimnasios modernos y centros comerciales de lujo a distancias caminables.
+              <strong>Villa Morra</strong> y el eje de la <strong>Avenida Aviadores del Chaco (Manora, Ycua Sati)</strong> son las zonas preferidas debido a la inmensa cantidad de servicios, oficinas corporativas, gimnasios modernos y centros comerciales de lujo a distancias caminables.
             </p>
           </div>
           <div className="space-y-2">
             <h4 className="font-bold text-slate-900">¿Cuál es el barrio más tranquilo y seguro?</h4>
             <p>
-              **Mburucuyá** destaca por ser puramente residencial, con calles empedradas cubiertas por enormes copas de árboles y presencia de embajadas, lo que garantiza una vigilancia y patrullaje policial superior al promedio.
+              <strong>Mburucuyá</strong> destaca por ser puramente residencial, con calles empedradas cubiertas por enormes copas de árboles y presencia de embajadas, lo que garantiza una vigilancia y patrullaje policial superior al promedio.
             </p>
           </div>
         </div>

@@ -92,5 +92,42 @@
     "infraSubtitle": "A Rota Biooceânica e o Trem de Subúrbio marcarão um antes e um depois na logística continental.",
     "cultureTitle": "Cultura de Negócios e Confiança",
     "cultureSubtitle": "No Paraguai vigora o princípio do 'país dos amigos'. Relacionamentos pessoais e presença física antecedem a assinatura de contratos."
+  },
+  "Home": {
+    "gridTitle": "Tudo sobre o Paraguai, Categorizado",
+    "gridSubtitle": "Acesse informações verificadas escritas por residentes locais e investidores experientes.",
+    "toolBadge": "Ferramenta Principal",
+    "toolTitle": "Mapa Interativo do Paraguai",
+    "toolDesc": "Descubra hospitais, embaixadas, coworkings, restaurantes e áreas seguras diretamente em nosso mapa interativo em tela cheia.",
+    "exploreMap": "Explorar Mapa",
+    "exploreCategory": "Explorar categoria",
+    "previewTitle": "Prévia do Mapa",
+    "previewDesc": "Navegue pela capital do país neste mini mapa e clique em \"Explorar mapa completo\" para filtrar mais camadas e ver coordenadas exatas.",
+    "categories": {
+      "costOfLiving": {
+        "title": "Custo de Vida",
+        "desc": "Preços reais de supermercados, aluguéis e serviços atualizados."
+      },
+      "howToMove": {
+        "title": "Como Mudar-se",
+        "desc": "Passo a passo para obter sua residência permanente e documento de identidade."
+      },
+      "tourism": {
+        "title": "Turismo & Atrações",
+        "desc": "Locais essenciais, rotas naturais e marcos culturais."
+      },
+      "business": {
+        "title": "Negócios & Investimentos",
+        "desc": "Impostos, abertura de empresas e oportunidades comerciais."
+      },
+      "cities": {
+        "title": "Cidades",
+        "desc": "Análise de Assunção, Encarnação, Ciudad del Este e mais."
+      },
+      "safety": {
+        "title": "Segurança & Vida Diaria",
+        "desc": "Conselhos práticos, saúde, bancos e segurança pública."
+      }
+    }
   }
 }

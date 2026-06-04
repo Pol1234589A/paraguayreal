@@ -92,5 +92,42 @@
     "infraSubtitle": "The Bioceanic Corridor and the Commuter Rail will mark a before and after in continental logistics.",
     "cultureTitle": "Business Culture & Trust",
     "cultureSubtitle": "Paraguay operates as a 'country of friends.' Personal relationships and physical presence come before contract signing."
+  },
+  "Home": {
+    "gridTitle": "Everything about Paraguay, Categorized",
+    "gridSubtitle": "Access verified information written by local residents and experienced investors.",
+    "toolBadge": "Core Tool",
+    "toolTitle": "Interactive Map of Paraguay",
+    "toolDesc": "Discover hospitals, embassies, coworking spaces, restaurants, and safe areas directly on our full-screen interactive map.",
+    "exploreMap": "Explore Map",
+    "exploreCategory": "Explore category",
+    "previewTitle": "Map Preview",
+    "previewDesc": "Browse the country's capital in this mini map and click on \"Explore full map\" to filter layers and see exact coordinates.",
+    "categories": {
+      "costOfLiving": {
+        "title": "Cost of Living",
+        "desc": "Real, updated prices for supermarkets, rentals, and basic utilities."
+      },
+      "howToMove": {
+        "title": "How to Move",
+        "desc": "Step-by-step guide to obtaining your permanent residency and ID."
+      },
+      "tourism": {
+        "title": "Tourism & Sights",
+        "desc": "Must-visit places, natural routes, and cultural highlights."
+      },
+      "business": {
+        "title": "Business & Investment",
+        "desc": "Taxes, incorporating companies, and commercial opportunities."
+      },
+      "cities": {
+        "title": "Cities",
+        "desc": "Detailed analysis of Asunción, Encarnación, Ciudad del Este, and more."
+      },
+      "safety": {
+        "title": "Safety & Daily Life",
+        "desc": "Practical advice, healthcare, banking, and public safety."
+      }
+    }
   }
 }

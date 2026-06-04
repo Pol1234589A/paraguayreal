@@ -30,7 +30,7 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function MapaPage({ params: { locale } }) {
+export default function MapaPage({ params: { locale }, searchParams }) {
   const siteUrl = 'https://paraguayreal.com';
 
   const mapSchema = {
@@ -45,7 +45,7 @@ export default function MapaPage({ params: { locale } }) {
   return (
     <div className="h-[calc(100vh-64px)] overflow-hidden w-full">
       <SchemaOrg schema={mapSchema} />
-      <InteractiveMap initialPlaces={placesGeoJSON.features} locale={locale} />
+      <InteractiveMap initialPlaces={placesGeoJSON.features} locale={locale} searchParams={searchParams} />
     </div>
   );
 }

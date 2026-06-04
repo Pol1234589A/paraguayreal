@@ -92,5 +92,42 @@
     "infraSubtitle": "La Ruta Bioceánica y el Tren de Cercanías marcarán un antes y un después en la logística continental.",
     "cultureTitle": "Cultura de Negocios y Confianza",
     "cultureSubtitle": "En Paraguay rige el principio del 'país de los amigos'. La relación física y el trato personal preceden al contrato."
+  },
+  "Home": {
+    "gridTitle": "Todo sobre el Paraguay, Categorizado",
+    "gridSubtitle": "Accede directo a información verídica redactada por residentes locales e inversores experimentados.",
+    "toolBadge": "Herramienta Principal",
+    "toolTitle": "Mapa Interactivo de Paraguay",
+    "toolDesc": "Descubre hospitales, embajadas, coworkings, restaurantes y zonas seguras directamente en nuestro mapa interactivo a pantalla completa.",
+    "exploreMap": "Explorar Mapa",
+    "exploreCategory": "Explorar categoría",
+    "previewTitle": "Vista Previa del Mapa",
+    "previewDesc": "Navega por la capital del país en este mini mapa y pulsa en \"Explorar mapa completo\" para filtrar más capas y ver coordenadas exactas.",
+    "categories": {
+      "costOfLiving": {
+        "title": "Coste de Vida",
+        "desc": "Precios reales de supermercados, alquileres y servicios actualizados."
+      },
+      "howToMove": {
+        "title": "Cómo Mudarse",
+        "desc": "Paso a paso para obtener tu residencia permanente y cédula."
+      },
+      "tourism": {
+        "title": "Turismo y Lugares",
+        "desc": "Lugares imprescindibles, rutas naturales y atractivos culturales."
+      },
+      "business": {
+        "title": "Negocios e Inversión",
+        "desc": "Impuestos, constitución de empresas y oportunidades comerciales."
+      },
+      "cities": {
+        "title": "Ciudades",
+        "desc": "Análisis de Asunción, Encarnación, Ciudad del Este y más."
+      },
+      "safety": {
+        "title": "Seguridad y Vida Diaria",
+        "desc": "Consejos prácticos, sanidad, bancos y seguridad ciudadana."
+      }
+    }
   }
 }

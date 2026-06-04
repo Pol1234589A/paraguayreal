@@ -21,14 +21,14 @@ const CATEGORIES = {
   transporte: { label: "Transporte", color: "#4b5563", icon: "🚌" }
 };
 
-export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
+export default function InteractiveMap({ initialPlaces = [], t, filterCity, searchParams }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
   const activePopupRef = useRef(null);
 
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(searchParams?.q || '');
   const [selectedCategories, setSelectedCategories] = useState(Object.keys(CATEGORIES));
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -44,6 +44,13 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
       }
     }
   }, []);
+
+  // Sync search query state when URL param changes
+  useEffect(() => {
+    if (searchParams?.q) {
+      setSearchQuery(searchParams.q);
+    }
+  }, [searchParams?.q]);
 
   // Filter places based on search, categories, and city
   const filteredPlaces = initialPlaces.filter((place) => {
@@ -73,18 +80,46 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
     let center = [-57.6362, -25.2867]; // Asuncion
     let zoom = 12;
 
-    if (filterCity === 'interior') {
-      center = [-56.5, -25.5];
-      zoom = 7.5;
-    } else if (filterCity && filterCity !== 'asuncion') {
-      const cityPlace = initialPlaces.find(p => p.properties.city === filterCity);
-      if (cityPlace) {
-        center = cityPlace.geometry.coordinates;
-        zoom = 13;
+    let hasTargetOverride = false;
+    if (searchParams?.id) {
+      const targetPlace = initialPlaces.find(p => p.properties.id === searchParams.id);
+      if (targetPlace) {
+        center = targetPlace.geometry.coordinates;
+        zoom = 15;
+        hasTargetOverride = true;
       }
-    } else if (!filterCity) {
-      center = [-57.5, -25.3];
-      zoom = 7;
+    }
+
+    if (!hasTargetOverride && searchParams?.q) {
+      const cleanQ = searchParams.q.toLowerCase();
+      const matchedPlace = initialPlaces.find(p => 
+        p.properties.name.toLowerCase().includes(cleanQ) ||
+        p.properties.description.toLowerCase().includes(cleanQ) ||
+        p.properties.address.toLowerCase().includes(cleanQ) ||
+        p.properties.city.toLowerCase().includes(cleanQ) ||
+        p.properties.tags.some(t => t.toLowerCase().includes(cleanQ))
+      );
+      if (matchedPlace) {
+        center = matchedPlace.geometry.coordinates;
+        zoom = 15;
+        hasTargetOverride = true;
+      }
+    }
+
+    if (!hasTargetOverride) {
+      if (filterCity === 'interior') {
+        center = [-56.5, -25.5];
+        zoom = 7.5;
+      } else if (filterCity && filterCity !== 'asuncion') {
+        const cityPlace = initialPlaces.find(p => p.properties.city === filterCity);
+        if (cityPlace) {
+          center = cityPlace.geometry.coordinates;
+          zoom = 13;
+        }
+      } else if (!filterCity) {
+        center = [-57.5, -25.3];
+        zoom = 7;
+      }
     }
 
     let mapInstance = null;
@@ -180,7 +215,48 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
         }
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterCity, engine, initialPlaces, loading, mapboxToken, googleMapsApiKey]);
+
+  // Handle panning/zooming to a place when searchParams changes after map is loaded
+  useEffect(() => {
+    if (!mapRef.current || !mapLoaded) return;
+
+    const flyToCoordinates = (coords) => {
+      if (engine === 'mapbox') {
+        mapRef.current.easeTo({
+          center: coords,
+          zoom: 15,
+          duration: 1000
+        });
+      } else if (engine === 'google') {
+        const latLng = { lat: coords[1], lng: coords[0] };
+        mapRef.current.panTo(latLng);
+        mapRef.current.setZoom(15);
+      } else if (engine === 'leaflet') {
+        mapRef.current.setView([coords[1], coords[0]], 15);
+      }
+    };
+
+    if (searchParams?.id) {
+      const targetPlace = initialPlaces.find(p => p.properties.id === searchParams.id);
+      if (targetPlace) {
+        flyToCoordinates(targetPlace.geometry.coordinates);
+      }
+    } else if (searchParams?.q) {
+      const cleanQ = searchParams.q.toLowerCase();
+      const matchedPlace = initialPlaces.find(p => 
+        p.properties.name.toLowerCase().includes(cleanQ) ||
+        p.properties.description.toLowerCase().includes(cleanQ) ||
+        p.properties.address.toLowerCase().includes(cleanQ) ||
+        p.properties.city.toLowerCase().includes(cleanQ) ||
+        p.properties.tags.some(t => t.toLowerCase().includes(cleanQ))
+      );
+      if (matchedPlace) {
+        flyToCoordinates(matchedPlace.geometry.coordinates);
+      }
+    }
+  }, [searchParams, mapLoaded, engine, initialPlaces]);
 
   // Update Markers when filteredPlaces changes
   useEffect(() => {
@@ -223,6 +299,15 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
           });
           activePopupRef.current = popup;
         });
+
+        if (searchParams?.id && place.properties.id === searchParams.id) {
+          setTimeout(() => {
+            if (mapRef.current) {
+              marker.togglePopup();
+              activePopupRef.current = popup;
+            }
+          }, 600);
+        }
 
         markersRef.current.push(marker);
       });
@@ -290,6 +375,16 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
           marker.addListener('click', clickListener);
         }
 
+        if (searchParams?.id && place.properties.id === searchParams.id) {
+          setTimeout(() => {
+            if (mapRef.current) {
+              if (activePopupRef.current) activePopupRef.current.close();
+              infowindow.open(mapRef.current, marker);
+              activePopupRef.current = infowindow;
+            }
+          }, 600);
+        }
+
         markersRef.current.push({ marker, infowindow, coords: coordinates });
       });
 
@@ -330,6 +425,14 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
           mapRef.current.setView([coordinates[1], coordinates[0]], Math.max(mapRef.current.getZoom(), 14));
         });
 
+        if (searchParams?.id && place.properties.id === searchParams.id) {
+          setTimeout(() => {
+            if (marker) {
+              marker.openPopup();
+            }
+          }, 600);
+        }
+
         markersRef.current.push(marker);
       });
 
@@ -341,6 +444,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
     return () => {
       cleanupMarkers();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filteredPlaces, mapLoaded, engine]);
 
   // Handler for list item click

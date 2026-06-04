@@ -2080,6 +2080,104 @@
           "repostería"
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.3828,
+          -25.3134
+        ]
+      },
+      "properties": {
+        "id": "cerro-koi",
+        "name": "Cerro Kõi (Punto de Poder Telúrico)",
+        "category": "turismo",
+        "description": "Monumento natural y afloramiento de areniscas columnares hexagonales únicas en Sudamérica. Considerado un vórtice de recarga de energía telúrica y geografía sagrada por su alineación cristalina.",
+        "address": "Areguá, Central, Paraguay",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Cerro+Koi+Aregua+Paraguay",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3134,-57.3828",
+        "internalUrl": "/turismo",
+        "hours": "Todos los días 08:00 - 17:00",
+        "city": "interior",
+        "website": "https://www.almadespierta.com/guias/geografia-sagrada-geomythologia-lugares-poder-paraguay",
+        "tags": [
+          "cerro",
+          "aregua",
+          "energia",
+          "misticismo",
+          "geologia",
+          "san lorenzo",
+          "central"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.9405,
+          -22.1558
+        ]
+      },
+      "properties": {
+        "id": "cavernas-vallemi",
+        "name": "Cavernas de Vallemí (Vórtice de Calcita)",
+        "category": "turismo",
+        "description": "Espectacular complejo espeleológico de más de 50 cavernas subterráneas de piedra caliza precámbrica y calcita luminiscente. Destaca la Caverna 54 con raíces de Guapo'y y la Santa Caverna.",
+        "address": "Vallemí, San Lázaro, Concepción, Paraguay",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.9,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Cavernas+de+Vallemi+Paraguay",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.1558,-57.9405",
+        "internalUrl": "/turismo",
+        "hours": "Visitas guiadas programadas",
+        "city": "interior",
+        "website": "https://www.almadespierta.com/guias/geografia-sagrada-geomythologia-lugares-poder-paraguay",
+        "tags": [
+          "cavernas",
+          "vallemi",
+          "misticismo",
+          "espeleologia",
+          "concepcion"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.6212,
+          -22.1154
+        ]
+      },
+      "properties": {
+        "id": "ojo-de-mar",
+        "name": "Ojo de Mar (Cenote Abisal)",
+        "category": "turismo",
+        "description": "Misterioso lago calcáreo circular de origen cárstico formado hace 250 millones de años. Custodiado por la mitología del caimán blanco (Yakaré Morotî) y corrientes magnéticas abisales.",
+        "address": "Bella Vista Norte, Amambay, Paraguay",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ojo+de+Mar+Bella+Vista+Norte+Paraguay",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.1154,-56.6212",
+        "internalUrl": "/turismo",
+        "hours": "Acceso libre diurno",
+        "city": "interior",
+        "website": "https://www.almadespierta.com/guias/geografia-sagrada-geomythologia-lugares-poder-paraguay",
+        "tags": [
+          "cenote",
+          "lago",
+          "misticismo",
+          "amambay",
+          "leyenda"
+        ]
+      }
     }
   ]
 }

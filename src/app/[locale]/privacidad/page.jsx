@@ -31,7 +31,7 @@ export default function PrivacidadPage({ params: { locale } }) {
       sec3Title: "3. Enlaces a Terceros",
       sec3Desc: "Nuestro sitio contiene hipervínculos a servicios externos (como mapas de Google Maps, ubicaciones oficiales de embajadas o videos de YouTube). No poseemos control sobre las políticas de privacidad o el uso de cookies de dichos terceros. Te aconsejamos leer sus políticas al salir de nuestro portal.",
       sec4Title: "4. Consultas y Contacto",
-      sec4Desc: "Si tienes cualquier pregunta sobre el funcionamiento técnico de la plataforma o deseas enviar alguna aclaración impositiva o de lugares, puedes contactar con nuestro equipo a través de: contacto@paraguayreal.com"
+      sec4Desc: "Si tienes cualquier pregunta sobre el funcionamiento técnico de la plataforma o deseas enviar alguna aclaración impositiva o de lugares, puedes contactar con nuestro equipo a través de: info@paraguayreal.com"
     },
     en: {
       title: "Privacy Policy",
@@ -43,7 +43,7 @@ export default function PrivacidadPage({ params: { locale } }) {
       sec3Title: "3. Third-Party Links",
       sec3Desc: "Our portal contains hyperlinks to external services (such as Google Maps, official embassy web pages, or YouTube videos). We do not control the privacy structures or cookie tracking systems of these third parties. We suggest reading their privacy policy pages when visiting.",
       sec4Title: "4. Inquiries & Contact",
-      sec4Desc: "If you have any questions regarding the technical mechanics of the site, or want to submit tax/place edits, feel free to reach out to: contacto@paraguayreal.com"
+      sec4Desc: "If you have any questions regarding the technical mechanics of the site, or want to submit tax/place edits, feel free to reach out to: info@paraguayreal.com"
     },
     pt: {
       title: "Política de Privacidade",
@@ -55,7 +55,7 @@ export default function PrivacidadPage({ params: { locale } }) {
       sec3Title: "3. Links para Terceiros",
       sec3Desc: "Nosso site possui links para serviços externos (como Google Maps, sites de embaixadas ou vídeos do YouTube). Não controlamos a política de privacidade e cookies dessas plataformas terceiras. Recomendamos ler as políticas delas ao sair do nosso site.",
       sec4Title: "4. Dúvidas e Contato",
-      sec4Desc: "Para qualquer dúvida sobre o funcionamento técnico ou sugestões de locais, entre em contato através de: contacto@paraguayreal.com"
+      sec4Desc: "Para qualquer dúvida sobre o funcionamento técnico ou sugestões de locais, entre em contato através de: info@paraguayreal.com"
     }
   };
 

@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { Mail, Compass } from 'lucide-react';
 
-export default function Footer({ locale = 'es', t }) {
+export default function Footer({ locale = 'es' }) {
+  const t = useTranslations();
   const translate = (key, defaultVal) => t ? t(key) : defaultVal;
 
   return (
@@ -11,8 +13,10 @@ export default function Footer({ locale = 'es', t }) {
           
           {/* Pitch */}
           <div className="space-y-4 md:col-span-2">
-            <h4 className="text-white font-extrabold text-lg flex items-center gap-2">
-              <Compass className="w-5 h-5 text-emerald-500" />
+            <h4 className="text-white font-extrabold text-lg flex items-center gap-2.5">
+              <div className="w-6 h-6 rounded overflow-hidden border border-slate-700 bg-white flex items-center justify-center">
+                <img src="/logo.png" alt="ParaguayReal Logo" className="w-full h-full object-cover scale-110" />
+              </div>
               <span>ParaguayReal</span>
             </h4>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
@@ -38,7 +42,7 @@ export default function Footer({ locale = 'es', t }) {
               {translate("Footer.suggestion", "¿Falta algún lugar clave en nuestro mapa?")}
             </p>
             <a
-              href="mailto:sugerencias@paraguayreal.com?subject=Sugerencia de lugar para el Mapa de Paraguay"
+              href="mailto:info@paraguayreal.com?subject=Sugerencia de lugar para el Mapa de Paraguay"
               className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition"
             >
               <Mail className="w-3.5 h-3.5" />

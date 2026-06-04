@@ -23,7 +23,7 @@ export default function HomePage({ params: { locale } }) {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "contacto@paraguayreal.com"
+      "email": "info@paraguayreal.com"
     }
   };
 
@@ -45,44 +45,44 @@ export default function HomePage({ params: { locale } }) {
   // 6 subcategories grid definitions
   const categories = [
     {
-      title: "Coste de Vida",
-      desc: "Precios reales de supermercados, alquileres y servicios actualizados.",
+      title: t("Home.categories.costOfLiving.title"),
+      desc: t("Home.categories.costOfLiving.desc"),
       url: "/precios",
       icon: <DollarSign className="w-5 h-5 text-emerald-600" />,
       bg: "bg-emerald-50"
     },
     {
-      title: "Cómo Mudarse",
-      desc: "Paso a paso para obtener tu residencia permanente y cédula.",
+      title: t("Home.categories.howToMove.title"),
+      desc: t("Home.categories.howToMove.desc"),
       url: "/blog/como-obtener-residencia-permanente-paraguay",
       icon: <UserCheck className="w-5 h-5 text-blue-600" />,
       bg: "bg-blue-50"
     },
     {
-      title: "Turismo y Lugares",
-      desc: "Lugares imprescindibles, rutas naturales y atractivos culturales.",
+      title: t("Home.categories.tourism.title"),
+      desc: t("Home.categories.tourism.desc"),
       url: "/turismo",
       icon: <Compass className="w-5 h-5 text-amber-600" />,
       bg: "bg-amber-50"
     },
     {
-      title: "Negocios e Inversión",
-      desc: "Impuestos, constitución de empresas y oportunidades comerciales.",
+      title: t("Home.categories.business.title"),
+      desc: t("Home.categories.business.desc"),
       url: "/negocios",
       icon: <Briefcase className="w-5 h-5 text-purple-600" />,
       bg: "bg-purple-50"
     },
     {
-      title: "Ciudades",
-      desc: "Análisis de Asunción, Encarnación, Ciudad del Este y más.",
+      title: t("Home.categories.cities.title"),
+      desc: t("Home.categories.cities.desc"),
       url: "/ciudades/asuncion",
       icon: <Building className="w-5 h-5 text-slate-600" />,
       bg: "bg-slate-50"
     },
     {
-      title: "Seguridad y Vida Diaria",
-      desc: "Consejos prácticos, sanidad, bancos y seguridad ciudadana.",
-      url: "/blog/como-obtener-residencia-permanente-paraguay", // Redirecting to general info
+      title: t("Home.categories.safety.title"),
+      desc: t("Home.categories.safety.desc"),
+      url: "/blog/como-obtener-residencia-permanente-paraguay",
       icon: <ShieldCheck className="w-5 h-5 text-red-600" />,
       bg: "bg-red-50"
     }
@@ -136,10 +136,10 @@ export default function HomePage({ params: { locale } }) {
       {/* Category Grid Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-extrabold text-slate-900 font-display mb-1 text-center">
-          Todo sobre el Paraguay, Categorizado
+          {t("Home.gridTitle")}
         </h2>
         <p className="text-xs sm:text-sm text-slate-500 mb-10 text-center">
-          Accede directo a información verídica redactada por residentes locales e inversores experimentados.
+          {t("Home.gridSubtitle")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -148,13 +148,13 @@ export default function HomePage({ params: { locale } }) {
             <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
             <div>
               <span className="bg-emerald-500 text-white text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase leading-none inline-block mb-3">
-                Herramienta Principal
+                {t("Home.toolBadge")}
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-white mb-2">
-                Mapa Interactivo de Paraguay
+                {t("Home.toolTitle")}
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm max-w-md leading-relaxed">
-                Descubre hospitales, embajadas, coworkings, restaurantes y zonas seguras directamente en nuestro mapa interactivo a pantalla completa.
+                {t("Home.toolDesc")}
               </p>
             </div>
             <div className="pt-6">
@@ -162,7 +162,7 @@ export default function HomePage({ params: { locale } }) {
                 href={`/${locale}/mapa`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all"
               >
-                <span>Explorar Mapa</span>
+                <span>{t("Home.exploreMap")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -188,7 +188,7 @@ export default function HomePage({ params: { locale } }) {
                   href={`/${locale}${cat.url}`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition"
                 >
-                  <span>Explorar categoría</span>
+                  <span>{t("Home.exploreCategory")}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -202,10 +202,10 @@ export default function HomePage({ params: { locale } }) {
         <div className="text-center space-y-2 mb-8">
           <h2 className="text-2xl font-extrabold text-slate-900 font-display flex items-center justify-center gap-2">
             <Map className="w-6 h-6 text-emerald-600" />
-            <span>Vista Previa del Mapa</span>
+            <span>{t("Home.previewTitle")}</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
-            Navega por la capital del país en este mini mapa y pulsa en &quot;Explorar mapa completo&quot; para filtrar más capas y ver coordenadas exactas.
+            {t("Home.previewDesc")}
           </p>
         </div>
 

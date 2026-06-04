@@ -42,6 +42,9 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
     const matchedPlaces = placesGeoJSON.features
       .filter((place) =>
         place.properties.name.toLowerCase().includes(cleanQuery) ||
+        place.properties.description.toLowerCase().includes(cleanQuery) ||
+        place.properties.address.toLowerCase().includes(cleanQuery) ||
+        place.properties.city.toLowerCase().includes(cleanQuery) ||
         place.properties.tags.some(tag => tag.toLowerCase().includes(cleanQuery))
       )
       .slice(0, 4)
@@ -67,6 +70,16 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
     setIsOpen(false);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      if (results.length > 0) {
+        window.location.href = `/${locale}${results[0].url}`;
+      } else if (query.trim().length > 0) {
+        window.location.href = `/${locale}/mapa?q=${encodeURIComponent(query)}`;
+      }
+    }
+  };
+
   return (
     <div ref={containerRef} className="relative w-full max-w-lg">
       <div className="relative">
@@ -79,6 +92,7 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
             setIsOpen(true);
           }}
           onFocus={() => setIsOpen(true)}
+          onKeyDown={handleKeyDown}
           placeholder={placeholder}
           className="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all text-slate-800"
         />

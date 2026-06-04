@@ -54,6 +54,7 @@ export default function Footer({ locale = 'es', t }) {
           <div className="flex gap-4">
             <a href={`/${locale}/privacidad`} className="hover:underline hover:text-slate-400">Privacidad</a>
             <a href={`/${locale}/cookies`} className="hover:underline hover:text-slate-400">Cookies</a>
+            <a href={`/${locale}/legal`} className="hover:underline hover:text-slate-400">Aviso Legal</a>
           </div>
         </div>
 

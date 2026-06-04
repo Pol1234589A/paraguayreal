@@ -1807,6 +1807,279 @@
           "chaco"
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.575811,
+          -25.298622
+        ]
+      },
+      "properties": {
+        "id": "tierra-colorada-gastro",
+        "name": "Tierra Colorada Gastró",
+        "category": "restaurantes",
+        "description": "Restaurante del chef Rodolfo Angenscheidt, galardonado entre los mejores de Latinoamérica, especializado en gastronomía paraguaya contemporánea de autor.",
+        "address": "Avda. Santísima Trinidad 784, Asunción",
+        "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.298622,-57.575811",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.298622,-57.575811",
+        "internalUrl": "/turismo",
+        "hours": "Martes a Sábado 12:00 - 15:00, 19:30 - 23:30",
+        "city": "asuncion",
+        "tags": [
+          "gastronomía",
+          "gourmet",
+          "autor",
+          "comida paraguaya"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.579211,
+          -25.294132
+        ]
+      },
+      "properties": {
+        "id": "talleyrand-villa-morra",
+        "name": "Talleyrand Villa Morra",
+        "category": "restaurantes",
+        "description": "Un clásico de la alta cocina internacional en Asunción con décadas de trayectoria y servicio premium.",
+        "address": "Mariscal Estigarribia c/ Cruz del Chaco, Asunción",
+        "photo": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.294132,-57.579211",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.294132,-57.579211",
+        "internalUrl": "/turismo",
+        "hours": "Todos los días 12:00 - 15:00, 20:00 - 00:00",
+        "city": "asuncion",
+        "tags": [
+          "alta cocina",
+          "internacional",
+          "gourmet",
+          "villa morra"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.572311,
+          -25.284722
+        ]
+      },
+      "properties": {
+        "id": "la-cabrera-paraguay",
+        "name": "La Cabrera Paraguay",
+        "category": "restaurantes",
+        "description": "Famosa parrilla argentina en el eje corporativo, reconocida por sus cortes premium de carne vacuna y variedad de guarniciones.",
+        "address": "Avda. Santa Teresa c/ Coronel Cabrera, Asunción",
+        "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.284722,-57.572311",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.284722,-57.572311",
+        "internalUrl": "/turismo",
+        "hours": "Todos los días 12:00 - 16:00, 19:30 - 00:00",
+        "city": "asuncion",
+        "tags": [
+          "parrilla",
+          "asado",
+          "carnes",
+          "eje corporativo"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.578622,
+          -25.296411
+        ]
+      },
+      "properties": {
+        "id": "el-cafe-de-aca",
+        "name": "El Café de acá",
+        "category": "restaurantes",
+        "description": "Encantador café y restaurante de ambientación tradicional paraguaya, famoso por su cocido quemado, chipas, mbejú y repostería casera.",
+        "address": "Teniente Héctor Vera 1390 c/ Dr. Morra, Asunción",
+        "photo": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.296411,-57.578622",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.296411,-57.578622",
+        "internalUrl": "/turismo",
+        "hours": "Todos los días 07:00 - 23:00",
+        "city": "asuncion",
+        "tags": [
+          "cafetería",
+          "tradicional",
+          "cocido",
+          "merienda",
+          "villa morra"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.112822,
+          -25.394411
+        ]
+      },
+      "properties": {
+        "id": "chiperia-maria-ana",
+        "name": "Chipería María Ana",
+        "category": "restaurantes",
+        "description": "Parada obligatoria de la Ruta 2. La chipería más icónica del país, sirviendo chipa calentita recién salida del tatakua artesanal.",
+        "address": "Ruta PY02 Km 72, Eusebio Ayala, Cordillera",
+        "photo": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.394411,-57.112822",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.394411,-57.112822",
+        "internalUrl": "/turismo",
+        "hours": "Todos los días 05:00 - 22:00",
+        "city": "all",
+        "tags": [
+          "chipa",
+          "tradicional",
+          "ruta 2",
+          "tatakua",
+          "caacupé"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.865322,
+          -27.332511
+        ]
+      },
+      "properties": {
+        "id": "restaurante-hiroshima",
+        "name": "Restaurante Hiroshima",
+        "category": "restaurantes",
+        "description": "Excelente cocina japonesa auténtica en Encarnación, fundada por descendientes de inmigrantes japoneses de Itapúa. Famoso por su sushi y tempura.",
+        "address": "Mcal. Estigarribia c/ 25 de Mayo, Encarnación",
+        "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-27.332511,-55.865322",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.332511,-55.865322",
+        "internalUrl": "/turismo",
+        "hours": "Martes a Domingo 19:00 - 23:30",
+        "city": "encarnacion",
+        "tags": [
+          "japonés",
+          "sushi",
+          "encarnación",
+          "itapúa"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.863122,
+          -27.333111
+        ]
+      },
+      "properties": {
+        "id": "milord-restaurant",
+        "name": "Milord Restaurant",
+        "category": "restaurantes",
+        "description": "Exclusiva opción gourmet internacional de ambientación elegante en el corazón de Encarnación.",
+        "address": "Antequera 1215 c/ Tomás Romero Pereira, Encarnación",
+        "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-27.333111,-55.863122",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.333111,-55.863122",
+        "internalUrl": "/turismo",
+        "hours": "Todos los días 12:00 - 15:00, 19:30 - 23:30",
+        "city": "encarnacion",
+        "tags": [
+          "gourmet",
+          "encarnación",
+          "internacional",
+          "hotel"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.612822,
+          -25.508911
+        ]
+      },
+      "properties": {
+        "id": "sax-palace-restaurant",
+        "name": "Sax Palace Restaurant",
+        "category": "restaurantes",
+        "description": "Experiencia gastronómica de lujo en el último piso de la tienda Sax, con vistas panorámicas al río Paraná y cocina mediterránea fina.",
+        "address": "Avda. San Blas c/ Regimiento Piribebuy, Ciudad del Este",
+        "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.508911,-54.612822",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.508911,-54.612822",
+        "internalUrl": "/turismo",
+        "hours": "Miércoles a Sábado 12:00 - 15:00, 19:30 - 23:30; Domingos 12:00 - 16:00",
+        "city": "cde",
+        "tags": [
+          "lujo",
+          "vista",
+          "mediterránea",
+          "cde"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.296122,
+          -25.309411
+        ]
+      },
+      "properties": {
+        "id": "cafe-del-lago-sanber",
+        "name": "Café del Lago",
+        "category": "restaurantes",
+        "description": "Clásica confitería y restaurante de San Bernardino, con hermosas vistas al lago Ypacaraí e ideal para merendar facturas alemanas.",
+        "address": "Avda. Luis F. Vaché c/ Defensores del Chaco, San Bernardino",
+        "photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.309411,-57.296122",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.309411,-57.296122",
+        "internalUrl": "/turismo",
+        "hours": "Todos los días 08:00 - 22:00",
+        "city": "all",
+        "tags": [
+          "café",
+          "vista",
+          "lago",
+          "san bernardino",
+          "repostería"
+        ]
+      }
     }
   ]
 }

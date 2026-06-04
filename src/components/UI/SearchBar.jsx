@@ -9,7 +9,7 @@ const STATIC_GUIDES = [
   { id: "coste-de-vida", name: "Costo de Vida en Paraguay", url: "/precios", type: "guide" },
   { id: "barrios-asuncion", name: "Seguridad y Barrios en Asunción", url: "/vivir/barrios", type: "guide" },
   { id: "residencia-permanente", name: "Guía de Residencia Permanente", url: "/blog/como-obtener-residencia-permanente-paraguay", type: "guide" },
-  { id: "negocios-inversion", name: "Hacer Negocios e Impuestos", url: "/blog/impuestos-extranjeros-paraguay", type: "guide" }
+  { id: "negocios-inversion", name: "Hacer Negocios e Impuestos", url: "/negocios", type: "guide" }
 ];
 
 export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) {

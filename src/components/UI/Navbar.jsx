@@ -17,7 +17,7 @@ export default function Navbar({ locale = 'es', t }) {
     { label: translate("Navigation.tourism", "Turismo"), url: "/turismo", isNew: false },
     { label: translate("Navigation.prices", "Precios"), url: "/precios", isNew: false },
     { label: translate("Navigation.moving", "Mudarse"), url: "/blog/como-obtener-residencia-permanente-paraguay", isNew: false },
-    { label: translate("Navigation.business", "Negocios"), url: "/blog/impuestos-extranjeros-paraguay", isNew: false },
+    { label: translate("Navigation.business", "Negocios"), url: "/negocios", isNew: false },
     { label: translate("Navigation.cities", "Ciudades"), url: "/ciudades/asuncion", isNew: false },
     { label: translate("Navigation.blog", "Blog"), url: "/blog/cuanto-cuesta-vivir-en-paraguay-2025", isNew: false }
   ];

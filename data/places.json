@@ -1715,6 +1715,98 @@
           "cordillera"
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.5684,
+          -25.2858
+        ]
+      },
+      "properties": {
+        "id": "wtc-asuncion",
+        "name": "World Trade Center Asunción",
+        "category": "bancos",
+        "description": "Complejo corporativo y financiero insignia de Asunción, epicentro de negocios, embajadas y multinacionales.",
+        "address": "Avda. Aviadores del Chaco 2050, Asunción",
+        "photo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2858,-57.5684",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2858,-57.5684",
+        "internalUrl": "/negocios",
+        "hours": "Abierto 24 horas",
+        "city": "asuncion",
+        "tags": [
+          "negocios",
+          "corporativo",
+          "finanzas",
+          "eje corporativo"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.6367,
+          -25.4089
+        ]
+      },
+      "properties": {
+        "id": "maquila-hub-hernandarias",
+        "name": "Parque Industrial Maquilador (Hernandarias)",
+        "category": "coworking",
+        "description": "Eje del régimen de la Ley de Maquila en Alto Paraná. Fábricas de exportación libre de aranceles al Mercosur con impuesto del 1%.",
+        "address": "Supercarretera de Itaipú Km 12, Hernandarias, Alto Paraná",
+        "photo": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.4089,-54.6367",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.4089,-54.6367",
+        "internalUrl": "/negocios",
+        "hours": "Lunes a Viernes 07:00 - 16:00",
+        "city": "cde",
+        "tags": [
+          "maquila",
+          "negocios",
+          "fábrica",
+          "exportación",
+          "mercosur"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.9044,
+          -21.6881
+        ]
+      },
+      "properties": {
+        "id": "ruta-bioceanica-paso",
+        "name": "Corredor de la Ruta Bioceánica (Paso Carmelo Peralta)",
+        "category": "transporte",
+        "description": "Punto neurálgico del mega corredor bioceánico que conectará los puertos del Atlántico y Pacífico cruzando el Chaco paraguayo.",
+        "address": "Carmelo Peralta, Alto Paraguay",
+        "photo": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-21.6881,-57.9044",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-21.6881,-57.9044",
+        "internalUrl": "/negocios",
+        "hours": "Abierto 24 horas",
+        "city": "all",
+        "tags": [
+          "bioceánica",
+          "transporte",
+          "infraestructura",
+          "logística",
+          "chaco"
+        ]
+      }
     }
   ]
 }

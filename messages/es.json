@@ -77,5 +77,20 @@
     "suggestion": "¿Falta algún lugar clave en nuestro mapa?",
     "suggestionBtn": "Sugerir Lugar",
     "rights": "Todos los derechos reservados."
+  },
+  "Business": {
+    "title": "Negocios e Inversión en Paraguay",
+    "subtitle": "Información estratégica sobre fiscalidad, Ley de Maquila, oportunidades inmobiliarias, agro y cultura de negocios basada en datos de residentes y empresarios locales.",
+    "updated": "Actualizado: Junio 2026",
+    "taxTitle": "Sistema Fiscal: Regla del 10-10-10",
+    "taxSubtitle": "Paraguay posee uno de los regímenes tributarios más sencillos y atractivos del mundo, basado en la territorialidad.",
+    "maquilaTitle": "Régimen de Maquila: Acceso Libre al Mercosur",
+    "maquilaSubtitle": "Una herramienta potente para exportadores industriales. Impuesto único del 1% sobre exportaciones y exención de aranceles.",
+    "investTitle": "Sectores de Inversión y Advertencias",
+    "investSubtitle": "Análisis sincero de sectores clave: sector agropecuario, ganadería y el mercado inmobiliario.",
+    "infraTitle": "Mega Obras de Conectividad",
+    "infraSubtitle": "La Ruta Bioceánica y el Tren de Cercanías marcarán un antes y un después en la logística continental.",
+    "cultureTitle": "Cultura de Negocios y Confianza",
+    "cultureSubtitle": "En Paraguay rige el principio del 'país de los amigos'. La relación física y el trato personal preceden al contrato."
   }
 }

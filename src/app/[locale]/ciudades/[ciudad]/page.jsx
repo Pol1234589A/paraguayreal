@@ -4,7 +4,7 @@ import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 import SchemaOrg from '../../../../components/SEO/SchemaOrg';
 import placesGeoJSON from '../../../../../data/places.json';
-import { Check, X, Shield, DollarSign, MapPin } from 'lucide-react';
+import { Check, X, Shield, DollarSign, MapPin, Briefcase } from 'lucide-react';
 
 const CityMap = dynamic(
   () => import('../../../../components/Map/CityMap'),
@@ -33,7 +33,21 @@ const CITIES_DATA = {
     cons: [
       "El tráfico vehicular en horas punta es pesado.",
       "Infraestructura vial con baches durante días de lluvias fuertes."
-    ]
+    ],
+    businessProfile: {
+      es: {
+        title: "Perfil de Negocios en Asunción",
+        desc: "Capital financiera e inmobiliaria de Paraguay. Destaca su eje corporativo (Santa Teresa / Aviadores del Chaco) que concentra el WTC y Paseo La Galería. Es ideal para sedes de software, servicios profesionales, consultoría y fideicomisos inmobiliarios. Se aconseja cautela con la plusvalía especulativa de terrenos, priorizando la renta por alquileres estables (rendimientos del 6% al 8% anual)."
+      },
+      en: {
+        title: "Asunción Business Profile",
+        desc: "Financial and real estate capital of Paraguay. It features the corporate axis of Santa Teresa and Aviadores del Chaco, home to the WTC and Paseo La Galería. Ideal for software headquarters, professional services, consulting, and real estate trusts. Caution is advised with speculative land flipping, focusing instead on stable rental yields (6% to 8% annually)."
+      },
+      pt: {
+        title: "Perfil de Negócios em Assunção",
+        desc: "Capital financeira e imobiliária do Paraguai. Destaca-se o eixo corporativo (Santa Teresa / Aviadores do Chaco) que concentra o WTC e Paseo La Galería. Ideal para sedes de tecnologia, serviços profissionais, consultoria e fundos imobiliários. Recomenda-se cautela com a especulação rápida de terrenos, focando em renda por aluguel (retornos de 6% a 8% ao ano)."
+      }
+    }
   },
   "ciudad-del-este": {
     name: "Ciudad del Este",
@@ -49,7 +63,21 @@ const CITIES_DATA = {
     cons: [
       "El microcentro comercial es muy caótico y ruidoso.",
       "Poca actividad cultural y de ocio después del cierre de tiendas."
-    ]
+    ],
+    businessProfile: {
+      es: {
+        title: "Perfil de Negocios en Ciudad del Este",
+        desc: "Eje de importación y manufactura. Es la puerta de entrada principal al régimen de la Ley de Maquila en Alto Paraná (como Hernandarias), facilitando la instalación de industrias que exportan a Brasil y Argentina con arancel cero y solo 1% de impuesto único. Excelente para comercio mayorista, logística y electrónica en la triple frontera."
+      },
+      en: {
+        title: "Ciudad del Este Business Profile",
+        desc: "Import and manufacturing hub. It is the main gateway to the Maquila Law regime in Alto Paraná (like Hernandarias), enabling industrial factories to export to Brazil and Argentina duty-free under a flat 1% tax. Highly recommended for wholesale trading, logistics, and electronics near the triple border."
+      },
+      pt: {
+        title: "Perfil de Negócios em Ciudad del Este",
+        desc: "Polo de importação e manufatura. É a principal porta de entrada da Lei de Maquila no Alto Paraná (como Hernandarias), facilitando a montagem de indústrias que exportam ao Brasil e Argentina com tarifa zero e imposto único de 1%. Excelente para comércio atacadista, logística e eletrônicos na tríplice fronteira."
+      }
+    }
   },
   "encarnacion": {
     name: "Encarnación",
@@ -65,7 +93,21 @@ const CITIES_DATA = {
     cons: [
       "La actividad económica e industrial es más reducida.",
       "En invierno la oferta de entretenimiento disminuye considerablemente."
-    ]
+    ],
+    businessProfile: {
+      es: {
+        title: "Perfil de Negocios en Encarnación",
+        desc: "Hub agroindustrial y logístico. Conectada estratégicamente por el río Paraná, es ideal para agroinversiones (soja, maíz, ganadería) en alianza con las cooperativas agrícolas del departamento de Itapúa. Cuenta con facilidades bancarias (Banco Sudameris en la Costanera) que permiten abrir cuentas ágilmente usando pasaporte."
+      },
+      en: {
+        title: "Encarnación Business Profile",
+        desc: "Agro-industrial and logistics hub. Strategically connected via the Paraná River, it is ideal for agricultural investments (soy, corn, livestock) alongside Itapúa's farming cooperatives. Offers excellent banking facilities (e.g. Banco Sudameris on the costanera) allowing account setups with just a passport."
+      },
+      pt: {
+        title: "Perfil de Negócios em Encarnação",
+        desc: "Polo agroindustrial e logístico. Conectada pelo Rio Paraná, é ideal para agroinvestimentos (soja, milho, pecuária) com cooperativas locais em Itapúa. Oferece facilidades bancárias (como o Banco Sudameris na Costanera) para abertura de contas de forma ágil com passaporte."
+      }
+    }
   }
 };
 
@@ -185,6 +227,19 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
           </div>
         </div>
       </section>
+
+      {/* Perfil de Negocios */}
+      {city.businessProfile && (
+        <section className="bg-emerald-50/20 border border-emerald-100 rounded-xl p-5 space-y-3">
+          <h3 className="font-extrabold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+            <Briefcase className="w-5 h-5 text-emerald-600 shrink-0" />
+            <span>{(city.businessProfile[locale] || city.businessProfile.es).title}</span>
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+            {(city.businessProfile[locale] || city.businessProfile.es).desc}
+          </p>
+        </section>
+      )}
 
       {/* Local Map */}
       <section className="space-y-4">

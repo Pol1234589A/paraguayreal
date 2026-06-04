@@ -77,5 +77,20 @@
     "suggestion": "Did we miss a key location on our map?",
     "suggestionBtn": "Suggest Location",
     "rights": "All rights reserved."
+  },
+  "Business": {
+    "title": "Business & Investment in Paraguay",
+    "subtitle": "Strategic information on taxation, the Maquila law, real estate opportunities, agriculture, and business culture, based on insights from local residents and entrepreneurs.",
+    "updated": "Updated: June 2026",
+    "taxTitle": "Tax System: The 10-10-10 Rule",
+    "taxSubtitle": "Paraguay offers one of the simplest and most attractive tax systems globally, based on territoriality.",
+    "maquilaTitle": "Maquila Regime: Duty-Free Mercosur Access",
+    "maquilaSubtitle": "A powerful tool for industrial exporters. A flat 1% tax on exports and complete exemption from import tariffs.",
+    "investTitle": "Investment Sectors & Warnings",
+    "investSubtitle": "Honest analysis of key sectors: agriculture, livestock, and the real estate market.",
+    "infraTitle": "Connectivity Megaprojects",
+    "infraSubtitle": "The Bioceanic Corridor and the Commuter Rail will mark a before and after in continental logistics.",
+    "cultureTitle": "Business Culture & Trust",
+    "cultureSubtitle": "Paraguay operates as a 'country of friends.' Personal relationships and physical presence come before contract signing."
   }
 }

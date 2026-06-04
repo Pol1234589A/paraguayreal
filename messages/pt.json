@@ -77,5 +77,20 @@
     "suggestion": "Falta algum lugar essencial no nosso mapa?",
     "suggestionBtn": "Sugerir Lugar",
     "rights": "Todos os direitos reservados."
+  },
+  "Business": {
+    "title": "Negócios e Investimentos no Paraguai",
+    "subtitle": "Informações estratégicas sobre impostos, Lei de Maquila, oportunidades imobiliárias, agronegócio e cultura de negócios, com base em depoimentos de residentes e empresários locais.",
+    "updated": "Atualizado: Junho de 2026",
+    "taxTitle": "Sistema Tributário: Regra 10-10-10",
+    "taxSubtitle": "O Paraguai oferece um dos sistemas fiscais mais simples e atraentes do mundo, baseado no princípio da territorialidade.",
+    "maquilaTitle": "Regime de Maquila: Acesso Livre ao Mercosul",
+    "maquilaSubtitle": "Uma ferramenta poderosa para exportadores industriais. Imposto único de 1% sobre exportações e isenção de tarifas de importação.",
+    "investTitle": "Setores de Investimento e Alertas",
+    "investSubtitle": "Análise honesta de setores-chave: agricultura, pecuária e o mercado imobiliário.",
+    "infraTitle": "Megaprojetos de Conectividade",
+    "infraSubtitle": "A Rota Biooceânica e o Trem de Subúrbio marcarão um antes e um depois na logística continental.",
+    "cultureTitle": "Cultura de Negócios e Confiança",
+    "cultureSubtitle": "No Paraguai vigora o princípio do 'país dos amigos'. Relacionamentos pessoais e presença física antecedem a assinatura de contratos."
   }
 }

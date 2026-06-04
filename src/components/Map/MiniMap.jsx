@@ -24,8 +24,8 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         style: 'mapbox://styles/mapbox/streets-v12',
         center: [lng, lat],
         zoom: 14,
-        scrollZoom: false,
-        doubleClickZoom: false,
+        scrollZoom: true,
+        doubleClickZoom: true,
         dragRotate: false
       });
 
@@ -59,8 +59,9 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         const map = new window.google.maps.Map(mapContainerRef.current, {
           center: center,
           zoom: 14,
-          scrollwheel: false,
-          disableDoubleClickZoom: true,
+          scrollwheel: true,
+          disableDoubleClickZoom: false,
+          zoomControl: true,
           mapTypeControl: false,
           streetViewControl: false,
           fullscreenControl: false
@@ -104,8 +105,8 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         }
 
         const map = window.L.map(container, {
-          scrollWheelZoom: false,
-          doubleClickZoom: false,
+          scrollWheelZoom: true,
+          doubleClickZoom: true,
           zoomControl: true
         }).setView([lat, lng], 14);
 

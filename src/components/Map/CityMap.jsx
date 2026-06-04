@@ -69,7 +69,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
         style: 'mapbox://styles/mapbox/streets-v12',
         center: center,
         zoom: zoom,
-        scrollZoom: false,
+        scrollZoom: true,
         pitchWithRotate: false,
         dragRotate: false
       });
@@ -141,7 +141,8 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
         const map = new window.google.maps.Map(mapContainerRef.current, {
           center: center,
           zoom: 13,
-          scrollwheel: false,
+          scrollwheel: true,
+          zoomControl: true,
           mapId: 'DEMO_MAP_ID', // Enables AdvancedMarkerElement
           mapTypeControl: false,
           streetViewControl: false
@@ -243,7 +244,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
         }
 
         const map = window.L.map(container, {
-          scrollWheelZoom: false,
+          scrollWheelZoom: true,
           zoomControl: true
         }).setView(center, 13);
 

@@ -24,11 +24,11 @@ const NEIGHBORHOODS_DATA = {
       geometry: {
         type: "Polygon",
         coordinates: [[
-          [-57.585, -25.298],
-          [-57.565, -25.298],
-          [-57.565, -25.285],
-          [-57.585, -25.285],
-          [-57.585, -25.298]
+          [-57.598, -25.305],
+          [-57.570, -25.305],
+          [-57.570, -25.280],
+          [-57.598, -25.280],
+          [-57.598, -25.305]
         ]]
       }
     },
@@ -47,11 +47,11 @@ const NEIGHBORHOODS_DATA = {
       geometry: {
         type: "Polygon",
         coordinates: [[
-          [-57.615, -25.290],
-          [-57.600, -25.290],
-          [-57.600, -25.280],
-          [-57.615, -25.280],
-          [-57.615, -25.290]
+          [-57.620, -25.292],
+          [-57.598, -25.292],
+          [-57.598, -25.272],
+          [-57.620, -25.272],
+          [-57.620, -25.292]
         ]]
       }
     },
@@ -70,11 +70,11 @@ const NEIGHBORHOODS_DATA = {
       geometry: {
         type: "Polygon",
         coordinates: [[
-          [-57.570, -25.275],
-          [-57.550, -25.275],
-          [-57.550, -25.255],
+          [-57.570, -25.280],
+          [-57.545, -25.280],
+          [-57.545, -25.255],
           [-57.570, -25.255],
-          [-57.570, -25.275]
+          [-57.570, -25.280]
         ]]
       }
     },
@@ -93,11 +93,11 @@ const NEIGHBORHOODS_DATA = {
       geometry: {
         type: "Polygon",
         coordinates: [[
-          [-57.640, -25.288],
-          [-57.625, -25.288],
-          [-57.625, -25.275],
-          [-57.640, -25.275],
-          [-57.640, -25.288]
+          [-57.645, -25.292],
+          [-57.620, -25.292],
+          [-57.620, -25.272],
+          [-57.645, -25.272],
+          [-57.645, -25.292]
         ]]
       }
     }
@@ -145,7 +145,7 @@ export default function NeighborhoodMap() {
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/light-v11',
         center: [-57.595, -25.285],
-        zoom: 12.5,
+        zoom: 13,
         pitchWithRotate: false,
         dragRotate: false
       });
@@ -214,7 +214,7 @@ export default function NeighborhoodMap() {
 
         const map = new window.google.maps.Map(mapContainerRef.current, {
           center: { lat: -25.285, lng: -57.595 },
-          zoom: 12.5,
+          zoom: 13,
           mapTypeControl: false,
           streetViewControl: false,
           styles: [
@@ -258,7 +258,7 @@ export default function NeighborhoodMap() {
 
         const map = window.L.map(container, {
           zoomControl: true
-        }).setView([-25.285, -57.595], 12);
+        }).setView([-25.285, -57.595], 13);
 
         mapRef.current = map;
         mapInstance = map;

@@ -41,7 +41,7 @@ export default function Navbar({ locale = 'es' }) {
         
         {/* Logo */}
         <a href={`/${locale}`} className="flex items-center gap-2.5 group cursor-pointer">
-          <div className="w-7 h-7 rounded-lg overflow-hidden border border-slate-100 shadow-sm flex items-center justify-center bg-white group-hover:border-emerald-200 transition">
+          <div className="w-10 h-10 rounded-xl overflow-hidden border border-slate-100 shadow-sm flex items-center justify-center bg-white group-hover:border-emerald-200 transition">
             <img src="/logo.png" alt="ParaguayReal Logo" className="w-full h-full object-cover scale-110" />
           </div>
           <span className="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-emerald-600 transition">

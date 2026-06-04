@@ -1,0 +1,1126 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6362, -25.2867] },
+      "properties": {
+        "id": "palacio-lopez",
+        "name": "Palacio de los López",
+        "category": "turismo",
+        "description": "Sede del gobierno paraguayo, uno de los edificios más emblemáticos de Asunción.",
+        "address": "El Paraguayo Independiente entre O'Leary y Ayolas, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2867,-57.6362",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2867,-57.6362",
+        "internalUrl": "/turismo/palacio-lopez",
+        "hours": "Lunes a Viernes 08:00 - 17:00",
+        "city": "asuncion",
+        "tags": ["histórico", "gobierno", "centro"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6318, -25.2821] },
+      "properties": {
+        "id": "panteon-heroes",
+        "name": "Panteón Nacional de los Héroes",
+        "category": "turismo",
+        "description": "Mausoleo histórico y monumento nacional que rinde homenaje a los héroes de la patria.",
+        "address": "Palma y Chile, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2821,-57.6318",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2821,-57.6318",
+        "internalUrl": "/turismo/panteon-heroes",
+        "hours": "Todos los días 06:00 - 18:00",
+        "city": "asuncion",
+        "tags": ["histórico", "monumento", "centro"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6433, -25.2798] },
+      "properties": {
+        "id": "costanera-asuncion",
+        "name": "Costanera de Asunción",
+        "category": "turismo",
+        "description": "Avenida costanera y playa peatonal a orillas de la bahía de Asunción, ideal para caminatas al atardecer.",
+        "address": "Avda. República y Costanera, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2798,-57.6433",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2798,-57.6433",
+        "internalUrl": "/turismo/costanera-asuncion",
+        "hours": "Acceso libre 24/7",
+        "city": "asuncion",
+        "tags": ["aire libre", "vistas", "bahía"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6228, -25.2917] },
+      "properties": {
+        "id": "mercado-4",
+        "name": "Mercado Municipal Nº 4",
+        "category": "supermercados",
+        "description": "El mercado popular más grande y bullicioso de Asunción, ideal para conocer la cultura y comida local.",
+        "address": "Avda. Pettirossi y Perú, Asunción",
+        "photo": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.2,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2917,-57.6228",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2917,-57.6228",
+        "internalUrl": "/turismo/mercado-4",
+        "hours": "Todos los días 04:00 - 18:00",
+        "city": "asuncion",
+        "tags": ["compras", "popular", "comida"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5794, -25.2936] },
+      "properties": {
+        "id": "shopping-mariscal",
+        "name": "Shopping Mariscal",
+        "category": "supermercados",
+        "description": "Uno de los centros comerciales tradicionales más dinámicos, ubicado en Villa Morra.",
+        "address": "Quesada 5050, Asunción",
+        "photo": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2936,-57.5794",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2936,-57.5794",
+        "internalUrl": "/compras/shopping-mariscal",
+        "hours": "Todos los días 09:00 - 21:00",
+        "city": "asuncion",
+        "tags": ["compras", "centro comercial", "restaurantes"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5190, -25.2403] },
+      "properties": {
+        "id": "aeropuerto-silvio-pettirossi",
+        "name": "Aeropuerto Internacional Silvio Pettirossi",
+        "category": "transporte",
+        "description": "La principal puerta de entrada aérea a Paraguay, ubicado en Luque (Gran Asunción).",
+        "address": "Autopista Silvio Pettirossi, Luque",
+        "photo": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.0,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2403,-57.5190",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2403,-57.5190",
+        "internalUrl": "/transporte/aeropuerto",
+        "hours": "Abierto 24 horas",
+        "city": "asuncion",
+        "tags": ["aeropuerto", "transporte", "viajes"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6015, -25.3211] },
+      "properties": {
+        "id": "estacion-buses-asuncion",
+        "name": "Estación de Buses de Asunción",
+        "category": "transporte",
+        "description": "La principal terminal de colectivos de larga distancia del país, conectando con todo el interior y el exterior.",
+        "address": "Avda. Fernando de la Mora y República de Argentina, Asunción",
+        "photo": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500&auto=format&fit=crop&q=60",
+        "rating": 3.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3211,-57.6015",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3211,-57.6015",
+        "internalUrl": "/transporte/estacion-buses",
+        "hours": "Abierto 24 horas",
+        "city": "asuncion",
+        "tags": ["buses", "transporte", "terminal"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6074, -25.2858] },
+      "properties": {
+        "id": "barrio-las-mercedes",
+        "name": "Barrio Las Mercedes",
+        "category": "barrios",
+        "description": "Barrio bohemio y de moda, famoso por sus cafeterías, bares de diseño y casonas históricas.",
+        "address": "Las Mercedes, Asunción",
+        "photo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2858,-57.6074",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2858,-57.6074",
+        "internalUrl": "/barrios/las-mercedes",
+        "hours": "Acceso libre",
+        "city": "asuncion",
+        "tags": ["barrio", "seguro", "gastronomía"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5615, -25.2658] },
+      "properties": {
+        "id": "barrio-mburucuya",
+        "name": "Barrio Mburucuyá",
+        "category": "barrios",
+        "description": "Una de las zonas residenciales más lujosas, tranquilas y seguras del norte de Asunción.",
+        "address": "Mburucuyá, Asunción",
+        "photo": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.9,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2658,-57.5615",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2658,-57.5615",
+        "internalUrl": "/barrios/mburucuya",
+        "hours": "Acceso libre",
+        "city": "asuncion",
+        "tags": ["barrio", "exclusivo", "seguridad"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5758, -25.2917] },
+      "properties": {
+        "id": "barrio-villa-morra",
+        "name": "Barrio Villa Morra",
+        "category": "barrios",
+        "description": "Corazón comercial y financiero de Asunción, repleto de shoppings, hoteles y locales gastronómicos de primer nivel.",
+        "address": "Villa Morra, Asunción",
+        "photo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2917,-57.5758",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2917,-57.5758",
+        "internalUrl": "/barrios/villa-morra",
+        "hours": "Acceso libre",
+        "city": "asuncion",
+        "tags": ["barrio", "financiero", "compras"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5954, -25.2999] },
+      "properties": {
+        "id": "hospital-central-ips",
+        "name": "Hospital Central IPS",
+        "category": "hospitales",
+        "description": "El complejo hospitalario público más grande del país, gestionado por el Instituto de Previsión Social.",
+        "address": "Avda. Sacramento y Dr. Manuel Peña, Asunción",
+        "photo": "https://images.unsplash.com/photo-1586773860418-d3b9da976c2e?w=500&auto=format&fit=crop&q=60",
+        "rating": 3.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2999,-57.5954",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2999,-57.5954",
+        "internalUrl": "/salud/ips",
+        "hours": "Abierto 24 horas",
+        "city": "asuncion",
+        "tags": ["hospital", "salud", "público"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5218, -25.3347] },
+      "properties": {
+        "id": "universidad-nacional-asuncion",
+        "name": "Universidad Nacional de Asunción (UNA)",
+        "category": "turismo",
+        "description": "El campus principal de la universidad más antigua y prestigiosa de Paraguay, situado en San Lorenzo.",
+        "address": "Avda. Mariscal López, San Lorenzo",
+        "photo": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3347,-57.5218",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3347,-57.5218",
+        "internalUrl": "/educacion/una",
+        "hours": "Lunes a Sábado 07:00 - 21:00",
+        "city": "asuncion",
+        "tags": ["universidad", "estudios", "campus"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6322, -25.2818] },
+      "properties": {
+        "id": "lido-bar",
+        "name": "Lido Bar",
+        "category": "restaurantes",
+        "description": "Restaurante emblemático e histórico en pleno centro, famoso por su caldo de pescado (pira caldo) y empanadas.",
+        "address": "Palma y Chile, Asunción",
+        "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2818,-57.6322",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2818,-57.6322",
+        "internalUrl": "/restaurantes/lido-bar",
+        "hours": "Todos los días 07:00 - 23:00",
+        "city": "asuncion",
+        "tags": ["comida típica", "centro", "histórico"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6331, -25.2831] },
+      "properties": {
+        "id": "bolsi",
+        "name": "Bolsi",
+        "category": "restaurantes",
+        "description": "Con más de 60 años, es un restaurante imprescindible con barra clásica y un menú internacional extenso de alta calidad.",
+        "address": "Estrella y Alberdi, Asunción",
+        "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2831,-57.6331",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2831,-57.6331",
+        "internalUrl": "/restaurantes/bolsi",
+        "hours": "Abierto 24 horas",
+        "city": "asuncion",
+        "tags": ["clásico", "barra", "internacional"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5750, -25.2910] },
+      "properties": {
+        "id": "lo-de-osvaldo",
+        "name": "Lo de Osvaldo",
+        "category": "restaurantes",
+        "description": "Excelente parrilla temática del fútbol paraguayo, ideal para probar la famosa carne paraguaya.",
+        "address": "Rafael Barret casi Mariscal López, Asunción",
+        "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2910,-57.5750",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2910,-57.5750",
+        "internalUrl": "/restaurantes/lo-de-osvaldo",
+        "hours": "Todos los días 11:30 - 15:30, 19:30 - 00:00",
+        "city": "asuncion",
+        "tags": ["parrilla", "asado", "fútbol"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5780, -25.2950] },
+      "properties": {
+        "id": "supermercado-superseis-villamorra",
+        "name": "Superseis Villa Morra",
+        "category": "supermercados",
+        "description": "Supermercado moderno con amplia variedad de productos locales e importados en Villa Morra.",
+        "address": "Avda. Mariscal López y Senador Long, Asunción",
+        "photo": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2950,-57.5780",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2950,-57.5780",
+        "internalUrl": "/precios/supermercados",
+        "hours": "Todos los días 07:00 - 23:00",
+        "city": "asuncion",
+        "tags": ["supermercado", "compras", "villa morra"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5732, -25.2890] },
+      "properties": {
+        "id": "cambios-chaco-villamorra",
+        "name": "Cambios Chaco - Villa Morra",
+        "category": "bancos",
+        "description": "Una de las casas de cambio más seguras y con mejor cotización del guaraní frente a USD, euro y reales.",
+        "address": "Senador Long casi Lillo, Asunción",
+        "photo": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.3,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2890,-57.5732",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2890,-57.5732",
+        "internalUrl": "/negocios/cambios",
+        "hours": "Lunes a Viernes 08:30 - 17:00, Sábados 08:30 - 12:00",
+        "city": "asuncion",
+        "tags": ["cambio", "dinero", "finanzas"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5684, -25.2842] },
+      "properties": {
+        "id": "embajada-espana",
+        "name": "Embajada de España en Paraguay",
+        "category": "embajadas",
+        "description": "Sede diplomática del Reino de España, encargada de trámites de visado y asistencia a españoles.",
+        "address": "Yegros 437, Asunción",
+        "photo": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.1,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2842,-57.5684",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2842,-57.5684",
+        "internalUrl": "/mudarse/embajada-espana",
+        "hours": "Lunes a Viernes 08:00 - 13:00",
+        "city": "asuncion",
+        "tags": ["consulado", "trámites", "españa"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5702, -25.2758] },
+      "properties": {
+        "id": "embajada-usa",
+        "name": "Embajada de los Estados Unidos",
+        "category": "embajadas",
+        "description": "Complejo diplomático de Estados Unidos en Paraguay, ubicado sobre la avenida Mariscal López.",
+        "address": "Avda. Mariscal López 1776, Asunción",
+        "photo": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.4,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2758,-57.5702",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2758,-57.5702",
+        "internalUrl": "/mudarse/embajada-usa",
+        "hours": "Lunes a Viernes 07:30 - 17:00",
+        "city": "asuncion",
+        "tags": ["consulado", "usa", "visa"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5658, -25.2822] },
+      "properties": {
+        "id": "coworking-loffice",
+        "name": "Loffice Bulnes",
+        "category": "coworking",
+        "description": "Uno de los espacios de coworking pioneros en Asunción, con oficinas compartidas de ambiente moderno.",
+        "address": "Bulnes 830, Asunción",
+        "photo": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2822,-57.5658",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2822,-57.5658",
+        "internalUrl": "/negocios/coworking",
+        "hours": "Lunes a Viernes 08:00 - 19:00, Sábados 09:00 - 13:00",
+        "city": "asuncion",
+        "tags": ["coworking", "nómada digital", "oficina"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5601, -25.2789] },
+      "properties": {
+        "id": "wework-asuncion",
+        "name": "WeWork Paseo Galería",
+        "category": "coworking",
+        "description": "Espacio premium de coworking de la red mundial WeWork, ubicado en las torres de Paseo La Galería.",
+        "address": "Torre 1, Avda. Santa Teresa, Asunción",
+        "photo": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2789,-57.5601",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2789,-57.5601",
+        "internalUrl": "/negocios/coworking",
+        "hours": "Todos los días 08:00 - 20:00",
+        "city": "asuncion",
+        "tags": ["coworking", "internet", "premium"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6258, -25.2801] },
+      "properties": {
+        "id": "loma-san-jeronimo",
+        "name": "Loma San Jerónimo",
+        "category": "turismo",
+        "description": "Primer barrio turístico y colorido de Asunción, con pasajes estrechos, miradores e identidad tradicional.",
+        "address": "Estrella y Agustín Barboza, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.4,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2801,-57.6258",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2801,-57.6258",
+        "internalUrl": "/turismo/loma-san-jeronimo",
+        "hours": "Todos los días 08:00 - 22:00",
+        "city": "asuncion",
+        "tags": ["barrio", "pintoresco", "turismo"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5790, -25.2711] },
+      "properties": {
+        "id": "parque-salud",
+        "name": "Parque de la Salud",
+        "category": "turismo",
+        "description": "Un pulmón verde de la ciudad con senderos sombreados ideales para caminar o correr de forma segura.",
+        "address": "Sgto. Marecos, Asunción",
+        "photo": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2711,-57.5790",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2711,-57.5790",
+        "internalUrl": "/turismo/parque-salud",
+        "hours": "Todos los días 05:00 - 21:00",
+        "city": "asuncion",
+        "tags": ["parque", "deportes", "naturaleza"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5620, -25.2450] },
+      "properties": {
+        "id": "parque-nu-guasu",
+        "name": "Parque Ñu Guasu",
+        "category": "turismo",
+        "description": "El parque recreativo más extenso del área metropolitana, con carriles para correr y bicicleta.",
+        "address": "Autopista Silvio Pettirossi, Luque",
+        "photo": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2450,-57.5620",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2450,-57.5620",
+        "internalUrl": "/turismo/nu-guasu",
+        "hours": "Todos los días 05:00 - 22:30",
+        "city": "asuncion",
+        "tags": ["parque", "running", "deportes"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6325, -25.2855] },
+      "properties": {
+        "id": "catedral-metropolitana",
+        "name": "Catedral Metropolitana de Asunción",
+        "category": "turismo",
+        "description": "El principal templo católico de la arquidiócesis de Asunción, de estilo neoclásico imponente.",
+        "address": "Independencia Nacional y Coronel Bogado, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2855,-57.6325",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2855,-57.6325",
+        "internalUrl": "/turismo/catedral",
+        "hours": "Lunes a Sábado 09:00 - 12:00, Domingos misas",
+        "city": "asuncion",
+        "tags": ["histórico", "iglesia", "centro"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6358, -25.2828] },
+      "properties": {
+        "id": "casa-independencia",
+        "name": "Museo Casa de la Independencia",
+        "category": "turismo",
+        "description": "Casa histórica donde se reunían los próceres paraguayos que declararon la independencia en 1811.",
+        "address": "Presidente Franco y 14 de Mayo, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2828,-57.6358",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2828,-57.6358",
+        "internalUrl": "/turismo/casa-independencia",
+        "hours": "Lunes a Viernes 08:30 - 16:30, Sábados 08:30 - 12:30",
+        "city": "asuncion",
+        "tags": ["histórico", "museo", "centro"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5772, -25.2801] },
+      "properties": {
+        "id": "sanatorio-metropolitano",
+        "name": "Sanatorio Metropolitano",
+        "category": "hospitales",
+        "description": "Clínica médica privada de referencia, con excelentes servicios de urgencias y consultorios.",
+        "address": "Teniente Benítez y Mariscal López, Fernando de la Mora",
+        "photo": "https://images.unsplash.com/photo-1586773860418-d3b9da976c2e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.2,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2801,-57.5772",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2801,-57.5772",
+        "internalUrl": "/salud/sanatorio-metropolitano",
+        "hours": "Abierto 24 horas",
+        "city": "asuncion",
+        "tags": ["hospital", "salud", "privado"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5622, -25.2798] },
+      "properties": {
+        "id": "paseo-la-galeria",
+        "name": "Paseo La Galería",
+        "category": "supermercados",
+        "description": "El centro comercial más lujoso y grande de Asunción con excelentes marcas e inmensa plaza de comidas.",
+        "address": "Avda. Santa Teresa y Aviadores del Chaco, Asunción",
+        "photo": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2798,-57.5622",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2798,-57.5622",
+        "internalUrl": "/compras/paseo-la-galeria",
+        "hours": "Todos los días 09:00 - 21:00",
+        "city": "asuncion",
+        "tags": ["compras", "centro comercial", "moderno"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5630, -25.2778] },
+      "properties": {
+        "id": "shopping-del-sol",
+        "name": "Shopping del Sol",
+        "category": "supermercados",
+        "description": "El primer gran shopping del país, recientemente ampliado y ubicado en el centro del eje corporativo.",
+        "address": "Avda. Aviadores del Chaco, Asunción",
+        "photo": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2778,-57.5630",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2778,-57.5630",
+        "internalUrl": "/compras/shopping-del-sol",
+        "hours": "Todos los días 09:00 - 21:00",
+        "city": "asuncion",
+        "tags": ["compras", "shopping", "cine"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6334, -25.2811] },
+      "properties": {
+        "id": "banco-itau-centro",
+        "name": "Banco Itaú - Sucursal Palma",
+        "category": "bancos",
+        "description": "Banco líder del mercado, con cajeros automáticos internacionales y atención de divisas.",
+        "address": "Palma y Nuestra Señora de la Asunción, Asunción",
+        "photo": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.1,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2811,-57.6334",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2811,-57.6334",
+        "internalUrl": "/negocios/bancos",
+        "hours": "Lunes a Viernes 08:30 - 13:30",
+        "city": "asuncion",
+        "tags": ["banco", "cajero", "dinero"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-54.6297, -25.5606] },
+      "properties": {
+        "id": "saltos-monday",
+        "name": "Saltos del Monday",
+        "category": "turismo",
+        "description": "Imponentes cascadas de más de 40 metros de altura rodeadas de densa selva atlántica, cerca de Ciudad del Este.",
+        "address": "Presidente Franco, Alto Paraná",
+        "photo": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.5606,-54.6297",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.5606,-54.6297",
+        "internalUrl": "/turismo/saltos-monday",
+        "hours": "Todos los días 08:00 - 17:00",
+        "city": "ciudad-del-este",
+        "tags": ["cataratas", "naturaleza", "parque"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-55.7000, -27.1333] },
+      "properties": {
+        "id": "ruinas-trinidad",
+        "name": "Ruinas Jesuíticas de Trinidad del Paraná",
+        "category": "turismo",
+        "description": "Declarado Patrimonio de la Humanidad por la UNESCO, es el conjunto de reducciones jesuíticas mejor conservado de Paraguay.",
+        "address": "Ruta PY06 Km 31, Trinidad, Itapúa",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-27.1333,-55.7000",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.1333,-55.7000",
+        "internalUrl": "/turismo/ruinas-trinidad",
+        "hours": "Todos los días 07:00 - 19:00",
+        "city": "encarnacion",
+        "tags": ["patrimonio", "jesuitas", "historia"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-55.8667, -27.3306] },
+      "properties": {
+        "id": "costanera-encarnacion",
+        "name": "Costanera y Playa San José",
+        "category": "turismo",
+        "description": "La playa fluvial y paseo costero más famoso del país, a orillas del inmenso río Paraná en Encarnación.",
+        "address": "Avda. Costanera, Encarnación",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-27.3306,-55.8667",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.3306,-55.8667",
+        "internalUrl": "/ciudades/encarnacion",
+        "hours": "Acceso libre",
+        "city": "encarnacion",
+        "tags": ["playa", "verano", "costanera"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-54.6111, -25.5097] },
+      "properties": {
+        "id": "shopping-paris-cde",
+        "name": "Shopping Paris",
+        "category": "supermercados",
+        "description": "Moderno centro comercial libre de impuestos en Ciudad del Este, famoso por sus tiendas y parque de hielo.",
+        "address": "Avda. Luis María Argaña, Ciudad del Este",
+        "photo": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.5097,-54.6111",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.5097,-54.6111",
+        "internalUrl": "/ciudades/ciudad-del-este",
+        "hours": "Todos los días 08:00 - 19:00",
+        "city": "ciudad-del-este",
+        "tags": ["compras", "shopping", "cde"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-56.5167, -23.7833] },
+      "properties": {
+        "id": "laguna-blanca",
+        "name": "Reserva Natural Laguna Blanca",
+        "category": "turismo",
+        "description": "Laguna de aguas cristalinas sobre arena blanca, ideal para acampada, avistamiento de aves y desconexión.",
+        "address": "Santa Rosa del Aguaray, San Pedro",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-23.7833,-56.5167",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-23.7833,-56.5167",
+        "internalUrl": "/turismo/laguna-blanca",
+        "hours": "Todos los días (con reserva previa)",
+        "city": "interior",
+        "tags": ["laguna", "naturaleza", "camping"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-55.9833, -22.5667] },
+      "properties": {
+        "id": "parque-cerro-cora",
+        "name": "Parque Nacional Cerro Corá",
+        "category": "turismo",
+        "description": "Reserva ecológica y sitio histórico clave donde terminó la Guerra de la Triple Alianza en 1870.",
+        "address": "Ruta PY05, Pedro Juan Caballero",
+        "photo": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-22.5667,-55.9833",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.5667,-55.9833",
+        "internalUrl": "/turismo/cerro-cora",
+        "hours": "Todos los días 08:00 - 17:00",
+        "city": "interior",
+        "tags": ["parque nacional", "historia", "chaco"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-54.3000, -24.0833] },
+      "properties": {
+        "id": "saltos-del-guaira",
+        "name": "Saltos del Guairá",
+        "category": "turismo",
+        "description": "Región fronteriza conocida por su enorme actividad de comercio de importaciones y cercanía al Río Paraná.",
+        "address": "Saltos del Guairá, Canindeyú",
+        "photo": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.1,
+        "googleMapsUrl": "https://maps.google.com/?q=-24.0833,-54.3000",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-24.0833,-54.3000",
+        "internalUrl": "/ciudades/saltos-del-guaira",
+        "hours": "Acceso libre",
+        "city": "interior",
+        "tags": ["frontera", "compras", "comercio"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.3000, -25.3000] },
+      "properties": {
+        "id": "san-bernardino",
+        "name": "San Bernardino y Lago Ypacaraí",
+        "category": "turismo",
+        "description": "La capital del verano paraguayo, una hermosa villa veraniega a orillas del mítico lago Ypacaraí.",
+        "address": "San Bernardino, Cordillera",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3000,-57.3000",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3000,-57.3000",
+        "internalUrl": "/turismo/san-bernardino",
+        "hours": "Acceso libre",
+        "city": "interior",
+        "tags": ["lago", "verano", "escapada"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-56.2667, -25.9000] },
+      "properties": {
+        "id": "cerro-tres-kandu",
+        "name": "Cerro Tres Kandú",
+        "category": "turismo",
+        "description": "El punto más alto de Paraguay (842 metros sobre el nivel del mar), un desafío imperdible para senderistas.",
+        "address": "General Eugenio A. Garay, Guairá",
+        "photo": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.9000,-56.2667",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.9000,-56.2667",
+        "internalUrl": "/turismo/tres-kandu",
+        "hours": "Todos los días 06:00 - 18:00 (registro al pie)",
+        "city": "interior",
+        "tags": ["senderismo", "cerro", "aventura"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-54.5900, -25.4100] },
+      "properties": {
+        "id": "central-itaipu",
+        "name": "Represa Binacional de Itaipú",
+        "category": "turismo",
+        "description": "Una de las mayores centrales hidroeléctricas del planeta, de gestión binacional entre Paraguay y Brasil.",
+        "address": "Hernandarias, Alto Paraná",
+        "photo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.4100,-54.5900",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.4100,-54.5900",
+        "internalUrl": "/turismo/itaipu",
+        "hours": "Visitas guiadas de Lunes a Domingo de 08:00 a 16:00",
+        "city": "interior",
+        "tags": ["ingeniería", "hidroeléctrica", "turismo"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.1417, -25.3858] },
+      "properties": {
+        "id": "basilica-caacupe",
+        "name": "Basílica de la Virgen de Caacupé",
+        "category": "turismo",
+        "description": "La capital espiritual del país, santuario nacional donde millones peregrinan cada 8 de diciembre.",
+        "address": "Calle Dr. Eligio Ayala, Caacupé",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3858,-57.1417",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3858,-57.1417",
+        "internalUrl": "/turismo/caacupe",
+        "hours": "Todos los días 06:00 - 20:00",
+        "city": "interior",
+        "tags": ["iglesia", "religión", "peregrinación"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.0500, -26.0167] },
+      "properties": {
+        "id": "parque-nacional-ybycui",
+        "name": "Parque Nacional Ybycuí",
+        "category": "turismo",
+        "description": "Hermoso parque nacional con densa vegetación subtropical, arroyos cristalinos, pozas naturales y la histórica fundición de hierro La Rosada.",
+        "address": "Ybycuí, Paraguarí",
+        "photo": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-26.0167,-57.0500",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-26.0167,-57.0500",
+        "internalUrl": "/turismo/ybycui",
+        "hours": "Todos los días 08:00 - 17:00",
+        "city": "interior",
+        "tags": ["parque nacional", "cascadas", "historia"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.1333, -25.5667] },
+      "properties": {
+        "id": "reserva-mbatovi",
+        "name": "Eco Reserva Mbatoví",
+        "category": "turismo",
+        "description": "Parque de eco-aventura con puentes colgantes, tirolesa y rappel en medio de la serranía de Paraguarí.",
+        "address": "Ruta Paraguarí - Piribebuy, Paraguarí",
+        "photo": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.9,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.5667,-57.1333",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.5667,-57.1333",
+        "internalUrl": "/turismo/mbatovi",
+        "hours": "Fines de semana con reserva previa",
+        "city": "interior",
+        "tags": ["aventura", "eco-turismo", "tirolesa"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-56.3111, -27.3167] },
+      "properties": {
+        "id": "dunas-san-cosme",
+        "name": "Dunas de San Cosme y Damián",
+        "category": "turismo",
+        "description": "Montículos de arena blanca en medio del inmenso lago de la represa de Yacyretá, parecidos a islas desérticas.",
+        "address": "San Cosme y Damián, Itapúa",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-27.3167,-56.3111",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.3167,-56.3111",
+        "internalUrl": "/turismo/dunas-san-cosme",
+        "hours": "Paseos en lancha con reserva previa",
+        "city": "interior",
+        "tags": ["dunas", "lago", "isla"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-60.0333, -22.3500] },
+      "properties": {
+        "id": "filadelfia-chaco",
+        "name": "Filadelfia (Chaco Paraguayo)",
+        "category": "turismo",
+        "description": "El principal asentamiento menonita del Chaco central, epicentro de la producción lechera e industrial de la región.",
+        "address": "Filadelfia, Boquerón",
+        "photo": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.3,
+        "googleMapsUrl": "https://maps.google.com/?q=-22.3500,-60.0333",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.3500,-60.0333",
+        "internalUrl": "/ciudades/filadelfia",
+        "hours": "Acceso libre",
+        "city": "interior",
+        "tags": ["chaco", "menonitas", "producción"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6250, -25.2905] },
+      "properties": {
+        "id": "parroquia-san-roque",
+        "name": "Iglesia San Roque",
+        "category": "turismo",
+        "description": "Parroquia tradicional de Asunción, representativa del barrio histórico de San Roque.",
+        "address": "Eligio Ayala y Tacuary, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2905,-57.6250",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2905,-57.6250",
+        "internalUrl": "/turismo/iglesias",
+        "hours": "Todos los días 07:00 - 19:00",
+        "city": "asuncion",
+        "tags": ["iglesia", "centro", "historia"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5645, -25.2811] },
+      "properties": {
+        "id": "banco-gnb-villamorra",
+        "name": "Banco GNB Paraguay - Casa Matriz",
+        "category": "bancos",
+        "description": "Una de las sedes de banca corporativa e inversiones internacionales en el nuevo centro de Asunción.",
+        "address": "Avda. Aviadores del Chaco, Asunción",
+        "photo": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.4,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2811,-57.5645",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2811,-57.5645",
+        "internalUrl": "/negocios/bancos",
+        "hours": "Lunes a Viernes 08:30 - 13:30",
+        "city": "asuncion",
+        "tags": ["banco", "gnb", "finanzas"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6299, -25.2825] },
+      "properties": {
+        "id": "cabildo-cultural",
+        "name": "Centro Cultural de la República El Cabildo",
+        "category": "turismo",
+        "description": "Antiguo ayuntamiento y edificio histórico transformado en el principal centro cultural de la ciudad.",
+        "address": "Avenida República y Alberdi, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2825,-57.6299",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2825,-57.6299",
+        "internalUrl": "/turismo/el-cabildo",
+        "hours": "Lunes a Viernes 08:00 - 19:00, Fines de semana 09:00 - 17:00",
+        "city": "asuncion",
+        "tags": ["cultura", "museo", "centro"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.6366, -25.2814] },
+      "properties": {
+        "id": "manzana-rivera",
+        "name": "Centro Cultural Manzana de la Rivera",
+        "category": "turismo",
+        "description": "Complejo de nueve casas históricas restauradas que albergan museos, bibliotecas y espacios teatrales.",
+        "address": "Ayolas 129, Asunción",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.7,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2814,-57.6366",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2814,-57.6366",
+        "internalUrl": "/turismo/manzana-de-la-rivera",
+        "hours": "Todos los días 08:00 - 20:00",
+        "city": "asuncion",
+        "tags": ["casas coloniales", "cultura", "museo"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5799, -25.2411] },
+      "properties": {
+        "id": "jardin-botanico-zoologico",
+        "name": "Jardín Botánico y Zoológico de Asunción",
+        "category": "turismo",
+        "description": "Inmenso parque arbolado de 110 hectáreas que fue la antigua residencia de campo de la familia López.",
+        "address": "Avda. Primer Presidente y Artigas, Asunción",
+        "photo": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format&fit=crop&q=60",
+        "rating": 3.9,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2411,-57.5799",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2411,-57.5799",
+        "internalUrl": "/turismo/jardin-botanico",
+        "hours": "Martes a Domingo 08:00 - 16:00",
+        "city": "asuncion",
+        "tags": ["parque", "naturaleza", "zoológico"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5670, -25.2882] },
+      "properties": {
+        "id": "supermercado-stock-lillo",
+        "name": "Supermercado Stock Lillo",
+        "category": "supermercados",
+        "description": "Supermercado muy popular y concurrido con excelentes ofertas y panadería fresca todos los días.",
+        "address": "Lillo y O'Higgins, Asunción",
+        "photo": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.3,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2882,-57.5670",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2882,-57.5670",
+        "internalUrl": "/precios/supermercados",
+        "hours": "Todos los días 07:00 - 22:30",
+        "city": "asuncion",
+        "tags": ["supermercado", "ofertas", "compras"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5605, -25.2750] },
+      "properties": {
+        "id": "tgi-fridays-asuncion",
+        "name": "TGI Fridays - Eje Corporativo",
+        "category": "restaurantes",
+        "description": "Popular restaurante internacional de comida americana, con excelente ambiente nocturno.",
+        "address": "Avda. Aviadores del Chaco, Asunción",
+        "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.4,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2750,-57.5605",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2750,-57.5605",
+        "internalUrl": "/restaurantes/fridays",
+        "hours": "Todos los días 11:30 - 01:00",
+        "city": "asuncion",
+        "tags": ["comida americana", "tragos", "eje corporativo"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5511, -25.2889] },
+      "properties": {
+        "id": "casa-cambio-guarani",
+        "name": "Cambios Guaraní - Eje Aviadores",
+        "category": "bancos",
+        "description": "Líder regional de transacciones financieras y canje de divisas con gran reputación.",
+        "address": "Avda. Aviadores del Chaco 2505, Asunción",
+        "photo": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2889,-57.5511",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2889,-57.5511",
+        "internalUrl": "/negocios/cambios",
+        "hours": "Lunes a Viernes 08:30 - 17:30, Sábado 08:30 - 12:30",
+        "city": "asuncion",
+        "tags": ["cambio", "finanzas", "dólar"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5855, -25.2831] },
+      "properties": {
+        "id": "la-herencia-cafe",
+        "name": "La Herencia Café - Las Mercedes",
+        "category": "restaurantes",
+        "description": "Una de las cafeterías con más encanto del barrio Las Mercedes, famosa por sus brunchs y mbejú.",
+        "address": "Juan de Salazar y Artigas, Asunción",
+        "photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2831,-57.5855",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2831,-57.5855",
+        "internalUrl": "/restaurantes/la-herencia",
+        "hours": "Todos los días 08:00 - 22:00",
+        "city": "asuncion",
+        "tags": ["cafetería", "mbejú", "las mercedes"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.5750, -25.2750] },
+      "properties": {
+        "id": "embajada-brasil",
+        "name": "Embajada de la República Federativa del Brasil",
+        "category": "embajadas",
+        "description": "Misión diplomática de Brasil en Asunción, ubicada en una zona residencial distinguida.",
+        "address": "Coronel Silva y España, Asunción",
+        "photo": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2750,-57.5750",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2750,-57.5750",
+        "internalUrl": "/mudarse/embajada-brasil",
+        "hours": "Lunes a Viernes 08:30 - 13:00",
+        "city": "asuncion",
+        "tags": ["embajada", "brasil", "consulado"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.3857, -25.3134] },
+      "properties": {
+        "id": "aregua-iglesia",
+        "name": "Iglesia de la Candelaria de Areguá",
+        "category": "turismo",
+        "description": "Hermosa iglesia colonial construida en lo alto de una colina en el centro de Areguá, ofreciendo vistas panorámicas del Lago Ypacaraí.",
+        "address": "De la Candelaria 515, Areguá, Paraguay",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.6,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3134,-57.3857",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3134,-57.3857",
+        "internalUrl": "/turismo/aregua-iglesia",
+        "hours": "Todos los días 08:00 - 18:00",
+        "city": "interior",
+        "tags": ["colonial", "iglesia", "vistas", "lago"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.3739, -25.3025] },
+      "properties": {
+        "id": "aregua-playa",
+        "name": "Playa Municipal de Areguá",
+        "category": "turismo",
+        "description": "Playa recreativa y costanera a orillas del Lago Ypacaraí en Areguá. Cuenta con muelle de madera, ferias de artesanía local y paseos para niños.",
+        "address": "Costanera de Areguá, Areguá, Paraguay",
+        "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.1,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3025,-57.3739",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3025,-57.3739",
+        "internalUrl": "/turismo/aregua-playa",
+        "hours": "Acceso libre (Costo entrada 1.000 PYG, auto 5.000 PYG)",
+        "city": "interior",
+        "tags": ["playa", "lago", "costanera", "recreativo"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.2536, -25.2631] },
+      "properties": {
+        "id": "altos-centro",
+        "name": "Centro Histórico de Altos",
+        "category": "turismo",
+        "description": "Ciudad colonial en altura en la Cordillera. Famosa por sus vistas al lago, su ambiente tranquilo para expatriados y su tradición de Semana Santa.",
+        "address": "Altos, Cordillera, Paraguay",
+        "photo": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.5,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2631,-57.2536",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2631,-57.2536",
+        "internalUrl": "/turismo/altos",
+        "hours": "Acceso libre",
+        "city": "interior",
+        "tags": ["histórico", "cordillera", "expatriados", "tranquilo"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-57.1706, -25.2786] },
+      "properties": {
+        "id": "atyra-artesania",
+        "name": "Paseo de los Artesanos en Atyrá",
+        "category": "turismo",
+        "description": "Pueblo artesanal y una de las ciudades más limpias de Sudamérica. Famoso por sus talleres de cuero (termos, guampas, monturas).",
+        "address": "Centro de Atyrá, Cordillera, Paraguay",
+        "photo": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=500&auto=format&fit=crop&q=60",
+        "rating": 4.8,
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2786,-57.1706",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2786,-57.1706",
+        "internalUrl": "/turismo/atyra",
+        "hours": "Todos los días 08:00 - 18:00",
+        "city": "interior",
+        "tags": ["artesanía", "cuero", "limpieza", "cordillera"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "Navigation": {
+    "map": "Map",
+    "live": "Living",
+    "tourism": "Tourism",
+    "prices": "Prices",
+    "moving": "Moving",
+    "business": "Business",
+    "cities": "Cities",
+    "blog": "Blog",
+    "mapBadge": "NEW"
+  },
+  "Hero": {
+    "title": "Everything you need to know about Paraguay. Unfiltered.",
+    "subtitle": "Real prices, residency guides, sightseeing, and daily living. Updated June 2026.",
+    "ctaPrimary": "Explore on Map",
+    "ctaSecondary": "View Living Guides",
+    "searchPlaceholder": "Search for places, cities, or guides...",
+    "trending": "Trending: Cost of living, Permanent residency, Safe neighborhoods"
+  },
+  "Map": {
+    "sidebarTitle": "Recommended Places",
+    "searchPlaceholder": "Search map...",
+    "allCategories": "All Categories",
+    "layers": {
+      "turismo": "Tourist Spots",
+      "restaurantes": "Food & Restaurants",
+      "barrios": "Recommended Areas",
+      "coworking": "Coworking Spaces",
+      "hospitales": "Hospitals & Clinics",
+      "supermercados": "Supermarkets & Malls",
+      "embajadas": "Embassies & Consulates",
+      "bancos": "Banks & Exchange Houses",
+      "transporte": "Transport"
+    },
+    "popup": {
+      "rating": "Rating",
+      "hours": "Opening Hours",
+      "address": "Address",
+      "googleMaps": "View on Google Maps",
+      "directions": "Get Directions",
+      "moreInfo": "More Information"
+    },
+    "noToken": "The environmental variable NEXT_PUBLIC_MAPBOX_TOKEN is not set. Please create a .env.local file in the root with your Mapbox token.",
+    "shareLocation": "Share Location",
+    "locationCopied": "Link copied to clipboard with current map view!",
+    "myLocation": "My location"
+  },
+  "Prices": {
+    "title": "Prices and Cost of Living in Paraguay",
+    "subtitle": "Collected information from actual supermarkets, rental markets, and basic utilities in Paraguay.",
+    "updated": "Updated: June 2026",
+    "currency": "Guaraníes (PYG) and Dollars (USD)",
+    "categories": {
+      "rent": "Rent & Housing",
+      "food": "Groceries & Supermarket",
+      "services": "Utilities & Services",
+      "transport": "Transportation & Fuel"
+    },
+    "headers": {
+      "item": "Item / Service",
+      "price": "Average Price (Guaraníes)",
+      "priceUsd": "Average Price (USD)"
+    }
+  },
+  "Cities": {
+    "title": "Principal Cities",
+    "subtitle": "Analyze characteristics, prices, and quality of life in Paraguay's key urban hubs.",
+    "pros": "Pros",
+    "cons": "Cons",
+    "safety": "Safety",
+    "cost": "Cost of Living",
+    "viewFullMap": "View full map of {city}"
+  },
+  "Footer": {
+    "pitch": "Paraguay unfiltered. Your number-one trusted resource to plan your journey, relocation, or investments in Paraguay.",
+    "suggestion": "Did we miss a key location on our map?",
+    "suggestionBtn": "Suggest Location",
+    "rights": "All rights reserved."
+  }
+}

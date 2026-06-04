@@ -1,0 +1,81 @@
+{
+  "Navigation": {
+    "map": "Mapa",
+    "live": "Viver",
+    "tourism": "Turismo",
+    "prices": "Preços",
+    "moving": "Mudar-se",
+    "business": "Negócios",
+    "cities": "Cidades",
+    "blog": "Blog",
+    "mapBadge": "NOVO"
+  },
+  "Hero": {
+    "title": "Tudo o que você precisa saber sobre o Paraguai. Sem filtros.",
+    "subtitle": "Preços reais, guias de residência, o que ver e como viver. Atualizado em Junho de 2026.",
+    "ctaPrimary": "Explorar no Mapa",
+    "ctaSecondary": "Ver Guias de Vida",
+    "searchPlaceholder": "Buscar lugares, cidades ou guias...",
+    "trending": "Tendências: Custo de vida, Residência permanente, Bairros seguros"
+  },
+  "Map": {
+    "sidebarTitle": "Locais Recomendados",
+    "searchPlaceholder": "Buscar no mapa...",
+    "allCategories": "Todas as Categorias",
+    "layers": {
+      "turismo": "Atrações Turísticas",
+      "restaurantes": "Restaurantes e Alimentação",
+      "barrios": "Bairros Recomendados",
+      "coworking": "Espaços Coworking",
+      "hospitales": "Hospitais e Clínicas",
+      "supermercados": "Supermercados e Shoppings",
+      "embajadas": "Embaixadas e Consulados",
+      "bancos": "Bancos e Câmbios",
+      "transporte": "Transporte"
+    },
+    "popup": {
+      "rating": "Avaliação",
+      "hours": "Horário",
+      "address": "Endereço",
+      "googleMaps": "Ver no Google Maps",
+      "directions": "Como chegar",
+      "moreInfo": "Mais informações"
+    },
+    "noToken": "A variável de ambiente NEXT_PUBLIC_MAPBOX_TOKEN não foi configurada. Crie um arquivo .env.local na raiz com seu token do Mapbox.",
+    "shareLocation": "Compartilhar Localização",
+    "locationCopied": "Link copiado para a área de transferência com a localização atual!",
+    "myLocation": "Minha localização"
+  },
+  "Prices": {
+    "title": "Preços e Custo de Vida no Paraguai",
+    "subtitle": "Informações reais sobre supermercados, aluguel de imóveis e serviços básicos no Paraguai.",
+    "updated": "Atualizado: Junho de 2026",
+    "currency": "Guaraníes (PYG) e Dólares (USD)",
+    "categories": {
+      "rent": "Aluguel e Habitação",
+      "food": "Alimentação e Supermercado",
+      "services": "Serviços Básicos",
+      "transport": "Transporte e Combustível"
+    },
+    "headers": {
+      "item": "Item / Serviço",
+      "price": "Preço Médio (Guaraníes)",
+      "priceUsd": "Preço Médio (USD)"
+    }
+  },
+  "Cities": {
+    "title": "Cidades Principais",
+    "subtitle": "Analise características, preços e qualidade de vida nos principais centros urbanos do Paraguai.",
+    "pros": "Prós",
+    "cons": "Contras",
+    "safety": "Segurança",
+    "cost": "Custo de Vida",
+    "viewFullMap": "Ver mapa completo de {city}"
+  },
+  "Footer": {
+    "pitch": "Paraguai sem filtros. Seu recurso de confiança número um para planejar sua viagem, mudança ou investimentos no Paraguai.",
+    "suggestion": "Falta algum lugar essencial no nosso mapa?",
+    "suggestionBtn": "Sugerir Lugar",
+    "rights": "Todos os direitos reservados."
+  }
+}

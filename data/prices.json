@@ -1,0 +1,32 @@
+{
+  "rent": [
+    { "item": "Alquiler Monoambiente (Centro Asunción)", "pyg": 2200000, "usd": 300 },
+    { "item": "Alquiler Depto 2 Dormitorios (Villa Morra)", "pyg": 5100000, "usd": 700 },
+    { "item": "Alquiler Casa 3 Dormitorios (Gran Asunción/Luque)", "pyg": 4400000, "usd": 600 },
+    { "item": "Alquiler Casa/Depto (Altos - Cordillera)", "pyg": 2000000, "usd": 270 },
+    { "item": "Habitación en piso compartido (Estudiantes)", "pyg": 1100000, "usd": 150 }
+  ],
+  "food": [
+    { "item": "Menú del día en restaurante (Almuerzo Ejecutivo)", "pyg": 25000, "usd": 3.40 },
+    { "item": "Cena para 2 en restaurante de gama media", "pyg": 180000, "usd": 24.50 },
+    { "item": "Café con leche (Cafetería moderna)", "pyg": 25000, "usd": 3.40 },
+    { "item": "Cold Brew (Café de especialidad)", "pyg": 30000, "usd": 4.10 },
+    { "item": "Leche (1 Litro)", "pyg": 6500, "usd": 0.88 },
+    { "item": "Pan fresco (1 Kg)", "pyg": 9000, "usd": 1.22 },
+    { "item": "Carne Vacuna de primera (1 Kg)", "pyg": 45000, "usd": 6.10 },
+    { "item": "Arroz (1 Kg)", "pyg": 7000, "usd": 0.95 },
+    { "item": "Agua embotellada (1.5 Litros)", "pyg": 4000, "usd": 0.54 }
+  ],
+  "services": [
+    { "item": "Electricidad (Gasto promedio mensual con A/C)", "pyg": 350000, "usd": 48.00 },
+    { "item": "Internet Fibra Óptica 100 Mbps", "pyg": 130000, "usd": 17.80 },
+    { "item": "Plan de datos móvil ilimitado", "pyg": 90000, "usd": 12.30 },
+    { "item": "Agua corriente básica tasa mínima", "pyg": 40000, "usd": 5.50 }
+  ],
+  "transport": [
+    { "item": "Litro de Nafta / Gasolina (95 Octanos)", "pyg": 7800, "usd": 1.06 },
+    { "item": "Boleto de Colectivo convencional", "pyg": 2300, "usd": 0.31 },
+    { "item": "Boleto de Colectivo diferenciado (con Aire)", "pyg": 3400, "usd": 0.46 },
+    { "item": "Viaje promedio en Uber/Bolt (5 km)", "pyg": 20000, "usd": 2.70 }
+  ]
+}

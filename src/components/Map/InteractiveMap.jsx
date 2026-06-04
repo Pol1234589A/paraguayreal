@@ -7,9 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import MapSidebar from './MapSidebar';
 import PlacePopup from './PlacePopup';
 import { Compass, Menu, X } from 'lucide-react';
-import { getMapEngine, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
-
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
 
 const CATEGORIES = {
   turismo: { label: "Turismo", color: "#10b981", icon: "📸" },
@@ -29,16 +27,12 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
   const markersRef = useRef([]);
   const activePopupRef = useRef(null);
 
-  const [engine, setEngine] = useState('none');
+  const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState(Object.keys(CATEGORIES));
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [shareStatus, setShareStatus] = useState(false);
-
-  useEffect(() => {
-    setEngine(getMapEngine());
-  }, []);
 
   // Handle URL parameters for initial map views (coordinates)
   useEffect(() => {
@@ -72,8 +66,8 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
 
   // Initialize Map
   useEffect(() => {
+    if (loading) return;
     if (!mapContainerRef.current) return;
-    if (engine === 'none') return;
 
     // Default center on Paraguay (or city if specified)
     let center = [-57.6362, -25.2867]; // Asuncion
@@ -97,7 +91,8 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
     let cleanup = () => {};
 
     // 1. MAPBOX INIT
-    if (engine === 'mapbox' && process.env.NEXT_PUBLIC_MAPBOX_TOKEN) {
+    if (engine === 'mapbox' && mapboxToken) {
+      mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/streets-v12',
@@ -129,8 +124,8 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
       };
     }
     // 2. GOOGLE MAPS INIT
-    else if (engine === 'google' && process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-      loadGoogleMapsScript(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY, () => {
+    else if (engine === 'google' && googleMapsApiKey) {
+      loadGoogleMapsScript(googleMapsApiKey, () => {
         if (!mapContainerRef.current) return;
         
         const gCenter = { lat: center[1], lng: center[0] };
@@ -185,7 +180,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
         }
       }
     };
-  }, [filterCity, engine, initialPlaces]);
+  }, [filterCity, engine, initialPlaces, loading, mapboxToken, googleMapsApiKey]);
 
   // Update Markers when filteredPlaces changes
   useEffect(() => {
@@ -475,11 +470,11 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity }) {
 
       {/* Map Container */}
       <div className="flex-1 h-full w-full relative bg-slate-100">
-        {engine === 'none' && (
+        {loading && (
           <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900/90 text-white p-6 text-center">
             <div className="max-w-md space-y-4">
               <Compass className="w-12 h-12 text-amber-500 mx-auto animate-spin" />
-              <p className="text-sm font-semibold">
+              <p className="text-sm font-semibold animate-pulse">
                 Cargando mapa interactivo de Paraguay...
               </p>
             </div>

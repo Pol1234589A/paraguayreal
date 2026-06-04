@@ -6,9 +6,7 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import PlacePopup from './PlacePopup';
 import { Eye, Compass } from 'lucide-react';
-import { getMapEngine, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
-
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
 
 const CATEGORY_COLORS = {
   turismo: "#10b981",
@@ -36,9 +34,9 @@ const CATEGORY_EMOJIS = {
 
 export default function CityMap({ cityKey, places = [], locale = 'es' }) {
   const mapContainerRef = useRef(null);
-  const [engine, setEngine] = useState('none');
   const [mapLoaded, setMapLoaded] = useState(false);
   const activeInfoWindowRef = useRef(null);
+  const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
 
   // Filter places for this city, or show all if cityKey is 'all'
   const cityPlaces = React.useMemo(() => {
@@ -48,10 +46,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
   }, [cityKey, places]);
 
   useEffect(() => {
-    setEngine(getMapEngine());
-  }, []);
-
-  useEffect(() => {
+    if (loading) return;
     if (!mapContainerRef.current) return;
     if (cityPlaces.length === 0) return;
 
@@ -59,7 +54,8 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
     let cleanup = () => {};
 
     // 1. MAPBOX ENGINE
-    if (engine === 'mapbox' && process.env.NEXT_PUBLIC_MAPBOX_TOKEN) {
+    if (engine === 'mapbox' && mapboxToken) {
+      mapboxgl.accessToken = mapboxToken;
       let center = [-57.6362, -25.2867];
       let zoom = 12;
 
@@ -133,8 +129,8 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
       };
     }
     // 2. GOOGLE MAPS ENGINE
-    else if (engine === 'google' && process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-      loadGoogleMapsScript(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY, () => {
+    else if (engine === 'google' && googleMapsApiKey) {
+      loadGoogleMapsScript(googleMapsApiKey, () => {
         if (!mapContainerRef.current) return;
 
         let center = { lat: -25.2867, lng: -57.6362 };
@@ -313,7 +309,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
         }
       }
     };
-  }, [cityKey, engine, cityPlaces]);
+  }, [cityKey, engine, cityPlaces, loading, mapboxToken, googleMapsApiKey]);
 
   return (
     <div className="relative w-full rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-slate-50">
@@ -338,11 +334,11 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
 
       {/* Map */}
       <div className="h-[450px] w-full relative">
-        {engine === 'none' && (
+        {loading && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-900/90 text-white p-6 text-center">
             <div className="max-w-md space-y-2">
               <Compass className="w-10 h-10 text-amber-500 mx-auto animate-spin" />
-              <p className="text-xs font-semibold">
+              <p className="text-xs font-semibold animate-pulse">
                 Cargando mapa...
               </p>
             </div>

@@ -1,28 +1,24 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { ExternalLink } from 'lucide-react';
-import { getMapEngine, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
-
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
 
 export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
   const mapContainerRef = useRef(null);
-  const [engine, setEngine] = useState('none');
+  const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
 
   useEffect(() => {
-    setEngine(getMapEngine());
-  }, []);
-
-  useEffect(() => {
+    if (loading) return;
     if (!mapContainerRef.current) return;
     if (!lat || !lng) return;
 
     let mapInstance = null;
 
-    if (engine === 'mapbox' && process.env.NEXT_PUBLIC_MAPBOX_TOKEN) {
+    if (engine === 'mapbox' && mapboxToken) {
+      mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/streets-v12',
@@ -55,8 +51,8 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         marker.setPopup(popup);
       }
     } 
-    else if (engine === 'google' && process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-      loadGoogleMapsScript(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY, () => {
+    else if (engine === 'google' && googleMapsApiKey) {
+      loadGoogleMapsScript(googleMapsApiKey, () => {
         if (!mapContainerRef.current) return;
         const center = { lat: parseFloat(lat), lng: parseFloat(lng) };
         
@@ -71,9 +67,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         });
 
         mapInstance = {
-          remove: () => {
-            // Google Maps handles its own cleanup, but we can clear references
-          }
+          remove: () => {}
         };
 
         const marker = new window.google.maps.Marker({
@@ -105,9 +99,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         if (!mapContainerRef.current) return;
         const container = mapContainerRef.current;
         
-        // Remove existing leaflet map if any
         if (container._leaflet_id && window.L) {
-          // Leaflet saves map instances on the HTML container element
           return;
         }
 
@@ -147,7 +139,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         }
       }
     };
-  }, [lat, lng, name, address, googleMapsUrl, engine]);
+  }, [lat, lng, name, address, googleMapsUrl, engine, loading, mapboxToken, googleMapsApiKey]);
 
   return (
     <div className="relative w-full rounded-xl overflow-hidden shadow border border-slate-200 bg-slate-50 my-6">
@@ -172,9 +164,9 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
 
       {/* Map */}
       <div className="h-[250px] w-full relative">
-        {engine === 'none' && (
+        {loading && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-900/90 text-white p-4 text-center">
-            <p className="text-[10px] font-semibold">
+            <p className="text-[10px] font-semibold animate-pulse">
               Cargando Mini Mapa...
             </p>
           </div>

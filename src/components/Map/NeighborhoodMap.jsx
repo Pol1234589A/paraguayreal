@@ -4,9 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Shield, DollarSign, MapPin } from 'lucide-react';
-import { getMapEngine, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
-
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
 
 const NEIGHBORHOODS_DATA = {
   type: "FeatureCollection",
@@ -109,15 +107,11 @@ const NEIGHBORHOODS_DATA = {
 export default function NeighborhoodMap() {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
-  const [engine, setEngine] = useState('none');
   const [viewMode, setViewMode] = useState('safety'); // 'safety' or 'rent'
   const [selectedNeighborhood, setSelectedNeighborhood] = useState(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const leafletGeoJsonRef = useRef(null);
-
-  useEffect(() => {
-    setEngine(getMapEngine());
-  }, []);
+  const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
 
   // Color helper functions for Google Maps and Leaflet styling
   const getPolygonColor = (featureProps, mode) => {
@@ -138,14 +132,15 @@ export default function NeighborhoodMap() {
 
   // Map Initialization Effect
   useEffect(() => {
+    if (loading) return;
     if (!mapContainerRef.current) return;
-    if (engine === 'none') return;
 
     let mapInstance = null;
     let cleanup = () => {};
 
     // 1. MAPBOX INITIALIZATION
-    if (engine === 'mapbox' && process.env.NEXT_PUBLIC_MAPBOX_TOKEN) {
+    if (engine === 'mapbox' && mapboxToken) {
+      mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/light-v11',
@@ -213,8 +208,8 @@ export default function NeighborhoodMap() {
       };
     }
     // 2. GOOGLE MAPS INITIALIZATION
-    else if (engine === 'google' && process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-      loadGoogleMapsScript(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY, () => {
+    else if (engine === 'google' && googleMapsApiKey) {
+      loadGoogleMapsScript(googleMapsApiKey, () => {
         if (!mapContainerRef.current) return;
 
         const map = new window.google.maps.Map(mapContainerRef.current, {
@@ -290,7 +285,7 @@ export default function NeighborhoodMap() {
         }
       }
     };
-  }, [engine]);
+  }, [engine, loading, mapboxToken, googleMapsApiKey]);
 
   // Update paint styles or GeoJSON layers when viewMode or mapLoaded changes
   useEffect(() => {
@@ -496,9 +491,9 @@ export default function NeighborhoodMap() {
 
       {/* Map container */}
       <div className="flex-1 relative h-full">
-        {engine === 'none' && (
+        {loading && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-900/90 text-white p-4 text-center">
-            <p className="text-xs font-semibold">
+            <p className="text-xs font-semibold animate-pulse">
               Cargando mapa de barrios...
             </p>
           </div>

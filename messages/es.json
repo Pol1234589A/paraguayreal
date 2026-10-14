@@ -146,5 +146,25 @@
     "closeMenu": "Cerrar menú",
     "clearSearch": "Borrar búsqueda",
     "all": "Todos"
+  },
+  "Tourism": {
+    "badge": "Guía Oficial",
+    "title": "Turismo y Lugares en Paraguay",
+    "intro": "Descubre los tesoros naturales, históricos y culturales de Paraguay. Desde la Costanera y museos coloniales de la capital hasta las imponentes ruinas jesuíticas, cascadas de la selva paranaense y lagos de Cordillera.",
+    "search": "Buscar por nombre, etiquetas o ciudad...",
+    "tabAll": "Todos",
+    "tabAsuncion": "Asunción",
+    "tabCordillera": "Areguá & Cordillera",
+    "tabEncCde": "Encarnación / CDE",
+    "tabInterior": "Otros Interior",
+    "recommended": "Atracciones Recomendadas",
+    "showing": "Mostrando resultados filtrados",
+    "empty": "No encontramos lugares turísticos con esos filtros. ¡Prueba buscando otro término!",
+    "freeAccess": "Acceso libre",
+    "viewMap": "Ver Mapa",
+    "directions": "Cómo Llegar",
+    "mapTitle": "Mapa de Atractivos Filtrados",
+    "mapDesc": "Navega por las coordenadas exactas de las atracciones turísticas seleccionadas. Haz clic en los pines para ver fotos y detalles de horarios.",
+    "crumb": "Turismo"
   }
 }

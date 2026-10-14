@@ -1,12 +1,7 @@
 /**
  * Dynamic map loader utility for ParaguayReal.
  * Handles loading Google Maps API and Leaflet from CDNs dynamically on the client side.
- * Also retrieves Mapbox / Google Maps API Keys dynamically from Firestore if configured.
  */
-
-import { useState, useEffect } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from './firebase';
 
 export function getMapEngine() {
   if (typeof window === 'undefined') return 'none';
@@ -23,81 +18,16 @@ export function getMapEngine() {
 }
 
 export function useMapKeys() {
-  const [keys, setKeys] = useState({
-    mapboxToken: '',
-    googleMapsApiKey: '',
-    engine: 'none',
-    loading: true
-  });
+  // Keys come only from build-time env vars. They must be restricted by domain
+  // in the Mapbox / Google consoles, since NEXT_PUBLIC_* values are public.
+  const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
 
-  useEffect(() => {
-    const defaultMapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
-    const defaultGoogleMapsKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
+  let engine = 'leaflet';
+  if (mapboxToken.trim() !== '') engine = 'mapbox';
+  else if (googleMapsApiKey.trim() !== '') engine = 'google';
 
-    const determineEngine = (mbToken, gKey) => {
-      if (mbToken && mbToken.trim() !== '') return 'mapbox';
-      if (gKey && gKey.trim() !== '') return 'google';
-      return 'leaflet';
-    };
-
-    if (!db) {
-      // Fallback to environment variables if Firebase Firestore is not initialized
-      setKeys({
-        mapboxToken: defaultMapboxToken,
-        googleMapsApiKey: defaultGoogleMapsKey,
-        engine: determineEngine(defaultMapboxToken, defaultGoogleMapsKey),
-        loading: false
-      });
-      return;
-    }
-
-    let active = true;
-
-    async function fetchKeys() {
-      try {
-        const docRef = doc(db, 'config', 'keys');
-        const docSnap = await getDoc(docRef);
-        
-        if (docSnap.exists() && active) {
-          const data = docSnap.data();
-          const mbToken = data.mapboxToken || data.mapbox_token || defaultMapboxToken;
-          const gKey = data.googleMapsApiKey || data.google_maps_key || defaultGoogleMapsKey;
-          
-          setKeys({
-            mapboxToken: mbToken,
-            googleMapsApiKey: gKey,
-            engine: determineEngine(mbToken, gKey),
-            loading: false
-          });
-        } else if (active) {
-          setKeys({
-            mapboxToken: defaultMapboxToken,
-            googleMapsApiKey: defaultGoogleMapsKey,
-            engine: determineEngine(defaultMapboxToken, defaultGoogleMapsKey),
-            loading: false
-          });
-        }
-      } catch (err) {
-        console.error('Error fetching map keys from Firestore:', err);
-        if (active) {
-          setKeys({
-            mapboxToken: defaultMapboxToken,
-            googleMapsApiKey: defaultGoogleMapsKey,
-            engine: determineEngine(defaultMapboxToken, defaultGoogleMapsKey),
-            loading: false
-          });
-        }
-      }
-    }
-
-    fetchKeys();
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  return keys;
+  return { mapboxToken, googleMapsApiKey, engine, loading: false };
 }
 
 export function loadGoogleMapsScript(apiKey, callback) {

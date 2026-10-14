@@ -5,27 +5,35 @@ import RelatedArticles from '../../../../components/UI/RelatedArticles';
 import SchemaOrg from '../../../../components/SEO/SchemaOrg';
 import { Calendar, User, Clock } from 'lucide-react';
 import { ARTICLES_DB } from '../../../../lib/blogData';
+import { notFound } from 'next/navigation';
+import { pageMetadata, LOCALES, SITE_URL } from '../../../../lib/seo';
 
-export async function generateMetadata({ params: { slug } }) {
+export function generateStaticParams() {
+  return LOCALES.flatMap((locale) =>
+    Object.keys(ARTICLES_DB).map((slug) => ({ locale, slug }))
+  );
+}
+
+export async function generateMetadata({ params: { slug, locale } }) {
   const article = ARTICLES_DB[slug];
-  if (!article) return { title: "Artículo no encontrado" };
+  if (!article) return {};
 
-  return {
+  return pageMetadata({
+    locale,
+    path: `/blog/${slug}`,
     title: `${article.title} | ParaguayReal`,
-    description: article.description
-  };
+    description: article.description,
+    image: article.photo,
+    type: 'article',
+    onlyDefaultLocale: true,
+    extra: { publishedTime: article.dateIso, authors: [article.author] }
+  });
 }
 
 export default function ArticlePage({ params: { slug, locale } }) {
   const article = ARTICLES_DB[slug];
 
-  if (!article) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-20 text-center font-bold">
-        El artículo no se encuentra en nuestra base de datos.
-      </div>
-    );
-  }
+  if (!article) notFound();
 
   const breadcrumbs = [
     { label: "Blog", url: "/blog" },
@@ -39,8 +47,10 @@ export default function ArticlePage({ params: { slug, locale } }) {
     "headline": article.title,
     "description": article.description,
     "image": article.photo,
-    "datePublished": "2026-05-15T08:00:00+02:00",
-    "dateModified": "2026-06-04T12:00:00+02:00",
+    "datePublished": article.dateIso,
+    "dateModified": article.dateIso,
+    "mainEntityOfPage": `${SITE_URL}/${locale}/blog/${slug}`,
+    "inLanguage": locale,
     "author": {
       "@type": "Person",
       "name": article.author
@@ -50,7 +60,7 @@ export default function ArticlePage({ params: { slug, locale } }) {
       "name": "ParaguayReal",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://paraguayreal.com/logo.png"
+        "url": `${SITE_URL}/logo.png`
       }
     }
   };

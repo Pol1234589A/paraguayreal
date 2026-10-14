@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../lib/seo';
 import dynamic from 'next/dynamic';
 import SchemaOrg from '../../../components/SEO/SchemaOrg';
 import placesGeoJSON from '../../../../data/places.json';
@@ -24,10 +25,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Mapa Interativo do Paraguai | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/mapa',
     title: titles[locale] || titles.es,
     description: "Mapa geolocalizado con puntos clave: embajadas, sanatorios, coworkings, supermercados y atractivos turísticos en Paraguay."
-  };
+  });
 }
 
 export default function MapaPage({ params: { locale }, searchParams }) {

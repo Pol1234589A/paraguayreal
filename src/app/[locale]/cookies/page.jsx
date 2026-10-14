@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../lib/seo';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 
@@ -9,10 +10,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Política de Cookies | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/cookies',
     title: titles[locale] || titles.es,
     description: "Información transparente sobre el uso de cookies y almacenamiento de preferencias locales en ParaguayReal."
-  };
+  });
 }
 
 export default function CookiesPage({ params: { locale } }) {

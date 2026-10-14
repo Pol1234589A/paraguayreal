@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../lib/seo';
 import SchemaOrg from '../../../components/SEO/SchemaOrg';
 import TourismClient from '../../../components/UI/TourismClient';
 import placesGeoJSON from '../../../../data/places.json';
@@ -16,10 +17,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Descubra os melhores destinos turísticos do Paraguai: Assunção colonial, praias de Encarnação, compras em Ciudad del Este e cachoeiras."
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/turismo',
     title: titles[locale] || titles.es,
     description: descriptions[locale] || descriptions.es
-  };
+  });
 }
 
 export default function TurismoPage({ params: { locale } }) {

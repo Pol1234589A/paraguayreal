@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../lib/seo';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 
@@ -9,10 +10,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Política de Privacidade | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/privacidad',
     title: titles[locale] || titles.es,
     description: "Declaración de privacidad, minimización de datos y seguridad en el uso de mapas interactivos de ParaguayReal."
-  };
+  });
 }
 
 export default function PrivacidadPage({ params: { locale } }) {

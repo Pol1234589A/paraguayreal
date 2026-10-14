@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../lib/seo';
 import { useTranslations } from 'next-intl';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
@@ -35,10 +36,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Descubra as vantagens fiscais do Paraguai (regra 10-10-10), a Lei de Maquila para o Mercosul, a cultura de negócios e os setores de investimento agrícola e imobiliário."
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/negocios',
     title: titles[locale] || titles.es,
     description: descriptions[locale] || descriptions.es
-  };
+  });
 }
 
 export default function NegociosPage({ params: { locale } }) {

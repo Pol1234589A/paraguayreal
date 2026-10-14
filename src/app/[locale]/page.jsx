@@ -1,10 +1,19 @@
 import React from 'react';
+import { pageAlternates, SITE_URL } from '../../lib/seo';
 import { useTranslations } from 'next-intl';
 import SearchBar from '../../components/UI/SearchBar';
 import CityMap from '../../components/Map/CityMap';
 import SchemaOrg from '../../components/SEO/SchemaOrg';
 import placesGeoJSON from '../../../data/places.json';
 import { Map, DollarSign, UserCheck, Compass, Briefcase, Building, ShieldCheck, ArrowRight } from 'lucide-react';
+
+export function generateMetadata({ params: { locale } }) {
+  return {
+    alternates: pageAlternates(locale),
+    openGraph: { siteName: 'ParaguayReal', url: `/${locale}`, type: 'website', images: [{ url: '/logo.png' }] },
+    twitter: { card: 'summary_large_image', images: ['/logo.png'] }
+  };
+}
 
 export default function HomePage({ params: { locale } }) {
   const t = useTranslations();
@@ -14,12 +23,8 @@ export default function HomePage({ params: { locale } }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ParaguayReal",
-    "url": "https://paraguayreal.com",
-    "logo": "https://paraguayreal.com/logo.png",
-    "sameAs": [
-      "https://x.com/paraguayreal",
-      "https://github.com/paraguayreal"
-    ],
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/logo.png`,
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
@@ -31,15 +36,7 @@ export default function HomePage({ params: { locale } }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "ParaguayReal",
-    "url": "https://paraguayreal.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://paraguayreal.com/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "url": SITE_URL
   };
 
   // 6 subcategories grid definitions
@@ -82,7 +79,7 @@ export default function HomePage({ params: { locale } }) {
     {
       title: t("Home.categories.safety.title"),
       desc: t("Home.categories.safety.desc"),
-      url: "/blog/como-obtener-residencia-permanente-paraguay",
+      url: "/blog/seguridad-infraestructura-paraguay-emigrantes",
       icon: <ShieldCheck className="w-5 h-5 text-red-600" />,
       bg: "bg-red-50"
     }

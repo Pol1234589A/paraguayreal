@@ -18,9 +18,8 @@
         "address": "El Paraguayo Independiente entre O'Leary y Ayolas, Asunción",
         "photo": "/images/places/palacio_lopez.png",
         "rating": 4.7,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2867,-57.6362",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2867,-57.6362",
-        "internalUrl": "/turismo/palacio-lopez",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.277636,-57.637569",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.277636,-57.637569",
         "hours": "Lunes a Viernes 08:00 - 17:00",
         "city": "asuncion",
         "tags": [
@@ -47,9 +46,8 @@
         "address": "Palma y Chile, Asunción",
         "photo": "/images/places/panteon_heroes.png",
         "rating": 4.8,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2821,-57.6318",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2821,-57.6318",
-        "internalUrl": "/turismo/panteon-heroes",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2823,-57.6353",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2823,-57.6353",
         "hours": "Todos los días 06:00 - 18:00",
         "city": "asuncion",
         "tags": [
@@ -76,9 +74,8 @@
         "address": "Avda. República y Costanera, Asunción",
         "photo": "/images/places/costanera_asuncion.png",
         "rating": 4.5,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2798,-57.6433",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2798,-57.6433",
-        "internalUrl": "/turismo/costanera-asuncion",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.276,-57.6316",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.276,-57.6316",
         "hours": "Acceso libre 24/7",
         "city": "asuncion",
         "tags": [
@@ -107,7 +104,6 @@
         "rating": 4.2,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2917,-57.6228",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2917,-57.6228",
-        "internalUrl": "/turismo/mercado-4",
         "hours": "Todos los días 04:00 - 18:00",
         "city": "asuncion",
         "tags": [
@@ -136,7 +132,6 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2936,-57.5794",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2936,-57.5794",
-        "internalUrl": "/compras/shopping-mariscal",
         "hours": "Todos los días 09:00 - 21:00",
         "city": "asuncion",
         "tags": [
@@ -163,9 +158,8 @@
         "address": "Autopista Silvio Pettirossi, Luque",
         "photo": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&auto=format&fit=crop&q=60",
         "rating": 4,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2403,-57.5190",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2403,-57.5190",
-        "internalUrl": "/transporte/aeropuerto",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2403,-57.519",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2403,-57.519",
         "hours": "Abierto 24 horas",
         "city": "asuncion",
         "tags": [
@@ -194,7 +188,6 @@
         "rating": 3.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.3211,-57.6015",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3211,-57.6015",
-        "internalUrl": "/transporte/estacion-buses",
         "hours": "Abierto 24 horas",
         "city": "asuncion",
         "tags": [
@@ -223,7 +216,6 @@
         "rating": 4.8,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2858,-57.6074",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2858,-57.6074",
-        "internalUrl": "/barrios/las-mercedes",
         "hours": "Acceso libre",
         "city": "asuncion",
         "tags": [
@@ -252,7 +244,6 @@
         "rating": 4.9,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2658,-57.5615",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2658,-57.5615",
-        "internalUrl": "/barrios/mburucuya",
         "hours": "Acceso libre",
         "city": "asuncion",
         "tags": [
@@ -281,7 +272,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2917,-57.5758",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2917,-57.5758",
-        "internalUrl": "/barrios/villa-morra",
         "hours": "Acceso libre",
         "city": "asuncion",
         "tags": [
@@ -310,7 +300,6 @@
         "rating": 3.5,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2999,-57.5954",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2999,-57.5954",
-        "internalUrl": "/salud/ips",
         "hours": "Abierto 24 horas",
         "city": "asuncion",
         "tags": [
@@ -339,7 +328,6 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-25.3347,-57.5218",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3347,-57.5218",
-        "internalUrl": "/educacion/una",
         "hours": "Lunes a Sábado 07:00 - 21:00",
         "city": "asuncion",
         "tags": [
@@ -368,7 +356,6 @@
         "rating": 4.5,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2818,-57.6322",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2818,-57.6322",
-        "internalUrl": "/restaurantes/lido-bar",
         "hours": "Todos los días 07:00 - 23:00",
         "city": "asuncion",
         "tags": [
@@ -397,7 +384,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2831,-57.6331",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2831,-57.6331",
-        "internalUrl": "/restaurantes/bolsi",
         "hours": "Abierto 24 horas",
         "city": "asuncion",
         "tags": [
@@ -424,9 +410,8 @@
         "address": "Rafael Barret casi Mariscal López, Asunción",
         "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60",
         "rating": 4.6,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2910,-57.5750",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2910,-57.5750",
-        "internalUrl": "/restaurantes/lo-de-osvaldo",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.291,-57.575",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.291,-57.575",
         "hours": "Todos los días 11:30 - 15:30, 19:30 - 00:00",
         "city": "asuncion",
         "tags": [
@@ -453,9 +438,8 @@
         "address": "Avda. Mariscal López y Senador Long, Asunción",
         "photo": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.5,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2950,-57.5780",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2950,-57.5780",
-        "internalUrl": "/precios/supermercados",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.295,-57.578",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.295,-57.578",
         "hours": "Todos los días 07:00 - 23:00",
         "city": "asuncion",
         "tags": [
@@ -482,9 +466,8 @@
         "address": "Senador Long casi Lillo, Asunción",
         "photo": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=500&auto=format&fit=crop&q=60",
         "rating": 4.3,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2890,-57.5732",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2890,-57.5732",
-        "internalUrl": "/negocios/cambios",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.289,-57.5732",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.289,-57.5732",
         "hours": "Lunes a Viernes 08:30 - 17:00, Sábados 08:30 - 12:00",
         "city": "asuncion",
         "tags": [
@@ -513,7 +496,6 @@
         "rating": 4.1,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2842,-57.5684",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2842,-57.5684",
-        "internalUrl": "/mudarse/embajada-espana",
         "hours": "Lunes a Viernes 08:00 - 13:00",
         "city": "asuncion",
         "tags": [
@@ -542,7 +524,6 @@
         "rating": 4.4,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2758,-57.5702",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2758,-57.5702",
-        "internalUrl": "/mudarse/embajada-usa",
         "hours": "Lunes a Viernes 07:30 - 17:00",
         "city": "asuncion",
         "tags": [
@@ -571,7 +552,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2822,-57.5658",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2822,-57.5658",
-        "internalUrl": "/negocios/coworking",
         "hours": "Lunes a Viernes 08:00 - 19:00, Sábados 09:00 - 13:00",
         "city": "asuncion",
         "tags": [
@@ -600,7 +580,6 @@
         "rating": 4.8,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2789,-57.5601",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2789,-57.5601",
-        "internalUrl": "/negocios/coworking",
         "hours": "Todos los días 08:00 - 20:00",
         "city": "asuncion",
         "tags": [
@@ -627,9 +606,8 @@
         "address": "Estrella y Agustín Barboza, Asunción",
         "photo": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&q=80",
         "rating": 4.4,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2801,-57.6258",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2801,-57.6258",
-        "internalUrl": "/turismo/loma-san-jeronimo",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2773,-57.6456",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2773,-57.6456",
         "hours": "Todos los días 08:00 - 22:00",
         "city": "asuncion",
         "tags": [
@@ -656,9 +634,8 @@
         "address": "Sgto. Marecos, Asunción",
         "photo": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format&fit=crop&q=60",
         "rating": 4.8,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2711,-57.5790",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2711,-57.5790",
-        "internalUrl": "/turismo/parque-salud",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2711,-57.579",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2711,-57.579",
         "hours": "Todos los días 05:00 - 21:00",
         "city": "asuncion",
         "tags": [
@@ -685,9 +662,8 @@
         "address": "Autopista Silvio Pettirossi, Luque",
         "photo": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format&fit=crop&q=60",
         "rating": 4.6,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2450,-57.5620",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2450,-57.5620",
-        "internalUrl": "/turismo/nu-guasu",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.245,-57.562",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.245,-57.562",
         "hours": "Todos los días 05:00 - 22:30",
         "city": "asuncion",
         "tags": [
@@ -714,9 +690,8 @@
         "address": "Independencia Nacional y Coronel Bogado, Asunción",
         "photo": "https://images.unsplash.com/photo-1548625361-155deea223d0?w=500&q=80",
         "rating": 4.5,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2855,-57.6325",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2855,-57.6325",
-        "internalUrl": "/turismo/catedral",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2816,-57.6324",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2816,-57.6324",
         "hours": "Lunes a Sábado 09:00 - 12:00, Domingos misas",
         "city": "asuncion",
         "tags": [
@@ -743,9 +718,8 @@
         "address": "Presidente Franco y 14 de Mayo, Asunción",
         "photo": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&q=80",
         "rating": 4.7,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2828,-57.6358",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2828,-57.6358",
-        "internalUrl": "/turismo/casa-independencia",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2806,-57.6362",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2806,-57.6362",
         "hours": "Lunes a Viernes 08:30 - 16:30, Sábados 08:30 - 12:30",
         "city": "asuncion",
         "tags": [
@@ -774,7 +748,6 @@
         "rating": 4.2,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2801,-57.5772",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2801,-57.5772",
-        "internalUrl": "/salud/sanatorio-metropolitano",
         "hours": "Abierto 24 horas",
         "city": "asuncion",
         "tags": [
@@ -803,7 +776,6 @@
         "rating": 4.8,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2798,-57.5622",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2798,-57.5622",
-        "internalUrl": "/compras/paseo-la-galeria",
         "hours": "Todos los días 09:00 - 21:00",
         "city": "asuncion",
         "tags": [
@@ -830,9 +802,8 @@
         "address": "Avda. Aviadores del Chaco, Asunción",
         "photo": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&auto=format&fit=crop&q=60",
         "rating": 4.7,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2778,-57.5630",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2778,-57.5630",
-        "internalUrl": "/compras/shopping-del-sol",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2778,-57.563",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2778,-57.563",
         "hours": "Todos los días 09:00 - 21:00",
         "city": "asuncion",
         "tags": [
@@ -861,7 +832,6 @@
         "rating": 4.1,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2811,-57.6334",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2811,-57.6334",
-        "internalUrl": "/negocios/bancos",
         "hours": "Lunes a Viernes 08:30 - 13:30",
         "city": "asuncion",
         "tags": [
@@ -890,7 +860,6 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-25.5606,-54.6297",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.5606,-54.6297",
-        "internalUrl": "/turismo/saltos-monday",
         "hours": "Todos los días 08:00 - 17:00",
         "city": "ciudad-del-este",
         "tags": [
@@ -917,9 +886,8 @@
         "address": "Ruta PY06 Km 31, Trinidad, Itapúa",
         "photo": "/images/places/ruinas_trinidad.png",
         "rating": 4.8,
-        "googleMapsUrl": "https://maps.google.com/?q=-27.1333,-55.7000",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.1333,-55.7000",
-        "internalUrl": "/turismo/ruinas-trinidad",
+        "googleMapsUrl": "https://maps.google.com/?q=-27.1333,-55.7",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.1333,-55.7",
         "hours": "Todos los días 07:00 - 19:00",
         "city": "encarnacion",
         "tags": [
@@ -948,7 +916,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-27.3306,-55.8667",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.3306,-55.8667",
-        "internalUrl": "/ciudades/encarnacion",
         "hours": "Acceso libre",
         "city": "encarnacion",
         "tags": [
@@ -977,7 +944,6 @@
         "rating": 4.5,
         "googleMapsUrl": "https://maps.google.com/?q=-25.5097,-54.6111",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.5097,-54.6111",
-        "internalUrl": "/ciudades/ciudad-del-este",
         "hours": "Todos los días 08:00 - 19:00",
         "city": "ciudad-del-este",
         "tags": [
@@ -1006,7 +972,6 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-23.7833,-56.5167",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-23.7833,-56.5167",
-        "internalUrl": "/turismo/laguna-blanca",
         "hours": "Todos los días (con reserva previa)",
         "city": "interior",
         "tags": [
@@ -1035,7 +1000,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-22.5667,-55.9833",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.5667,-55.9833",
-        "internalUrl": "/turismo/cerro-cora",
         "hours": "Todos los días 08:00 - 17:00",
         "city": "interior",
         "tags": [
@@ -1062,9 +1026,8 @@
         "address": "Saltos del Guairá, Canindeyú",
         "photo": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.1,
-        "googleMapsUrl": "https://maps.google.com/?q=-24.0833,-54.3000",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-24.0833,-54.3000",
-        "internalUrl": "/ciudades/saltos-del-guaira",
+        "googleMapsUrl": "https://maps.google.com/?q=-24.0833,-54.3",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-24.0833,-54.3",
         "hours": "Acceso libre",
         "city": "interior",
         "tags": [
@@ -1091,9 +1054,8 @@
         "address": "San Bernardino, Cordillera",
         "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.5,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.3000,-57.3000",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3000,-57.3000",
-        "internalUrl": "/turismo/san-bernardino",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3,-57.3",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3,-57.3",
         "hours": "Acceso libre",
         "city": "interior",
         "tags": [
@@ -1120,9 +1082,8 @@
         "address": "General Eugenio A. Garay, Guairá",
         "photo": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=500&auto=format&fit=crop&q=60",
         "rating": 4.8,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.9000,-56.2667",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.9000,-56.2667",
-        "internalUrl": "/turismo/tres-kandu",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.9,-56.2667",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.9,-56.2667",
         "hours": "Todos los días 06:00 - 18:00 (registro al pie)",
         "city": "interior",
         "tags": [
@@ -1149,9 +1110,8 @@
         "address": "Hernandarias, Alto Paraná",
         "photo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60",
         "rating": 4.7,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.4100,-54.5900",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.4100,-54.5900",
-        "internalUrl": "/turismo/itaipu",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.41,-54.59",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.41,-54.59",
         "hours": "Visitas guiadas de Lunes a Domingo de 08:00 a 16:00",
         "city": "interior",
         "tags": [
@@ -1178,9 +1138,8 @@
         "address": "Calle Dr. Eligio Ayala, Caacupé",
         "photo": "/images/places/basilica_caacupe.png",
         "rating": 4.7,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.3858,-57.1417",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3858,-57.1417",
-        "internalUrl": "/turismo/caacupe",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3861,-57.1435",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3861,-57.1435",
         "hours": "Todos los días 06:00 - 20:00",
         "city": "interior",
         "tags": [
@@ -1207,9 +1166,8 @@
         "address": "Ybycuí, Paraguarí",
         "photo": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&auto=format&fit=crop&q=60",
         "rating": 4.8,
-        "googleMapsUrl": "https://maps.google.com/?q=-26.0167,-57.0500",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-26.0167,-57.0500",
-        "internalUrl": "/turismo/ybycui",
+        "googleMapsUrl": "https://maps.google.com/?q=-26.0167,-57.05",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-26.0167,-57.05",
         "hours": "Todos los días 08:00 - 17:00",
         "city": "interior",
         "tags": [
@@ -1238,7 +1196,6 @@
         "rating": 4.9,
         "googleMapsUrl": "https://maps.google.com/?q=-25.5667,-57.1333",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.5667,-57.1333",
-        "internalUrl": "/turismo/mbatovi",
         "hours": "Fines de semana con reserva previa",
         "city": "interior",
         "tags": [
@@ -1267,7 +1224,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-27.3167,-56.3111",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.3167,-56.3111",
-        "internalUrl": "/turismo/dunas-san-cosme",
         "hours": "Paseos en lancha con reserva previa",
         "city": "interior",
         "tags": [
@@ -1294,9 +1250,8 @@
         "address": "Filadelfia, Boquerón",
         "photo": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.3,
-        "googleMapsUrl": "https://maps.google.com/?q=-22.3500,-60.0333",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.3500,-60.0333",
-        "internalUrl": "/ciudades/filadelfia",
+        "googleMapsUrl": "https://maps.google.com/?q=-22.35,-60.0333",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.35,-60.0333",
         "hours": "Acceso libre",
         "city": "interior",
         "tags": [
@@ -1323,9 +1278,8 @@
         "address": "Eligio Ayala y Tacuary, Asunción",
         "photo": "https://images.unsplash.com/photo-1548625361-155deea223d0?w=500&q=80",
         "rating": 4.5,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2905,-57.6250",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2905,-57.6250",
-        "internalUrl": "/turismo/iglesias",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2818,-57.6335",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2818,-57.6335",
         "hours": "Todos los días 07:00 - 19:00",
         "city": "asuncion",
         "tags": [
@@ -1354,7 +1308,6 @@
         "rating": 4.4,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2811,-57.5645",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2811,-57.5645",
-        "internalUrl": "/negocios/bancos",
         "hours": "Lunes a Viernes 08:30 - 13:30",
         "city": "asuncion",
         "tags": [
@@ -1381,9 +1334,8 @@
         "address": "Avenida República y Alberdi, Asunción",
         "photo": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&q=80",
         "rating": 4.6,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2825,-57.6299",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2825,-57.6299",
-        "internalUrl": "/turismo/el-cabildo",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2798,-57.6337",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2798,-57.6337",
         "hours": "Lunes a Viernes 08:00 - 19:00, Fines de semana 09:00 - 17:00",
         "city": "asuncion",
         "tags": [
@@ -1410,9 +1362,8 @@
         "address": "Ayolas 129, Asunción",
         "photo": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&q=80",
         "rating": 4.7,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2814,-57.6366",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2814,-57.6366",
-        "internalUrl": "/turismo/manzana-de-la-rivera",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2825,-57.6348",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2825,-57.6348",
         "hours": "Todos los días 08:00 - 20:00",
         "city": "asuncion",
         "tags": [
@@ -1441,7 +1392,6 @@
         "rating": 3.9,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2411,-57.5799",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2411,-57.5799",
-        "internalUrl": "/turismo/jardin-botanico",
         "hours": "Martes a Domingo 08:00 - 16:00",
         "city": "asuncion",
         "tags": [
@@ -1468,9 +1418,8 @@
         "address": "Lillo y O'Higgins, Asunción",
         "photo": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.3,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2882,-57.5670",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2882,-57.5670",
-        "internalUrl": "/precios/supermercados",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.2882,-57.567",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2882,-57.567",
         "hours": "Todos los días 07:00 - 22:30",
         "city": "asuncion",
         "tags": [
@@ -1497,9 +1446,8 @@
         "address": "Avda. Aviadores del Chaco, Asunción",
         "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60",
         "rating": 4.4,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2750,-57.5605",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2750,-57.5605",
-        "internalUrl": "/restaurantes/fridays",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.275,-57.5605",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.275,-57.5605",
         "hours": "Todos los días 11:30 - 01:00",
         "city": "asuncion",
         "tags": [
@@ -1528,7 +1476,6 @@
         "rating": 4.5,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2889,-57.5511",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2889,-57.5511",
-        "internalUrl": "/negocios/cambios",
         "hours": "Lunes a Viernes 08:30 - 17:30, Sábado 08:30 - 12:30",
         "city": "asuncion",
         "tags": [
@@ -1557,7 +1504,6 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2831,-57.5855",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2831,-57.5855",
-        "internalUrl": "/restaurantes/la-herencia",
         "hours": "Todos los días 08:00 - 22:00",
         "city": "asuncion",
         "tags": [
@@ -1584,9 +1530,8 @@
         "address": "Coronel Silva y España, Asunción",
         "photo": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=500&auto=format&fit=crop&q=60",
         "rating": 4.5,
-        "googleMapsUrl": "https://maps.google.com/?q=-25.2750,-57.5750",
-        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2750,-57.5750",
-        "internalUrl": "/mudarse/embajada-brasil",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.275,-57.575",
+        "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.275,-57.575",
         "hours": "Lunes a Viernes 08:30 - 13:00",
         "city": "asuncion",
         "tags": [
@@ -1615,7 +1560,6 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-25.3134,-57.3857",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3134,-57.3857",
-        "internalUrl": "/turismo/aregua-iglesia",
         "hours": "Todos los días 08:00 - 18:00",
         "city": "interior",
         "tags": [
@@ -1645,7 +1589,6 @@
         "rating": 4.1,
         "googleMapsUrl": "https://maps.google.com/?q=-25.3025,-57.3739",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3025,-57.3739",
-        "internalUrl": "/turismo/aregua-playa",
         "hours": "Acceso libre (Costo entrada 1.000 PYG, auto 5.000 PYG)",
         "city": "interior",
         "tags": [
@@ -1675,7 +1618,6 @@
         "rating": 4.5,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2631,-57.2536",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2631,-57.2536",
-        "internalUrl": "/turismo/altos",
         "hours": "Acceso libre",
         "city": "interior",
         "tags": [
@@ -1705,7 +1647,6 @@
         "rating": 4.8,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2786,-57.1706",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2786,-57.1706",
-        "internalUrl": "/turismo/atyra",
         "hours": "Todos los días 08:00 - 18:00",
         "city": "interior",
         "tags": [
@@ -1735,7 +1676,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.2858,-57.5684",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.2858,-57.5684",
-        "internalUrl": "/negocios",
         "hours": "Abierto 24 horas",
         "city": "asuncion",
         "tags": [
@@ -1765,9 +1705,8 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-25.4089,-54.6367",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.4089,-54.6367",
-        "internalUrl": "/negocios",
         "hours": "Lunes a Viernes 07:00 - 16:00",
-        "city": "cde",
+        "city": "ciudad-del-este",
         "tags": [
           "maquila",
           "negocios",
@@ -1796,9 +1735,8 @@
         "rating": 4.5,
         "googleMapsUrl": "https://maps.google.com/?q=-21.6881,-57.9044",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-21.6881,-57.9044",
-        "internalUrl": "/negocios",
         "hours": "Abierto 24 horas",
-        "city": "all",
+        "city": "interior",
         "tags": [
           "bioceánica",
           "transporte",
@@ -1827,7 +1765,6 @@
         "rating": 4.8,
         "googleMapsUrl": "https://maps.google.com/?q=-25.298622,-57.575811",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.298622,-57.575811",
-        "internalUrl": "/turismo",
         "hours": "Martes a Sábado 12:00 - 15:00, 19:30 - 23:30",
         "city": "asuncion",
         "tags": [
@@ -1857,7 +1794,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.294132,-57.579211",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.294132,-57.579211",
-        "internalUrl": "/turismo",
         "hours": "Todos los días 12:00 - 15:00, 20:00 - 00:00",
         "city": "asuncion",
         "tags": [
@@ -1887,7 +1823,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.284722,-57.572311",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.284722,-57.572311",
-        "internalUrl": "/turismo",
         "hours": "Todos los días 12:00 - 16:00, 19:30 - 00:00",
         "city": "asuncion",
         "tags": [
@@ -1917,7 +1852,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.296411,-57.578622",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.296411,-57.578622",
-        "internalUrl": "/turismo",
         "hours": "Todos los días 07:00 - 23:00",
         "city": "asuncion",
         "tags": [
@@ -1948,9 +1882,8 @@
         "rating": 4.8,
         "googleMapsUrl": "https://maps.google.com/?q=-25.394411,-57.112822",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.394411,-57.112822",
-        "internalUrl": "/turismo",
         "hours": "Todos los días 05:00 - 22:00",
-        "city": "all",
+        "city": "interior",
         "tags": [
           "chipa",
           "tradicional",
@@ -1979,7 +1912,6 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-27.332511,-55.865322",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.332511,-55.865322",
-        "internalUrl": "/turismo",
         "hours": "Martes a Domingo 19:00 - 23:30",
         "city": "encarnacion",
         "tags": [
@@ -2009,7 +1941,6 @@
         "rating": 4.6,
         "googleMapsUrl": "https://maps.google.com/?q=-27.333111,-55.863122",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-27.333111,-55.863122",
-        "internalUrl": "/turismo",
         "hours": "Todos los días 12:00 - 15:00, 19:30 - 23:30",
         "city": "encarnacion",
         "tags": [
@@ -2039,9 +1970,8 @@
         "rating": 4.7,
         "googleMapsUrl": "https://maps.google.com/?q=-25.508911,-54.612822",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.508911,-54.612822",
-        "internalUrl": "/turismo",
         "hours": "Miércoles a Sábado 12:00 - 15:00, 19:30 - 23:30; Domingos 12:00 - 16:00",
-        "city": "cde",
+        "city": "ciudad-del-este",
         "tags": [
           "lujo",
           "vista",
@@ -2069,9 +1999,8 @@
         "rating": 4.5,
         "googleMapsUrl": "https://maps.google.com/?q=-25.309411,-57.296122",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.309411,-57.296122",
-        "internalUrl": "/turismo",
         "hours": "Todos los días 08:00 - 22:00",
-        "city": "all",
+        "city": "interior",
         "tags": [
           "café",
           "vista",
@@ -2098,9 +2027,8 @@
         "address": "Areguá, Central, Paraguay",
         "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.8,
-        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Cerro+Koi+Aregua+Paraguay",
+        "googleMapsUrl": "https://maps.google.com/?q=-25.3134,-57.3828",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-25.3134,-57.3828",
-        "internalUrl": "/turismo",
         "hours": "Todos los días 08:00 - 17:00",
         "city": "interior",
         "website": "https://www.almadespierta.com/guias/geografia-sagrada-geomythologia-lugares-poder-paraguay",
@@ -2132,9 +2060,8 @@
         "address": "Vallemí, San Lázaro, Concepción, Paraguay",
         "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.9,
-        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Cavernas+de+Vallemi+Paraguay",
+        "googleMapsUrl": "https://maps.google.com/?q=-22.1558,-57.9405",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.1558,-57.9405",
-        "internalUrl": "/turismo",
         "hours": "Visitas guiadas programadas",
         "city": "interior",
         "website": "https://www.almadespierta.com/guias/geografia-sagrada-geomythologia-lugares-poder-paraguay",
@@ -2164,9 +2091,8 @@
         "address": "Bella Vista Norte, Amambay, Paraguay",
         "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
         "rating": 4.7,
-        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ojo+de+Mar+Bella+Vista+Norte+Paraguay",
+        "googleMapsUrl": "https://maps.google.com/?q=-22.1154,-56.6212",
         "googleMapsDirections": "https://www.google.com/maps/dir/?api=1&destination=-22.1154,-56.6212",
-        "internalUrl": "/turismo",
         "hours": "Acceso libre diurno",
         "city": "interior",
         "website": "https://www.almadespierta.com/guias/geografia-sagrada-geomythologia-lugares-poder-paraguay",

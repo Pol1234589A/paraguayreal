@@ -1,9 +1,11 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Inter, Playfair_Display } from 'next/font/google';
 import Navbar from '../../components/UI/Navbar';
 import Footer from '../../components/UI/Footer';
+import { SITE_URL, LOCALES } from '../../lib/seo';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -33,19 +35,16 @@ export async function generateMetadata({ params: { locale } }) {
   return {
     title: titles[locale] || titles.es,
     description: descriptions[locale] || descriptions.es,
-    metadataBase: new URL('https://paraguayreal.com'),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        'es': '/es',
-        'en': '/en',
-        'pt': '/pt'
-      }
-    }
+    metadataBase: new URL(SITE_URL)
   };
 }
 
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export default async function LocaleLayout({ children, params: { locale } }) {
+  if (!LOCALES.includes(locale)) notFound();
   const messages = await getMessages();
 
   return (

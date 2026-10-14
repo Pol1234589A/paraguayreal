@@ -1,8 +1,12 @@
 import React from 'react';
 import { ChevronRight, Home } from 'lucide-react';
+import { SITE_URL } from '../../lib/seo';
+import { jsonLd } from '../../lib/jsonLd';
+
+const HOME_LABEL = { es: 'Inicio', en: 'Home', pt: 'Início' };
 
 export default function Breadcrumb({ items = [], locale = 'es' }) {
-  const siteUrl = 'https://paraguayreal.com';
+  const siteUrl = SITE_URL;
 
   const schema = {
     "@context": "https://schema.org",
@@ -11,7 +15,7 @@ export default function Breadcrumb({ items = [], locale = 'es' }) {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Inicio",
+        "name": HOME_LABEL[locale] || HOME_LABEL.es,
         "item": `${siteUrl}/${locale}`
       },
       ...items.map((item, index) => ({
@@ -24,11 +28,11 @@ export default function Breadcrumb({ items = [], locale = 'es' }) {
   };
 
   return (
-    <nav className="flex flex-wrap items-center gap-1.5 text-xs text-slate-500 py-4 select-none">
+    <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-xs text-slate-500 py-4 select-none">
       {/* Schema Injection */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(schema) }}
       />
 
       <a
@@ -36,7 +40,7 @@ export default function Breadcrumb({ items = [], locale = 'es' }) {
         className="flex items-center gap-1 hover:text-emerald-600 transition"
       >
         <Home className="w-3.5 h-3.5" />
-        <span className="hidden sm:inline">Inicio</span>
+        <span className="hidden sm:inline">{HOME_LABEL[locale] || HOME_LABEL.es}</span>
       </a>
 
       {items.map((item, index) => {

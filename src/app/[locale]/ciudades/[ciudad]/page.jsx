@@ -1,4 +1,6 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
+import { pageMetadata, LOCALES } from '../../../../lib/seo';
 import dynamic from 'next/dynamic';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
@@ -111,30 +113,34 @@ const CITIES_DATA = {
   }
 };
 
-export async function generateMetadata({ params: { ciudad } }) {
-  const city = CITIES_DATA[ciudad];
-  if (!city) return { title: "Ciudad no encontrada" };
+export function generateStaticParams() {
+  return LOCALES.flatMap((locale) =>
+    Object.keys(CITIES_DATA).map((ciudad) => ({ locale, ciudad }))
+  );
+}
 
-  return {
+export async function generateMetadata({ params: { ciudad, locale } }) {
+  const city = CITIES_DATA[ciudad];
+  if (!city) return {};
+
+  return pageMetadata({
+    locale,
+    path: `/ciudades/${ciudad}`,
     title: `Vivir en ${city.name}: Guía Completa de Precios y Zonas | ParaguayReal`,
-    description: `Descubre todo sobre vivir en ${city.name}: pros y contras, seguridad, costos promedio de vida y mapa de lugares recomendados.`
-  };
+    description: `Descubre todo sobre vivir en ${city.name}: pros y contras, seguridad, costos promedio de vida y mapa de lugares recomendados.`,
+    image: city.photo,
+    onlyDefaultLocale: true
+  });
 }
 
 export default function CiudadPage({ params: { ciudad, locale } }) {
   const city = CITIES_DATA[ciudad];
 
-  if (!city) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-20 text-center font-bold">
-        Ciudad no encontrada en nuestra base de datos.
-      </div>
-    );
-  }
+  if (!city) notFound();
 
   const breadcrumbs = [
     { label: "Ciudades", url: "/ciudades/asuncion" },
-    { label: item => item.toUpperCase(), label: city.name, url: `/ciudades/${ciudad}` }
+    { label: city.name, url: `/ciudades/${ciudad}` }
   ];
 
   // Structured Place schemas

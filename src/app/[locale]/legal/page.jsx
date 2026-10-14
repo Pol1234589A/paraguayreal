@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../lib/seo';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 
@@ -9,10 +10,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Aviso Legal e Termos de Uso | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/legal',
     title: titles[locale] || titles.es,
     description: "Información legal, propiedad intelectual y términos de uso del sitio web ParaguayReal."
-  };
+  });
 }
 
 export default function LegalPage({ params: { locale } }) {

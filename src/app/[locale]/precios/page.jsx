@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../lib/seo';
 import { useTranslations } from 'next-intl';
 import PriceTable from '../../../components/UI/PriceTable';
 import FAQAccordion from '../../../components/UI/FAQAccordion';
@@ -13,10 +14,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Custo de Vida no Paraguai: Preços 2026 | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/precios',
     title: titles[locale] || titles.es,
     description: "Consulta precios detallados y actualizados de alquileres, comida, internet, nafta y servicios básicos en Paraguay."
-  };
+  });
 }
 
 export default function PreciosPage({ params: { locale } }) {

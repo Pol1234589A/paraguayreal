@@ -1,4 +1,5 @@
 import React from 'react';
+import { pageMetadata } from '../../../../lib/seo';
 import dynamic from 'next/dynamic';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
@@ -24,10 +25,12 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Melhores Bairros de Assunção: Segurança e Aluguel | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/vivir/barrios',
     title: titles[locale] || titles.es,
     description: "Mapa interactivo de los barrios residenciales de Asunción: Villa Morra, Las Mercedes, Mburucuyá y Centro. Índices de seguridad y costos."
-  };
+  });
 }
 
 export default function BarriosPage({ params: { locale } }) {

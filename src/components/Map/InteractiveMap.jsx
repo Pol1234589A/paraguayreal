@@ -2,13 +2,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import MapSidebar from './MapSidebar';
 import PlacePopup from './PlacePopup';
 import { Compass, Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, loadMapbox, getMapbox } from '../../lib/mapLoader';
 
 const CATEGORIES = {
   turismo: { label: "Turismo", color: "#10b981", icon: "📸" },
@@ -122,11 +120,14 @@ export default function InteractiveMap({ initialPlaces = [], filterCity, searchP
       }
     }
 
+    let cancelled = false;
     let mapInstance = null;
     let cleanup = () => {};
 
     // 1. MAPBOX INIT
     if (engine === 'mapbox' && mapboxToken) {
+      loadMapbox().then((mapboxgl) => {
+      if (cancelled) return;
       mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
@@ -157,6 +158,7 @@ export default function InteractiveMap({ initialPlaces = [], filterCity, searchP
       cleanup = () => {
         map.remove();
       };
+      });
     }
     // 2. GOOGLE MAPS INIT
     else if (engine === 'google' && googleMapsApiKey) {
@@ -206,6 +208,7 @@ export default function InteractiveMap({ initialPlaces = [], filterCity, searchP
     }
 
     return () => {
+      cancelled = true;
       cleanup();
       if (mapInstance && typeof mapInstance.remove === 'function') {
         try {
@@ -266,6 +269,8 @@ export default function InteractiveMap({ initialPlaces = [], filterCity, searchP
 
     // 1. MAPBOX MARKERS
     if (engine === 'mapbox') {
+      const mapboxgl = getMapbox();
+      if (!mapboxgl) return;
       markersRef.current.forEach((marker) => marker.remove());
       markersRef.current = [];
 

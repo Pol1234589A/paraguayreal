@@ -1,15 +1,14 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { ExternalLink } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, escapeHtml, safeUrl } from '../../lib/mapLoader';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, escapeHtml, safeUrl, loadMapbox } from '../../lib/mapLoader';
 
 export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
   const mapContainerRef = useRef(null);
   const tc = useTranslations('Common');
+  const gmapsLabel = tc('viewOnGoogleMaps');
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
 
   useEffect(() => {
@@ -17,10 +16,13 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
     if (!mapContainerRef.current) return;
     if (!lat || !lng) return;
 
-    const GMAPS_LABEL = escapeHtml(tc('viewOnGoogleMaps'));
+    const GMAPS_LABEL = escapeHtml(gmapsLabel);
+    let cancelled = false;
     let mapInstance = null;
 
     if (engine === 'mapbox' && mapboxToken) {
+      loadMapbox().then((mapboxgl) => {
+      if (cancelled) return;
       mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
@@ -54,6 +56,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
           `);
         marker.setPopup(popup);
       }
+      });
     } 
     else if (engine === 'google' && googleMapsApiKey) {
       loadGoogleMapsScript(googleMapsApiKey, () => {
@@ -137,6 +140,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
     }
 
     return () => {
+      cancelled = true;
       if (mapInstance && typeof mapInstance.remove === 'function') {
         try {
           mapInstance.remove();
@@ -145,7 +149,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         }
       }
     };
-  }, [lat, lng, name, address, googleMapsUrl, tc, engine, loading, mapboxToken, googleMapsApiKey]);
+  }, [lat, lng, name, address, googleMapsUrl, gmapsLabel, engine, loading, mapboxToken, googleMapsApiKey]);
 
   return (
     <div className="relative w-full rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-slate-50 my-6">

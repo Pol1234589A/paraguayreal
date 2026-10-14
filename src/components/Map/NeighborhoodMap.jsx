@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { Shield, DollarSign, MapPin } from 'lucide-react';
-import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, loadMapbox } from '../../lib/mapLoader';
 
 const NEIGHBORHOODS_DATA = {
   type: "FeatureCollection",
@@ -135,11 +133,14 @@ export default function NeighborhoodMap() {
     if (loading) return;
     if (!mapContainerRef.current) return;
 
+    let cancelled = false;
     let mapInstance = null;
     let cleanup = () => {};
 
     // 1. MAPBOX INITIALIZATION
     if (engine === 'mapbox' && mapboxToken) {
+      loadMapbox().then((mapboxgl) => {
+      if (cancelled) return;
       mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
@@ -206,6 +207,7 @@ export default function NeighborhoodMap() {
       cleanup = () => {
         map.remove();
       };
+      });
     }
     // 2. GOOGLE MAPS INITIALIZATION
     else if (engine === 'google' && googleMapsApiKey) {
@@ -276,6 +278,7 @@ export default function NeighborhoodMap() {
     }
 
     return () => {
+      cancelled = true;
       cleanup();
       if (mapInstance && typeof mapInstance.remove === 'function') {
         try {

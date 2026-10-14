@@ -2,12 +2,10 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { useTranslations } from 'next-intl';
 import PlacePopup from './PlacePopup';
 import { Eye, Compass } from 'lucide-react';
-import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, loadMapbox } from '../../lib/mapLoader';
 
 const CATEGORY_COLORS = {
   turismo: "#10b981",
@@ -57,11 +55,14 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
     if (!mapContainerRef.current) return;
     if (cityPlaces.length === 0) return;
 
+    let cancelled = false;
     let mapInstance = null;
     let cleanup = () => {};
 
     // 1. MAPBOX ENGINE
     if (engine === 'mapbox' && mapboxToken) {
+      loadMapbox().then((mapboxgl) => {
+      if (cancelled) return;
       mapboxgl.accessToken = mapboxToken;
       let center = [-57.6362, -25.2867];
       let zoom = 12;
@@ -134,6 +135,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
         markers.forEach(m => m.remove());
         map.remove();
       };
+      });
     }
     // 2. GOOGLE MAPS ENGINE
     else if (engine === 'google' && googleMapsApiKey) {
@@ -308,6 +310,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
     }
 
     return () => {
+      cancelled = true;
       cleanup();
       if (mapInstance && typeof mapInstance.remove === 'function') {
         try {

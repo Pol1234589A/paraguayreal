@@ -123,3 +123,22 @@ export function safeUrl(value) {
     return '';
   }
 }
+
+let mapboxModule = null;
+let mapboxPromise = null;
+
+/** Lazily load mapbox-gl (JS + CSS) only when the Mapbox engine is actually used. */
+export function loadMapbox() {
+  if (!mapboxPromise) {
+    mapboxPromise = Promise.all([import('mapbox-gl'), import('mapbox-gl/dist/mapbox-gl.css')]).then(([mod]) => {
+      mapboxModule = mod.default;
+      return mapboxModule;
+    });
+  }
+  return mapboxPromise;
+}
+
+/** The loaded mapbox-gl module, or null if loadMapbox() has not resolved yet. */
+export function getMapbox() {
+  return mapboxModule;
+}

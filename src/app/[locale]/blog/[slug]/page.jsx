@@ -45,7 +45,8 @@ export default async function ArticlePage({ params }) {
   const { content } = await compileMDX({
     source: article.content,
     components: { MiniMap: LazyMiniMap },
-    options: { mdxOptions: { remarkPlugins: [remarkGfm] } }
+    // Content is first-party MDX; blockJS must be off or numeric props like lat={-25.29} are stripped
+    options: { blockJS: false, mdxOptions: { remarkPlugins: [remarkGfm] } }
   });
   const related = getAllPosts(locale).filter((p) => p.slug !== slug).slice(0, 3);
 

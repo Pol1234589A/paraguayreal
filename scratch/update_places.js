@@ -20,11 +20,11 @@ const coordinateCorrections = {
 
 // Photo updates (locally-served generated images or relevant Unsplash placeholders)
 const photoUpdates = {
-  'palacio-lopez': '/images/places/palacio_lopez.png',
-  'panteon-heroes': '/images/places/panteon_heroes.png',
-  'costanera-asuncion': '/images/places/costanera_asuncion.png',
-  'ruinas-trinidad': '/images/places/ruinas_trinidad.png',
-  'basilica-caacupe': '/images/places/basilica_caacupe.png',
+  'palacio-lopez': '/images/places/palacio_lopez.webp',
+  'panteon-heroes': '/images/places/panteon_heroes.webp',
+  'costanera-asuncion': '/images/places/costanera_asuncion.webp',
+  'ruinas-trinidad': '/images/places/ruinas_trinidad.webp',
+  'basilica-caacupe': '/images/places/basilica_caacupe.webp',
   'loma-san-jeronimo': 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&q=80',
   'catedral-metropolitana': 'https://images.unsplash.com/photo-1548625361-155deea223d0?w=500&q=80',
   'casa-independencia': 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&q=80',

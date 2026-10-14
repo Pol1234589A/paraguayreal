@@ -1,8 +1,14 @@
+import Link from 'next/link';
 import React from 'react';
 import { pageAlternates, SITE_URL } from '../../lib/seo';
 import { useTranslations } from 'next-intl';
 import SearchBar from '../../components/UI/SearchBar';
-import CityMap from '../../components/Map/CityMap';
+import dynamic from 'next/dynamic';
+
+const CityMap = dynamic(() => import('../../components/Map/CityMap'), {
+  ssr: false,
+  loading: () => <div className="h-[450px] w-full bg-slate-100 rounded-xl border border-slate-200 animate-pulse" />
+});
 import SchemaOrg from '../../components/SEO/SchemaOrg';
 import placesGeoJSON from '../../../data/places.json';
 import { Map, DollarSign, UserCheck, Compass, Briefcase, Building, ShieldCheck, ArrowRight } from 'lucide-react';
@@ -86,7 +92,7 @@ export default function HomePage({ params: { locale } }) {
   ];
 
   return (
-    <div className="space-y-16 pb-20 select-none">
+    <div className="space-y-16 pb-20">
       <SchemaOrg schema={organizationSchema} />
       <SchemaOrg schema={websiteSchema} />
 
@@ -110,21 +116,21 @@ export default function HomePage({ params: { locale } }) {
 
           {/* CTAs */}
           <div className="pt-6 flex flex-wrap gap-4 justify-center items-center">
-            <a
+            <Link
               href={`/${locale}/mapa`}
-              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all hover:scale-103 duration-200 cursor-pointer"
+              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all hover:scale-105 duration-200 cursor-pointer"
             >
               {t("Hero.ctaPrimary")}
-            </a>
-            <a
+            </Link>
+            <Link
               href={`/${locale}/vivir/barrios`}
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl border border-slate-700 transition"
             >
               {t("Hero.ctaSecondary")}
-            </a>
+            </Link>
           </div>
 
-          <p className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wide">
+          <p className="text-[11px] sm:text-xs text-slate-500 font-semibold tracking-wide">
             {t("Hero.trending")}
           </p>
         </div>
@@ -144,7 +150,7 @@ export default function HomePage({ params: { locale } }) {
           <div className="md:col-span-2 bg-gradient-to-br from-emerald-800 to-slate-950 text-white p-8 rounded-3xl flex flex-col justify-between shadow-xl group min-h-[260px] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
             <div>
-              <span className="bg-emerald-500 text-white text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase leading-none inline-block mb-3">
+              <span className="bg-emerald-500 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full uppercase leading-none inline-block mb-3">
                 {t("Home.toolBadge")}
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-white mb-2">
@@ -155,13 +161,13 @@ export default function HomePage({ params: { locale } }) {
               </p>
             </div>
             <div className="pt-6">
-              <a
+              <Link
                 href={`/${locale}/mapa`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all"
               >
                 <span>{t("Home.exploreMap")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -181,13 +187,13 @@ export default function HomePage({ params: { locale } }) {
                 </div>
               </div>
               <div className="pt-6">
-                <a
+                <Link
                   href={`/${locale}${cat.url}`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition"
                 >
                   <span>{t("Home.exploreCategory")}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

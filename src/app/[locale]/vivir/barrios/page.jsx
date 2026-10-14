@@ -40,7 +40,7 @@ export default function BarriosPage({ params: { locale } }) {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-8">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Header text */}

@@ -536,10 +536,10 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row h-[calc(100vh-64px)] w-full overflow-hidden">
+    <div className="relative flex flex-col md:flex-row h-[calc(100dvh-64px)] w-full overflow-hidden">
       {/* Sidebar Controls */}
       <div
-        className={`fixed md:relative top-16 md:top-0 left-0 h-[calc(100vh-128px)] md:h-full z-20 w-full md:w-auto transition-transform duration-300 transform md:transform-none ${
+        className={`fixed md:relative top-16 md:top-0 left-0 h-[calc(100dvh-128px)] md:h-full z-20 w-full md:w-auto transition-transform duration-300 transform md:transform-none ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
       >

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { ChevronRight, Home } from 'lucide-react';
 import { SITE_URL } from '../../lib/seo';
@@ -28,20 +29,20 @@ export default function Breadcrumb({ items = [], locale = 'es' }) {
   };
 
   return (
-    <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-xs text-slate-500 py-4 select-none">
+    <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-xs text-slate-500 py-4">
       {/* Schema Injection */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(schema) }}
       />
 
-      <a
+      <Link
         href={`/${locale}`}
         className="flex items-center gap-1 hover:text-emerald-600 transition"
       >
         <Home className="w-3.5 h-3.5" />
         <span className="hidden sm:inline">{HOME_LABEL[locale] || HOME_LABEL.es}</span>
-      </a>
+      </Link>
 
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
@@ -53,12 +54,12 @@ export default function Breadcrumb({ items = [], locale = 'es' }) {
                 {item.label}
               </span>
             ) : (
-              <a
+              <Link
                 href={`/${locale}${item.url}`}
                 className="hover:text-emerald-600 transition truncate max-w-[200px] sm:max-w-none"
               >
                 {item.label}
-              </a>
+              </Link>
             )}
           </React.Fragment>
         );

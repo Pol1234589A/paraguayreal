@@ -129,5 +129,10 @@
         "desc": "Consejos prácticos, sanidad, bancos y seguridad ciudadana."
       }
     }
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "desc": "Lo sentimos, la página que buscas no existe o se ha movido. Explora nuestro menú o vuelve al inicio para seguir navegando.",
+    "cta": "Volver al Inicio"
   }
 }

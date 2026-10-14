@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Breadcrumb from './Breadcrumb';
@@ -34,7 +35,7 @@ export default function BlogIndexClient({ locale }) {
   });
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 select-none space-y-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Page Header */}
@@ -72,7 +73,7 @@ export default function BlogIndexClient({ locale }) {
           <button
             key={idx}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-1.5 rounded-full text-xs font-bold transition select-none cursor-pointer ${
+            className={`px-4 py-1.5 rounded-full text-xs font-bold transition cursor-pointer ${
               selectedCategory === cat
                 ? 'bg-emerald-600 text-white shadow-sm'
                 : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -94,12 +95,12 @@ export default function BlogIndexClient({ locale }) {
               <div className="space-y-4">
                 {/* Visual Header Image */}
                 <div className="h-48 w-full overflow-hidden bg-slate-100 relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={article.photo}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-900 text-[10px] font-black px-2.5 py-0.5 rounded uppercase shadow-sm">
+                  <span className="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-900 text-[11px] font-black px-2.5 py-0.5 rounded uppercase shadow-sm">
                     {article.category}
                   </span>
                 </div>
@@ -107,9 +108,9 @@ export default function BlogIndexClient({ locale }) {
                 {/* Info Text */}
                 <div className="px-5 space-y-2">
                   <h2 className="text-base sm:text-lg font-extrabold text-slate-900 font-display line-clamp-2 leading-snug group-hover:text-emerald-600 transition">
-                    <a href={`/${locale}/blog/${article.slug}`}>
+                    <Link href={`/${locale}/blog/${article.slug}`}>
                       {article.title}
-                    </a>
+                    </Link>
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-3 font-light">
                     {article.description}
@@ -119,19 +120,19 @@ export default function BlogIndexClient({ locale }) {
 
               {/* Card Footer */}
               <div className="px-5 pb-5 pt-4 border-t border-slate-50 mt-4 flex items-center justify-between">
-                <div className="flex gap-3 text-[10px] text-slate-400 font-semibold">
+                <div className="flex gap-3 text-[11px] text-slate-400 font-semibold">
                   <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{article.readTime}</span>
                   </span>
                 </div>
-                <a 
+                <Link 
                   href={`/${locale}/blog/${article.slug}`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition"
                 >
                   <span>{locale === 'en' ? "Read more" : locale === 'pt' ? "Ler mais" : "Leer artículo"}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}

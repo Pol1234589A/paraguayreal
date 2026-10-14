@@ -158,13 +158,13 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       <SchemaOrg schema={placeSchema} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Hero Banner */}
       <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden shadow-lg bg-slate-900 text-white">
-        <img
+        <img loading="lazy" decoding="async"
           src={city.photo}
           alt={city.name}
           className="absolute inset-0 w-full h-full object-cover opacity-60"
@@ -221,14 +221,14 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
         <div className="flex items-center gap-2">
           <Shield className="w-5 h-5 text-emerald-600" />
           <div>
-            <span className="text-[10px] font-bold text-slate-400 block uppercase">Nivel de Seguridad</span>
+            <span className="text-[11px] font-bold text-slate-400 block uppercase">Nivel de Seguridad</span>
             <span className="font-semibold text-slate-800">{city.safety}</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <DollarSign className="w-5 h-5 text-emerald-600" />
           <div>
-            <span className="text-[10px] font-bold text-slate-400 block uppercase">Costo Mensual Estimado</span>
+            <span className="text-[11px] font-bold text-slate-400 block uppercase">Costo Mensual Estimado</span>
             <span className="font-semibold text-slate-800">{city.cost}</span>
           </div>
         </div>

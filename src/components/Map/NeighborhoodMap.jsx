@@ -386,7 +386,7 @@ export default function NeighborhoodMap() {
 
           {/* Toggle buttons */}
           <div className="space-y-2 mb-6">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
               Filtrar mapa por:
             </span>
             <div className="flex gap-2">
@@ -417,7 +417,7 @@ export default function NeighborhoodMap() {
 
           {/* Legends */}
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">
               Leyenda
             </span>
             {viewMode === 'safety' ? (
@@ -463,20 +463,20 @@ export default function NeighborhoodMap() {
             </div>
             <div className="space-y-2 text-xs">
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block">SEGURIDAD:</span>
+                <span className="text-[11px] font-bold text-slate-400 block">SEGURIDAD:</span>
                 <span className="font-semibold text-slate-700">{selectedNeighborhood.safetyText}</span>
               </div>
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block">ALQUILER PROMEDIO:</span>
+                <span className="text-[11px] font-bold text-slate-400 block">ALQUILER PROMEDIO:</span>
                 <span className="font-semibold text-slate-700">{selectedNeighborhood.rentText}</span>
               </div>
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block">PROS:</span>
+                <span className="text-[11px] font-bold text-slate-400 block">PROS:</span>
                 <span className="text-slate-600">{selectedNeighborhood.pros}</span>
               </div>
               {selectedNeighborhood.cons && (
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 block">CONTRAS:</span>
+                  <span className="text-[11px] font-bold text-slate-400 block">CONTRAS:</span>
                   <span className="text-slate-600">{selectedNeighborhood.cons}</span>
                 </div>
               )}

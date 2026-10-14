@@ -66,13 +66,13 @@ export default function ArticlePage({ params: { slug, locale } }) {
   };
 
   return (
-    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-6">
+    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       <SchemaOrg schema={articleSchema} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Title & Metadata */}
       <div className="space-y-4">
-        <span className="bg-emerald-50 text-emerald-800 text-[10px] font-bold px-2.5 py-0.5 rounded uppercase border border-emerald-100">
+        <span className="bg-emerald-50 text-emerald-800 text-[11px] font-bold px-2.5 py-0.5 rounded uppercase border border-emerald-100">
           {article.category}
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight text-slate-900">
@@ -100,7 +100,7 @@ export default function ArticlePage({ params: { slug, locale } }) {
 
       {/* Hero Image */}
       <div className="h-64 sm:h-96 w-full rounded-2xl overflow-hidden shadow bg-slate-100">
-        <img
+        <img loading="lazy" decoding="async"
           src={article.photo}
           alt={article.title}
           className="w-full h-full object-cover"

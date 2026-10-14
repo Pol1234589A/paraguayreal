@@ -54,7 +54,7 @@ export default function PreciosPage({ params: { locale } }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <SchemaOrg schema={priceSpecificationSchema} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       

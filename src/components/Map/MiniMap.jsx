@@ -24,7 +24,8 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         style: 'mapbox://styles/mapbox/streets-v12',
         center: [lng, lat],
         zoom: 14,
-        scrollZoom: true,
+        scrollZoom: false,
+        cooperativeGestures: true,
         doubleClickZoom: true,
         dragRotate: false
       });
@@ -59,7 +60,8 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         const map = new window.google.maps.Map(mapContainerRef.current, {
           center: center,
           zoom: 14,
-          scrollwheel: true,
+          scrollwheel: false,
+          gestureHandling: 'cooperative',
           disableDoubleClickZoom: false,
           zoomControl: true,
           mapTypeControl: false,
@@ -105,7 +107,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         }
 
         const map = window.L.map(container, {
-          scrollWheelZoom: true,
+          scrollWheelZoom: false,
           doubleClickZoom: true,
           zoomControl: true
         }).setView([lat, lng], 14);
@@ -148,14 +150,14 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
       <div className="p-3 bg-white border-b border-slate-100 flex items-center justify-between">
         <div>
           <h5 className="text-xs font-bold text-slate-800">{name}</h5>
-          {address && <p className="text-[10px] text-slate-500 truncate">{address}</p>}
+          {address && <p className="text-[11px] text-slate-500 truncate">{address}</p>}
         </div>
         {googleMapsUrl && (
           <a
             href={googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 hover:text-emerald-700 transition"
+            className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 hover:text-emerald-700 transition"
           >
             <span>Ver en Google Maps</span>
             <ExternalLink className="w-3 h-3" />
@@ -167,7 +169,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
       <div className="h-[250px] w-full relative">
         {loading && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-900/90 text-white p-4 text-center">
-            <p className="text-[10px] font-semibold animate-pulse">
+            <p className="text-[11px] font-semibold animate-pulse">
               Cargando Mini Mapa...
             </p>
           </div>

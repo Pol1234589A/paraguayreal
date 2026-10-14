@@ -65,7 +65,7 @@ export default function LegalPage({ params: { locale } }) {
   const data = content[locale] || content.es;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 select-none space-y-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
       <Breadcrumb items={breadcrumbs} locale={locale} />
       
       <div className="space-y-4 border-b border-slate-100 pb-6">

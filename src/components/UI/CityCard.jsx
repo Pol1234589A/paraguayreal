@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { Star, Shield, ArrowRight, DollarSign } from 'lucide-react';
 
@@ -8,7 +9,7 @@ export default function CityCard({ city, locale = 'es' }) {
     <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col group h-full">
       {/* City Photo */}
       <div className="relative h-48 w-full overflow-hidden bg-slate-100 shrink-0">
-        <img
+        <img loading="lazy" decoding="async"
           src={photo}
           alt={name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -31,14 +32,14 @@ export default function CityCard({ city, locale = 'es' }) {
             <div className="flex items-center gap-1.5 text-slate-700">
               <Shield className="w-4 h-4 text-emerald-600" />
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block uppercase">Seguridad</span>
+                <span className="text-[11px] font-bold text-slate-400 block uppercase">Seguridad</span>
                 <span className="font-semibold">{safety}</span>
               </div>
             </div>
             <div className="flex items-center gap-1.5 text-slate-700">
               <DollarSign className="w-4 h-4 text-emerald-600" />
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block uppercase">Costo</span>
+                <span className="text-[11px] font-bold text-slate-400 block uppercase">Costo</span>
                 <span className="font-semibold">{cost}</span>
               </div>
             </div>
@@ -48,7 +49,7 @@ export default function CityCard({ city, locale = 'es' }) {
         {/* Pros summary */}
         {pros.length > 0 && (
           <div className="space-y-1">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Destacados:</span>
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Destacados:</span>
             <ul className="text-xs text-slate-600 space-y-1 list-disc pl-4">
               {pros.slice(0, 2).map((pro, index) => (
                 <li key={index} className="truncate">{pro}</li>
@@ -59,13 +60,13 @@ export default function CityCard({ city, locale = 'es' }) {
 
         {/* Action Link */}
         <div className="pt-2">
-          <a
+          <Link
             href={`/${locale}/ciudades/${slug}`}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 group-hover:text-emerald-700 transition"
           >
             <span>Explorar {name}</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -95,14 +95,14 @@ export default function TourismClient({ placesFeatures, locale }) {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Header section */}
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <UpdatedBadge />
-          <span className="bg-amber-100 text-amber-900 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
+          <span className="bg-amber-100 text-amber-900 border border-amber-200 text-[11px] font-bold px-2 py-0.5 rounded-full uppercase">
             Guía Oficial
           </span>
         </div>
@@ -181,12 +181,12 @@ export default function TourismClient({ placesFeatures, locale }) {
                   className="bg-white border border-slate-100/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div className="relative h-44 w-full bg-slate-100 overflow-hidden">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={p.photo || 'https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500'}
                       alt={p.name}
                       className="w-full h-full object-cover"
                     />
-                    <span className="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase leading-none shadow-sm">
+                    <span className="absolute top-3 right-3 bg-emerald-500 text-white text-[11px] font-black px-2 py-0.5 rounded uppercase leading-none shadow-sm">
                       {p.city === 'interior' ? 'Interior' : p.city}
                     </span>
                   </div>
@@ -195,7 +195,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                     <div className="space-y-2">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-                        <span className="text-[10px] font-extrabold text-slate-400 block uppercase tracking-wide">
+                        <span className="text-[11px] font-extrabold text-slate-400 block uppercase tracking-wide">
                           {p.address}
                         </span>
                       </div>
@@ -216,7 +216,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                           <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
                           <span className="font-bold text-slate-700">{p.rating || '4.5'}</span>
                         </div>
-                        <span className="text-[10px] font-semibold text-slate-500 block truncate max-w-[150px]">
+                        <span className="text-[11px] font-semibold text-slate-500 block truncate max-w-[150px]">
                           🕒 {p.hours || 'Acceso libre'}
                         </span>
                       </div>
@@ -226,7 +226,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                         {(p.tags || []).slice(0, 3).map((tag, idx) => (
                           <span
                             key={idx}
-                            className="bg-slate-50 text-slate-500 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase"
+                            className="bg-slate-50 text-slate-500 text-[11px] font-bold px-1.5 py-0.5 rounded uppercase"
                           >
                             {tag}
                           </span>

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, MapPin, BookOpen, X } from 'lucide-react';
 import placesGeoJSON from '../../../data/places.json';
@@ -17,6 +19,7 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
   const [results, setResults] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
+  const router = useRouter();
 
   // Close recommendations on outside click
   useEffect(() => {
@@ -73,9 +76,9 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       if (results.length > 0) {
-        window.location.href = `/${locale}${results[0].url}`;
+        router.push(`/${locale}${results[0].url}`);
       } else if (query.trim().length > 0) {
-        window.location.href = `/${locale}/mapa?q=${encodeURIComponent(query)}`;
+        router.push(`/${locale}/mapa?q=${encodeURIComponent(query)}`);
       }
     }
   };
@@ -94,12 +97,19 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
+          aria-label={placeholder}
+          role="combobox"
+          aria-controls="search-results"
+          aria-expanded={isOpen && results.length > 0}
+          aria-autocomplete="list"
+          onKeyUp={(e) => { if (e.key === 'Escape') setIsOpen(false); }}
           className="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all text-slate-800"
         />
         {query && (
           <button
             onClick={handleClear}
-            className="absolute right-3 top-3 text-slate-400 hover:text-slate-600 focus:outline-none"
+            aria-label="Borrar búsqueda"
+            className="absolute right-1 top-0 p-3 text-slate-400 hover:text-slate-600 focus:outline-none"
           >
             <X className="w-4 h-4" />
           </button>
@@ -108,9 +118,9 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
 
       {/* Auto-suggest results dropdown */}
       {isOpen && results.length > 0 && (
-        <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-100 z-50 max-h-80 overflow-y-auto divide-y divide-slate-50">
+        <div id="search-results" role="listbox" className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-100 z-50 max-h-80 overflow-y-auto divide-y divide-slate-50">
           {results.map((item, idx) => (
-            <a
+            <Link
               key={idx}
               href={`/${locale}${item.url}`}
               className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition group"
@@ -128,11 +138,11 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
                 <span className="block text-xs font-bold text-slate-900 truncate">
                   {item.name}
                 </span>
-                <span className="block text-[10px] text-slate-400 uppercase font-semibold">
+                <span className="block text-[11px] text-slate-400 uppercase font-semibold">
                   {item.type === 'place' ? `Lugar · ${item.category}` : "Guía / Artículo"}
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       )}

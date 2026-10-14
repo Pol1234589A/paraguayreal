@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { pageMetadata } from '../../../lib/seo';
 import { useTranslations } from 'next-intl';
@@ -306,7 +307,7 @@ export default function NegociosPage({ params: { locale } }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 pb-16 select-none">
+    <div className="min-h-screen bg-slate-50/50 pb-16">
       <SchemaOrg schema={pageSchema} />
       
       {/* Hero Banner */}
@@ -318,7 +319,7 @@ export default function NegociosPage({ params: { locale } }) {
           <Breadcrumb items={breadcrumbs} locale={locale} />
           
           <div className="space-y-3">
-            <span className="bg-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30 uppercase tracking-wider">
+            <span className="bg-emerald-500/20 text-emerald-300 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30 uppercase tracking-wider">
               {data.updated}
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-white max-w-3xl">
@@ -389,7 +390,7 @@ export default function NegociosPage({ params: { locale } }) {
         <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
             <div className="space-y-2">
-              <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase leading-none">
+              <span className="text-[11px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase leading-none">
                 {data.maquilaSubtitle}
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display flex items-center gap-2">
@@ -419,7 +420,7 @@ export default function NegociosPage({ params: { locale } }) {
               {locale === 'en' && "Many international firms manufacture or assemble parts in Paraguay to re-export to Brazil and Argentina, bypassing the massive import bureaucracies. This triangulation benefit is unmatched."}
               {locale === 'pt' && "Muitas empresas internacionais fabricam peças ou montam produtos no Paraguai para reexportar ao Brasil e Argentina, contornando a burocracia e tarifas de importação. Esta triangulação é única."}
             </p>
-            <div className="flex gap-3 pt-3 border-t border-slate-700/50 text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+            <div className="flex gap-3 pt-3 border-t border-slate-700/50 text-[11px] uppercase font-bold text-slate-400 tracking-wider">
               <div className="flex items-center gap-1">
                 <Ship className="w-3.5 h-3.5" />
                 <span>Mercosur</span>
@@ -532,17 +533,17 @@ export default function NegociosPage({ params: { locale } }) {
 
         {/* Link back to blog */}
         <div className="text-center pt-4">
-          <a
+          <Link
             href={`/${locale}/blog/cuanto-cuesta-vivir-en-paraguay-2025`}
-            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow transition select-none cursor-pointer"
+            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow transition cursor-pointer"
           >
             <span>{data.ctaBlog}</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
         {/* Disclaimer */}
-        <div className="border-t border-slate-200/80 pt-6 text-[10px] text-slate-400 text-center max-w-2xl mx-auto leading-relaxed">
+        <div className="border-t border-slate-200/80 pt-6 text-[11px] text-slate-400 text-center max-w-2xl mx-auto leading-relaxed">
           <strong>{data.warningHeader}:</strong> {locale === 'es' && "ParaguayReal no brinda asesoría financiera, impositiva ni legal oficial. Las guías son meramente informativas y se basan en testimonios y leyes vigentes recopiladas de residentes y empresarios locales. Consulta con profesionales matriculados en Paraguay."}
           {locale === 'en' && "ParaguayReal does not provide official financial, tax, or legal advice. The guides are purely informative and based on testimonies and current laws collected from local residents and entrepreneurs. Consult licensed professionals in Paraguay."}
           {locale === 'pt' && "ParaguayReal não fornece consultoria financeira, fiscal ou jurídica oficial. Os guias são meramente informativos e baseados em depoimentos e leis vigentes coletados de residentes e empresários locais. Consulte profissionais licenciados no Paraguai."}

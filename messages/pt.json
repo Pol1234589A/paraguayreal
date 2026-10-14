@@ -129,5 +129,10 @@
         "desc": "Conselhos práticos, saúde, bancos e segurança pública."
       }
     }
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "desc": "Desculpe, a página que você procura não existe ou foi movida. Explore o menu ou volte ao início para continuar navegando.",
+    "cta": "Voltar ao Início"
   }
 }

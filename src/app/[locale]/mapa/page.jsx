@@ -10,7 +10,7 @@ const InteractiveMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="h-[calc(100vh-64px)] w-full flex flex-col items-center justify-center bg-slate-950 text-slate-100 font-semibold gap-3">
+      <div className="h-[calc(100dvh-64px)] w-full flex flex-col items-center justify-center bg-slate-950 text-slate-100 font-semibold gap-3">
         <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin" />
         <span className="text-xs text-slate-400 uppercase tracking-widest font-mono">Cargando Mapa Interactivo...</span>
       </div>
@@ -46,7 +46,7 @@ export default function MapaPage({ params: { locale }, searchParams }) {
   };
 
   return (
-    <div className="h-[calc(100vh-64px)] overflow-hidden w-full">
+    <div className="h-[calc(100dvh-64px)] overflow-hidden w-full">
       <SchemaOrg schema={mapSchema} />
       <InteractiveMap initialPlaces={placesGeoJSON.features} locale={locale} searchParams={searchParams} />
     </div>

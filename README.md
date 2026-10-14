@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ParaguayReal
 
-## Getting Started
+Guía en es/en/pt sobre vivir, invertir y viajar en Paraguay. Next.js 14 (App Router) + next-intl + Tailwind, con mapa interactivo (Mapbox, Google Maps o Leaflet como fallback).
 
-First, run the development server:
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local   # añade tus tokens de mapa
+npm install
+npm run dev                  # http://localhost:3005
+npm run build && npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variables de entorno
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Variable | Uso |
+| --- | --- |
+| `NEXT_PUBLIC_MAPBOX_TOKEN` | Motor Mapbox (prioritario). Es público: restríngelo por dominio en Mapbox. |
+| `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Motor Google Maps (si no hay token Mapbox). Restríngela por dominio. |
+| `NEXT_PUBLIC_SITE_URL` | URL base para canonical, sitemap y JSON-LD (por defecto `https://paraguayreal.com`). |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Sin ninguna clave de mapa se usa Leaflet + OpenStreetMap.
 
-## Learn More
+## Estructura
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `src/app/[locale]/…` páginas; `src/lib/seo.js` metadatos (canonical, hreflang, Open Graph) y `src/app/sitemap.js`/`robots.js`.
+- `src/lib/blogData.jsx` artículos del blog (solo en español por ahora; en/pt canonicalizan a `/es`).
+- `data/places.json` lugares del mapa (GeoJSON); `data/prices.json` precios.
+- `messages/*.json` textos de interfaz.

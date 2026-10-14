@@ -24,6 +24,6 @@ Sin ninguna clave de mapa se usa Leaflet + OpenStreetMap.
 ## Estructura
 
 - `src/app/[locale]/…` páginas; `src/lib/seo.js` metadatos (canonical, hreflang, Open Graph) y `src/app/sitemap.js`/`robots.js`.
-- `src/lib/blogData.jsx` artículos del blog (solo en español por ahora; en/pt canonicalizan a `/es`).
+- `content/blog/<locale>/*.mdx` artículos del blog (frontmatter + MDX; hoy solo `es`; si falta la traducción se sirve el español con canonical a `/es`). Lector en `src/lib/blog.js`.
 - `data/places.json` lugares del mapa (GeoJSON); `data/prices.json` precios.
 - `messages/*.json` textos de interfaz.

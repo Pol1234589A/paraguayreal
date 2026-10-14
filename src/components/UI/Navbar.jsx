@@ -104,7 +104,7 @@ export default function Navbar({ locale = 'es' }) {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          aria-label={isMobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={isMobileOpen ? t('Common.closeMenu') : t('Common.openMenu')}
           aria-expanded={isMobileOpen}
           aria-controls="mobile-menu"
           className="lg:hidden p-3 text-slate-600 hover:bg-slate-50 rounded-lg focus:outline-none transition"
@@ -137,7 +137,7 @@ export default function Navbar({ locale = 'es' }) {
           <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
             <span className="flex items-center gap-1.5 text-sm font-bold text-slate-400">
               <Globe className="w-4 h-4" />
-              <span>Idioma</span>
+              <span>{t('Common.language')}</span>
             </span>
             <div className="flex gap-4 text-sm font-black text-slate-600">
               <button

@@ -134,5 +134,17 @@
     "title": "Página não encontrada",
     "desc": "Desculpe, a página que você procura não existe ou foi movida. Explore o menu ou volte ao início para continuar navegando.",
     "cta": "Voltar ao Início"
+  },
+  "Common": {
+    "updated": "Atualizado",
+    "place": "Local",
+    "guide": "Guia / Artigo",
+    "viewOnGoogleMaps": "Ver no Google Maps",
+    "loadingMap": "Carregando mapa…",
+    "language": "Idioma",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "clearSearch": "Limpar busca",
+    "all": "Todos"
   }
 }

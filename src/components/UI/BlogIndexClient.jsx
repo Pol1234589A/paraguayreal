@@ -10,7 +10,7 @@ import { Search, Calendar, User, Clock, ArrowRight, BookOpen } from 'lucide-reac
 export default function BlogIndexClient({ locale, articles }) {
   const t = useTranslations();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const breadcrumbs = [
     { label: t("Navigation.blog") || "Blog", url: "/blog" }
@@ -18,13 +18,13 @@ export default function BlogIndexClient({ locale, articles }) {
 
 
   // Extract unique categories for filter tabs
-  const categories = ['Todos', ...new Set(articles.map(art => art.category))];
+  const categories = ['all', ...new Set(articles.map(art => art.category))];
 
   // Filter logic
   const filteredArticles = articles.filter(art => {
     const matchesSearch = art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           art.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'Todos' || art.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || art.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -73,7 +73,7 @@ export default function BlogIndexClient({ locale, articles }) {
                 : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
             }`}
           >
-            {cat}
+            {cat === 'all' ? t('Common.all') : cat}
           </button>
         ))}
       </div>

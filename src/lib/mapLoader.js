@@ -75,6 +75,8 @@ export function loadLeafletScript(callback) {
     link.id = 'leaflet-css';
     link.rel = 'stylesheet';
     link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    link.crossOrigin = '';
     document.head.appendChild(link);
   }
 
@@ -87,6 +89,8 @@ export function loadLeafletScript(callback) {
   const script = document.createElement('script');
   script.id = 'leaflet-script';
   script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+  script.crossOrigin = '';
   script.async = true;
 
   script.addEventListener('load', () => {
@@ -98,4 +102,24 @@ export function loadLeafletScript(callback) {
   });
 
   document.body.appendChild(script);
+}
+
+/** Escape text for safe interpolation into HTML strings (popups). */
+export function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/** Only allow http(s) URLs in popup links. */
+export function safeUrl(value) {
+  try {
+    const u = new URL(value);
+    return u.protocol === 'https:' || u.protocol === 'http:' ? escapeHtml(u.href) : '';
+  } catch {
+    return '';
+  }
 }

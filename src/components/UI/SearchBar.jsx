@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Search, MapPin, BookOpen, X } from 'lucide-react';
 import placesGeoJSON from '../../../data/places.json';
@@ -19,6 +20,7 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
   const router = useRouter();
+  const tc = useTranslations('Common');
 
   // Close recommendations on outside click
   useEffect(() => {
@@ -103,7 +105,7 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
         {query && (
           <button
             onClick={handleClear}
-            aria-label="Borrar búsqueda"
+            aria-label={tc('clearSearch')}
             className="absolute right-1 top-0 p-3 text-slate-400 hover:text-slate-600 focus:outline-none"
           >
             <X className="w-4 h-4" />
@@ -134,7 +136,7 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
                   {item.name}
                 </span>
                 <span className="block text-[11px] text-slate-400 uppercase font-semibold">
-                  {item.type === 'place' ? `Lugar · ${item.category}` : "Guía / Artículo"}
+                  {item.type === 'place' ? `${tc('place')} · ${item.category}` : tc('guide')}
                 </span>
               </div>
             </Link>

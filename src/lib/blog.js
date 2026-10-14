@@ -1,8 +1,15 @@
 import 'server-only';
 import fs from 'node:fs';
 import path from 'node:path';
-import matter from 'gray-matter';
+import { parse as parseYaml } from 'yaml';
 import { DEFAULT_LOCALE, LOCALES } from './seo';
+
+/** Split `---` YAML frontmatter from the MDX body. */
+function parseFrontmatter(raw) {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!match) return { data: {}, content: raw };
+  return { data: parseYaml(match[1]) || {}, content: match[2] };
+}
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
@@ -26,7 +33,7 @@ export function getPost(slug, locale = DEFAULT_LOCALE) {
   const actual = fs.existsSync(fileFor(locale, slug)) ? locale : DEFAULT_LOCALE;
   const file = fileFor(actual, slug);
   if (!fs.existsSync(file)) return null;
-  const { data, content } = matter(fs.readFileSync(file, 'utf8'));
+  const { data, content } = parseFrontmatter(fs.readFileSync(file, 'utf8'));
   return {
     slug,
     locale: actual,

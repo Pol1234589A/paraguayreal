@@ -2,28 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
-export default function RelatedArticles({ category = "residencia", currentSlug = "", locale = "es" }) {
-  // Demo articles to suggest
-  const articles = [
-    {
-      title: "Cómo obtener la residencia permanente en Paraguay en 2026",
-      slug: "como-obtener-residencia-permanente-paraguay",
-      category: "residencia",
-      photo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60"
-    },
-    {
-      title: "Impuestos en Paraguay: Guía completa para extranjeros y freelancers",
-      slug: "impuestos-extranjeros-paraguay",
-      category: "negocios",
-      photo: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=500&auto=format&fit=crop&q=60"
-    },
-    {
-      title: "Mejores barrios para vivir en Asunción: Seguridad y precios",
-      slug: "mejores-barrios-asuncion",
-      category: "vivir",
-      photo: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&auto=format&fit=crop&q=60"
-    }
-  ].filter(art => art.slug !== currentSlug);
+export default function RelatedArticles({ posts = [], locale = "es" }) {
+  const articles = posts;
+
+  if (articles.length === 0) return null;
 
   return (
     <div className="space-y-4">
@@ -34,7 +16,7 @@ export default function RelatedArticles({ category = "residencia", currentSlug =
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {articles.slice(0, 3).map((art, index) => (
           <Link
-            key={index}
+            key={art.slug}
             href={`/${locale}/blog/${art.slug}`}
             className="group block bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition duration-200"
           >
@@ -42,7 +24,7 @@ export default function RelatedArticles({ category = "residencia", currentSlug =
               <img loading="lazy" decoding="async"
                 src={art.photo}
                 alt={art.title}
-                className="w-full h-full object-cover group-hover:scale-103 transition duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
               />
             </div>
             <div className="p-4 space-y-2">

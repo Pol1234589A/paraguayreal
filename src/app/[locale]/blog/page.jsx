@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { setRequestLocale } from 'next-intl/server';
 import BlogIndexClient from '../../../components/UI/BlogIndexClient';
 import { pageMetadata } from '../../../lib/seo';
+import { getAllPosts } from '../../../lib/blog';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -23,8 +24,8 @@ export async function generateMetadata({ params }) {
   });
 }
 
-export default function BlogIndexPage({ params }) {
-  const { locale } = use(params);
+export default async function BlogIndexPage({ params }) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  return <BlogIndexClient locale={locale} />;
+  return <BlogIndexClient locale={locale} articles={getAllPosts(locale)} />;
 }

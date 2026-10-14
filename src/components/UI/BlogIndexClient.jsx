@@ -5,10 +5,9 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Breadcrumb from './Breadcrumb';
 import UpdatedBadge from './UpdatedBadge';
-import { ARTICLES_DB } from '../../lib/blogData';
 import { Search, Calendar, User, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
-export default function BlogIndexClient({ locale }) {
+export default function BlogIndexClient({ locale, articles }) {
   const t = useTranslations();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
@@ -17,11 +16,6 @@ export default function BlogIndexClient({ locale }) {
     { label: t("Navigation.blog") || "Blog", url: "/blog" }
   ];
 
-  // Convert ARTICLES_DB object to array for array operations
-  const articles = Object.entries(ARTICLES_DB).map(([slug, data]) => ({
-    slug,
-    ...data
-  }));
 
   // Extract unique categories for filter tabs
   const categories = ['Todos', ...new Set(articles.map(art => art.category))];

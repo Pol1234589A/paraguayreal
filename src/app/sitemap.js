@@ -1,4 +1,4 @@
-import { ARTICLES_DB } from '../lib/blogData';
+import { getAllSlugs, getPost, postLocales } from '../lib/blog';
 import { SITE_URL, LOCALES } from '../lib/seo';
 
 const STATIC_PATHS = ['', '/mapa', '/precios', '/vivir/barrios', '/turismo', '/negocios', '/blog', '/legal', '/privacidad', '/cookies'];
@@ -27,8 +27,19 @@ export default function sitemap() {
       })
     ),
     ...CITIES.flatMap((city) => entry(`/ciudades/${city}`, { priority: 0.7, changeFrequency: 'weekly', esOnly: true })),
-    ...Object.entries(ARTICLES_DB).flatMap(([slug, article]) =>
-      entry(`/blog/${slug}`, { priority: 0.6, changeFrequency: 'monthly', lastModified: article.dateIso, esOnly: true })
-    )
+    ...getAllSlugs().flatMap((slug) => {
+      const lastModified = getPost(slug).date;
+      const locales = postLocales(slug);
+      // Only list locales that have their own translation; the rest canonicalise to es
+      return locales.flatMap((locale) => ({
+        url: `${SITE_URL}/${locale}/blog/${slug}`,
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        ...(locales.length > 1 && {
+          alternates: { languages: Object.fromEntries(locales.map((l) => [l, `${SITE_URL}/${l}/blog/${slug}`])) }
+        })
+      }));
+    })
   ];
 }

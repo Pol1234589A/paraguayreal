@@ -1,23 +1,26 @@
-import React, { use } from 'react';
+import React from 'react';
 import { setRequestLocale } from 'next-intl/server';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 import RelatedArticles from '../../../../components/UI/RelatedArticles';
 import SchemaOrg from '../../../../components/SEO/SchemaOrg';
 import { Calendar, User, Clock } from 'lucide-react';
-import { ARTICLES_DB } from '../../../../lib/blogData';
+import { compileMDX } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
+import { getPost, getAllPosts, getAllSlugs, postLocales } from '../../../../lib/blog';
+import LazyMiniMap from '../../../../components/Map/LazyMiniMap';
 import { notFound } from 'next/navigation';
 import { pageMetadata, LOCALES, SITE_URL } from '../../../../lib/seo';
 
 export function generateStaticParams() {
   return LOCALES.flatMap((locale) =>
-    Object.keys(ARTICLES_DB).map((slug) => ({ locale, slug }))
+    getAllSlugs().map((slug) => ({ locale, slug }))
   );
 }
 
 export async function generateMetadata({ params }) {
   const { slug, locale } = await params;
-  const article = ARTICLES_DB[slug];
+  const article = getPost(slug, locale);
   if (!article) return {};
 
   return pageMetadata({
@@ -27,17 +30,24 @@ export async function generateMetadata({ params }) {
     description: article.description,
     image: article.photo,
     type: 'article',
-    onlyDefaultLocale: true,
-    extra: { publishedTime: article.dateIso, authors: [article.author] }
+    onlyDefaultLocale: !article.translated,
+    locales: postLocales(slug),
+    extra: { publishedTime: article.date, authors: [article.author] }
   });
 }
 
-export default function ArticlePage({ params }) {
-  const { slug, locale } = use(params);
+export default async function ArticlePage({ params }) {
+  const { slug, locale } = await params;
   setRequestLocale(locale);
-  const article = ARTICLES_DB[slug];
+  const article = getPost(slug, locale);
 
   if (!article) notFound();
+  const { content } = await compileMDX({
+    source: article.content,
+    components: { MiniMap: LazyMiniMap },
+    options: { mdxOptions: { remarkPlugins: [remarkGfm] } }
+  });
+  const related = getAllPosts(locale).filter((p) => p.slug !== slug).slice(0, 3);
 
   const breadcrumbs = [
     { label: "Blog", url: "/blog" },
@@ -51,10 +61,10 @@ export default function ArticlePage({ params }) {
     "headline": article.title,
     "description": article.description,
     "image": article.photo,
-    "datePublished": article.dateIso,
-    "dateModified": article.dateIso,
+    "datePublished": article.date,
+    "dateModified": article.date,
     "mainEntityOfPage": `${SITE_URL}/${locale}/blog/${slug}`,
-    "inLanguage": locale,
+    "inLanguage": article.locale,
     "author": {
       "@type": "Person",
       "name": article.author
@@ -90,7 +100,7 @@ export default function ArticlePage({ params }) {
           </div>
           <div className="flex items-center gap-1.5">
             <Calendar className="w-4 h-4 text-slate-300" />
-            <span>{article.date}</span>
+            <span>{new Date(article.date).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Clock className="w-4 h-4 text-slate-300" />
@@ -113,12 +123,12 @@ export default function ArticlePage({ params }) {
 
       {/* Content body */}
       <div className="prose prose-slate max-w-none prose-sm sm:prose-base pt-4">
-        {article.content}
+        {content}
       </div>
 
       {/* Related section */}
       <section className="border-t border-slate-200/80 pt-10 mt-12">
-        <RelatedArticles category={article.category.toLowerCase()} currentSlug={slug} locale={locale} />
+        <RelatedArticles posts={related} locale={locale} />
       </section>
     </article>
   );

@@ -26,7 +26,7 @@ export default function sitemap() {
         changeFrequency: path === '' ? 'daily' : 'weekly'
       })
     ),
-    ...CITIES.flatMap((city) => entry(`/ciudades/${city}`, { priority: 0.7, changeFrequency: 'weekly', esOnly: true })),
+    ...CITIES.flatMap((city) => entry(`/ciudades/${city}`, { priority: 0.7, changeFrequency: 'weekly' })),
     ...getAllSlugs().flatMap((slug) => {
       const lastModified = getPost(slug).date;
       const locales = postLocales(slug);

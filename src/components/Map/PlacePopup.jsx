@@ -3,7 +3,7 @@ import GoogleMapsButton from './GoogleMapsButton';
 import DirectionsButton from './DirectionsButton';
 import { Star, Clock, MapPin } from 'lucide-react';
 
-export default function PlacePopup({ place }) {
+export default function PlacePopup({ place, labels = {} }) {
   if (!place) return null;
 
   return (
@@ -47,8 +47,8 @@ export default function PlacePopup({ place }) {
 
         <div className="flex flex-col gap-1.5 pt-2 border-t border-slate-100">
           <div className="flex gap-1.5">
-            <DirectionsButton url={place.googleMapsDirections} label="Cómo llegar" />
-            <GoogleMapsButton url={place.googleMapsUrl} label="Google Maps" variant="outline" />
+            <DirectionsButton url={place.googleMapsDirections} label={labels.directions || "Cómo llegar"} />
+            <GoogleMapsButton url={place.googleMapsUrl} label={labels.googleMaps || "Google Maps"} variant="outline" />
           </div>
           {place.website && (
             <a
@@ -57,7 +57,7 @@ export default function PlacePopup({ place }) {
               rel="noopener noreferrer"
               className="w-full mt-1 text-center text-emerald-600 hover:text-emerald-700 font-bold border border-emerald-100 hover:border-emerald-200 bg-emerald-50 hover:bg-emerald-100/50 rounded-lg py-1.5 px-3 transition text-[11px] flex items-center justify-center gap-1 shadow-xs"
             >
-              <span>Ver Guía Geografía Sagrada</span>
+              <span>{labels.viewGuide || 'Ver Guía Geografía Sagrada'}</span>
             </a>
           )}
         </div>

@@ -7,6 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import MapSidebar from './MapSidebar';
 import PlacePopup from './PlacePopup';
 import { Compass, Menu, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
 
 const CATEGORIES = {
@@ -21,7 +22,13 @@ const CATEGORIES = {
   transporte: { label: "Transporte", color: "#4b5563", icon: "🚌" }
 };
 
-export default function InteractiveMap({ initialPlaces = [], t, filterCity, searchParams }) {
+export default function InteractiveMap({ initialPlaces = [], filterCity, searchParams }) {
+  const t = useTranslations();
+  const popupLabels = {
+    directions: t('Map.directions'),
+    googleMaps: t('Map.googleMaps'),
+    viewGuide: t('Map.viewGuide')
+  };
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
@@ -274,7 +281,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
         const popup = new mapboxgl.Popup({ offset: 25, closeButton: true, maxWidth: '280px' })
           .setDOMContent(popupNode);
@@ -330,7 +337,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
         const infowindow = new window.google.maps.InfoWindow({
           content: popupNode,
@@ -408,7 +415,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
         const marker = window.L.marker([coordinates[1], coordinates[0]], { icon: myIcon })
           .addTo(mapRef.current)
@@ -543,7 +550,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
           selectedCategories={selectedCategories}
           toggleCategory={toggleCategory}
           onPlaceClick={handlePlaceClick}
-          categories={CATEGORIES}
+          categories={Object.fromEntries(Object.entries(CATEGORIES).map(([k, v]) => [k, { ...v, label: t(`Map.layers.${k}`) }]))}
           onShareLocation={handleShareLocation}
           t={t}
         />
@@ -572,7 +579,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
             <div className="max-w-md space-y-4">
               <Compass className="w-12 h-12 text-amber-500 mx-auto animate-spin" />
               <p className="text-sm font-semibold animate-pulse">
-                Cargando mapa interactivo de Paraguay...
+                {t('Map.loadingInteractive')}
               </p>
             </div>
           </div>

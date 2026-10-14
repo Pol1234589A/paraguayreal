@@ -80,7 +80,7 @@ export default function MapSidebar({
       <div className="flex-1 overflow-y-auto division-y divide-slate-100">
         {places.length === 0 ? (
           <div className="p-8 text-center text-sm text-slate-400">
-            No se encontraron lugares en esta zona.
+            {translate('Map.noPlaces', 'No se encontraron lugares en esta zona.')}
           </div>
         ) : (
           places.map((place) => (

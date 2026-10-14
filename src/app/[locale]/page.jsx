@@ -7,7 +7,7 @@ import SearchBar from '../../components/UI/SearchBar';
 
 import CityMap from '../../components/Map/LazyCityMap';
 import SchemaOrg from '../../components/SEO/SchemaOrg';
-import placesGeoJSON from '../../../data/places.json';
+import { getPlaces } from '../../lib/places';
 import { Map, DollarSign, UserCheck, Compass, Briefcase, Building, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export async function generateMetadata({ params }) {
@@ -212,7 +212,7 @@ export default function HomePage({ params }) {
           </p>
         </div>
 
-        <CityMap cityKey="asuncion" places={placesGeoJSON.features} locale={locale} />
+        <CityMap cityKey="asuncion" places={getPlaces(locale)} locale={locale} />
       </section>
     </div>
   );

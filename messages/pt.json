@@ -44,7 +44,16 @@
     "noToken": "A variável de ambiente NEXT_PUBLIC_MAPBOX_TOKEN não foi configurada. Crie um arquivo .env.local na raiz com seu token do Mapbox.",
     "shareLocation": "Compartilhar Localização",
     "locationCopied": "Link copiado para a área de transferência com a localização atual!",
-    "myLocation": "Minha localização"
+    "myLocation": "Minha localização",
+    "noPlaces": "Nenhum lugar encontrado nesta área.",
+    "directions": "Como chegar",
+    "googleMaps": "Google Maps",
+    "viewGuide": "Ver Guia de Geografia Sagrada",
+    "loadingInteractive": "Carregando mapa interativo do Paraguai...",
+    "fullMap": "Ver mapa completo",
+    "touristPlaces": "lugares turísticos",
+    "placesIn": "lugares em",
+    "loading": "Carregando mapa..."
   },
   "Prices": {
     "title": "Preços e Custo de Vida no Paraguai",

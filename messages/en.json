@@ -44,7 +44,16 @@
     "noToken": "The environmental variable NEXT_PUBLIC_MAPBOX_TOKEN is not set. Please create a .env.local file in the root with your Mapbox token.",
     "shareLocation": "Share Location",
     "locationCopied": "Link copied to clipboard with current map view!",
-    "myLocation": "My location"
+    "myLocation": "My location",
+    "noPlaces": "No places found in this area.",
+    "directions": "Directions",
+    "googleMaps": "Google Maps",
+    "viewGuide": "View Sacred Geography Guide",
+    "loadingInteractive": "Loading interactive map of Paraguay...",
+    "fullMap": "View full map",
+    "touristPlaces": "tourist places",
+    "placesIn": "places in",
+    "loading": "Loading map..."
   },
   "Prices": {
     "title": "Prices and Cost of Living in Paraguay",

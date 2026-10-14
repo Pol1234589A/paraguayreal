@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '../../../lib/seo';
 import SchemaOrg from '../../../components/SEO/SchemaOrg';
 import TourismClient from '../../../components/UI/TourismClient';
-import placesGeoJSON from '../../../../data/places.json';
+import { getPlaces } from '../../../lib/places';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -33,7 +33,7 @@ export default function TurismoPage({ params }) {
   const siteUrl = 'https://paraguayreal.com';
   
   // Filter for tourism spots to build structured ItemList schema for SEO crawlers
-  const tourismPlaces = placesGeoJSON.features.filter(
+  const tourismPlaces = getPlaces(locale).filter(
     (place) => place.properties.category === 'turismo'
   );
 
@@ -74,7 +74,7 @@ export default function TurismoPage({ params }) {
     <div className="min-h-screen bg-slate-50">
       <SchemaOrg schema={tourismSchema} />
       <SchemaOrg schema={websiteSchema} />
-      <TourismClient placesFeatures={placesGeoJSON.features} locale={locale} />
+      <TourismClient placesFeatures={getPlaces(locale)} locale={locale} />
     </div>
   );
 }

@@ -44,7 +44,16 @@
     "noToken": "No se ha configurado la variable de entorno NEXT_PUBLIC_MAPBOX_TOKEN. Por favor, crea un archivo .env.local en la raíz con tu token de Mapbox.",
     "shareLocation": "Compartir Ubicación",
     "locationCopied": "¡Enlace copiado al portapapeles con la ubicación actual!",
-    "myLocation": "Mi ubicación"
+    "myLocation": "Mi ubicación",
+    "noPlaces": "No se encontraron lugares en esta zona.",
+    "directions": "Cómo llegar",
+    "googleMaps": "Google Maps",
+    "viewGuide": "Ver Guía Geografía Sagrada",
+    "loadingInteractive": "Cargando mapa interactivo de Paraguay...",
+    "fullMap": "Ver mapa completo",
+    "touristPlaces": "lugares turísticos",
+    "placesIn": "lugares en",
+    "loading": "Cargando mapa..."
   },
   "Prices": {
     "title": "Precios y Costo de Vida en Paraguay",

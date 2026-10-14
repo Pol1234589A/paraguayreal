@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { useTranslations } from 'next-intl';
 import PlacePopup from './PlacePopup';
 import { Eye, Compass } from 'lucide-react';
 import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
@@ -33,6 +34,12 @@ const CATEGORY_EMOJIS = {
 };
 
 export default function CityMap({ cityKey, places = [], locale = 'es' }) {
+  const t = useTranslations();
+  const popupLabels = {
+    directions: t('Map.directions'),
+    googleMaps: t('Map.googleMaps'),
+    viewGuide: t('Map.viewGuide')
+  };
   const mapContainerRef = useRef(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const activeInfoWindowRef = useRef(null);
@@ -102,7 +109,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
         const popup = new mapboxgl.Popup({ offset: 25, maxWidth: '280px' })
           .setDOMContent(popupNode);
@@ -173,7 +180,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
 
           const popupNode = document.createElement('div');
           const root = createRoot(popupNode);
-          root.render(<PlacePopup place={place.properties} />);
+          root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
           const infowindow = new window.google.maps.InfoWindow({
             content: popupNode,
@@ -276,7 +283,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
 
           const popupNode = document.createElement('div');
           const root = createRoot(popupNode);
-          root.render(<PlacePopup place={place.properties} />);
+          root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
           const marker = window.L.marker([coords[1], coords[0]], { icon: myIcon })
             .addTo(map)
@@ -318,7 +325,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
       <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-xs shadow-sm px-3 py-1.5 rounded-lg flex items-center gap-2 border border-slate-100">
         <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping" />
         <span className="text-xs font-bold text-slate-800">
-          {cityPlaces.length} {cityKey === 'all' ? 'lugares turísticos' : `lugares en ${cityKey.toUpperCase()}`}
+          {cityPlaces.length} {cityKey === 'all' ? t('Map.touristPlaces') : `${t('Map.placesIn')} ${cityKey.toUpperCase()}`}
         </span>
       </div>
 
@@ -329,7 +336,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
           className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-lg shadow-sm transition"
         >
           <Eye className="w-3.5 h-3.5" />
-          <span>Ver mapa completo</span>
+          <span>{t('Map.fullMap')}</span>
         </a>
       </div>
 
@@ -340,7 +347,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
             <div className="max-w-md space-y-2">
               <Compass className="w-10 h-10 text-amber-500 mx-auto animate-spin" />
               <p className="text-xs font-semibold animate-pulse">
-                Cargando mapa...
+                {t('Map.loading')}
               </p>
             </div>
           </div>

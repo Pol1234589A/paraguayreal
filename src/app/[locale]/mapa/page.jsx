@@ -2,7 +2,7 @@ import React, { use } from 'react';
 import { setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '../../../lib/seo';
 import SchemaOrg from '../../../components/SEO/SchemaOrg';
-import placesGeoJSON from '../../../../data/places.json';
+import { getPlaces } from '../../../lib/places';
 
 import InteractiveMap from '../../../components/Map/LazyInteractiveMap';
 
@@ -40,7 +40,7 @@ export default function MapaPage({ params, searchParams }) {
   return (
     <div className="h-[calc(100dvh-64px)] overflow-hidden w-full">
       <SchemaOrg schema={mapSchema} />
-      <InteractiveMap initialPlaces={placesGeoJSON.features} locale={locale} searchParams={sp} />
+      <InteractiveMap initialPlaces={getPlaces(locale)} locale={locale} searchParams={sp} />
     </div>
   );
 }

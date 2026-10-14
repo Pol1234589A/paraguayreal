@@ -5,14 +5,14 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Search, MapPin, BookOpen, X } from 'lucide-react';
-import placesGeoJSON from '../../../data/places.json';
+import { getPlaces } from '../../lib/places';
 
 // Static site sections/articles to search through
 const STATIC_GUIDES = [
-  { id: "coste-de-vida", name: "Costo de Vida en Paraguay", url: "/precios", type: "guide" },
-  { id: "barrios-asuncion", name: "Seguridad y Barrios en Asunción", url: "/vivir/barrios", type: "guide" },
-  { id: "residencia-permanente", name: "Guía de Residencia Permanente", url: "/blog/como-obtener-residencia-permanente-paraguay", type: "guide" },
-  { id: "negocios-inversion", name: "Hacer Negocios e Impuestos", url: "/negocios", type: "guide" }
+  { id: "coste-de-vida", url: "/precios", type: "guide", names: { es: "Costo de Vida en Paraguay", en: "Cost of Living in Paraguay", pt: "Custo de Vida no Paraguai" } },
+  { id: "barrios-asuncion", url: "/vivir/barrios", type: "guide", names: { es: "Seguridad y Barrios en Asunción", en: "Safety and Neighborhoods in Asunción", pt: "Segurança e Bairros em Assunção" } },
+  { id: "residencia-permanente", url: "/blog/como-obtener-residencia-permanente-paraguay", type: "guide", names: { es: "Guía de Residencia Permanente", en: "Permanent Residency Guide", pt: "Guia de Residência Permanente" } },
+  { id: "negocios-inversion", url: "/negocios", type: "guide", names: { es: "Hacer Negocios e Impuestos", en: "Doing Business and Taxes", pt: "Fazer Negócios e Impostos" } }
 ];
 
 export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) {
@@ -40,7 +40,7 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
     const cleanQuery = query.toLowerCase();
 
     // 1. Search in GeoJSON places
-    const matchedPlaces = placesGeoJSON.features
+    const matchedPlaces = getPlaces(locale)
       .filter((place) =>
         place.properties.name.toLowerCase().includes(cleanQuery) ||
         place.properties.description.toLowerCase().includes(cleanQuery) ||
@@ -58,12 +58,13 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
       }));
 
     // 2. Search in guides
-    const matchedGuides = STATIC_GUIDES.filter((guide) =>
-      guide.name.toLowerCase().includes(cleanQuery)
-    ).slice(0, 3);
+    const matchedGuides = STATIC_GUIDES
+      .map((guide) => ({ ...guide, name: guide.names[locale] || guide.names.es }))
+      .filter((guide) => guide.name.toLowerCase().includes(cleanQuery))
+      .slice(0, 3);
 
     return [...matchedPlaces, ...matchedGuides];
-  }, [query]);
+  }, [query, locale]);
 
   const handleClear = () => {
     setQuery('');

@@ -36,7 +36,7 @@ export default function TourismClient({ placesFeatures, locale }) {
     return allTourismPlaces.filter((place) => {
       // 1. Tab filter
       const city = place.properties.city;
-      const tags = place.properties.tags || [];
+      const tags = place.properties.tagsOriginal || place.properties.tags || [];
       const id = place.properties.id || '';
 
       if (activeTab === 'asuncion' && city !== 'asuncion') return false;

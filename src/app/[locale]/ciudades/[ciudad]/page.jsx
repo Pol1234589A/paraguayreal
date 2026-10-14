@@ -5,7 +5,7 @@ import { pageMetadata, LOCALES } from '../../../../lib/seo';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 import SchemaOrg from '../../../../components/SEO/SchemaOrg';
-import placesGeoJSON from '../../../../../data/places.json';
+import { getPlaces } from '../../../../lib/places';
 import { Check, X, Shield, DollarSign, MapPin, Briefcase } from 'lucide-react';
 
 import CityMap from '../../../../components/Map/LazyCityMap';
@@ -334,7 +334,7 @@ export default function CiudadPage({ params }) {
         <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
           {L.placesDesc(city.name)}
         </p>
-        <CityMap cityKey={ciudad} places={placesGeoJSON.features} locale={locale} />
+        <CityMap cityKey={ciudad} places={getPlaces(locale)} locale={locale} />
       </section>
     </div>
   );

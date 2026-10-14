@@ -8,7 +8,7 @@ Guía en es/en/pt sobre vivir, invertir y viajar en Paraguay. Next.js 14 (App Ro
 cp .env.example .env.local   # añade tus tokens de mapa
 npm install
 npm run dev                  # http://localhost:3005
-npm run build && npm run lint
+npm run build && npm run lint && npm test   # test: contenido, i18n y datos de mapa
 ```
 
 ## Variables de entorno

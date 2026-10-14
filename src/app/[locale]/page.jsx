@@ -99,7 +99,7 @@ export default function HomePage({ params }) {
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         {/* Background gradient overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-950/40 via-slate-950 to-slate-950 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-emerald-950/40 via-slate-950 to-slate-950 z-0 pointer-events-none" />
         
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-tight text-white">
@@ -147,7 +147,7 @@ export default function HomePage({ params }) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Main Map Card - Spans 2 cols */}
-          <div className="md:col-span-2 bg-gradient-to-br from-emerald-800 to-slate-950 text-white p-8 rounded-3xl flex flex-col justify-between shadow-xl group min-h-[260px] relative overflow-hidden">
+          <div className="md:col-span-2 bg-linear-to-br from-emerald-800 to-slate-950 text-white p-8 rounded-3xl flex flex-col justify-between shadow-xl group min-h-[260px] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
             <div>
               <span className="bg-emerald-500 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full uppercase leading-none inline-block mb-3">
@@ -175,7 +175,7 @@ export default function HomePage({ params }) {
           {categories.map((cat, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+              className="bg-white border border-slate-100 p-6 rounded-2xl shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div className={`p-2.5 rounded-xl w-fit ${cat.bg}`}>

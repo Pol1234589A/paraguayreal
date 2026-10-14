@@ -38,7 +38,7 @@ export default function FAQAccordion({ faqs = [] }) {
         return (
           <div
             key={index}
-            className="border border-slate-200 bg-white rounded-xl overflow-hidden shadow-sm transition"
+            className="border border-slate-200 bg-white rounded-xl overflow-hidden shadow-xs transition"
           >
             <button
               onClick={() => toggleFAQ(index)}

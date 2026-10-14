@@ -53,7 +53,7 @@ export default function BarriosPage({ params }) {
       </section>
 
       {/* Additional details */}
-      <section className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+      <section className="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-4">
         <h3 className="font-extrabold text-slate-900 text-lg">Resumen de Recomendaciones</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
           <div className="space-y-2">

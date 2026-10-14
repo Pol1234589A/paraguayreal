@@ -15,7 +15,7 @@ export default function Footer({ locale = 'es' }) {
           {/* Pitch */}
           <div className="space-y-4 md:col-span-2">
             <h4 className="text-white font-extrabold text-lg flex items-center gap-2.5">
-              <div className="w-6 h-6 rounded overflow-hidden border border-slate-700 bg-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-sm overflow-hidden border border-slate-700 bg-white flex items-center justify-center">
                 <img src="/logo.png" alt="ParaguayReal Logo" className="w-full h-full object-cover scale-110" />
               </div>
               <span>ParaguayReal</span>

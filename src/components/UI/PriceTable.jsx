@@ -30,7 +30,7 @@ export default function PriceTable({ t }) {
               <h3 className="font-extrabold text-sm tracking-wide uppercase font-display">
                 {getCategoryTitle(categoryKey)}
               </h3>
-              <span className="text-[11px] bg-emerald-600 font-bold px-2 py-0.5 rounded text-emerald-50">
+              <span className="text-[11px] bg-emerald-600 font-bold px-2 py-0.5 rounded-sm text-emerald-50">
                 {t ? t("Prices.updated") : "Actualizado: Junio 2026"}
               </span>
             </div>

@@ -12,7 +12,7 @@ export default function PlacePopup({ place }) {
         <img loading="lazy" decoding="async"
           src={place.photo}
           alt={place.name}
-          className="w-full h-28 object-cover rounded-lg mb-2 shadow-sm"
+          className="w-full h-28 object-cover rounded-lg mb-2 shadow-xs"
         />
       )}
       <div className="px-1">
@@ -23,7 +23,7 @@ export default function PlacePopup({ place }) {
             <Star className="w-3 h-3 fill-amber-500 text-amber-500" />
             <span>{place.rating || 'N/A'}</span>
           </div>
-          <span className="text-[11px] bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded font-semibold capitalize">
+          <span className="text-[11px] bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded-sm font-semibold capitalize">
             {place.category}
           </span>
         </div>
@@ -55,7 +55,7 @@ export default function PlacePopup({ place }) {
               href={place.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full mt-1 text-center text-emerald-600 hover:text-emerald-700 font-bold border border-emerald-100 hover:border-emerald-200 bg-emerald-50 hover:bg-emerald-100/50 rounded-lg py-1.5 px-3 transition text-[11px] flex items-center justify-center gap-1 shadow-sm"
+              className="w-full mt-1 text-center text-emerald-600 hover:text-emerald-700 font-bold border border-emerald-100 hover:border-emerald-200 bg-emerald-50 hover:bg-emerald-100/50 rounded-lg py-1.5 px-3 transition text-[11px] flex items-center justify-center gap-1 shadow-xs"
             >
               <span>Ver Guía Geografía Sagrada</span>
             </a>

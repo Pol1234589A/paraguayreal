@@ -162,7 +162,7 @@ export default function CiudadPage({ params }) {
           alt={city.name}
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/30 to-transparent" />
         <div className="absolute bottom-6 left-6 right-6 space-y-2">
           <UpdatedBadge />
           <h1 className="text-3xl sm:text-4xl font-extrabold font-display leading-none">
@@ -210,7 +210,7 @@ export default function CiudadPage({ params }) {
       </section>
 
       {/* Quick Stats Panel */}
-      <section className="bg-white rounded-xl border border-slate-100 p-5 shadow-sm grid grid-cols-2 gap-4 text-xs sm:text-sm">
+      <section className="bg-white rounded-xl border border-slate-100 p-5 shadow-xs grid grid-cols-2 gap-4 text-xs sm:text-sm">
         <div className="flex items-center gap-2">
           <Shield className="w-5 h-5 text-emerald-600" />
           <div>

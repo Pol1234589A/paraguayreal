@@ -56,7 +56,7 @@ export default function BlogIndexClient({ locale, articles }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={locale === 'en' ? "Search articles..." : locale === 'pt' ? "Buscar artigos..." : "Buscar artículos..."}
-            className="w-full pl-9 pr-4 py-2.5 text-xs sm:text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-slate-800 shadow-sm"
+            className="w-full pl-9 pr-4 py-2.5 text-xs sm:text-sm bg-white border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-emerald-500 transition-all text-slate-800 shadow-xs"
           />
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function BlogIndexClient({ locale, articles }) {
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-1.5 rounded-full text-xs font-bold transition cursor-pointer ${
               selectedCategory === cat
-                ? 'bg-emerald-600 text-white shadow-sm'
+                ? 'bg-emerald-600 text-white shadow-xs'
                 : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
             }`}
           >
@@ -84,7 +84,7 @@ export default function BlogIndexClient({ locale, articles }) {
           {filteredArticles.map((article, idx) => (
             <article 
               key={idx} 
-              className="bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+              className="bg-white border border-slate-100 rounded-2xl shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group"
             >
               <div className="space-y-4">
                 {/* Visual Header Image */}
@@ -94,7 +94,7 @@ export default function BlogIndexClient({ locale, articles }) {
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-900 text-[11px] font-black px-2.5 py-0.5 rounded uppercase shadow-sm">
+                  <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-slate-900 text-[11px] font-black px-2.5 py-0.5 rounded-sm uppercase shadow-xs">
                     {article.category}
                   </span>
                 </div>

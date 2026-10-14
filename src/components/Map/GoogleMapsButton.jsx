@@ -4,7 +4,7 @@ import { MapPin } from 'lucide-react';
 export default function GoogleMapsButton({ label = "Ver en Google Maps", url, variant = "outline" }) {
   const baseStyle = "inline-flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 cursor-pointer w-full sm:w-auto";
   const variants = {
-    primary: "bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm",
+    primary: "bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs",
     secondary: "bg-slate-800 hover:bg-slate-700 text-slate-100",
     outline: "border border-slate-300 hover:border-slate-400 text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
   };

@@ -116,7 +116,7 @@ export default function TourismClient({ placesFeatures, locale }) {
       </div>
 
       {/* Search and Filters row */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center bg-white border border-slate-100 rounded-2xl p-4 shadow-xs">
         {/* Search input */}
         <div className="relative flex-1 max-w-md">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -125,7 +125,7 @@ export default function TourismClient({ placesFeatures, locale }) {
             placeholder="Buscar por nombre, etiquetas o ciudad..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
+            className="w-full bg-slate-50 border border-slate-200 text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
           />
         </div>
 
@@ -178,7 +178,7 @@ export default function TourismClient({ placesFeatures, locale }) {
               return (
                 <div
                   key={p.id}
-                  className="bg-white border border-slate-100/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white border border-slate-100/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div className="relative h-44 w-full bg-slate-100 overflow-hidden">
                     <img loading="lazy" decoding="async"
@@ -186,7 +186,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                       alt={p.name}
                       className="w-full h-full object-cover"
                     />
-                    <span className="absolute top-3 right-3 bg-emerald-500 text-white text-[11px] font-black px-2 py-0.5 rounded uppercase leading-none shadow-sm">
+                    <span className="absolute top-3 right-3 bg-emerald-500 text-white text-[11px] font-black px-2 py-0.5 rounded-sm uppercase leading-none shadow-xs">
                       {p.city === 'interior' ? 'Interior' : p.city}
                     </span>
                   </div>
@@ -226,7 +226,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                         {(p.tags || []).slice(0, 3).map((tag, idx) => (
                           <span
                             key={idx}
-                            className="bg-slate-50 text-slate-500 text-[11px] font-bold px-1.5 py-0.5 rounded uppercase"
+                            className="bg-slate-50 text-slate-500 text-[11px] font-bold px-1.5 py-0.5 rounded-sm uppercase"
                           >
                             {tag}
                           </span>
@@ -247,7 +247,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                           href={p.googleMapsDirections || p.googleMapsUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 text-center py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition shadow-sm"
+                          className="flex-1 text-center py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition shadow-xs"
                         >
                           Cómo Llegar
                         </a>

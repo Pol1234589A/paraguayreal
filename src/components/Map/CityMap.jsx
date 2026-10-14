@@ -315,7 +315,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
   return (
     <div className="relative w-full rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-slate-50">
       {/* Header Info */}
-      <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-sm shadow px-3 py-1.5 rounded-lg flex items-center gap-2 border border-slate-100">
+      <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-xs shadow-sm px-3 py-1.5 rounded-lg flex items-center gap-2 border border-slate-100">
         <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping" />
         <span className="text-xs font-bold text-slate-800">
           {cityPlaces.length} {cityKey === 'all' ? 'lugares turísticos' : `lugares en ${cityKey.toUpperCase()}`}
@@ -326,7 +326,7 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
       <div className="absolute bottom-4 left-4 z-10">
         <a
           href={cityKey === 'all' ? `/${locale}/mapa` : `/${locale}/mapa?ciudad=${cityKey}`}
-          className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-lg shadow transition"
+          className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-lg shadow-sm transition"
         >
           <Eye className="w-3.5 h-3.5" />
           <span>Ver mapa completo</span>

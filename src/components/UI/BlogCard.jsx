@@ -6,7 +6,7 @@ export default function BlogCard({ post, locale = 'es' }) {
   const { title, description, category, date, readTime, photo, slug } = post;
 
   return (
-    <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group h-full">
+    <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group h-full">
       {/* Blog Photo */}
       {photo && (
         <Link href={`/${locale}/blog/${slug}`} className="block h-48 w-full overflow-hidden bg-slate-100 shrink-0">
@@ -23,7 +23,7 @@ export default function BlogCard({ post, locale = 'es' }) {
         <div className="space-y-2">
           {/* Metadata */}
           <div className="flex items-center justify-between text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-            <span className="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded font-bold">
+            <span className="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-sm font-bold">
               {category}
             </span>
             <div className="flex items-center gap-2">

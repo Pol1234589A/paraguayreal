@@ -100,13 +100,13 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
           aria-expanded={isOpen && results.length > 0}
           aria-autocomplete="list"
           onKeyUp={(e) => { if (e.key === 'Escape') setIsOpen(false); }}
-          className="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all text-slate-800"
+          className="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all text-slate-800"
         />
         {query && (
           <button
             onClick={handleClear}
             aria-label={tc('clearSearch')}
-            className="absolute right-1 top-0 p-3 text-slate-400 hover:text-slate-600 focus:outline-none"
+            className="absolute right-1 top-0 p-3 text-slate-400 hover:text-slate-600 focus:outline-hidden"
           >
             <X className="w-4 h-4" />
           </button>

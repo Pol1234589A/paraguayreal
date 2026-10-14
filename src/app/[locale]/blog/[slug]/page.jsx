@@ -86,7 +86,7 @@ export default async function ArticlePage({ params }) {
 
       {/* Title & Metadata */}
       <div className="space-y-4">
-        <span className="bg-emerald-50 text-emerald-800 text-[11px] font-bold px-2.5 py-0.5 rounded uppercase border border-emerald-100">
+        <span className="bg-emerald-50 text-emerald-800 text-[11px] font-bold px-2.5 py-0.5 rounded-sm uppercase border border-emerald-100">
           {article.category}
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight text-slate-900">
@@ -113,7 +113,7 @@ export default async function ArticlePage({ params }) {
       </div>
 
       {/* Hero Image */}
-      <div className="h-64 sm:h-96 w-full rounded-2xl overflow-hidden shadow bg-slate-100">
+      <div className="h-64 sm:h-96 w-full rounded-2xl overflow-hidden shadow-sm bg-slate-100">
         <img loading="lazy" decoding="async"
           src={article.photo}
           alt={article.title}

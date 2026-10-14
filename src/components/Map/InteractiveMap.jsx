@@ -559,7 +559,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
       {/* Toggle Sidebar Button for Mobile */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="absolute top-4 left-4 z-30 md:hidden bg-white text-slate-800 hover:bg-slate-50 p-2.5 rounded-lg shadow-lg border border-slate-200 focus:outline-none transition flex items-center gap-2 text-xs font-semibold"
+        className="absolute top-4 left-4 z-30 md:hidden bg-white text-slate-800 hover:bg-slate-50 p-2.5 rounded-lg shadow-lg border border-slate-200 focus:outline-hidden transition flex items-center gap-2 text-xs font-semibold"
       >
         {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
         <span>Filtros</span>

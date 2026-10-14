@@ -45,12 +45,12 @@ export default function Navbar({ locale = 'es' }) {
   };
 
   return (
-    <header className="sticky top-0 z-[1100] bg-white border-b border-slate-100 shadow-sm w-full">
+    <header className="sticky top-0 z-1100 bg-white border-b border-slate-100 shadow-xs w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2.5 group cursor-pointer">
-          <div className="w-7 h-7 rounded-lg overflow-hidden border border-slate-100 shadow-sm flex items-center justify-center bg-white group-hover:border-emerald-200 transition">
+          <div className="w-7 h-7 rounded-lg overflow-hidden border border-slate-100 shadow-xs flex items-center justify-center bg-white group-hover:border-emerald-200 transition">
             <img src="/logo.png" alt="ParaguayReal Logo" className="w-full h-full object-cover scale-110" />
           </div>
           <span className="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-emerald-600 transition">
@@ -107,7 +107,7 @@ export default function Navbar({ locale = 'es' }) {
           aria-label={isMobileOpen ? t('Common.closeMenu') : t('Common.openMenu')}
           aria-expanded={isMobileOpen}
           aria-controls="mobile-menu"
-          className="lg:hidden p-3 text-slate-600 hover:bg-slate-50 rounded-lg focus:outline-none transition"
+          className="lg:hidden p-3 text-slate-600 hover:bg-slate-50 rounded-lg focus:outline-hidden transition"
         >
           {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -115,7 +115,7 @@ export default function Navbar({ locale = 'es' }) {
 
       {/* Mobile menu panel */}
       {isMobileOpen && (
-        <div id="mobile-menu" className="lg:hidden border-t border-slate-100 bg-white px-4 py-6 space-y-4 animate-slideDown shadow-xl absolute top-16 left-0 right-0 z-[1100]">
+        <div id="mobile-menu" className="lg:hidden border-t border-slate-100 bg-white px-4 py-6 space-y-4 animate-slideDown shadow-xl absolute top-16 left-0 right-0 z-1100">
           <nav className="flex flex-col gap-3.5">
             {navLinks.map((link, idx) => (
               <Link

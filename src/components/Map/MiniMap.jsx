@@ -148,7 +148,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
   }, [lat, lng, name, address, googleMapsUrl, tc, engine, loading, mapboxToken, googleMapsApiKey]);
 
   return (
-    <div className="relative w-full rounded-xl overflow-hidden shadow border border-slate-200 bg-slate-50 my-6">
+    <div className="relative w-full rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-slate-50 my-6">
       {/* Top Banner */}
       <div className="p-3 bg-white border-b border-slate-100 flex items-center justify-between">
         <div>

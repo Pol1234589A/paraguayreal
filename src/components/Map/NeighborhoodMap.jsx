@@ -423,30 +423,30 @@ export default function NeighborhoodMap() {
             {viewMode === 'safety' ? (
               <div className="space-y-1.5 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#059669] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#059669] shrink-0" />
                   <span>Muy seguro / Residencial</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#10b981] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#10b981] shrink-0" />
                   <span>Seguro</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#fbbf24] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#fbbf24] shrink-0" />
                   <span>Precaución de noche</span>
                 </div>
               </div>
             ) : (
               <div className="space-y-1.5 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#a7f3d0] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#a7f3d0] shrink-0" />
                   <span>Alquiler Bajo ($500 USD)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#f97316] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#f97316] shrink-0" />
                   <span>Alquiler Medio ($1000 USD)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#dc2626] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#dc2626] shrink-0" />
                   <span>Alquiler Premium (+$1500 USD)</span>
                 </div>
               </div>

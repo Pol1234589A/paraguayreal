@@ -18,7 +18,7 @@ export default function RelatedArticles({ posts = [], locale = "es" }) {
           <Link
             key={art.slug}
             href={`/${locale}/blog/${art.slug}`}
-            className="group block bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition duration-200"
+            className="group block bg-white rounded-xl border border-slate-100 shadow-xs overflow-hidden hover:shadow-md transition duration-200"
           >
             <div className="h-32 bg-slate-100 relative">
               <img loading="lazy" decoding="async"
@@ -28,7 +28,7 @@ export default function RelatedArticles({ posts = [], locale = "es" }) {
               />
             </div>
             <div className="p-4 space-y-2">
-              <span className="text-[11px] bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded uppercase">
+              <span className="text-[11px] bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded-sm uppercase">
                 {art.category}
               </span>
               <h5 className="font-bold text-xs text-slate-800 line-clamp-2 group-hover:text-emerald-600 transition leading-snug">

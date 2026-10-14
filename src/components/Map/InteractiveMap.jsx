@@ -29,28 +29,21 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
   const [searchQuery, setSearchQuery] = useState(searchParams?.q || '');
-  const [selectedCategories, setSelectedCategories] = useState(Object.keys(CATEGORIES));
+  const [selectedCategories, setSelectedCategories] = useState(() =>
+    searchParams?.categoria && CATEGORIES[searchParams.categoria]
+      ? [searchParams.categoria]
+      : Object.keys(CATEGORIES)
+  );
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [shareStatus, setShareStatus] = useState(false);
 
-  // Handle URL parameters for initial map views (coordinates)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const categoryParam = params.get('categoria');
-      if (categoryParam && CATEGORIES[categoryParam]) {
-        setSelectedCategories([categoryParam]);
-      }
-    }
-  }, []);
-
-  // Sync search query state when URL param changes
-  useEffect(() => {
-    if (searchParams?.q) {
-      setSearchQuery(searchParams.q);
-    }
-  }, [searchParams?.q]);
+  // Sync search query state when the URL param changes (adjust state during render)
+  const [prevQ, setPrevQ] = useState(searchParams?.q);
+  if (searchParams?.q !== prevQ) {
+    setPrevQ(searchParams?.q);
+    if (searchParams?.q) setSearchQuery(searchParams.q);
+  }
 
   // Filter places based on search, categories, and city
   const filteredPlaces = initialPlaces.filter((place) => {

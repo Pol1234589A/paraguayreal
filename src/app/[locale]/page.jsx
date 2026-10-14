@@ -1,19 +1,17 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import { pageAlternates, SITE_URL } from '../../lib/seo';
 import { useTranslations } from 'next-intl';
 import SearchBar from '../../components/UI/SearchBar';
-import dynamic from 'next/dynamic';
 
-const CityMap = dynamic(() => import('../../components/Map/CityMap'), {
-  ssr: false,
-  loading: () => <div className="h-[450px] w-full bg-slate-100 rounded-xl border border-slate-200 animate-pulse" />
-});
+import CityMap from '../../components/Map/LazyCityMap';
 import SchemaOrg from '../../components/SEO/SchemaOrg';
 import placesGeoJSON from '../../../data/places.json';
 import { Map, DollarSign, UserCheck, Compass, Briefcase, Building, ShieldCheck, ArrowRight } from 'lucide-react';
 
-export function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   return {
     alternates: pageAlternates(locale),
     openGraph: { siteName: 'ParaguayReal', url: `/${locale}`, type: 'website', images: [{ url: '/logo.png' }] },
@@ -21,7 +19,9 @@ export function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function HomePage({ params: { locale } }) {
+export default function HomePage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations();
 
   // Organization structured schema for AI engines and search crawlers

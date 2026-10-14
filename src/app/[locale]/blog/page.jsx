@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import BlogIndexClient from '../../../components/UI/BlogIndexClient';
 import { pageMetadata } from '../../../lib/seo';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Blog: Guías sobre Vivir, Invertir y Viajar en Paraguay | ParaguayReal",
     en: "Blog: Guides to Living, Investing and Traveling in Paraguay | ParaguayReal",
@@ -21,6 +23,8 @@ export async function generateMetadata({ params: { locale } }) {
   });
 }
 
-export default function BlogIndexPage({ params: { locale } }) {
+export default function BlogIndexPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   return <BlogIndexClient locale={locale} />;
 }

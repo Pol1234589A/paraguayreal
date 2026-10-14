@@ -1,24 +1,13 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '../../../../lib/seo';
-import dynamic from 'next/dynamic';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 
-// Lazy load the polygon map to avoid SSR issues
-const NeighborhoodMap = dynamic(
-  () => import('../../../../components/Map/NeighborhoodMap'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[500px] w-full flex flex-col items-center justify-center bg-slate-100 text-slate-500 font-semibold gap-3 rounded-2xl border border-slate-200">
-        <div className="w-6 h-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
-        <span className="text-xs uppercase font-mono tracking-wider">Cargando Mapa de Barrios...</span>
-      </div>
-    )
-  }
-);
+import NeighborhoodMap from '../../../../components/Map/LazyNeighborhoodMap';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Mejores Barrios de Asunción: Seguridad y Alquileres | ParaguayReal",
     en: "Best Neighborhoods in Asunción: Safety & Rent | ParaguayReal",
@@ -33,7 +22,9 @@ export async function generateMetadata({ params: { locale } }) {
   });
 }
 
-export default function BarriosPage({ params: { locale } }) {
+export default function BarriosPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const breadcrumbs = [
     { label: "Vivir", url: "/vivir/barrios" },
     { label: "Barrios de Asunción", url: "/vivir/barrios" }

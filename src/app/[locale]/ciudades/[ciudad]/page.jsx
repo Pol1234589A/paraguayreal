@@ -1,24 +1,14 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { pageMetadata, LOCALES } from '../../../../lib/seo';
-import dynamic from 'next/dynamic';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 import SchemaOrg from '../../../../components/SEO/SchemaOrg';
 import placesGeoJSON from '../../../../../data/places.json';
 import { Check, X, Shield, DollarSign, MapPin, Briefcase } from 'lucide-react';
 
-const CityMap = dynamic(
-  () => import('../../../../components/Map/CityMap'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[450px] w-full flex items-center justify-center bg-slate-100 rounded-xl border border-slate-200">
-        <span className="text-xs text-slate-500 uppercase font-mono animate-pulse">Cargando mapa de la ciudad...</span>
-      </div>
-    )
-  }
-);
+import CityMap from '../../../../components/Map/LazyCityMap';
 
 const CITIES_DATA = {
   "asuncion": {
@@ -119,7 +109,8 @@ export function generateStaticParams() {
   );
 }
 
-export async function generateMetadata({ params: { ciudad, locale } }) {
+export async function generateMetadata({ params }) {
+  const { ciudad, locale } = await params;
   const city = CITIES_DATA[ciudad];
   if (!city) return {};
 
@@ -133,7 +124,9 @@ export async function generateMetadata({ params: { ciudad, locale } }) {
   });
 }
 
-export default function CiudadPage({ params: { ciudad, locale } }) {
+export default function CiudadPage({ params }) {
+  const { ciudad, locale } = use(params);
+  setRequestLocale(locale);
   const city = CITIES_DATA[ciudad];
 
   if (!city) notFound();

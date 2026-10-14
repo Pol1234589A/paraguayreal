@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '../../../lib/seo';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Política de Cookies | ParaguayReal",
     en: "Cookie Policy | ParaguayReal",
@@ -18,7 +20,9 @@ export async function generateMetadata({ params: { locale } }) {
   });
 }
 
-export default function CookiesPage({ params: { locale } }) {
+export default function CookiesPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const breadcrumbs = [
     { label: locale === 'en' ? "Cookie Policy" : locale === 'pt' ? "Política de Cookies" : "Política de Cookies", url: "/cookies" }
   ];

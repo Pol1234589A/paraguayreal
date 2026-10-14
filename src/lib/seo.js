@@ -1,6 +1,8 @@
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://paraguayreal.com').replace(/\/$/, '');
-export const LOCALES = ['es', 'en', 'pt'];
-export const DEFAULT_LOCALE = 'es';
+import { routing } from '../i18n/routing';
+
+export const LOCALES = routing.locales;
+export const DEFAULT_LOCALE = routing.defaultLocale;
 
 const OG_LOCALES = { es: 'es_PY', en: 'en_US', pt: 'pt_BR' };
 

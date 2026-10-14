@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '../../../lib/seo';
 import { useTranslations } from 'next-intl';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
@@ -24,7 +25,8 @@ import {
   Train
 } from 'lucide-react';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Negocios e Inversión en Paraguay: Guía 2026 | ParaguayReal",
     en: "Business & Investment in Paraguay: 2026 Guide | ParaguayReal",
@@ -45,7 +47,9 @@ export async function generateMetadata({ params: { locale } }) {
   });
 }
 
-export default function NegociosPage({ params: { locale } }) {
+export default function NegociosPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations();
 
   const breadcrumbs = [

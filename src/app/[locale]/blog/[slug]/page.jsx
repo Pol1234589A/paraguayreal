@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 import RelatedArticles from '../../../../components/UI/RelatedArticles';
@@ -14,7 +15,8 @@ export function generateStaticParams() {
   );
 }
 
-export async function generateMetadata({ params: { slug, locale } }) {
+export async function generateMetadata({ params }) {
+  const { slug, locale } = await params;
   const article = ARTICLES_DB[slug];
   if (!article) return {};
 
@@ -30,7 +32,9 @@ export async function generateMetadata({ params: { slug, locale } }) {
   });
 }
 
-export default function ArticlePage({ params: { slug, locale } }) {
+export default function ArticlePage({ params }) {
+  const { slug, locale } = use(params);
+  setRequestLocale(locale);
   const article = ARTICLES_DB[slug];
 
   if (!article) notFound();

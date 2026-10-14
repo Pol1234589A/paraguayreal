@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '../../../lib/seo';
 import { useTranslations } from 'next-intl';
 import PriceTable from '../../../components/UI/PriceTable';
@@ -7,7 +8,8 @@ import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import SchemaOrg from '../../../components/SEO/SchemaOrg';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Costo de Vida en Paraguay: Precios 2026 | ParaguayReal",
     en: "Cost of Living in Paraguay: Prices 2026 | ParaguayReal",
@@ -22,7 +24,9 @@ export async function generateMetadata({ params: { locale } }) {
   });
 }
 
-export default function PreciosPage({ params: { locale } }) {
+export default function PreciosPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations();
 
   const breadcrumbs = [

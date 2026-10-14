@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Search, MapPin, BookOpen, X } from 'lucide-react';
 import placesGeoJSON from '../../../data/places.json';
 
@@ -16,7 +16,6 @@ const STATIC_GUIDES = [
 
 export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
   const router = useRouter();
@@ -33,11 +32,8 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
   }, []);
 
   // Filter items
-  useEffect(() => {
-    if (query.trim().length === 0) {
-      setResults([]);
-      return;
-    }
+  const results = useMemo(() => {
+    if (query.trim().length === 0) return [];
 
     const cleanQuery = query.toLowerCase();
 
@@ -64,12 +60,11 @@ export default function SearchBar({ placeholder = "Buscar...", locale = 'es' }) 
       guide.name.toLowerCase().includes(cleanQuery)
     ).slice(0, 3);
 
-    setResults([...matchedPlaces, ...matchedGuides]);
+    return [...matchedPlaces, ...matchedGuides];
   }, [query]);
 
   const handleClear = () => {
     setQuery('');
-    setResults([]);
     setIsOpen(false);
   };
 

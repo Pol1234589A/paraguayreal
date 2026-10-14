@@ -6,21 +6,21 @@
     "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start -p 3005",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "lucide-react": "^1.17.0",
     "mapbox-gl": "^3.24.0",
-    "next": "14.2.35",
-    "next-intl": "^4.13.0",
+    "next": "^16.4.1",
+    "next-intl": "^4.14.9",
     "next-mdx-remote": "^6.0.0",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   }

@@ -1,36 +1,31 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '../../../lib/seo';
 import SchemaOrg from '../../../components/SEO/SchemaOrg';
-import placesGeoJSON from '../../../../data/places.json';
+import { getPlaces } from '../../../lib/places';
 
-// Dynamically import map with SSR disabled to prevent server-side compilation crashes
-const InteractiveMap = dynamic(
-  () => import('../../../components/Map/InteractiveMap'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[calc(100vh-64px)] w-full flex flex-col items-center justify-center bg-slate-950 text-slate-100 font-semibold gap-3">
-        <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin" />
-        <span className="text-xs text-slate-400 uppercase tracking-widest font-mono">Cargando Mapa Interactivo...</span>
-      </div>
-    )
-  }
-);
+import InteractiveMap from '../../../components/Map/LazyInteractiveMap';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Mapa Interactivo de Paraguay | ParaguayReal",
     en: "Interactive Map of Paraguay | ParaguayReal",
     pt: "Mapa Interativo do Paraguai | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/mapa',
     title: titles[locale] || titles.es,
     description: "Mapa geolocalizado con puntos clave: embajadas, sanatorios, coworkings, supermercados y atractivos turísticos en Paraguay."
-  };
+  });
 }
 
-export default function MapaPage({ params: { locale }, searchParams }) {
+export default function MapaPage({ params, searchParams }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+  const sp = use(searchParams);
   const siteUrl = 'https://paraguayreal.com';
 
   const mapSchema = {
@@ -43,9 +38,9 @@ export default function MapaPage({ params: { locale }, searchParams }) {
   };
 
   return (
-    <div className="h-[calc(100vh-64px)] overflow-hidden w-full">
+    <div className="h-[calc(100dvh-64px)] overflow-hidden w-full">
       <SchemaOrg schema={mapSchema} />
-      <InteractiveMap initialPlaces={placesGeoJSON.features} locale={locale} searchParams={searchParams} />
+      <InteractiveMap initialPlaces={getPlaces(locale)} locale={locale} searchParams={sp} />
     </div>
   );
 }

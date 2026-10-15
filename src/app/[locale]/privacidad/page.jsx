@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '../../../lib/seo';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Política de Privacidad | ParaguayReal",
     en: "Privacy Policy | ParaguayReal",
     pt: "Política de Privacidade | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/privacidad',
     title: titles[locale] || titles.es,
     description: "Declaración de privacidad, minimización de datos y seguridad en el uso de mapas interactivos de ParaguayReal."
-  };
+  });
 }
 
-export default function PrivacidadPage({ params: { locale } }) {
+export default function PrivacidadPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const breadcrumbs = [
     { label: locale === 'en' ? "Privacy Policy" : locale === 'pt' ? "Política de Privacidade" : "Política de Privacidad", url: "/privacidad" }
   ];
@@ -62,7 +69,7 @@ export default function PrivacidadPage({ params: { locale } }) {
   const data = content[locale] || content.es;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 select-none space-y-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
       <Breadcrumb items={breadcrumbs} locale={locale} />
       
       <div className="space-y-4 border-b border-slate-100 pb-6">

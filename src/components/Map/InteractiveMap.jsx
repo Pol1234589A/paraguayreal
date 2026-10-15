@@ -2,12 +2,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import MapSidebar from './MapSidebar';
 import PlacePopup from './PlacePopup';
 import { Compass, Menu, X } from 'lucide-react';
-import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
+import { useTranslations } from 'next-intl';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, loadMapbox, getMapbox } from '../../lib/mapLoader';
 
 const CATEGORIES = {
   turismo: { label: "Turismo", color: "#10b981", icon: "📸" },
@@ -21,7 +20,13 @@ const CATEGORIES = {
   transporte: { label: "Transporte", color: "#4b5563", icon: "🚌" }
 };
 
-export default function InteractiveMap({ initialPlaces = [], t, filterCity, searchParams }) {
+export default function InteractiveMap({ initialPlaces = [], filterCity, searchParams }) {
+  const t = useTranslations();
+  const popupLabels = {
+    directions: t('Map.directions'),
+    googleMaps: t('Map.googleMaps'),
+    viewGuide: t('Map.viewGuide')
+  };
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
@@ -29,28 +34,21 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
   const [searchQuery, setSearchQuery] = useState(searchParams?.q || '');
-  const [selectedCategories, setSelectedCategories] = useState(Object.keys(CATEGORIES));
+  const [selectedCategories, setSelectedCategories] = useState(() =>
+    searchParams?.categoria && CATEGORIES[searchParams.categoria]
+      ? [searchParams.categoria]
+      : Object.keys(CATEGORIES)
+  );
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [shareStatus, setShareStatus] = useState(false);
 
-  // Handle URL parameters for initial map views (coordinates)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const categoryParam = params.get('categoria');
-      if (categoryParam && CATEGORIES[categoryParam]) {
-        setSelectedCategories([categoryParam]);
-      }
-    }
-  }, []);
-
-  // Sync search query state when URL param changes
-  useEffect(() => {
-    if (searchParams?.q) {
-      setSearchQuery(searchParams.q);
-    }
-  }, [searchParams?.q]);
+  // Sync search query state when the URL param changes (adjust state during render)
+  const [prevQ, setPrevQ] = useState(searchParams?.q);
+  if (searchParams?.q !== prevQ) {
+    setPrevQ(searchParams?.q);
+    if (searchParams?.q) setSearchQuery(searchParams.q);
+  }
 
   // Filter places based on search, categories, and city
   const filteredPlaces = initialPlaces.filter((place) => {
@@ -122,11 +120,14 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
       }
     }
 
+    let cancelled = false;
     let mapInstance = null;
     let cleanup = () => {};
 
     // 1. MAPBOX INIT
     if (engine === 'mapbox' && mapboxToken) {
+      loadMapbox().then((mapboxgl) => {
+      if (cancelled) return;
       mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
@@ -157,6 +158,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
       cleanup = () => {
         map.remove();
       };
+      });
     }
     // 2. GOOGLE MAPS INIT
     else if (engine === 'google' && googleMapsApiKey) {
@@ -206,6 +208,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
     }
 
     return () => {
+      cancelled = true;
       cleanup();
       if (mapInstance && typeof mapInstance.remove === 'function') {
         try {
@@ -266,6 +269,8 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
     // 1. MAPBOX MARKERS
     if (engine === 'mapbox') {
+      const mapboxgl = getMapbox();
+      if (!mapboxgl) return;
       markersRef.current.forEach((marker) => marker.remove());
       markersRef.current = [];
 
@@ -281,7 +286,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
         const popup = new mapboxgl.Popup({ offset: 25, closeButton: true, maxWidth: '280px' })
           .setDOMContent(popupNode);
@@ -337,7 +342,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
         const infowindow = new window.google.maps.InfoWindow({
           content: popupNode,
@@ -415,7 +420,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} labels={popupLabels} />);
 
         const marker = window.L.marker([coordinates[1], coordinates[0]], { icon: myIcon })
           .addTo(mapRef.current)
@@ -536,10 +541,10 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row h-[calc(100vh-64px)] w-full overflow-hidden">
+    <div className="relative flex flex-col md:flex-row h-[calc(100dvh-64px)] w-full overflow-hidden">
       {/* Sidebar Controls */}
       <div
-        className={`fixed md:relative top-16 md:top-0 left-0 h-[calc(100vh-128px)] md:h-full z-20 w-full md:w-auto transition-transform duration-300 transform md:transform-none ${
+        className={`fixed md:relative top-16 md:top-0 left-0 h-[calc(100dvh-128px)] md:h-full z-20 w-full md:w-auto transition-transform duration-300 transform md:transform-none ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
       >
@@ -550,7 +555,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
           selectedCategories={selectedCategories}
           toggleCategory={toggleCategory}
           onPlaceClick={handlePlaceClick}
-          categories={CATEGORIES}
+          categories={Object.fromEntries(Object.entries(CATEGORIES).map(([k, v]) => [k, { ...v, label: t(`Map.layers.${k}`) }]))}
           onShareLocation={handleShareLocation}
           t={t}
         />
@@ -566,7 +571,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
       {/* Toggle Sidebar Button for Mobile */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="absolute top-4 left-4 z-30 md:hidden bg-white text-slate-800 hover:bg-slate-50 p-2.5 rounded-lg shadow-lg border border-slate-200 focus:outline-none transition flex items-center gap-2 text-xs font-semibold"
+        className="absolute top-4 left-4 z-30 md:hidden bg-white text-slate-800 hover:bg-slate-50 p-2.5 rounded-lg shadow-lg border border-slate-200 focus:outline-hidden transition flex items-center gap-2 text-xs font-semibold"
       >
         {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
         <span>Filtros</span>
@@ -579,7 +584,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
             <div className="max-w-md space-y-4">
               <Compass className="w-12 h-12 text-amber-500 mx-auto animate-spin" />
               <p className="text-sm font-semibold animate-pulse">
-                Cargando mapa interactivo de Paraguay...
+                {t('Map.loadingInteractive')}
               </p>
             </div>
           </div>

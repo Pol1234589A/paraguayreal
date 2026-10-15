@@ -44,7 +44,16 @@
     "noToken": "No se ha configurado la variable de entorno NEXT_PUBLIC_MAPBOX_TOKEN. Por favor, crea un archivo .env.local en la raíz con tu token de Mapbox.",
     "shareLocation": "Compartir Ubicación",
     "locationCopied": "¡Enlace copiado al portapapeles con la ubicación actual!",
-    "myLocation": "Mi ubicación"
+    "myLocation": "Mi ubicación",
+    "noPlaces": "No se encontraron lugares en esta zona.",
+    "directions": "Cómo llegar",
+    "googleMaps": "Google Maps",
+    "viewGuide": "Ver Guía Geografía Sagrada",
+    "loadingInteractive": "Cargando mapa interactivo de Paraguay...",
+    "fullMap": "Ver mapa completo",
+    "touristPlaces": "lugares turísticos",
+    "placesIn": "lugares en",
+    "loading": "Cargando mapa..."
   },
   "Prices": {
     "title": "Precios y Costo de Vida en Paraguay",
@@ -129,5 +138,42 @@
         "desc": "Consejos prácticos, sanidad, bancos y seguridad ciudadana."
       }
     }
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "desc": "Lo sentimos, la página que buscas no existe o se ha movido. Explora nuestro menú o vuelve al inicio para seguir navegando.",
+    "cta": "Volver al Inicio"
+  },
+  "Common": {
+    "updated": "Actualizado",
+    "place": "Lugar",
+    "guide": "Guía / Artículo",
+    "viewOnGoogleMaps": "Ver en Google Maps",
+    "loadingMap": "Cargando mapa…",
+    "language": "Idioma",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "clearSearch": "Borrar búsqueda",
+    "all": "Todos"
+  },
+  "Tourism": {
+    "badge": "Guía Oficial",
+    "title": "Turismo y Lugares en Paraguay",
+    "intro": "Descubre los tesoros naturales, históricos y culturales de Paraguay. Desde la Costanera y museos coloniales de la capital hasta las imponentes ruinas jesuíticas, cascadas de la selva paranaense y lagos de Cordillera.",
+    "search": "Buscar por nombre, etiquetas o ciudad...",
+    "tabAll": "Todos",
+    "tabAsuncion": "Asunción",
+    "tabCordillera": "Areguá & Cordillera",
+    "tabEncCde": "Encarnación / CDE",
+    "tabInterior": "Otros Interior",
+    "recommended": "Atracciones Recomendadas",
+    "showing": "Mostrando resultados filtrados",
+    "empty": "No encontramos lugares turísticos con esos filtros. ¡Prueba buscando otro término!",
+    "freeAccess": "Acceso libre",
+    "viewMap": "Ver Mapa",
+    "directions": "Cómo Llegar",
+    "mapTitle": "Mapa de Atractivos Filtrados",
+    "mapDesc": "Navega por las coordenadas exactas de las atracciones turísticas seleccionadas. Haz clic en los pines para ver fotos y detalles de horarios.",
+    "crumb": "Turismo"
   }
 }

@@ -1,4 +1,7 @@
-import React from 'react';
+import Link from 'next/link';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '../../../lib/seo';
 import { useTranslations } from 'next-intl';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
@@ -22,7 +25,8 @@ import {
   Train
 } from 'lucide-react';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Negocios e Inversión en Paraguay: Guía 2026 | ParaguayReal",
     en: "Business & Investment in Paraguay: 2026 Guide | ParaguayReal",
@@ -35,13 +39,17 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Descubra as vantagens fiscais do Paraguai (regra 10-10-10), a Lei de Maquila para o Mercosul, a cultura de negócios e os setores de investimento agrícola e imobiliário."
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/negocios',
     title: titles[locale] || titles.es,
     description: descriptions[locale] || descriptions.es
-  };
+  });
 }
 
-export default function NegociosPage({ params: { locale } }) {
+export default function NegociosPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations();
 
   const breadcrumbs = [
@@ -303,11 +311,11 @@ export default function NegociosPage({ params: { locale } }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 pb-16 select-none">
+    <div className="min-h-screen bg-slate-50/50 pb-16">
       <SchemaOrg schema={pageSchema} />
       
       {/* Hero Banner */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white py-12 sm:py-16 px-4 border-b border-emerald-900/50 relative overflow-hidden">
+      <div className="bg-linear-to-br from-slate-900 via-slate-800 to-emerald-950 text-white py-12 sm:py-16 px-4 border-b border-emerald-900/50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-slate-500/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
         
@@ -315,7 +323,7 @@ export default function NegociosPage({ params: { locale } }) {
           <Breadcrumb items={breadcrumbs} locale={locale} />
           
           <div className="space-y-3">
-            <span className="bg-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30 uppercase tracking-wider">
+            <span className="bg-emerald-500/20 text-emerald-300 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30 uppercase tracking-wider">
               {data.updated}
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-white max-w-3xl">
@@ -349,7 +357,7 @@ export default function NegociosPage({ params: { locale } }) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 space-y-12">
         
         {/* Section 1: Taxes */}
-        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-sm space-y-6">
+        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-xs space-y-6">
           <div className="space-y-2">
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display flex items-center gap-2">
               <Coins className="w-6 h-6 text-emerald-600" />
@@ -383,10 +391,10 @@ export default function NegociosPage({ params: { locale } }) {
         </section>
 
         {/* Section 2: Maquila Regime */}
-        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
             <div className="space-y-2">
-              <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase leading-none">
+              <span className="text-[11px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase leading-none">
                 {data.maquilaSubtitle}
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display flex items-center gap-2">
@@ -408,7 +416,7 @@ export default function NegociosPage({ params: { locale } }) {
             </ul>
           </div>
           
-          <div className="lg:col-span-5 bg-gradient-to-br from-slate-900 to-emerald-950 p-6 rounded-2xl text-white space-y-4 border border-emerald-900 relative overflow-hidden">
+          <div className="lg:col-span-5 bg-linear-to-br from-slate-900 to-emerald-950 p-6 rounded-2xl text-white space-y-4 border border-emerald-900 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl"></div>
             <h3 className="text-base font-bold font-display text-emerald-300">Mercosur Export Hub</h3>
             <p className="text-xs text-slate-300 leading-relaxed font-light">
@@ -416,7 +424,7 @@ export default function NegociosPage({ params: { locale } }) {
               {locale === 'en' && "Many international firms manufacture or assemble parts in Paraguay to re-export to Brazil and Argentina, bypassing the massive import bureaucracies. This triangulation benefit is unmatched."}
               {locale === 'pt' && "Muitas empresas internacionais fabricam peças ou montam produtos no Paraguai para reexportar ao Brasil e Argentina, contornando a burocracia e tarifas de importação. Esta triangulação é única."}
             </p>
-            <div className="flex gap-3 pt-3 border-t border-slate-700/50 text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+            <div className="flex gap-3 pt-3 border-t border-slate-700/50 text-[11px] uppercase font-bold text-slate-400 tracking-wider">
               <div className="flex items-center gap-1">
                 <Ship className="w-3.5 h-3.5" />
                 <span>Mercosur</span>
@@ -431,7 +439,7 @@ export default function NegociosPage({ params: { locale } }) {
         </section>
 
         {/* Section 3: Honest Warnings & Sectors */}
-        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-sm space-y-6">
+        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-xs space-y-6">
           <div className="space-y-2">
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display flex items-center gap-2">
               <AlertTriangle className="w-6 h-6 text-amber-500" />
@@ -444,7 +452,7 @@ export default function NegociosPage({ params: { locale } }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             {/* Warning 1: Real estate speculation */}
-            <div className="bg-amber-50/20 border border-amber-200/50 p-6 rounded-xl space-y-3 hover:shadow-sm transition">
+            <div className="bg-amber-50/20 border border-amber-200/50 p-6 rounded-xl space-y-3 hover:shadow-xs transition">
               <h3 className="text-base font-bold text-slate-900 font-display flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-amber-600" />
                 <span>{data.investSector1Title}</span>
@@ -452,14 +460,14 @@ export default function NegociosPage({ params: { locale } }) {
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
                 {data.investSector1Desc}
               </p>
-              <div className="flex items-center gap-1.5 text-xs text-amber-800 font-bold bg-amber-50 px-2.5 py-1 rounded w-fit">
+              <div className="flex items-center gap-1.5 text-xs text-amber-800 font-bold bg-amber-50 px-2.5 py-1 rounded-sm w-fit">
                 <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
                 <span>{locale === 'es' ? "Advertencia de Plusvalía Rápida" : locale === 'pt' ? "Aviso de Lucro Rápido" : "Speculation Warning"}</span>
               </div>
             </div>
 
             {/* Sector 2: Agriculture */}
-            <div className="bg-emerald-50/10 border border-emerald-100 p-6 rounded-xl space-y-3 hover:shadow-sm transition">
+            <div className="bg-emerald-50/10 border border-emerald-100 p-6 rounded-xl space-y-3 hover:shadow-xs transition">
               <h3 className="text-base font-bold text-slate-900 font-display flex items-center gap-2">
                 <Trees className="w-5 h-5 text-emerald-700" />
                 <span>{data.investSector2Title}</span>
@@ -467,7 +475,7 @@ export default function NegociosPage({ params: { locale } }) {
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
                 {data.investSector2Desc}
               </p>
-              <div className="flex items-center gap-1.5 text-xs text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1 rounded w-fit">
+              <div className="flex items-center gap-1.5 text-xs text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1 rounded-sm w-fit">
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-600" />
                 <span>{locale === 'es' ? "Sector Altamente Productivo" : locale === 'pt' ? "Setor Altamente Produtivo" : "Highly Productive"}</span>
               </div>
@@ -489,7 +497,7 @@ export default function NegociosPage({ params: { locale } }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {data.infraGrid.map((item, idx) => (
-              <div key={idx} className="bg-white border border-slate-100 p-6 rounded-xl shadow-sm space-y-4 hover:shadow-md transition">
+              <div key={idx} className="bg-white border border-slate-100 p-6 rounded-xl shadow-xs space-y-4 hover:shadow-md transition">
                 <div className="p-3 bg-emerald-50 w-fit rounded-lg border border-emerald-100">
                   {item.icon}
                 </div>
@@ -501,7 +509,7 @@ export default function NegociosPage({ params: { locale } }) {
         </section>
 
         {/* Section 5: Trust and Culture */}
-        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <section className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5 bg-emerald-50 rounded-2xl p-6 border border-emerald-100 text-center space-y-3">
             <div className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center border border-emerald-200 text-emerald-600 text-2xl">
               🤝
@@ -529,17 +537,17 @@ export default function NegociosPage({ params: { locale } }) {
 
         {/* Link back to blog */}
         <div className="text-center pt-4">
-          <a
+          <Link
             href={`/${locale}/blog/cuanto-cuesta-vivir-en-paraguay-2025`}
-            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow transition select-none cursor-pointer"
+            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-sm transition cursor-pointer"
           >
             <span>{data.ctaBlog}</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
         {/* Disclaimer */}
-        <div className="border-t border-slate-200/80 pt-6 text-[10px] text-slate-400 text-center max-w-2xl mx-auto leading-relaxed">
+        <div className="border-t border-slate-200/80 pt-6 text-[11px] text-slate-400 text-center max-w-2xl mx-auto leading-relaxed">
           <strong>{data.warningHeader}:</strong> {locale === 'es' && "ParaguayReal no brinda asesoría financiera, impositiva ni legal oficial. Las guías son meramente informativas y se basan en testimonios y leyes vigentes recopiladas de residentes y empresarios locales. Consulta con profesionales matriculados en Paraguay."}
           {locale === 'en' && "ParaguayReal does not provide official financial, tax, or legal advice. The guides are purely informative and based on testimonies and current laws collected from local residents and entrepreneurs. Consult licensed professionals in Paraguay."}
           {locale === 'pt' && "ParaguayReal não fornece consultoria financeira, fiscal ou jurídica oficial. Os guias são meramente informativos e baseados em depoimentos e leis vigentes coletados de residentes e empresários locais. Consulte profissionais licenciados no Paraguai."}

@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '../../../lib/seo';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Política de Cookies | ParaguayReal",
     en: "Cookie Policy | ParaguayReal",
     pt: "Política de Cookies | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/cookies',
     title: titles[locale] || titles.es,
     description: "Información transparente sobre el uso de cookies y almacenamiento de preferencias locales en ParaguayReal."
-  };
+  });
 }
 
-export default function CookiesPage({ params: { locale } }) {
+export default function CookiesPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const breadcrumbs = [
     { label: locale === 'en' ? "Cookie Policy" : locale === 'pt' ? "Política de Cookies" : "Política de Cookies", url: "/cookies" }
   ];
@@ -71,7 +78,7 @@ export default function CookiesPage({ params: { locale } }) {
   const data = content[locale] || content.es;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 select-none space-y-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
       <Breadcrumb items={breadcrumbs} locale={locale} />
       
       <div className="space-y-4 border-b border-slate-100 pb-6">

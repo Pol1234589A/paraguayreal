@@ -40,7 +40,7 @@ export default function MapSidebar({
             placeholder={translate("Map.searchPlaceholder", "Buscar en el mapa...")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
+            className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
           />
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function MapSidebar({
             return (
               <label
                 key={key}
-                className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg border text-xs font-semibold cursor-pointer transition select-none ${
+                className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg border text-xs font-semibold cursor-pointer transition ${
                   isChecked
                     ? 'border-emerald-600 bg-emerald-50 text-emerald-900'
                     : 'border-slate-200 bg-white hover:bg-slate-50 text-slate-600'
@@ -80,17 +80,17 @@ export default function MapSidebar({
       <div className="flex-1 overflow-y-auto division-y divide-slate-100">
         {places.length === 0 ? (
           <div className="p-8 text-center text-sm text-slate-400">
-            No se encontraron lugares en esta zona.
+            {translate('Map.noPlaces', 'No se encontraron lugares en esta zona.')}
           </div>
         ) : (
           places.map((place) => (
             <button
               key={place.properties.id}
               onClick={() => onPlaceClick(place)}
-              className="w-full text-left p-4 hover:bg-slate-50/80 active:bg-slate-100 focus:outline-none border-b border-slate-100 transition flex gap-3"
+              className="w-full text-left p-4 hover:bg-slate-50/80 active:bg-slate-100 focus:outline-hidden border-b border-slate-100 transition flex gap-3"
             >
               {place.properties.photo && (
-                <img
+                <img loading="lazy" decoding="async"
                   src={place.properties.photo}
                   alt={place.properties.name}
                   className="w-14 h-14 rounded-lg object-cover bg-slate-100 shrink-0 border border-slate-100"
@@ -100,11 +100,11 @@ export default function MapSidebar({
                 <h4 className="font-bold text-sm text-slate-900 truncate">{place.properties.name}</h4>
                 <p className="text-xs text-slate-500 line-clamp-1 mb-1">{place.properties.address}</p>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-semibold capitalize">
+                  <span className="text-[11px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded-sm font-semibold capitalize">
                     {place.properties.category}
                   </span>
                   {place.properties.rating && (
-                    <div className="flex items-center gap-0.5 text-[10px] text-amber-500 font-bold">
+                    <div className="flex items-center gap-0.5 text-[11px] text-amber-500 font-bold">
                       <Star className="w-3 h-3 fill-amber-500" />
                       <span>{place.properties.rating}</span>
                     </div>

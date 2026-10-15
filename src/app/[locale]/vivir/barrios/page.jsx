@@ -1,43 +1,37 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '../../../../lib/seo';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 
-// Lazy load the polygon map to avoid SSR issues
-const NeighborhoodMap = dynamic(
-  () => import('../../../../components/Map/NeighborhoodMap'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[500px] w-full flex flex-col items-center justify-center bg-slate-100 text-slate-500 font-semibold gap-3 rounded-2xl border border-slate-200">
-        <div className="w-6 h-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
-        <span className="text-xs uppercase font-mono tracking-wider">Cargando Mapa de Barrios...</span>
-      </div>
-    )
-  }
-);
+import NeighborhoodMap from '../../../../components/Map/LazyNeighborhoodMap';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Mejores Barrios de Asunción: Seguridad y Alquileres | ParaguayReal",
     en: "Best Neighborhoods in Asunción: Safety & Rent | ParaguayReal",
     pt: "Melhores Bairros de Assunção: Segurança e Aluguel | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/vivir/barrios',
     title: titles[locale] || titles.es,
     description: "Mapa interactivo de los barrios residenciales de Asunción: Villa Morra, Las Mercedes, Mburucuyá y Centro. Índices de seguridad y costos."
-  };
+  });
 }
 
-export default function BarriosPage({ params: { locale } }) {
+export default function BarriosPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const breadcrumbs = [
     { label: "Vivir", url: "/vivir/barrios" },
     { label: "Barrios de Asunción", url: "/vivir/barrios" }
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-8">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Header text */}
@@ -59,7 +53,7 @@ export default function BarriosPage({ params: { locale } }) {
       </section>
 
       {/* Additional details */}
-      <section className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+      <section className="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-4">
         <h3 className="font-extrabold text-slate-900 text-lg">Resumen de Recomendaciones</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
           <div className="space-y-2">

@@ -1,12 +1,27 @@
-import React from 'react';
+import Link from 'next/link';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageAlternates, SITE_URL } from '../../lib/seo';
 import { useTranslations } from 'next-intl';
 import SearchBar from '../../components/UI/SearchBar';
-import CityMap from '../../components/Map/CityMap';
+
+import CityMap from '../../components/Map/LazyCityMap';
 import SchemaOrg from '../../components/SEO/SchemaOrg';
-import placesGeoJSON from '../../../data/places.json';
+import { getPlaces } from '../../lib/places';
 import { Map, DollarSign, UserCheck, Compass, Briefcase, Building, ShieldCheck, ArrowRight } from 'lucide-react';
 
-export default function HomePage({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  return {
+    alternates: pageAlternates(locale),
+    openGraph: { siteName: 'ParaguayReal', url: `/${locale}`, type: 'website', images: [{ url: '/logo.png' }] },
+    twitter: { card: 'summary_large_image', images: ['/logo.png'] }
+  };
+}
+
+export default function HomePage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations();
 
   // Organization structured schema for AI engines and search crawlers
@@ -14,12 +29,8 @@ export default function HomePage({ params: { locale } }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ParaguayReal",
-    "url": "https://paraguayreal.com",
-    "logo": "https://paraguayreal.com/logo.png",
-    "sameAs": [
-      "https://x.com/paraguayreal",
-      "https://github.com/paraguayreal"
-    ],
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/logo.png`,
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
@@ -31,15 +42,7 @@ export default function HomePage({ params: { locale } }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "ParaguayReal",
-    "url": "https://paraguayreal.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://paraguayreal.com/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "url": SITE_URL
   };
 
   // 6 subcategories grid definitions
@@ -82,21 +85,21 @@ export default function HomePage({ params: { locale } }) {
     {
       title: t("Home.categories.safety.title"),
       desc: t("Home.categories.safety.desc"),
-      url: "/blog/como-obtener-residencia-permanente-paraguay",
+      url: "/blog/seguridad-infraestructura-paraguay-emigrantes",
       icon: <ShieldCheck className="w-5 h-5 text-red-600" />,
       bg: "bg-red-50"
     }
   ];
 
   return (
-    <div className="space-y-16 pb-20 select-none">
+    <div className="space-y-16 pb-20">
       <SchemaOrg schema={organizationSchema} />
       <SchemaOrg schema={websiteSchema} />
 
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         {/* Background gradient overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-950/40 via-slate-950 to-slate-950 z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-emerald-950/40 via-slate-950 to-slate-950 z-0 pointer-events-none" />
         
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-tight text-white">
@@ -113,21 +116,21 @@ export default function HomePage({ params: { locale } }) {
 
           {/* CTAs */}
           <div className="pt-6 flex flex-wrap gap-4 justify-center items-center">
-            <a
+            <Link
               href={`/${locale}/mapa`}
-              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all hover:scale-103 duration-200 cursor-pointer"
+              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all hover:scale-105 duration-200 cursor-pointer"
             >
               {t("Hero.ctaPrimary")}
-            </a>
-            <a
+            </Link>
+            <Link
               href={`/${locale}/vivir/barrios`}
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl border border-slate-700 transition"
             >
               {t("Hero.ctaSecondary")}
-            </a>
+            </Link>
           </div>
 
-          <p className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wide">
+          <p className="text-[11px] sm:text-xs text-slate-500 font-semibold tracking-wide">
             {t("Hero.trending")}
           </p>
         </div>
@@ -144,10 +147,10 @@ export default function HomePage({ params: { locale } }) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Main Map Card - Spans 2 cols */}
-          <div className="md:col-span-2 bg-gradient-to-br from-emerald-800 to-slate-950 text-white p-8 rounded-3xl flex flex-col justify-between shadow-xl group min-h-[260px] relative overflow-hidden">
+          <div className="md:col-span-2 bg-linear-to-br from-emerald-800 to-slate-950 text-white p-8 rounded-3xl flex flex-col justify-between shadow-xl group min-h-[260px] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
             <div>
-              <span className="bg-emerald-500 text-white text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase leading-none inline-block mb-3">
+              <span className="bg-emerald-500 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full uppercase leading-none inline-block mb-3">
                 {t("Home.toolBadge")}
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-white mb-2">
@@ -158,13 +161,13 @@ export default function HomePage({ params: { locale } }) {
               </p>
             </div>
             <div className="pt-6">
-              <a
+              <Link
                 href={`/${locale}/mapa`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all"
               >
                 <span>{t("Home.exploreMap")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -172,7 +175,7 @@ export default function HomePage({ params: { locale } }) {
           {categories.map((cat, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+              className="bg-white border border-slate-100 p-6 rounded-2xl shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div className={`p-2.5 rounded-xl w-fit ${cat.bg}`}>
@@ -184,13 +187,13 @@ export default function HomePage({ params: { locale } }) {
                 </div>
               </div>
               <div className="pt-6">
-                <a
+                <Link
                   href={`/${locale}${cat.url}`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition"
                 >
                   <span>{t("Home.exploreCategory")}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -209,7 +212,7 @@ export default function HomePage({ params: { locale } }) {
           </p>
         </div>
 
-        <CityMap cityKey="asuncion" places={placesGeoJSON.features} locale={locale} />
+        <CityMap cityKey="asuncion" places={getPlaces(locale)} locale={locale} />
       </section>
     </div>
   );

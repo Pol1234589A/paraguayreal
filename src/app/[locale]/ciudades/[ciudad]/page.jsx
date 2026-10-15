@@ -1,22 +1,14 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { pageMetadata, LOCALES } from '../../../../lib/seo';
 import Breadcrumb from '../../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../../components/UI/UpdatedBadge';
 import SchemaOrg from '../../../../components/SEO/SchemaOrg';
-import placesGeoJSON from '../../../../../data/places.json';
+import { getPlaces } from '../../../../lib/places';
 import { Check, X, Shield, DollarSign, MapPin, Briefcase } from 'lucide-react';
 
-const CityMap = dynamic(
-  () => import('../../../../components/Map/CityMap'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[450px] w-full flex items-center justify-center bg-slate-100 rounded-xl border border-slate-200">
-        <span className="text-xs text-slate-500 uppercase font-mono animate-pulse">Cargando mapa de la ciudad...</span>
-      </div>
-    )
-  }
-);
+import CityMap from '../../../../components/Map/LazyCityMap';
 
 const CITIES_DATA = {
   "asuncion": {
@@ -111,30 +103,122 @@ const CITIES_DATA = {
   }
 };
 
-export async function generateMetadata({ params: { ciudad } }) {
-  const city = CITIES_DATA[ciudad];
-  if (!city) return { title: "Ciudad no encontrada" };
+const CITY_I18N = {
+  "asuncion": {
+    en: {
+      description: "Paraguay's capital and its financial, cultural and business hub. Modern skyscrapers sit alongside colonial houses and leafy residential areas.",
+      safety: "Favorable (avoid the downtown area at night)",
+      cost: "High ($800 - $1,500 USD/month)",
+      pros: ["Main center of professional jobs and business.", "Excellent range of private schools and medical clinics.", "High-level nightlife, bars and international restaurants."],
+      cons: ["Rush-hour traffic is heavy.", "Roads get potholes during heavy rain."]
+    },
+    pt: {
+      description: "A capital do Paraguai e o epicentro financeiro, cultural e de negócios do país. Mistura arranha-céus modernos com casarões coloniais e áreas residenciais muito arborizadas.",
+      safety: "Favorável (evitar o centro à noite)",
+      cost: "Alto ($800 - $1.500 USD/mês)",
+      pros: ["Principal centro de empregos profissionais e de negócios.", "Excelente oferta de colégios particulares e sanatórios médicos.", "Vida noturna, bares e restaurantes internacionais de alto nível."],
+      cons: ["O trânsito nos horários de pico é pesado.", "As ruas ficam com buracos em dias de chuva forte."]
+    }
+  },
+  "ciudad-del-este": {
+    en: {
+      description: "Located in the Triple Border with Brazil and Argentina, it is one of the largest free-trade zones in the world. Dynamic, multicultural and ideal for traders and tech investors.",
+      safety: "Moderate (take care downtown)",
+      cost: "Medium ($600 - $1,000 USD/month)",
+      pros: ["Huge trade and import opportunities.", "Direct, immediate access to the Brazilian market (Foz do Iguaçu).", "Close to natural wonders such as the Monday Falls."],
+      cons: ["The commercial downtown is very chaotic and noisy.", "Little cultural or leisure activity after shops close."]
+    },
+    pt: {
+      description: "Localizada na Tríplice Fronteira com Brasil e Argentina, é uma das maiores zonas de livre comércio do mundo. Dinâmica, multicultural e ideal para comerciantes e investidores de tecnologia.",
+      safety: "Moderada (cuidado no centro)",
+      cost: "Médio ($600 - $1.000 USD/mês)",
+      pros: ["Enormes oportunidades de comércio e importação.", "Acesso direto e imediato ao mercado brasileiro (Foz do Iguaçu).", "Perto de maravilhas naturais como os Saltos do Monday."],
+      cons: ["O centro comercial é muito caótico e barulhento.", "Pouca atividade cultural e de lazer depois que as lojas fecham."]
+    }
+  },
+  "encarnacion": {
+    en: {
+      description: "Known as the 'Pearl of the South', it is the summer city par excellence, with spotless river beaches, a clean and orderly waterfront and a very safe, peaceful pace of life.",
+      safety: "Excellent (the safest city in the country)",
+      cost: "Medium ($500 - $900 USD/month)",
+      pros: ["Safe river beaches and a first-class waterfront.", "Public safety above the rest of the country.", "Calm, impeccable family atmosphere."],
+      cons: ["Economic and industrial activity is smaller.", "Entertainment options drop considerably in winter."]
+    },
+    pt: {
+      description: "Conhecida como a 'Pérola do Sul', é a cidade de verão por excelência, com praias de rio impecáveis, uma orla limpa e ordenada e um ritmo de vida muito seguro e tranquilo.",
+      safety: "Excelente (a mais segura do país)",
+      cost: "Médio ($500 - $900 USD/mês)",
+      pros: ["Praias fluviais seguras e orla de primeiro mundo.", "Nível de segurança pública superior ao resto do país.", "Tranquilidade e ambiente familiar impecável."],
+      cons: ["A atividade econômica e industrial é menor.", "No inverno a oferta de entretenimento diminui bastante."]
+    }
+  }
+};
 
-  return {
-    title: `Vivir en ${city.name}: Guía Completa de Precios y Zonas | ParaguayReal`,
-    description: `Descubre todo sobre vivir en ${city.name}: pros y contras, seguridad, costos promedio de vida y mapa de lugares recomendados.`
-  };
+const LABELS = {
+  es: {
+    title: (n) => `Vivir en ${n}: Guía Completa de Precios y Zonas | ParaguayReal`,
+    desc: (n) => `Descubre todo sobre vivir en ${n}: pros y contras, seguridad, costos promedio de vida y mapa de lugares recomendados.`,
+    h1: (n) => `Guía de Vida en ${n}`, pros: (n) => `Ventajas de vivir en ${n}`, cons: (n) => `Desventajas de vivir en ${n}`,
+    safety: 'Nivel de Seguridad', cost: 'Costo Mensual Estimado', places: (n) => `Lugares Recomendados en ${n}`,
+    placesDesc: (n) => `Explora los centros de salud, comercios y zonas turísticas clave que hemos catalogado para ${n}. Puedes hacer clic en los pines para obtener rutas directas de Google Maps.`,
+    crumb: 'Ciudades'
+  },
+  en: {
+    title: (n) => `Living in ${n}: Complete Guide to Prices and Areas | ParaguayReal`,
+    desc: (n) => `Everything about living in ${n}: pros and cons, safety, average cost of living and a map of recommended places.`,
+    h1: (n) => `Living in ${n}: City Guide`, pros: (n) => `Advantages of living in ${n}`, cons: (n) => `Disadvantages of living in ${n}`,
+    safety: 'Safety Level', cost: 'Estimated Monthly Cost', places: (n) => `Recommended Places in ${n}`,
+    placesDesc: (n) => `Explore the health centers, shops and key tourist areas we have catalogued for ${n}. Click the pins to get direct Google Maps routes.`,
+    crumb: 'Cities'
+  },
+  pt: {
+    title: (n) => `Viver em ${n}: Guia Completo de Preços e Zonas | ParaguayReal`,
+    desc: (n) => `Descubra tudo sobre viver em ${n}: prós e contras, segurança, custo de vida médio e mapa de lugares recomendados.`,
+    h1: (n) => `Guia de Vida em ${n}`, pros: (n) => `Vantagens de viver em ${n}`, cons: (n) => `Desvantagens de viver em ${n}`,
+    safety: 'Nível de Segurança', cost: 'Custo Mensal Estimado', places: (n) => `Lugares Recomendados em ${n}`,
+    placesDesc: (n) => `Explore os centros de saúde, comércios e zonas turísticas-chave que catalogamos para ${n}. Clique nos pins para obter rotas diretas do Google Maps.`,
+    crumb: 'Cidades'
+  }
+};
+
+function localizeCity(key, locale) {
+  const base = CITIES_DATA[key];
+  if (!base) return null;
+  return { ...base, ...(CITY_I18N[key]?.[locale] || {}) };
 }
 
-export default function CiudadPage({ params: { ciudad, locale } }) {
-  const city = CITIES_DATA[ciudad];
+export function generateStaticParams() {
+  return LOCALES.flatMap((locale) =>
+    Object.keys(CITIES_DATA).map((ciudad) => ({ locale, ciudad }))
+  );
+}
 
-  if (!city) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-20 text-center font-bold">
-        Ciudad no encontrada en nuestra base de datos.
-      </div>
-    );
-  }
+export async function generateMetadata({ params }) {
+  const { ciudad, locale } = await params;
+  const city = localizeCity(ciudad, locale);
+  if (!city) return {};
+  const L = LABELS[locale] || LABELS.es;
+
+  return pageMetadata({
+    locale,
+    path: `/ciudades/${ciudad}`,
+    title: L.title(city.name),
+    description: L.desc(city.name),
+    image: city.photo
+  });
+}
+
+export default function CiudadPage({ params }) {
+  const { ciudad, locale } = use(params);
+  setRequestLocale(locale);
+  const city = localizeCity(ciudad, locale);
+
+  if (!city) notFound();
+  const L = LABELS[locale] || LABELS.es;
 
   const breadcrumbs = [
-    { label: "Ciudades", url: "/ciudades/asuncion" },
-    { label: item => item.toUpperCase(), label: city.name, url: `/ciudades/${ciudad}` }
+    { label: L.crumb, url: "/ciudades/asuncion" },
+    { label: city.name, url: `/ciudades/${ciudad}` }
   ];
 
   // Structured Place schemas
@@ -152,22 +236,22 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       <SchemaOrg schema={placeSchema} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Hero Banner */}
       <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden shadow-lg bg-slate-900 text-white">
-        <img
+        <img loading="lazy" decoding="async"
           src={city.photo}
           alt={city.name}
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/30 to-transparent" />
         <div className="absolute bottom-6 left-6 right-6 space-y-2">
           <UpdatedBadge />
           <h1 className="text-3xl sm:text-4xl font-extrabold font-display leading-none">
-            Guía de Vida en {city.name}
+            {L.h1(city.name)}
           </h1>
           <p className="text-xs sm:text-sm text-slate-200 max-w-xl line-clamp-2">
             {city.description}
@@ -181,7 +265,7 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
         <div className="bg-emerald-50/30 border border-emerald-100 rounded-xl p-5 space-y-3">
           <h3 className="font-extrabold text-slate-900 text-sm sm:text-base flex items-center gap-1.5">
             <Check className="w-5 h-5 text-emerald-600 shrink-0" />
-            <span>Ventajas de vivir en {city.name}</span>
+            <span>{L.pros(city.name)}</span>
           </h3>
           <ul className="space-y-2 text-xs sm:text-sm text-slate-700 list-none pl-1">
             {city.pros.map((pro, index) => (
@@ -197,7 +281,7 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
         <div className="bg-red-50/20 border border-red-100 rounded-xl p-5 space-y-3">
           <h3 className="font-extrabold text-slate-900 text-sm sm:text-base flex items-center gap-1.5">
             <X className="w-5 h-5 text-red-600 shrink-0" />
-            <span>Desventajas de vivir en {city.name}</span>
+            <span>{L.cons(city.name)}</span>
           </h3>
           <ul className="space-y-2 text-xs sm:text-sm text-slate-700 list-none pl-1">
             {city.cons.map((con, index) => (
@@ -211,18 +295,18 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
       </section>
 
       {/* Quick Stats Panel */}
-      <section className="bg-white rounded-xl border border-slate-100 p-5 shadow-sm grid grid-cols-2 gap-4 text-xs sm:text-sm">
+      <section className="bg-white rounded-xl border border-slate-100 p-5 shadow-xs grid grid-cols-2 gap-4 text-xs sm:text-sm">
         <div className="flex items-center gap-2">
           <Shield className="w-5 h-5 text-emerald-600" />
           <div>
-            <span className="text-[10px] font-bold text-slate-400 block uppercase">Nivel de Seguridad</span>
+            <span className="text-[11px] font-bold text-slate-400 block uppercase">{L.safety}</span>
             <span className="font-semibold text-slate-800">{city.safety}</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <DollarSign className="w-5 h-5 text-emerald-600" />
           <div>
-            <span className="text-[10px] font-bold text-slate-400 block uppercase">Costo Mensual Estimado</span>
+            <span className="text-[11px] font-bold text-slate-400 block uppercase">{L.cost}</span>
             <span className="font-semibold text-slate-800">{city.cost}</span>
           </div>
         </div>
@@ -245,12 +329,12 @@ export default function CiudadPage({ params: { ciudad, locale } }) {
       <section className="space-y-4">
         <h3 className="font-extrabold text-slate-950 text-base sm:text-lg flex items-center gap-2">
           <MapPin className="w-5 h-5 text-emerald-600" />
-          <span>Lugares Recomendados en {city.name}</span>
+          <span>{L.places(city.name)}</span>
         </h3>
         <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-          Explora los centros de salud, comercios y zonas turísticas clave que hemos catalogado para {city.name}. Puedes hacer clic en los pines para obtener rutas directas de Google Maps.
+          {L.placesDesc(city.name)}
         </p>
-        <CityMap cityKey={ciudad} places={placesGeoJSON.features} locale={locale} />
+        <CityMap cityKey={ciudad} places={getPlaces(locale)} locale={locale} />
       </section>
     </div>
   );

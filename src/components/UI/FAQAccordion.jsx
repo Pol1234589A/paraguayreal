@@ -1,5 +1,6 @@
 'use client';
 
+import { jsonLd } from '../../lib/jsonLd';
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -29,7 +30,7 @@ export default function FAQAccordion({ faqs = [] }) {
       {/* Schema Injection */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }}
       />
 
       {faqs.map((faq, index) => {
@@ -37,7 +38,7 @@ export default function FAQAccordion({ faqs = [] }) {
         return (
           <div
             key={index}
-            className="border border-slate-200 bg-white rounded-xl overflow-hidden shadow-sm transition"
+            className="border border-slate-200 bg-white rounded-xl overflow-hidden shadow-xs transition"
           >
             <button
               onClick={() => toggleFAQ(index)}

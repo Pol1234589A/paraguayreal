@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import Breadcrumb from './Breadcrumb';
@@ -19,6 +20,7 @@ const CityMap = dynamic(
 );
 
 export default function TourismClient({ placesFeatures, locale }) {
+  const t = useTranslations('Tourism');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState('all');
 
@@ -34,7 +36,7 @@ export default function TourismClient({ placesFeatures, locale }) {
     return allTourismPlaces.filter((place) => {
       // 1. Tab filter
       const city = place.properties.city;
-      const tags = place.properties.tags || [];
+      const tags = place.properties.tagsOriginal || place.properties.tags || [];
       const id = place.properties.id || '';
 
       if (activeTab === 'asuncion' && city !== 'asuncion') return false;
@@ -91,52 +93,52 @@ export default function TourismClient({ placesFeatures, locale }) {
   }, [allTourismPlaces, activeTab, searchQuery]);
 
   const breadcrumbs = [
-    { label: 'Turismo', url: '/turismo' }
+    { label: t('crumb'), url: '/turismo' }
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       <Breadcrumb items={breadcrumbs} locale={locale} />
 
       {/* Header section */}
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <UpdatedBadge />
-          <span className="bg-amber-100 text-amber-900 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
-            Guía Oficial
+          <span className="bg-amber-100 text-amber-900 border border-amber-200 text-[11px] font-bold px-2 py-0.5 rounded-full uppercase">
+            {t('badge')}
           </span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold font-display leading-tight text-slate-900 flex items-center gap-3">
           <Compass className="w-10 h-10 text-emerald-600 animate-spin-slow" />
-          <span>Turismo y Lugares en Paraguay</span>
+          <span>{t('title')}</span>
         </h1>
         <p className="text-slate-500 text-sm sm:text-base max-w-3xl leading-relaxed">
-          Descubre los tesoros naturales, históricos y culturales de Paraguay. Desde la Costanera y museos coloniales de la capital hasta las imponentes ruinas jesuíticas, cascadas de la selva paranaense y lagos de Cordillera.
+          {t('intro')}
         </p>
       </div>
 
       {/* Search and Filters row */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center bg-white border border-slate-100 rounded-2xl p-4 shadow-xs">
         {/* Search input */}
         <div className="relative flex-1 max-w-md">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Buscar por nombre, etiquetas o ciudad..."
+            placeholder={t('search')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
+            className="w-full bg-slate-50 border border-slate-200 text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
           />
         </div>
 
         {/* Tab buttons */}
         <div className="flex flex-wrap gap-1.5 scrollbar-none overflow-x-auto">
           {[
-            { id: 'all', label: 'Todos' },
-            { id: 'asuncion', label: 'Asunción' },
-            { id: 'cordillera-aregua', label: 'Areguá & Cordillera' },
-            { id: 'encarnacion-cde', label: 'Encarnación / CDE' },
-            { id: 'interior', label: 'Otros Interior' }
+            { id: 'all', label: t('tabAll') },
+            { id: 'asuncion', label: t('tabAsuncion') },
+            { id: 'cordillera-aregua', label: t('tabCordillera') },
+            { id: 'encarnacion-cde', label: t('tabEncCde') },
+            { id: 'interior', label: t('tabInterior') }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -157,10 +159,10 @@ export default function TourismClient({ placesFeatures, locale }) {
       <section className="space-y-6">
         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
           <h2 className="text-lg font-bold text-slate-900">
-            Atracciones Recomendadas ({filteredPlaces.length})
+            {t('recommended')} ({filteredPlaces.length})
           </h2>
           <span className="text-xs text-slate-400 font-medium">
-            Mostrando resultados filtrados
+            {t('showing')}
           </span>
         </div>
 
@@ -168,7 +170,7 @@ export default function TourismClient({ placesFeatures, locale }) {
           <div className="text-center py-20 bg-white border border-slate-100 rounded-3xl space-y-4">
             <Compass className="w-12 h-12 text-slate-300 mx-auto" />
             <p className="text-slate-500 font-semibold text-sm">
-              No encontramos lugares turísticos con esos filtros. ¡Prueba buscando otro término!
+              {t('empty')}
             </p>
           </div>
         ) : (
@@ -178,15 +180,15 @@ export default function TourismClient({ placesFeatures, locale }) {
               return (
                 <div
                   key={p.id}
-                  className="bg-white border border-slate-100/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white border border-slate-100/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div className="relative h-44 w-full bg-slate-100 overflow-hidden">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={p.photo || 'https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=500'}
                       alt={p.name}
                       className="w-full h-full object-cover"
                     />
-                    <span className="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase leading-none shadow-sm">
+                    <span className="absolute top-3 right-3 bg-emerald-500 text-white text-[11px] font-black px-2 py-0.5 rounded-sm uppercase leading-none shadow-xs">
                       {p.city === 'interior' ? 'Interior' : p.city}
                     </span>
                   </div>
@@ -195,7 +197,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                     <div className="space-y-2">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-                        <span className="text-[10px] font-extrabold text-slate-400 block uppercase tracking-wide">
+                        <span className="text-[11px] font-extrabold text-slate-400 block uppercase tracking-wide">
                           {p.address}
                         </span>
                       </div>
@@ -216,8 +218,8 @@ export default function TourismClient({ placesFeatures, locale }) {
                           <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
                           <span className="font-bold text-slate-700">{p.rating || '4.5'}</span>
                         </div>
-                        <span className="text-[10px] font-semibold text-slate-500 block truncate max-w-[150px]">
-                          🕒 {p.hours || 'Acceso libre'}
+                        <span className="text-[11px] font-semibold text-slate-500 block truncate max-w-[150px]">
+                          🕒 {p.hours || t('freeAccess')}
                         </span>
                       </div>
 
@@ -226,7 +228,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                         {(p.tags || []).slice(0, 3).map((tag, idx) => (
                           <span
                             key={idx}
-                            className="bg-slate-50 text-slate-500 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase"
+                            className="bg-slate-50 text-slate-500 text-[11px] font-bold px-1.5 py-0.5 rounded-sm uppercase"
                           >
                             {tag}
                           </span>
@@ -241,15 +243,15 @@ export default function TourismClient({ placesFeatures, locale }) {
                           rel="noopener noreferrer"
                           className="flex-1 text-center py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold rounded-xl transition border border-emerald-100/60"
                         >
-                          Ver Mapa
+                          {t('viewMap')}
                         </a>
                         <a
                           href={p.googleMapsDirections || p.googleMapsUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 text-center py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition shadow-sm"
+                          className="flex-1 text-center py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition shadow-xs"
                         >
-                          Cómo Llegar
+                          {t('directions')}
                         </a>
                       </div>
                     </div>
@@ -265,10 +267,10 @@ export default function TourismClient({ placesFeatures, locale }) {
       <section className="space-y-4 pt-4 border-t border-slate-100">
         <div className="space-y-1">
           <h2 className="text-xl font-extrabold text-slate-900 font-display">
-            Mapa de Atractivos Filtrados
+            {t('mapTitle')}
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-            Navega por las coordenadas exactas de las atracciones turísticas seleccionadas. Haz clic en los pines para ver fotos y detalles de horarios.
+            {t('mapDesc')}
           </p>
         </div>
 

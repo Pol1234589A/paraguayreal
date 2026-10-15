@@ -3,16 +3,16 @@ import GoogleMapsButton from './GoogleMapsButton';
 import DirectionsButton from './DirectionsButton';
 import { Star, Clock, MapPin } from 'lucide-react';
 
-export default function PlacePopup({ place }) {
+export default function PlacePopup({ place, labels = {} }) {
   if (!place) return null;
 
   return (
     <div className="w-64 p-1 text-slate-800 rounded-xl">
       {place.photo && (
-        <img
+        <img loading="lazy" decoding="async"
           src={place.photo}
           alt={place.name}
-          className="w-full h-28 object-cover rounded-lg mb-2 shadow-sm"
+          className="w-full h-28 object-cover rounded-lg mb-2 shadow-xs"
         />
       )}
       <div className="px-1">
@@ -23,7 +23,7 @@ export default function PlacePopup({ place }) {
             <Star className="w-3 h-3 fill-amber-500 text-amber-500" />
             <span>{place.rating || 'N/A'}</span>
           </div>
-          <span className="text-[10px] bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded font-semibold capitalize">
+          <span className="text-[11px] bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded-sm font-semibold capitalize">
             {place.category}
           </span>
         </div>
@@ -33,12 +33,12 @@ export default function PlacePopup({ place }) {
         </p>
 
         <div className="space-y-1 mb-2.5">
-          <div className="flex items-start gap-1 text-[10px] text-slate-500 leading-normal">
+          <div className="flex items-start gap-1 text-[11px] text-slate-500 leading-normal">
             <MapPin className="w-3 h-3 text-slate-400 shrink-0 mt-0.5" />
             <span className="line-clamp-2">{place.address}</span>
           </div>
           {place.hours && (
-            <div className="flex items-center gap-1 text-[10px] text-slate-500">
+            <div className="flex items-center gap-1 text-[11px] text-slate-500">
               <Clock className="w-3 h-3 text-slate-400 shrink-0" />
               <span>{place.hours}</span>
             </div>
@@ -47,17 +47,17 @@ export default function PlacePopup({ place }) {
 
         <div className="flex flex-col gap-1.5 pt-2 border-t border-slate-100">
           <div className="flex gap-1.5">
-            <DirectionsButton url={place.googleMapsDirections} label="Cómo llegar" />
-            <GoogleMapsButton url={place.googleMapsUrl} label="Google Maps" variant="outline" />
+            <DirectionsButton url={place.googleMapsDirections} label={labels.directions || "Cómo llegar"} />
+            <GoogleMapsButton url={place.googleMapsUrl} label={labels.googleMaps || "Google Maps"} variant="outline" />
           </div>
           {place.website && (
             <a
               href={place.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full mt-1 text-center text-emerald-600 hover:text-emerald-700 font-bold border border-emerald-100 hover:border-emerald-200 bg-emerald-50 hover:bg-emerald-100/50 rounded-lg py-1.5 px-3 transition text-[10px] flex items-center justify-center gap-1 shadow-sm"
+              className="w-full mt-1 text-center text-emerald-600 hover:text-emerald-700 font-bold border border-emerald-100 hover:border-emerald-200 bg-emerald-50 hover:bg-emerald-100/50 rounded-lg py-1.5 px-3 transition text-[11px] flex items-center justify-center gap-1 shadow-xs"
             >
-              <span>Ver Guía Geografía Sagrada</span>
+              <span>{labels.viewGuide || 'Ver Guía Geografía Sagrada'}</span>
             </a>
           )}
         </div>

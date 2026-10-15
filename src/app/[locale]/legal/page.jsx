@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '../../../lib/seo';
 import Breadcrumb from '../../../components/UI/Breadcrumb';
 import UpdatedBadge from '../../../components/UI/UpdatedBadge';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Aviso Legal y Condiciones de Uso | ParaguayReal",
     en: "Legal Notice and Terms of Use | ParaguayReal",
     pt: "Aviso Legal e Termos de Uso | ParaguayReal"
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/legal',
     title: titles[locale] || titles.es,
     description: "Información legal, propiedad intelectual y términos de uso del sitio web ParaguayReal."
-  };
+  });
 }
 
-export default function LegalPage({ params: { locale } }) {
+export default function LegalPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const breadcrumbs = [
     { label: locale === 'en' ? "Legal Notice" : locale === 'pt' ? "Aviso Legal" : "Aviso Legal", url: "/legal" }
   ];
@@ -31,7 +38,9 @@ export default function LegalPage({ params: { locale } }) {
       sec3Title: "3. Propiedad Intelectual",
       sec3Desc: "Todos los elementos gráficos, código fuente, logotipos y contenidos de texto del sitio están protegidos por derechos de autor y propiedad intelectual. Queda prohibida la reproducción parcial o total sin consentimiento previo por escrito o mención directa de autoría mediante hipervínculo.",
       sec4Title: "4. Exclusión de Asesoría Profesional",
-      sec4Desc: "El contenido referente a visados, radicación permanente, impuestos (regla 10-10-10) y regulaciones financieras locales no constituye asesoría legal, contable ni financiera oficial. Se recomienda encarecidamente al usuario consultar con asesores y profesionales licenciados en Paraguay antes de tomar cualquier decisión de inversión o radicación."
+      sec4Desc: "El contenido referente a visados, radicación permanente, impuestos (regla 10-10-10) y regulaciones financieras locales no constituye asesoría legal, contable ni financiera oficial. Se recomienda encarecidamente al usuario consultar con asesores y profesionales licenciados en Paraguay antes de tomar cualquier decisión de inversión o radicación.",
+      sec5Title: "5. Contacto",
+      sec5Desc: "Para consultas legales, solicitudes de rectificación o ejercicio de derechos sobre tus datos, escribe a"
     },
     en: {
       title: "Legal Notice & Terms of Use",
@@ -43,7 +52,9 @@ export default function LegalPage({ params: { locale } }) {
       sec3Title: "3. Intellectual Property",
       sec3Desc: "All graphic assets, source code, logos, and textual contents of this site are protected by copyright and intellectual property laws. Reproduction in whole or in part is prohibited without prior written consent or explicit link attribution.",
       sec4Title: "4. Disclaimer of Professional Advice",
-      sec4Desc: "Content regarding visas, permanent residency, tax rules (10-10-10 system), and local business laws does not constitute official legal, accounting, or financial advice. Users are strongly advised to consult licensed professionals in Paraguay before making any investment or relocation decisions."
+      sec4Desc: "Content regarding visas, permanent residency, tax rules (10-10-10 system), and local business laws does not constitute official legal, accounting, or financial advice. Users are strongly advised to consult licensed professionals in Paraguay before making any investment or relocation decisions.",
+      sec5Title: "5. Contact",
+      sec5Desc: "For legal inquiries, correction requests or to exercise your data rights, write to"
     },
     pt: {
       title: "Aviso Legal e Termos de Uso",
@@ -55,14 +66,16 @@ export default function LegalPage({ params: { locale } }) {
       sec3Title: "3. Propriedade Intelectual",
       sec3Desc: "Todos os elementos gráficos, código-fonte, logotipos e textos do site estão protegidos por direitos autorais. É proibida a reprodução parcial ou total sem consentimento prévio por escrito ou menção direta de autoria com hiperlink.",
       sec4Title: "4. Exclusão de Assessoria Profissional",
-      sec4Desc: "As informações referentes a vistos, residência permanente, impostos (regra 10-10-10) e leis financeiras locais não constituem assessoria jurídica, contábil ou financeira oficial. Recomenda-se fortemente consultar profissionais licenciados no Paraguai antes de qualquer decisão de investimento ou mudança."
+      sec4Desc: "As informações referentes a vistos, residência permanente, impostos (regra 10-10-10) e leis financeiras locais não constituem assessoria jurídica, contábil ou financeira oficial. Recomenda-se fortemente consultar profissionais licenciados no Paraguai antes de qualquer decisão de investimento ou mudança.",
+      sec5Title: "5. Contato",
+      sec5Desc: "Para consultas jurídicas, pedidos de retificação ou exercício de direitos sobre seus dados, escreva para"
     }
   };
 
   const data = content[locale] || content.es;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 select-none space-y-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
       <Breadcrumb items={breadcrumbs} locale={locale} />
       
       <div className="space-y-4 border-b border-slate-100 pb-6">
@@ -89,6 +102,10 @@ export default function LegalPage({ params: { locale } }) {
         <div className="space-y-2">
           <h2 className="text-lg font-bold text-slate-900 font-display">{data.sec3Title}</h2>
           <p>{data.sec3Desc}</p>
+        </div>
+        <div className="space-y-2">
+          <h2 className="text-lg font-bold text-slate-900 font-display">{data.sec5Title}</h2>
+          <p>{data.sec5Desc} <a href="mailto:info@paraguayreal.com" className="text-emerald-700 font-semibold underline">info@paraguayreal.com</a>.</p>
         </div>
         <div className="space-y-2 bg-amber-50/40 p-5 rounded-xl border border-amber-100">
           <h2 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">

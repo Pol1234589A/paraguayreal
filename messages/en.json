@@ -44,7 +44,16 @@
     "noToken": "The environmental variable NEXT_PUBLIC_MAPBOX_TOKEN is not set. Please create a .env.local file in the root with your Mapbox token.",
     "shareLocation": "Share Location",
     "locationCopied": "Link copied to clipboard with current map view!",
-    "myLocation": "My location"
+    "myLocation": "My location",
+    "noPlaces": "No places found in this area.",
+    "directions": "Directions",
+    "googleMaps": "Google Maps",
+    "viewGuide": "View Sacred Geography Guide",
+    "loadingInteractive": "Loading interactive map of Paraguay...",
+    "fullMap": "View full map",
+    "touristPlaces": "tourist places",
+    "placesIn": "places in",
+    "loading": "Loading map..."
   },
   "Prices": {
     "title": "Prices and Cost of Living in Paraguay",
@@ -129,5 +138,42 @@
         "desc": "Practical advice, healthcare, banking, and public safety."
       }
     }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "desc": "Sorry, the page you are looking for does not exist or has moved. Browse the menu or go back home to keep exploring.",
+    "cta": "Back to Home"
+  },
+  "Common": {
+    "updated": "Updated",
+    "place": "Place",
+    "guide": "Guide / Article",
+    "viewOnGoogleMaps": "View on Google Maps",
+    "loadingMap": "Loading map…",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "clearSearch": "Clear search",
+    "all": "All"
+  },
+  "Tourism": {
+    "badge": "Official Guide",
+    "title": "Tourism and Places in Paraguay",
+    "intro": "Discover Paraguay's natural, historical and cultural treasures. From the capital's waterfront and colonial museums to the imposing Jesuit ruins, Paraná rainforest waterfalls and Cordillera lakes.",
+    "search": "Search by name, tags or city...",
+    "tabAll": "All",
+    "tabAsuncion": "Asunción",
+    "tabCordillera": "Areguá & Cordillera",
+    "tabEncCde": "Encarnación / CDE",
+    "tabInterior": "Other Interior",
+    "recommended": "Recommended Attractions",
+    "showing": "Showing filtered results",
+    "empty": "We couldn't find tourist places with those filters. Try another search term!",
+    "freeAccess": "Free access",
+    "viewMap": "View Map",
+    "directions": "Get Directions",
+    "mapTitle": "Map of Filtered Attractions",
+    "mapDesc": "Browse the exact coordinates of the selected tourist attractions. Click the pins to see photos and opening hours.",
+    "crumb": "Tourism"
   }
 }

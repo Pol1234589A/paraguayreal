@@ -30,7 +30,7 @@ export default function PriceTable({ t }) {
               <h3 className="font-extrabold text-sm tracking-wide uppercase font-display">
                 {getCategoryTitle(categoryKey)}
               </h3>
-              <span className="text-[10px] bg-emerald-600 font-bold px-2 py-0.5 rounded text-emerald-50">
+              <span className="text-[11px] bg-emerald-600 font-bold px-2 py-0.5 rounded-sm text-emerald-50">
                 {t ? t("Prices.updated") : "Actualizado: Junio 2026"}
               </span>
             </div>
@@ -39,7 +39,7 @@ export default function PriceTable({ t }) {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs sm:text-sm">
                 <thead>
-                  <tr className="bg-slate-50 border-b border-slate-100 text-slate-400 font-semibold uppercase text-[10px] tracking-wider">
+                  <tr className="bg-slate-50 border-b border-slate-100 text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
                     <th className="px-6 py-3.5 w-1/2">
                       {t ? t("Prices.headers.item") : "Concepto / Servicio"}
                     </th>

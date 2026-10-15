@@ -1,0 +1,1688 @@
+{
+ "palacio-lopez": {
+  "en": {
+   "name": "Palacio de los López",
+   "description": "Seat of the Paraguayan government and one of the most emblematic buildings in Asunción.",
+   "hours": "Monday to Friday 08:00 - 17:00",
+   "tags": [
+    "historic",
+    "government",
+    "downtown"
+   ]
+  },
+  "pt": {
+   "name": "Palacio de los López",
+   "description": "Sede do governo paraguaio e um dos edifícios mais emblemáticos de Assunção.",
+   "hours": "Segunda a sexta 08:00 - 17:00",
+   "tags": [
+    "histórico",
+    "governo",
+    "centro"
+   ]
+  }
+ },
+ "panteon-heroes": {
+  "en": {
+   "name": "National Pantheon of Heroes",
+   "description": "Historic mausoleum and national monument paying tribute to the heroes of the homeland.",
+   "hours": "Every day 06:00 - 18:00",
+   "tags": [
+    "historic",
+    "monument",
+    "downtown"
+   ]
+  },
+  "pt": {
+   "name": "Panteão Nacional dos Heróis",
+   "description": "Mausoléu histórico e monumento nacional que presta homenagem aos heróis da pátria.",
+   "hours": "Todos os dias 06:00 - 18:00",
+   "tags": [
+    "histórico",
+    "monumento",
+    "centro"
+   ]
+  }
+ },
+ "costanera-asuncion": {
+  "en": {
+   "name": "Asunción Waterfront",
+   "description": "Waterfront avenue and pedestrian beach on the shores of Asunción Bay, ideal for sunset walks.",
+   "hours": "Free access 24/7",
+   "tags": [
+    "outdoors",
+    "views",
+    "bay"
+   ]
+  },
+  "pt": {
+   "name": "Costanera de Assunção",
+   "description": "Avenida beira-rio e praia de pedestres às margens da baía de Assunção, ideal para caminhadas ao entardecer.",
+   "hours": "Acesso livre 24h",
+   "tags": [
+    "ao ar livre",
+    "vistas",
+    "baía"
+   ]
+  }
+ },
+ "mercado-4": {
+  "en": {
+   "name": "Municipal Market No. 4",
+   "description": "The largest and busiest popular market in Asunción, ideal for experiencing local culture and food.",
+   "hours": "Every day 04:00 - 18:00",
+   "tags": [
+    "shopping",
+    "popular",
+    "food"
+   ]
+  },
+  "pt": {
+   "name": "Mercado Municipal nº 4",
+   "description": "O maior e mais movimentado mercado popular de Assunção, ideal para conhecer a cultura e a comida locais.",
+   "hours": "Todos os dias 04:00 - 18:00",
+   "tags": [
+    "compras",
+    "popular",
+    "comida"
+   ]
+  }
+ },
+ "shopping-mariscal": {
+  "en": {
+   "name": "Shopping Mariscal",
+   "description": "One of the most dynamic traditional shopping malls, located in Villa Morra.",
+   "hours": "Every day 09:00 - 21:00",
+   "tags": [
+    "shopping",
+    "shopping mall",
+    "restaurants"
+   ]
+  },
+  "pt": {
+   "name": "Shopping Mariscal",
+   "description": "Um dos shoppings tradicionais mais dinâmicos, localizado em Villa Morra.",
+   "hours": "Todos os dias 09:00 - 21:00",
+   "tags": [
+    "compras",
+    "shopping center",
+    "restaurantes"
+   ]
+  }
+ },
+ "aeropuerto-silvio-pettirossi": {
+  "en": {
+   "name": "Silvio Pettirossi International Airport",
+   "description": "The main air gateway to Paraguay, located in Luque (Greater Asunción).",
+   "hours": "Open 24 hours",
+   "tags": [
+    "airport",
+    "transport",
+    "travel"
+   ]
+  },
+  "pt": {
+   "name": "Aeroporto Internacional Silvio Pettirossi",
+   "description": "A principal porta de entrada aérea do Paraguai, localizada em Luque (Grande Assunção).",
+   "hours": "Aberto 24 horas",
+   "tags": [
+    "aeroporto",
+    "transporte",
+    "viagens"
+   ]
+  }
+ },
+ "estacion-buses-asuncion": {
+  "en": {
+   "name": "Asunción Bus Terminal",
+   "description": "The country's main long-distance bus terminal, connecting with the whole interior and abroad.",
+   "hours": "Open 24 hours",
+   "tags": [
+    "buses",
+    "transport",
+    "terminal"
+   ]
+  },
+  "pt": {
+   "name": "Rodoviária de Assunção",
+   "description": "O principal terminal de ônibus de longa distância do país, com conexões para todo o interior e o exterior.",
+   "hours": "Aberto 24 horas",
+   "tags": [
+    "ônibus",
+    "transporte",
+    "terminal"
+   ]
+  }
+ },
+ "barrio-las-mercedes": {
+  "en": {
+   "name": "Las Mercedes Neighborhood",
+   "description": "Bohemian and trendy neighborhood, famous for its cafés, designer bars and historic mansions.",
+   "hours": "Free access",
+   "tags": [
+    "neighborhood",
+    "safe",
+    "gastronomy"
+   ]
+  },
+  "pt": {
+   "name": "Bairro Las Mercedes",
+   "description": "Bairro boêmio e da moda, famoso por suas cafeterias, bares de design e casarões históricos.",
+   "hours": "Acesso livre",
+   "tags": [
+    "bairro",
+    "seguro",
+    "gastronomia"
+   ]
+  }
+ },
+ "barrio-mburucuya": {
+  "en": {
+   "name": "Mburucuyá Neighborhood",
+   "description": "One of the most luxurious, quiet and safe residential areas in northern Asunción.",
+   "hours": "Free access",
+   "tags": [
+    "neighborhood",
+    "exclusive",
+    "security"
+   ]
+  },
+  "pt": {
+   "name": "Bairro Mburucuyá",
+   "description": "Uma das zonas residenciais mais luxuosas, tranquilas e seguras do norte de Assunção.",
+   "hours": "Acesso livre",
+   "tags": [
+    "bairro",
+    "exclusivo",
+    "segurança"
+   ]
+  }
+ },
+ "barrio-villa-morra": {
+  "en": {
+   "name": "Villa Morra Neighborhood",
+   "description": "Commercial and financial heart of Asunción, full of malls, hotels and top-quality dining venues.",
+   "hours": "Free access",
+   "tags": [
+    "neighborhood",
+    "financial",
+    "shopping"
+   ]
+  },
+  "pt": {
+   "name": "Bairro Villa Morra",
+   "description": "Coração comercial e financeiro de Assunção, repleto de shoppings, hotéis e estabelecimentos gastronômicos de primeira linha.",
+   "hours": "Acesso livre",
+   "tags": [
+    "bairro",
+    "financeiro",
+    "compras"
+   ]
+  }
+ },
+ "hospital-central-ips": {
+  "en": {
+   "name": "Hospital Central IPS",
+   "description": "The country's largest public hospital complex, managed by the Social Security Institute (Instituto de Previsión Social).",
+   "hours": "Open 24 hours",
+   "tags": [
+    "hospital",
+    "health",
+    "public"
+   ]
+  },
+  "pt": {
+   "name": "Hospital Central IPS",
+   "description": "O maior complexo hospitalar público do país, gerido pelo Instituto de Previsão Social.",
+   "hours": "Aberto 24 horas",
+   "tags": [
+    "hospital",
+    "saúde",
+    "público"
+   ]
+  }
+ },
+ "universidad-nacional-asuncion": {
+  "en": {
+   "name": "National University of Asunción (UNA)",
+   "description": "The main campus of the oldest and most prestigious university in Paraguay, located in San Lorenzo.",
+   "hours": "Monday to Saturday 07:00 - 21:00",
+   "tags": [
+    "university",
+    "studies",
+    "campus"
+   ]
+  },
+  "pt": {
+   "name": "Universidade Nacional de Assunção (UNA)",
+   "description": "O campus principal da universidade mais antiga e prestigiada do Paraguai, situado em San Lorenzo.",
+   "hours": "Segunda a sábado 07:00 - 21:00",
+   "tags": [
+    "universidade",
+    "estudos",
+    "campus"
+   ]
+  }
+ },
+ "lido-bar": {
+  "en": {
+   "name": "Lido Bar",
+   "description": "Iconic historic restaurant right downtown, famous for its fish soup (pira caldo) and empanadas.",
+   "hours": "Every day 07:00 - 23:00",
+   "tags": [
+    "traditional food",
+    "downtown",
+    "historic"
+   ]
+  },
+  "pt": {
+   "name": "Lido Bar",
+   "description": "Restaurante emblemático e histórico em pleno centro, famoso por seu caldo de peixe (pira caldo) e empanadas.",
+   "hours": "Todos os dias 07:00 - 23:00",
+   "tags": [
+    "comida típica",
+    "centro",
+    "histórico"
+   ]
+  }
+ },
+ "bolsi": {
+  "en": {
+   "name": "Bolsi",
+   "description": "Over 60 years old, a must-visit restaurant with a classic counter and an extensive, high-quality international menu.",
+   "hours": "Open 24 hours",
+   "tags": [
+    "classic",
+    "counter",
+    "international"
+   ]
+  },
+  "pt": {
+   "name": "Bolsi",
+   "description": "Com mais de 60 anos, é um restaurante imperdível com balcão clássico e um extenso cardápio internacional de alta qualidade.",
+   "hours": "Aberto 24 horas",
+   "tags": [
+    "clássico",
+    "balcão",
+    "internacional"
+   ]
+  }
+ },
+ "lo-de-osvaldo": {
+  "en": {
+   "name": "Lo de Osvaldo",
+   "description": "Excellent Paraguayan football-themed steakhouse, ideal for trying the famous Paraguayan beef.",
+   "hours": "Every day 11:30 - 15:30, 19:30 - 00:00",
+   "tags": [
+    "steakhouse",
+    "barbecue",
+    "football"
+   ]
+  },
+  "pt": {
+   "name": "Lo de Osvaldo",
+   "description": "Excelente churrascaria temática do futebol paraguaio, ideal para provar a famosa carne paraguaia.",
+   "hours": "Todos os dias 11:30 - 15:30, 19:30 - 00:00",
+   "tags": [
+    "churrascaria",
+    "churrasco",
+    "futebol"
+   ]
+  }
+ },
+ "supermercado-superseis-villamorra": {
+  "en": {
+   "name": "Superseis Villa Morra",
+   "description": "Modern supermarket with a wide variety of local and imported products in Villa Morra.",
+   "hours": "Every day 07:00 - 23:00",
+   "tags": [
+    "supermarket",
+    "shopping",
+    "villa morra"
+   ]
+  },
+  "pt": {
+   "name": "Superseis Villa Morra",
+   "description": "Supermercado moderno com ampla variedade de produtos locais e importados em Villa Morra.",
+   "hours": "Todos os dias 07:00 - 23:00",
+   "tags": [
+    "supermercado",
+    "compras",
+    "villa morra"
+   ]
+  }
+ },
+ "cambios-chaco-villamorra": {
+  "en": {
+   "name": "Cambios Chaco - Villa Morra",
+   "description": "One of the safest currency exchange houses, with some of the best rates for the guaraní against USD, euro and reais.",
+   "hours": "Monday to Friday 08:30 - 17:00, Saturdays 08:30 - 12:00",
+   "tags": [
+    "exchange",
+    "money",
+    "finance"
+   ]
+  },
+  "pt": {
+   "name": "Cambios Chaco - Villa Morra",
+   "description": "Uma das casas de câmbio mais seguras e com melhor cotação do guarani frente ao dólar, ao euro e ao real.",
+   "hours": "Segunda a sexta 08:30 - 17:00, sábados 08:30 - 12:00",
+   "tags": [
+    "câmbio",
+    "dinheiro",
+    "finanças"
+   ]
+  }
+ },
+ "embajada-espana": {
+  "en": {
+   "name": "Embassy of Spain in Paraguay",
+   "description": "Diplomatic seat of the Kingdom of Spain, in charge of visa procedures and assistance to Spanish citizens.",
+   "hours": "Monday to Friday 08:00 - 13:00",
+   "tags": [
+    "consulate",
+    "procedures",
+    "spain"
+   ]
+  },
+  "pt": {
+   "name": "Embaixada da Espanha no Paraguai",
+   "description": "Sede diplomática do Reino da Espanha, responsável por trâmites de visto e assistência a espanhóis.",
+   "hours": "Segunda a sexta 08:00 - 13:00",
+   "tags": [
+    "consulado",
+    "trâmites",
+    "espanha"
+   ]
+  }
+ },
+ "embajada-usa": {
+  "en": {
+   "name": "Embassy of the United States",
+   "description": "United States diplomatic complex in Paraguay, located on Mariscal López Avenue.",
+   "hours": "Monday to Friday 07:30 - 17:00",
+   "tags": [
+    "consulate",
+    "usa",
+    "visa"
+   ]
+  },
+  "pt": {
+   "name": "Embaixada dos Estados Unidos",
+   "description": "Complexo diplomático dos Estados Unidos no Paraguai, localizado na avenida Mariscal López.",
+   "hours": "Segunda a sexta 07:30 - 17:00",
+   "tags": [
+    "consulado",
+    "eua",
+    "visto"
+   ]
+  }
+ },
+ "coworking-loffice": {
+  "en": {
+   "name": "Loffice Bulnes",
+   "description": "One of the pioneering coworking spaces in Asunción, with shared offices in a modern setting.",
+   "hours": "Monday to Friday 08:00 - 19:00, Saturdays 09:00 - 13:00",
+   "tags": [
+    "coworking",
+    "digital nomad",
+    "office"
+   ]
+  },
+  "pt": {
+   "name": "Loffice Bulnes",
+   "description": "Um dos espaços de coworking pioneiros em Assunção, com escritórios compartilhados em ambiente moderno.",
+   "hours": "Segunda a sexta 08:00 - 19:00, sábados 09:00 - 13:00",
+   "tags": [
+    "coworking",
+    "nômade digital",
+    "escritório"
+   ]
+  }
+ },
+ "wework-asuncion": {
+  "en": {
+   "name": "WeWork Paseo Galería",
+   "description": "Premium coworking space from the global WeWork network, located in the Paseo La Galería towers.",
+   "hours": "Every day 08:00 - 20:00",
+   "tags": [
+    "coworking",
+    "internet",
+    "premium"
+   ]
+  },
+  "pt": {
+   "name": "WeWork Paseo Galería",
+   "description": "Espaço de coworking premium da rede mundial WeWork, localizado nas torres do Paseo La Galería.",
+   "hours": "Todos os dias 08:00 - 20:00",
+   "tags": [
+    "coworking",
+    "internet",
+    "premium"
+   ]
+  }
+ },
+ "loma-san-jeronimo": {
+  "en": {
+   "name": "Loma San Jerónimo",
+   "description": "Asunción's first tourist and colorful neighborhood, with narrow alleys, viewpoints and a traditional identity.",
+   "hours": "Every day 08:00 - 22:00",
+   "tags": [
+    "neighborhood",
+    "picturesque",
+    "tourism"
+   ]
+  },
+  "pt": {
+   "name": "Loma San Jerónimo",
+   "description": "Primeiro bairro turístico e colorido de Assunção, com vielas estreitas, mirantes e identidade tradicional.",
+   "hours": "Todos os dias 08:00 - 22:00",
+   "tags": [
+    "bairro",
+    "pitoresco",
+    "turismo"
+   ]
+  }
+ },
+ "parque-salud": {
+  "en": {
+   "name": "Parque de la Salud",
+   "description": "A green lung of the city with shaded paths ideal for walking or running safely.",
+   "hours": "Every day 05:00 - 21:00",
+   "tags": [
+    "park",
+    "sports",
+    "nature"
+   ]
+  },
+  "pt": {
+   "name": "Parque de la Salud",
+   "description": "Um pulmão verde da cidade com trilhas sombreadas ideais para caminhar ou correr com segurança.",
+   "hours": "Todos os dias 05:00 - 21:00",
+   "tags": [
+    "parque",
+    "esportes",
+    "natureza"
+   ]
+  }
+ },
+ "parque-nu-guasu": {
+  "en": {
+   "name": "Parque Ñu Guasu",
+   "description": "The largest recreational park in the metropolitan area, with running and bike lanes.",
+   "hours": "Every day 05:00 - 22:30",
+   "tags": [
+    "park",
+    "running",
+    "sports"
+   ]
+  },
+  "pt": {
+   "name": "Parque Ñu Guasu",
+   "description": "O maior parque recreativo da área metropolitana, com pistas para corrida e ciclovias.",
+   "hours": "Todos os dias 05:00 - 22:30",
+   "tags": [
+    "parque",
+    "corrida",
+    "esportes"
+   ]
+  }
+ },
+ "catedral-metropolitana": {
+  "en": {
+   "name": "Metropolitan Cathedral of Asunción",
+   "description": "The main Catholic church of the Archdiocese of Asunción, with an imposing neoclassical style.",
+   "hours": "Monday to Saturday 09:00 - 12:00, Sundays Mass",
+   "tags": [
+    "historic",
+    "church",
+    "downtown"
+   ]
+  },
+  "pt": {
+   "name": "Catedral Metropolitana de Assunção",
+   "description": "O principal templo católico da arquidiocese de Assunção, de imponente estilo neoclássico.",
+   "hours": "Segunda a sábado 09:00 - 12:00, domingos missas",
+   "tags": [
+    "histórico",
+    "igreja",
+    "centro"
+   ]
+  }
+ },
+ "casa-independencia": {
+  "en": {
+   "name": "House of Independence Museum",
+   "description": "Historic house where the Paraguayan founding fathers who declared independence in 1811 used to meet.",
+   "hours": "Monday to Friday 08:30 - 16:30, Saturdays 08:30 - 12:30",
+   "tags": [
+    "historic",
+    "museum",
+    "downtown"
+   ]
+  },
+  "pt": {
+   "name": "Museu Casa da Independência",
+   "description": "Casa histórica onde se reuniam os próceres paraguaios que declararam a independência em 1811.",
+   "hours": "Segunda a sexta 08:30 - 16:30, sábados 08:30 - 12:30",
+   "tags": [
+    "histórico",
+    "museu",
+    "centro"
+   ]
+  }
+ },
+ "sanatorio-metropolitano": {
+  "en": {
+   "name": "Sanatorio Metropolitano",
+   "description": "Leading private medical clinic, with excellent emergency services and consulting rooms.",
+   "hours": "Open 24 hours",
+   "tags": [
+    "hospital",
+    "health",
+    "private"
+   ]
+  },
+  "pt": {
+   "name": "Sanatorio Metropolitano",
+   "description": "Clínica médica privada de referência, com excelentes serviços de urgência e consultórios.",
+   "hours": "Aberto 24 horas",
+   "tags": [
+    "hospital",
+    "saúde",
+    "privado"
+   ]
+  }
+ },
+ "paseo-la-galeria": {
+  "en": {
+   "name": "Paseo La Galería",
+   "description": "The most luxurious and largest shopping mall in Asunción, with excellent brands and a huge food court.",
+   "hours": "Every day 09:00 - 21:00",
+   "tags": [
+    "shopping",
+    "shopping mall",
+    "modern"
+   ]
+  },
+  "pt": {
+   "name": "Paseo La Galería",
+   "description": "O shopping mais luxuoso e maior de Assunção, com excelentes marcas e uma imensa praça de alimentação.",
+   "hours": "Todos os dias 09:00 - 21:00",
+   "tags": [
+    "compras",
+    "shopping center",
+    "moderno"
+   ]
+  }
+ },
+ "shopping-del-sol": {
+  "en": {
+   "name": "Shopping del Sol",
+   "description": "The country's first major mall, recently expanded and located in the heart of the corporate hub.",
+   "hours": "Every day 09:00 - 21:00",
+   "tags": [
+    "shopping",
+    "mall",
+    "cinema"
+   ]
+  },
+  "pt": {
+   "name": "Shopping del Sol",
+   "description": "O primeiro grande shopping do país, recentemente ampliado e localizado no centro do eixo corporativo.",
+   "hours": "Todos os dias 09:00 - 21:00",
+   "tags": [
+    "compras",
+    "shopping",
+    "cinema"
+   ]
+  }
+ },
+ "banco-itau-centro": {
+  "en": {
+   "name": "Banco Itaú - Palma Branch",
+   "description": "Market-leading bank, with international ATMs and foreign exchange services.",
+   "hours": "Monday to Friday 08:30 - 13:30",
+   "tags": [
+    "bank",
+    "atm",
+    "money"
+   ]
+  },
+  "pt": {
+   "name": "Banco Itaú - Agência Palma",
+   "description": "Banco líder do mercado, com caixas eletrônicos internacionais e serviço de câmbio.",
+   "hours": "Segunda a sexta 08:30 - 13:30",
+   "tags": [
+    "banco",
+    "caixa eletrônico",
+    "dinheiro"
+   ]
+  }
+ },
+ "saltos-monday": {
+  "en": {
+   "name": "Monday Falls",
+   "description": "Impressive waterfalls over 40 meters high surrounded by dense Atlantic forest, near Ciudad del Este.",
+   "hours": "Every day 08:00 - 17:00",
+   "tags": [
+    "waterfalls",
+    "nature",
+    "park"
+   ]
+  },
+  "pt": {
+   "name": "Saltos do Monday",
+   "description": "Imponentes cachoeiras com mais de 40 metros de altura, cercadas de densa mata atlântica, perto de Ciudad del Este.",
+   "hours": "Todos os dias 08:00 - 17:00",
+   "tags": [
+    "cataratas",
+    "natureza",
+    "parque"
+   ]
+  }
+ },
+ "ruinas-trinidad": {
+  "en": {
+   "name": "Jesuit Ruins of Trinidad del Paraná",
+   "description": "A UNESCO World Heritage Site, it is the best-preserved group of Jesuit missions in Paraguay.",
+   "hours": "Every day 07:00 - 19:00",
+   "tags": [
+    "heritage",
+    "jesuits",
+    "history"
+   ]
+  },
+  "pt": {
+   "name": "Ruínas Jesuíticas de Trinidad del Paraná",
+   "description": "Declarado Patrimônio da Humanidade pela UNESCO, é o conjunto de reduções jesuíticas mais bem conservado do Paraguai.",
+   "hours": "Todos os dias 07:00 - 19:00",
+   "tags": [
+    "patrimônio",
+    "jesuítas",
+    "história"
+   ]
+  }
+ },
+ "costanera-encarnacion": {
+  "en": {
+   "name": "Costanera and San José Beach",
+   "description": "The country's most famous river beach and riverside promenade, on the banks of the vast Paraná River in Encarnación.",
+   "hours": "Free access",
+   "tags": [
+    "beach",
+    "summer",
+    "waterfront"
+   ]
+  },
+  "pt": {
+   "name": "Costanera e Praia San José",
+   "description": "A praia fluvial e o calçadão à beira-rio mais famosos do país, às margens do imenso rio Paraná em Encarnación.",
+   "hours": "Acesso livre",
+   "tags": [
+    "praia",
+    "verão",
+    "orla"
+   ]
+  }
+ },
+ "shopping-paris-cde": {
+  "en": {
+   "name": "Shopping Paris",
+   "description": "Modern duty-free mall in Ciudad del Este, famous for its stores and ice rink.",
+   "hours": "Every day 08:00 - 19:00",
+   "tags": [
+    "shopping",
+    "mall",
+    "cde"
+   ]
+  },
+  "pt": {
+   "name": "Shopping Paris",
+   "description": "Moderno shopping center livre de impostos em Ciudad del Este, famoso por suas lojas e parque de gelo.",
+   "hours": "Todos os dias 08:00 - 19:00",
+   "tags": [
+    "compras",
+    "shopping",
+    "cde"
+   ]
+  }
+ },
+ "laguna-blanca": {
+  "en": {
+   "name": "Laguna Blanca Nature Reserve",
+   "description": "Crystal-clear lagoon over white sand, ideal for camping, birdwatching and disconnecting.",
+   "hours": "Every day (advance reservation required)",
+   "tags": [
+    "lagoon",
+    "nature",
+    "camping"
+   ]
+  },
+  "pt": {
+   "name": "Reserva Natural Laguna Blanca",
+   "description": "Lagoa de águas cristalinas sobre areia branca, ideal para acampar, observar aves e se desconectar.",
+   "hours": "Todos os dias (com reserva prévia)",
+   "tags": [
+    "lagoa",
+    "natureza",
+    "camping"
+   ]
+  }
+ },
+ "parque-cerro-cora": {
+  "en": {
+   "name": "Cerro Corá National Park",
+   "description": "Ecological reserve and key historic site where the War of the Triple Alliance ended in 1870.",
+   "hours": "Every day 08:00 - 17:00",
+   "tags": [
+    "national park",
+    "history",
+    "chaco"
+   ]
+  },
+  "pt": {
+   "name": "Parque Nacional Cerro Corá",
+   "description": "Reserva ecológica e sítio histórico fundamental onde terminou a Guerra da Tríplice Aliança em 1870.",
+   "hours": "Todos os dias 08:00 - 17:00",
+   "tags": [
+    "parque nacional",
+    "história",
+    "chaco"
+   ]
+  }
+ },
+ "saltos-del-guaira": {
+  "en": {
+   "name": "Saltos del Guairá",
+   "description": "Border region known for its huge import trade activity and proximity to the Paraná River.",
+   "hours": "Free access",
+   "tags": [
+    "border",
+    "shopping",
+    "trade"
+   ]
+  },
+  "pt": {
+   "name": "Saltos del Guairá",
+   "description": "Região de fronteira conhecida por sua enorme atividade de comércio de importações e proximidade com o rio Paraná.",
+   "hours": "Acesso livre",
+   "tags": [
+    "fronteira",
+    "compras",
+    "comércio"
+   ]
+  }
+ },
+ "san-bernardino": {
+  "en": {
+   "name": "San Bernardino and Lake Ypacaraí",
+   "description": "The capital of the Paraguayan summer, a beautiful summer town on the shores of the legendary Lake Ypacaraí.",
+   "hours": "Free access",
+   "tags": [
+    "lake",
+    "summer",
+    "getaway"
+   ]
+  },
+  "pt": {
+   "name": "San Bernardino e Lago Ypacaraí",
+   "description": "A capital do verão paraguaio, uma bela vila de veraneio às margens do mítico Lago Ypacaraí.",
+   "hours": "Acesso livre",
+   "tags": [
+    "lago",
+    "verão",
+    "escapada"
+   ]
+  }
+ },
+ "cerro-tres-kandu": {
+  "en": {
+   "name": "Cerro Tres Kandú",
+   "description": "The highest point in Paraguay (842 meters above sea level), an unmissable challenge for hikers.",
+   "hours": "Every day 06:00 - 18:00 (registration at the foot)",
+   "tags": [
+    "hiking",
+    "hill",
+    "adventure"
+   ]
+  },
+  "pt": {
+   "name": "Cerro Tres Kandú",
+   "description": "O ponto mais alto do Paraguai (842 metros acima do nível do mar), um desafio imperdível para trilheiros.",
+   "hours": "Todos os dias 06:00 - 18:00 (registro ao pé do morro)",
+   "tags": [
+    "trilhas",
+    "morro",
+    "aventura"
+   ]
+  }
+ },
+ "central-itaipu": {
+  "en": {
+   "name": "Itaipú Binational Dam",
+   "description": "One of the largest hydroelectric power plants on the planet, jointly operated by Paraguay and Brazil.",
+   "hours": "Guided tours Monday to Sunday from 08:00 to 16:00",
+   "tags": [
+    "engineering",
+    "hydroelectric",
+    "tourism"
+   ]
+  },
+  "pt": {
+   "name": "Usina Binacional de Itaipu",
+   "description": "Uma das maiores usinas hidrelétricas do planeta, com gestão binacional entre Paraguai e Brasil.",
+   "hours": "Visitas guiadas de segunda a domingo das 08:00 às 16:00",
+   "tags": [
+    "engenharia",
+    "hidrelétrica",
+    "turismo"
+   ]
+  }
+ },
+ "basilica-caacupe": {
+  "en": {
+   "name": "Basilica of the Virgin of Caacupé",
+   "description": "The spiritual capital of the country, a national shrine where millions make a pilgrimage every December 8.",
+   "hours": "Every day 06:00 - 20:00",
+   "tags": [
+    "church",
+    "religion",
+    "pilgrimage"
+   ]
+  },
+  "pt": {
+   "name": "Basílica da Virgem de Caacupé",
+   "description": "A capital espiritual do país, santuário nacional onde milhões de pessoas peregrinam todo 8 de dezembro.",
+   "hours": "Todos os dias 06:00 - 20:00",
+   "tags": [
+    "igreja",
+    "religião",
+    "peregrinação"
+   ]
+  }
+ },
+ "parque-nacional-ybycui": {
+  "en": {
+   "name": "Ybycuí National Park",
+   "description": "Beautiful national park with dense subtropical vegetation, crystal-clear streams, natural pools and the historic La Rosada iron foundry.",
+   "hours": "Every day 08:00 - 17:00",
+   "tags": [
+    "national park",
+    "waterfalls",
+    "history"
+   ]
+  },
+  "pt": {
+   "name": "Parque Nacional Ybycuí",
+   "description": "Belo parque nacional com densa vegetação subtropical, riachos cristalinos, piscinas naturais e a histórica fundição de ferro La Rosada.",
+   "hours": "Todos os dias 08:00 - 17:00",
+   "tags": [
+    "parque nacional",
+    "cachoeiras",
+    "história"
+   ]
+  }
+ },
+ "reserva-mbatovi": {
+  "en": {
+   "name": "Mbatoví Eco Reserve",
+   "description": "Eco-adventure park with hanging bridges, zip line and rappelling in the heart of the Paraguarí mountain range.",
+   "hours": "Weekends with advance reservation",
+   "tags": [
+    "adventure",
+    "eco-tourism",
+    "zip line"
+   ]
+  },
+  "pt": {
+   "name": "Eco Reserva Mbatoví",
+   "description": "Parque de ecoaventura com pontes suspensas, tirolesa e rapel em meio à serra de Paraguarí.",
+   "hours": "Fins de semana com reserva prévia",
+   "tags": [
+    "aventura",
+    "ecoturismo",
+    "tirolesa"
+   ]
+  }
+ },
+ "dunas-san-cosme": {
+  "en": {
+   "name": "San Cosme y Damián Dunes",
+   "description": "White sand mounds in the middle of the vast Yacyretá reservoir lake, resembling desert islands.",
+   "hours": "Boat trips with advance reservation",
+   "tags": [
+    "dunes",
+    "lake",
+    "island"
+   ]
+  },
+  "pt": {
+   "name": "Dunas de San Cosme y Damián",
+   "description": "Montes de areia branca no meio do imenso lago da represa de Yacyretá, semelhantes a ilhas desérticas.",
+   "hours": "Passeios de lancha com reserva prévia",
+   "tags": [
+    "dunas",
+    "lago",
+    "ilha"
+   ]
+  }
+ },
+ "filadelfia-chaco": {
+  "en": {
+   "name": "Filadelfia (Paraguayan Chaco)",
+   "description": "The main Mennonite settlement in the central Chaco, epicenter of the region's dairy and industrial production.",
+   "hours": "Free access",
+   "tags": [
+    "chaco",
+    "mennonites",
+    "production"
+   ]
+  },
+  "pt": {
+   "name": "Filadélfia (Chaco Paraguaio)",
+   "description": "O principal assentamento menonita do Chaco central, epicentro da produção leiteira e industrial da região.",
+   "hours": "Acesso livre",
+   "tags": [
+    "chaco",
+    "menonitas",
+    "produção"
+   ]
+  }
+ },
+ "parroquia-san-roque": {
+  "en": {
+   "name": "San Roque Church",
+   "description": "Traditional parish church of Asunción, representative of the historic San Roque neighborhood.",
+   "hours": "Every day 07:00 - 19:00",
+   "tags": [
+    "church",
+    "downtown",
+    "history"
+   ]
+  },
+  "pt": {
+   "name": "Igreja San Roque",
+   "description": "Paróquia tradicional de Assunção, representativa do histórico bairro de San Roque.",
+   "hours": "Todos os dias 07:00 - 19:00",
+   "tags": [
+    "igreja",
+    "centro",
+    "história"
+   ]
+  }
+ },
+ "banco-gnb-villamorra": {
+  "en": {
+   "name": "Banco GNB Paraguay - Casa Matriz",
+   "description": "One of the corporate banking and international investment offices in the new center of Asunción.",
+   "hours": "Monday to Friday 08:30 - 13:30",
+   "tags": [
+    "bank",
+    "gnb",
+    "finance"
+   ]
+  },
+  "pt": {
+   "name": "Banco GNB Paraguay - Casa Matriz",
+   "description": "Uma das sedes de banco corporativo e investimentos internacionais no novo centro de Assunção.",
+   "hours": "Segunda a sexta 08:30 - 13:30",
+   "tags": [
+    "banco",
+    "gnb",
+    "finanças"
+   ]
+  }
+ },
+ "cabildo-cultural": {
+  "en": {
+   "name": "El Cabildo Cultural Center of the Republic",
+   "description": "Former town hall and historic building transformed into the city's main cultural center.",
+   "hours": "Monday to Friday 08:00 - 19:00, weekends 09:00 - 17:00",
+   "tags": [
+    "culture",
+    "museum",
+    "downtown"
+   ]
+  },
+  "pt": {
+   "name": "Centro Cultural da República El Cabildo",
+   "description": "Antiga prefeitura e edifício histórico transformado no principal centro cultural da cidade.",
+   "hours": "Segunda a sexta 08:00 - 19:00, fins de semana 09:00 - 17:00",
+   "tags": [
+    "cultura",
+    "museu",
+    "centro"
+   ]
+  }
+ },
+ "manzana-rivera": {
+  "en": {
+   "name": "Manzana de la Rivera Cultural Center",
+   "description": "Complex of nine restored historic houses that host museums, libraries and theater spaces.",
+   "hours": "Every day 08:00 - 20:00",
+   "tags": [
+    "colonial houses",
+    "culture",
+    "museum"
+   ]
+  },
+  "pt": {
+   "name": "Centro Cultural Manzana de la Rivera",
+   "description": "Complexo de nove casas históricas restauradas que abrigam museus, bibliotecas e espaços teatrais.",
+   "hours": "Todos os dias 08:00 - 20:00",
+   "tags": [
+    "casas coloniais",
+    "cultura",
+    "museu"
+   ]
+  }
+ },
+ "jardin-botanico-zoologico": {
+  "en": {
+   "name": "Asunción Botanical Garden and Zoo",
+   "description": "Vast 110-hectare wooded park that was formerly the country residence of the López family.",
+   "hours": "Tuesday to Sunday 08:00 - 16:00",
+   "tags": [
+    "park",
+    "nature",
+    "zoo"
+   ]
+  },
+  "pt": {
+   "name": "Jardim Botânico e Zoológico de Assunção",
+   "description": "Imenso parque arborizado de 110 hectares que foi a antiga residência de campo da família López.",
+   "hours": "Terça a domingo 08:00 - 16:00",
+   "tags": [
+    "parque",
+    "natureza",
+    "zoológico"
+   ]
+  }
+ },
+ "supermercado-stock-lillo": {
+  "en": {
+   "name": "Stock Lillo Supermarket",
+   "description": "Very popular and busy supermarket with excellent deals and fresh bakery every day.",
+   "hours": "Every day 07:00 - 22:30",
+   "tags": [
+    "supermarket",
+    "deals",
+    "shopping"
+   ]
+  },
+  "pt": {
+   "name": "Supermercado Stock Lillo",
+   "description": "Supermercado muito popular e movimentado, com excelentes ofertas e padaria fresca todos os dias.",
+   "hours": "Todos os dias 07:00 - 22:30",
+   "tags": [
+    "supermercado",
+    "ofertas",
+    "compras"
+   ]
+  }
+ },
+ "tgi-fridays-asuncion": {
+  "en": {
+   "name": "TGI Fridays - Eje Corporativo",
+   "description": "Popular international American-food restaurant with a great nightlife atmosphere.",
+   "hours": "Every day 11:30 - 01:00",
+   "tags": [
+    "american food",
+    "drinks",
+    "corporate hub"
+   ]
+  },
+  "pt": {
+   "name": "TGI Fridays - Eje Corporativo",
+   "description": "Popular restaurante internacional de comida americana, com excelente ambiente noturno.",
+   "hours": "Todos os dias 11:30 - 01:00",
+   "tags": [
+    "comida americana",
+    "drinques",
+    "eixo corporativo"
+   ]
+  }
+ },
+ "casa-cambio-guarani": {
+  "en": {
+   "name": "Cambios Guaraní - Eje Aviadores",
+   "description": "Regional leader in financial transactions and currency exchange with an excellent reputation.",
+   "hours": "Monday to Friday 08:30 - 17:30, Saturday 08:30 - 12:30",
+   "tags": [
+    "exchange",
+    "finance",
+    "dollar"
+   ]
+  },
+  "pt": {
+   "name": "Cambios Guaraní - Eje Aviadores",
+   "description": "Líder regional em transações financeiras e câmbio de divisas, com grande reputação.",
+   "hours": "Segunda a sexta 08:30 - 17:30, sábado 08:30 - 12:30",
+   "tags": [
+    "câmbio",
+    "finanças",
+    "dólar"
+   ]
+  }
+ },
+ "la-herencia-cafe": {
+  "en": {
+   "name": "La Herencia Café - Las Mercedes",
+   "description": "One of the most charming cafés in the Las Mercedes neighborhood, famous for its brunches and mbejú.",
+   "hours": "Every day 08:00 - 22:00",
+   "tags": [
+    "café",
+    "mbejú",
+    "las mercedes"
+   ]
+  },
+  "pt": {
+   "name": "La Herencia Café - Las Mercedes",
+   "description": "Uma das cafeterias mais charmosas do bairro Las Mercedes, famosa por seus brunchs e mbejú.",
+   "hours": "Todos os dias 08:00 - 22:00",
+   "tags": [
+    "cafeteria",
+    "mbejú",
+    "las mercedes"
+   ]
+  }
+ },
+ "embajada-brasil": {
+  "en": {
+   "name": "Embassy of the Federative Republic of Brazil",
+   "description": "Diplomatic mission of Brazil in Asunción, located in a distinguished residential area.",
+   "hours": "Monday to Friday 08:30 - 13:00",
+   "tags": [
+    "embassy",
+    "brazil",
+    "consulate"
+   ]
+  },
+  "pt": {
+   "name": "Embaixada da República Federativa do Brasil",
+   "description": "Missão diplomática do Brasil em Assunção, localizada em uma distinta zona residencial.",
+   "hours": "Segunda a sexta 08:30 - 13:00",
+   "tags": [
+    "embaixada",
+    "brasil",
+    "consulado"
+   ]
+  }
+ },
+ "aregua-iglesia": {
+  "en": {
+   "name": "Church of La Candelaria of Areguá",
+   "description": "Beautiful colonial church built on top of a hill in the center of Areguá, offering panoramic views of Lake Ypacaraí.",
+   "hours": "Every day 08:00 - 18:00",
+   "tags": [
+    "colonial",
+    "church",
+    "views",
+    "lake"
+   ]
+  },
+  "pt": {
+   "name": "Igreja de La Candelaria de Areguá",
+   "description": "Bela igreja colonial construída no alto de uma colina no centro de Areguá, com vistas panorâmicas do Lago Ypacaraí.",
+   "hours": "Todos os dias 08:00 - 18:00",
+   "tags": [
+    "colonial",
+    "igreja",
+    "vistas",
+    "lago"
+   ]
+  }
+ },
+ "aregua-playa": {
+  "en": {
+   "name": "Areguá Municipal Beach",
+   "description": "Recreational beach and waterfront on the shores of Lake Ypacaraí in Areguá. Features a wooden pier, local crafts fairs and children's rides.",
+   "hours": "Free access (entrance fee 1,000 PYG, car 5,000 PYG)",
+   "tags": [
+    "beach",
+    "lake",
+    "waterfront",
+    "recreational"
+   ]
+  },
+  "pt": {
+   "name": "Praia Municipal de Areguá",
+   "description": "Praia recreativa e orla às margens do Lago Ypacaraí em Areguá. Conta com píer de madeira, feiras de artesanato local e passeios para crianças.",
+   "hours": "Acesso livre (ingresso 1.000 PYG, carro 5.000 PYG)",
+   "tags": [
+    "praia",
+    "lago",
+    "orla",
+    "recreativo"
+   ]
+  }
+ },
+ "altos-centro": {
+  "en": {
+   "name": "Altos Historic Center",
+   "description": "Colonial hill town in the Cordillera. Famous for its lake views, its quiet atmosphere for expats and its Holy Week tradition.",
+   "hours": "Free access",
+   "tags": [
+    "historic",
+    "cordillera",
+    "expats",
+    "quiet"
+   ]
+  },
+  "pt": {
+   "name": "Centro Histórico de Altos",
+   "description": "Cidade colonial em altitude na Cordillera. Famosa por suas vistas do lago, seu ambiente tranquilo para expatriados e sua tradição da Semana Santa.",
+   "hours": "Acesso livre",
+   "tags": [
+    "histórico",
+    "cordillera",
+    "expatriados",
+    "tranquilo"
+   ]
+  }
+ },
+ "atyra-artesania": {
+  "en": {
+   "name": "Artisans' Walk in Atyrá",
+   "description": "Artisan town and one of the cleanest cities in South America. Famous for its leather workshops (thermoses, guampas, saddles).",
+   "hours": "Every day 08:00 - 18:00",
+   "tags": [
+    "crafts",
+    "leather",
+    "cleanliness",
+    "cordillera"
+   ]
+  },
+  "pt": {
+   "name": "Passeio dos Artesãos em Atyrá",
+   "description": "Cidade artesanal e uma das mais limpas da América do Sul. Famosa por suas oficinas de couro (garrafas térmicas, guampas, selas).",
+   "hours": "Todos os dias 08:00 - 18:00",
+   "tags": [
+    "artesanato",
+    "couro",
+    "limpeza",
+    "cordillera"
+   ]
+  }
+ },
+ "wtc-asuncion": {
+  "en": {
+   "name": "World Trade Center Asunción",
+   "description": "Flagship corporate and financial complex of Asunción, epicenter of business, embassies and multinationals.",
+   "hours": "Open 24 hours",
+   "tags": [
+    "business",
+    "corporate",
+    "finance",
+    "corporate hub"
+   ]
+  },
+  "pt": {
+   "name": "World Trade Center Assunção",
+   "description": "Complexo corporativo e financeiro de destaque de Assunção, epicentro de negócios, embaixadas e multinacionais.",
+   "hours": "Aberto 24 horas",
+   "tags": [
+    "negócios",
+    "corporativo",
+    "finanças",
+    "eixo corporativo"
+   ]
+  }
+ },
+ "maquila-hub-hernandarias": {
+  "en": {
+   "name": "Maquila Industrial Park (Hernandarias)",
+   "description": "Hub of the Maquila Law regime in Alto Paraná. Export factories free of tariffs to Mercosur with a 1% tax.",
+   "hours": "Monday to Friday 07:00 - 16:00",
+   "tags": [
+    "maquila",
+    "business",
+    "factory",
+    "export",
+    "mercosur"
+   ]
+  },
+  "pt": {
+   "name": "Parque Industrial Maquilador (Hernandarias)",
+   "description": "Eixo do regime da Lei de Maquila no Alto Paraná. Fábricas de exportação livres de tarifas para o Mercosul com imposto de 1%.",
+   "hours": "Segunda a sexta 07:00 - 16:00",
+   "tags": [
+    "maquila",
+    "negócios",
+    "fábrica",
+    "exportação",
+    "mercosul"
+   ]
+  }
+ },
+ "ruta-bioceanica-paso": {
+  "en": {
+   "name": "Bioceanic Route Corridor (Carmelo Peralta Crossing)",
+   "description": "Nerve center of the mega bioceanic corridor that will connect the Atlantic and Pacific ports across the Paraguayan Chaco.",
+   "hours": "Open 24 hours",
+   "tags": [
+    "bioceanic",
+    "transport",
+    "infrastructure",
+    "logistics",
+    "chaco"
+   ]
+  },
+  "pt": {
+   "name": "Corredor da Rota Bioceânica (Passo Carmelo Peralta)",
+   "description": "Ponto nevrálgico do megacorredor bioceânico que conectará os portos do Atlântico e do Pacífico atravessando o Chaco paraguaio.",
+   "hours": "Aberto 24 horas",
+   "tags": [
+    "bioceânica",
+    "transporte",
+    "infraestrutura",
+    "logística",
+    "chaco"
+   ]
+  }
+ },
+ "tierra-colorada-gastro": {
+  "en": {
+   "name": "Tierra Colorada Gastró",
+   "description": "Restaurant of chef Rodolfo Angenscheidt, award-winning among the best in Latin America, specializing in contemporary Paraguayan signature cuisine.",
+   "hours": "Tuesday to Saturday 12:00 - 15:00, 19:30 - 23:30",
+   "tags": [
+    "gastronomy",
+    "gourmet",
+    "signature",
+    "paraguayan food"
+   ]
+  },
+  "pt": {
+   "name": "Tierra Colorada Gastró",
+   "description": "Restaurante do chef Rodolfo Angenscheidt, premiado entre os melhores da América Latina, especializado em gastronomia paraguaia contemporânea de autor.",
+   "hours": "Terça a sábado 12:00 - 15:00, 19:30 - 23:30",
+   "tags": [
+    "gastronomia",
+    "gourmet",
+    "autoral",
+    "comida paraguaia"
+   ]
+  }
+ },
+ "talleyrand-villa-morra": {
+  "en": {
+   "name": "Talleyrand Villa Morra",
+   "description": "A classic of international haute cuisine in Asunción with decades of history and premium service.",
+   "hours": "Every day 12:00 - 15:00, 20:00 - 00:00",
+   "tags": [
+    "haute cuisine",
+    "international",
+    "gourmet",
+    "villa morra"
+   ]
+  },
+  "pt": {
+   "name": "Talleyrand Villa Morra",
+   "description": "Um clássico da alta cozinha internacional em Assunção, com décadas de trajetória e serviço premium.",
+   "hours": "Todos os dias 12:00 - 15:00, 20:00 - 00:00",
+   "tags": [
+    "alta cozinha",
+    "internacional",
+    "gourmet",
+    "villa morra"
+   ]
+  }
+ },
+ "la-cabrera-paraguay": {
+  "en": {
+   "name": "La Cabrera Paraguay",
+   "description": "Famous Argentine steakhouse in the corporate hub, known for its premium beef cuts and variety of side dishes.",
+   "hours": "Every day 12:00 - 16:00, 19:30 - 00:00",
+   "tags": [
+    "steakhouse",
+    "barbecue",
+    "meats",
+    "corporate hub"
+   ]
+  },
+  "pt": {
+   "name": "La Cabrera Paraguay",
+   "description": "Famosa parrilla argentina no eixo corporativo, reconhecida por seus cortes premium de carne bovina e variedade de guarnições.",
+   "hours": "Todos os dias 12:00 - 16:00, 19:30 - 00:00",
+   "tags": [
+    "parrilla",
+    "churrasco",
+    "carnes",
+    "eixo corporativo"
+   ]
+  }
+ },
+ "el-cafe-de-aca": {
+  "en": {
+   "name": "El Café de acá",
+   "description": "Charming café and restaurant with traditional Paraguayan decor, famous for its cocido quemado, chipas, mbejú and homemade pastries.",
+   "hours": "Every day 07:00 - 23:00",
+   "tags": [
+    "café",
+    "traditional",
+    "cocido",
+    "afternoon snack",
+    "villa morra"
+   ]
+  },
+  "pt": {
+   "name": "El Café de acá",
+   "description": "Encantador café e restaurante com ambientação tradicional paraguaia, famoso por seu cocido quemado, chipas, mbejú e confeitaria caseira.",
+   "hours": "Todos os dias 07:00 - 23:00",
+   "tags": [
+    "cafeteria",
+    "tradicional",
+    "cocido",
+    "lanche da tarde",
+    "villa morra"
+   ]
+  }
+ },
+ "chiperia-maria-ana": {
+  "en": {
+   "name": "Chipería María Ana",
+   "description": "A must-stop on Route 2. The most iconic chipa shop in the country, serving hot chipa fresh out of the artisanal tatakua.",
+   "hours": "Every day 05:00 - 22:00",
+   "tags": [
+    "chipa",
+    "traditional",
+    "route 2",
+    "tatakua",
+    "caacupé"
+   ]
+  },
+  "pt": {
+   "name": "Chipería María Ana",
+   "description": "Parada obrigatória da Rota 2. A chiparia mais icônica do país, servindo chipa quentinha recém-saída do tatakua artesanal.",
+   "hours": "Todos os dias 05:00 - 22:00",
+   "tags": [
+    "chipa",
+    "tradicional",
+    "rota 2",
+    "tatakua",
+    "caacupé"
+   ]
+  }
+ },
+ "restaurante-hiroshima": {
+  "en": {
+   "name": "Restaurante Hiroshima",
+   "description": "Excellent authentic Japanese cuisine in Encarnación, founded by descendants of Japanese immigrants in Itapúa. Famous for its sushi and tempura.",
+   "hours": "Tuesday to Sunday 19:00 - 23:30",
+   "tags": [
+    "japanese",
+    "sushi",
+    "encarnación",
+    "itapúa"
+   ]
+  },
+  "pt": {
+   "name": "Restaurante Hiroshima",
+   "description": "Excelente culinária japonesa autêntica em Encarnación, fundada por descendentes de imigrantes japoneses de Itapúa. Famoso por seu sushi e tempurá.",
+   "hours": "Terça a domingo 19:00 - 23:30",
+   "tags": [
+    "japonês",
+    "sushi",
+    "encarnación",
+    "itapúa"
+   ]
+  }
+ },
+ "milord-restaurant": {
+  "en": {
+   "name": "Milord Restaurant",
+   "description": "Exclusive international gourmet option with elegant decor in the heart of Encarnación.",
+   "hours": "Every day 12:00 - 15:00, 19:30 - 23:30",
+   "tags": [
+    "gourmet",
+    "encarnación",
+    "international",
+    "hotel"
+   ]
+  },
+  "pt": {
+   "name": "Milord Restaurant",
+   "description": "Exclusiva opção gourmet internacional com ambientação elegante no coração de Encarnación.",
+   "hours": "Todos os dias 12:00 - 15:00, 19:30 - 23:30",
+   "tags": [
+    "gourmet",
+    "encarnación",
+    "internacional",
+    "hotel"
+   ]
+  }
+ },
+ "sax-palace-restaurant": {
+  "en": {
+   "name": "Sax Palace Restaurant",
+   "description": "Luxury dining experience on the top floor of the Sax store, with panoramic views of the Paraná River and fine Mediterranean cuisine.",
+   "hours": "Wednesday to Saturday 12:00 - 15:00, 19:30 - 23:30; Sundays 12:00 - 16:00",
+   "tags": [
+    "luxury",
+    "view",
+    "mediterranean",
+    "cde"
+   ]
+  },
+  "pt": {
+   "name": "Sax Palace Restaurant",
+   "description": "Experiência gastronômica de luxo no último andar da loja Sax, com vistas panorâmicas do rio Paraná e fina cozinha mediterrânea.",
+   "hours": "Quarta a sábado 12:00 - 15:00, 19:30 - 23:30; domingos 12:00 - 16:00",
+   "tags": [
+    "luxo",
+    "vista",
+    "mediterrânea",
+    "cde"
+   ]
+  }
+ },
+ "cafe-del-lago-sanber": {
+  "en": {
+   "name": "Café del Lago",
+   "description": "Classic confectionery and restaurant in San Bernardino, with beautiful views of Lake Ypacaraí and ideal for an afternoon snack of German pastries.",
+   "hours": "Every day 08:00 - 22:00",
+   "tags": [
+    "café",
+    "view",
+    "lake",
+    "san bernardino",
+    "pastries"
+   ]
+  },
+  "pt": {
+   "name": "Café del Lago",
+   "description": "Clássica confeitaria e restaurante de San Bernardino, com belas vistas do lago Ypacaraí e ideal para um lanche com doces alemães (facturas).",
+   "hours": "Todos os dias 08:00 - 22:00",
+   "tags": [
+    "café",
+    "vista",
+    "lago",
+    "san bernardino",
+    "confeitaria"
+   ]
+  }
+ },
+ "cerro-koi": {
+  "en": {
+   "name": "Cerro Kõi (Telluric Power Point)",
+   "description": "Natural monument and outcrop of hexagonal columnar sandstone unique in South America. Considered a vortex for recharging telluric energy and sacred geography due to its crystalline alignment.",
+   "hours": "Every day 08:00 - 17:00",
+   "tags": [
+    "hill",
+    "aregua",
+    "energy",
+    "mysticism",
+    "geology",
+    "san lorenzo",
+    "central"
+   ]
+  },
+  "pt": {
+   "name": "Cerro Kõi (Ponto de Poder Telúrico)",
+   "description": "Monumento natural e afloramento de arenitos colunares hexagonais únicos na América do Sul. Considerado um vórtice de recarga de energia telúrica e geografia sagrada por seu alinhamento cristalino.",
+   "hours": "Todos os dias 08:00 - 17:00",
+   "tags": [
+    "morro",
+    "aregua",
+    "energia",
+    "misticismo",
+    "geologia",
+    "san lorenzo",
+    "central"
+   ]
+  }
+ },
+ "cavernas-vallemi": {
+  "en": {
+   "name": "Vallemí Caves (Calcite Vortex)",
+   "description": "Spectacular speleological complex of more than 50 underground caves of Precambrian limestone and luminescent calcite. Highlights include Cave 54 with Guapo'y roots and the Holy Cave.",
+   "hours": "Scheduled guided tours",
+   "tags": [
+    "caves",
+    "vallemi",
+    "mysticism",
+    "speleology",
+    "concepcion"
+   ]
+  },
+  "pt": {
+   "name": "Cavernas de Vallemí (Vórtice de Calcita)",
+   "description": "Espetacular complexo espeleológico com mais de 50 cavernas subterrâneas de calcário pré-cambriano e calcita luminescente. Destacam-se a Caverna 54, com raízes de Guapo'y, e a Santa Caverna.",
+   "hours": "Visitas guiadas programadas",
+   "tags": [
+    "cavernas",
+    "vallemi",
+    "misticismo",
+    "espeleologia",
+    "concepcion"
+   ]
+  }
+ },
+ "ojo-de-mar": {
+  "en": {
+   "name": "Ojo de Mar (Abyssal Cenote)",
+   "description": "Mysterious circular limestone lake of karstic origin formed 250 million years ago. Guarded by the mythology of the white caiman (Yakaré Morotî) and abyssal magnetic currents.",
+   "hours": "Free access during daytime",
+   "tags": [
+    "cenote",
+    "lake",
+    "mysticism",
+    "amambay",
+    "legend"
+   ]
+  },
+  "pt": {
+   "name": "Ojo de Mar (Cenote Abissal)",
+   "description": "Misterioso lago calcário circular de origem cárstica formado há 250 milhões de anos. Guardado pela mitologia do jacaré branco (Yakaré Morotî) e por correntes magnéticas abissais.",
+   "hours": "Acesso livre durante o dia",
+   "tags": [
+    "cenote",
+    "lago",
+    "misticismo",
+    "amambay",
+    "lenda"
+   ]
+  }
+ }
+}

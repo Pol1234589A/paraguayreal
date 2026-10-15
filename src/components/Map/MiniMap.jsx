@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { ExternalLink } from 'lucide-react';
-import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
+import { useTranslations } from 'next-intl';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, escapeHtml, safeUrl, loadMapbox } from '../../lib/mapLoader';
 
 export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
   const mapContainerRef = useRef(null);
+  const tc = useTranslations('Common');
+  const gmapsLabel = tc('viewOnGoogleMaps');
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
 
   useEffect(() => {
@@ -15,16 +16,21 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
     if (!mapContainerRef.current) return;
     if (!lat || !lng) return;
 
+    const GMAPS_LABEL = escapeHtml(gmapsLabel);
+    let cancelled = false;
     let mapInstance = null;
 
     if (engine === 'mapbox' && mapboxToken) {
+      loadMapbox().then((mapboxgl) => {
+      if (cancelled) return;
       mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/streets-v12',
         center: [lng, lat],
         zoom: 14,
-        scrollZoom: true,
+        scrollZoom: false,
+        cooperativeGestures: true,
         doubleClickZoom: true,
         dragRotate: false
       });
@@ -43,13 +49,14 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         const popup = new mapboxgl.Popup({ offset: 35 })
           .setHTML(`
             <div style="font-family: inherit; font-size: 12px; color: #1e293b; padding: 2px;">
-              <strong style="display:block; margin-bottom: 2px; color: #0f172a;">${name}</strong>
-              ${address ? `<span style="color:#64748b; font-size:10px; display:block; margin-bottom:6px;">📍 ${address}</span>` : ''}
-              ${googleMapsUrl ? `<a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; display:inline-flex; align-items:center; gap:2px;">Ver en Google Maps ↗</a>` : ''}
+              <strong style="display:block; margin-bottom: 2px; color: #0f172a;">${escapeHtml(name)}</strong>
+              ${address ? `<span style="color:#64748b; font-size:10px; display:block; margin-bottom:6px;">📍 ${escapeHtml(address)}</span>` : ''}
+              ${googleMapsUrl ? `<a href="${safeUrl(googleMapsUrl)}" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; display:inline-flex; align-items:center; gap:2px;">${GMAPS_LABEL} ↗</a>` : ''}
             </div>
           `);
         marker.setPopup(popup);
       }
+      });
     } 
     else if (engine === 'google' && googleMapsApiKey) {
       loadGoogleMapsScript(googleMapsApiKey, () => {
@@ -59,7 +66,8 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         const map = new window.google.maps.Map(mapContainerRef.current, {
           center: center,
           zoom: 14,
-          scrollwheel: true,
+          scrollwheel: false,
+          gestureHandling: 'cooperative',
           disableDoubleClickZoom: false,
           zoomControl: true,
           mapTypeControl: false,
@@ -80,9 +88,9 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         if (name) {
           const contentString = `
             <div style="font-family: sans-serif; font-size: 12px; color: #1e293b; padding: 4px; max-width: 200px;">
-              <strong style="display:block; margin-bottom: 2px; color: #0f172a;">${name}</strong>
-              ${address ? `<span style="color:#64748b; font-size:10px; display:block; margin-bottom:6px;">📍 ${address}</span>` : ''}
-              ${googleMapsUrl ? `<a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; display:inline-flex; align-items:center; gap:2px;">Ver en Google Maps ↗</a>` : ''}
+              <strong style="display:block; margin-bottom: 2px; color: #0f172a;">${escapeHtml(name)}</strong>
+              ${address ? `<span style="color:#64748b; font-size:10px; display:block; margin-bottom:6px;">📍 ${escapeHtml(address)}</span>` : ''}
+              ${googleMapsUrl ? `<a href="${safeUrl(googleMapsUrl)}" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; display:inline-flex; align-items:center; gap:2px;">${GMAPS_LABEL} ↗</a>` : ''}
             </div>
           `;
           const infowindow = new window.google.maps.InfoWindow({
@@ -105,7 +113,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         }
 
         const map = window.L.map(container, {
-          scrollWheelZoom: true,
+          scrollWheelZoom: false,
           doubleClickZoom: true,
           zoomControl: true
         }).setView([lat, lng], 14);
@@ -121,9 +129,9 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         if (name) {
           const popupContent = `
             <div style="font-family: sans-serif; font-size: 12px; color: #1e293b; padding: 2px; max-width: 200px;">
-              <strong style="display:block; margin-bottom: 2px; color: #0f172a;">${name}</strong>
-              ${address ? `<span style="color:#64748b; font-size:10px; display:block; margin-bottom:6px;">📍 ${address}</span>` : ''}
-              ${googleMapsUrl ? `<a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none;">Ver en Google Maps ↗</a>` : ''}
+              <strong style="display:block; margin-bottom: 2px; color: #0f172a;">${escapeHtml(name)}</strong>
+              ${address ? `<span style="color:#64748b; font-size:10px; display:block; margin-bottom:6px;">📍 ${escapeHtml(address)}</span>` : ''}
+              ${googleMapsUrl ? `<a href="${safeUrl(googleMapsUrl)}" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none;">${GMAPS_LABEL} ↗</a>` : ''}
             </div>
           `;
           marker.bindPopup(popupContent);
@@ -132,6 +140,7 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
     }
 
     return () => {
+      cancelled = true;
       if (mapInstance && typeof mapInstance.remove === 'function') {
         try {
           mapInstance.remove();
@@ -140,24 +149,24 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         }
       }
     };
-  }, [lat, lng, name, address, googleMapsUrl, engine, loading, mapboxToken, googleMapsApiKey]);
+  }, [lat, lng, name, address, googleMapsUrl, gmapsLabel, engine, loading, mapboxToken, googleMapsApiKey]);
 
   return (
-    <div className="relative w-full rounded-xl overflow-hidden shadow border border-slate-200 bg-slate-50 my-6">
+    <div className="relative w-full rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-slate-50 my-6">
       {/* Top Banner */}
       <div className="p-3 bg-white border-b border-slate-100 flex items-center justify-between">
         <div>
           <h5 className="text-xs font-bold text-slate-800">{name}</h5>
-          {address && <p className="text-[10px] text-slate-500 truncate">{address}</p>}
+          {address && <p className="text-[11px] text-slate-500 truncate">{address}</p>}
         </div>
         {googleMapsUrl && (
           <a
             href={googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 hover:text-emerald-700 transition"
+            className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 hover:text-emerald-700 transition"
           >
-            <span>Ver en Google Maps</span>
+            <span>{tc('viewOnGoogleMaps')}</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         )}
@@ -167,8 +176,8 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
       <div className="h-[250px] w-full relative">
         {loading && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-900/90 text-white p-4 text-center">
-            <p className="text-[10px] font-semibold animate-pulse">
-              Cargando Mini Mapa...
+            <p className="text-[11px] font-semibold animate-pulse">
+              {tc('loadingMap')}
             </p>
           </div>
         )}

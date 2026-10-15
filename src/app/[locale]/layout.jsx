@@ -1,9 +1,11 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Inter, Playfair_Display } from 'next/font/google';
 import Navbar from '../../components/UI/Navbar';
 import Footer from '../../components/UI/Footer';
+import { SITE_URL, LOCALES } from '../../lib/seo';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,7 +19,8 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "ParaguayReal | Guía de Viaje, Costo de Vida y Residencia en Paraguay",
     en: "ParaguayReal | Travel Guide, Cost of Living & Residency in Paraguay",
@@ -33,19 +36,18 @@ export async function generateMetadata({ params: { locale } }) {
   return {
     title: titles[locale] || titles.es,
     description: descriptions[locale] || descriptions.es,
-    metadataBase: new URL('https://paraguayreal.com'),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        'es': '/es',
-        'en': '/en',
-        'pt': '/pt'
-      }
-    }
+    metadataBase: new URL(SITE_URL)
   };
 }
 
-export default async function LocaleLayout({ children, params: { locale } }) {
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({ children, params }) {
+  const { locale } = await params;
+  if (!LOCALES.includes(locale)) notFound();
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

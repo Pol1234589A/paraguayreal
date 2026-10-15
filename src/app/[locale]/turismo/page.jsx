@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { use } from 'react';
+import { setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '../../../lib/seo';
 import SchemaOrg from '../../../components/SEO/SchemaOrg';
 import TourismClient from '../../../components/UI/TourismClient';
-import placesGeoJSON from '../../../../data/places.json';
+import { getPlaces } from '../../../lib/places';
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const titles = {
     es: "Guía de Turismo en Paraguay: Qué ver y Atractivos Imperdibles | ParaguayReal",
     en: "Tourism Guide in Paraguay: Best Places to Visit | ParaguayReal",
@@ -16,17 +19,21 @@ export async function generateMetadata({ params: { locale } }) {
     pt: "Descubra os melhores destinos turísticos do Paraguai: Assunção colonial, praias de Encarnação, compras em Ciudad del Este e cachoeiras."
   };
 
-  return {
+  return pageMetadata({
+    locale,
+    path: '/turismo',
     title: titles[locale] || titles.es,
     description: descriptions[locale] || descriptions.es
-  };
+  });
 }
 
-export default function TurismoPage({ params: { locale } }) {
+export default function TurismoPage({ params }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const siteUrl = 'https://paraguayreal.com';
   
   // Filter for tourism spots to build structured ItemList schema for SEO crawlers
-  const tourismPlaces = placesGeoJSON.features.filter(
+  const tourismPlaces = getPlaces(locale).filter(
     (place) => place.properties.category === 'turismo'
   );
 
@@ -67,7 +74,7 @@ export default function TurismoPage({ params: { locale } }) {
     <div className="min-h-screen bg-slate-50">
       <SchemaOrg schema={tourismSchema} />
       <SchemaOrg schema={websiteSchema} />
-      <TourismClient placesFeatures={placesGeoJSON.features} locale={locale} />
+      <TourismClient placesFeatures={getPlaces(locale)} locale={locale} />
     </div>
   );
 }

@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { Shield, DollarSign, MapPin } from 'lucide-react';
-import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
+import { useMapKeys, loadGoogleMapsScript, loadLeafletScript, loadMapbox } from '../../lib/mapLoader';
 
 const NEIGHBORHOODS_DATA = {
   type: "FeatureCollection",
@@ -135,11 +133,14 @@ export default function NeighborhoodMap() {
     if (loading) return;
     if (!mapContainerRef.current) return;
 
+    let cancelled = false;
     let mapInstance = null;
     let cleanup = () => {};
 
     // 1. MAPBOX INITIALIZATION
     if (engine === 'mapbox' && mapboxToken) {
+      loadMapbox().then((mapboxgl) => {
+      if (cancelled) return;
       mapboxgl.accessToken = mapboxToken;
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
@@ -206,6 +207,7 @@ export default function NeighborhoodMap() {
       cleanup = () => {
         map.remove();
       };
+      });
     }
     // 2. GOOGLE MAPS INITIALIZATION
     else if (engine === 'google' && googleMapsApiKey) {
@@ -276,6 +278,7 @@ export default function NeighborhoodMap() {
     }
 
     return () => {
+      cancelled = true;
       cleanup();
       if (mapInstance && typeof mapInstance.remove === 'function') {
         try {
@@ -386,7 +389,7 @@ export default function NeighborhoodMap() {
 
           {/* Toggle buttons */}
           <div className="space-y-2 mb-6">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
               Filtrar mapa por:
             </span>
             <div className="flex gap-2">
@@ -417,36 +420,36 @@ export default function NeighborhoodMap() {
 
           {/* Legends */}
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">
               Leyenda
             </span>
             {viewMode === 'safety' ? (
               <div className="space-y-1.5 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#059669] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#059669] shrink-0" />
                   <span>Muy seguro / Residencial</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#10b981] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#10b981] shrink-0" />
                   <span>Seguro</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#fbbf24] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#fbbf24] shrink-0" />
                   <span>Precaución de noche</span>
                 </div>
               </div>
             ) : (
               <div className="space-y-1.5 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#a7f3d0] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#a7f3d0] shrink-0" />
                   <span>Alquiler Bajo ($500 USD)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#f97316] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#f97316] shrink-0" />
                   <span>Alquiler Medio ($1000 USD)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#dc2626] shrink-0" />
+                  <span className="w-3 h-3 rounded-sm bg-[#dc2626] shrink-0" />
                   <span>Alquiler Premium (+$1500 USD)</span>
                 </div>
               </div>
@@ -463,20 +466,20 @@ export default function NeighborhoodMap() {
             </div>
             <div className="space-y-2 text-xs">
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block">SEGURIDAD:</span>
+                <span className="text-[11px] font-bold text-slate-400 block">SEGURIDAD:</span>
                 <span className="font-semibold text-slate-700">{selectedNeighborhood.safetyText}</span>
               </div>
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block">ALQUILER PROMEDIO:</span>
+                <span className="text-[11px] font-bold text-slate-400 block">ALQUILER PROMEDIO:</span>
                 <span className="font-semibold text-slate-700">{selectedNeighborhood.rentText}</span>
               </div>
               <div>
-                <span className="text-[10px] font-bold text-slate-400 block">PROS:</span>
+                <span className="text-[11px] font-bold text-slate-400 block">PROS:</span>
                 <span className="text-slate-600">{selectedNeighborhood.pros}</span>
               </div>
               {selectedNeighborhood.cons && (
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 block">CONTRAS:</span>
+                  <span className="text-[11px] font-bold text-slate-400 block">CONTRAS:</span>
                   <span className="text-slate-600">{selectedNeighborhood.cons}</span>
                 </div>
               )}

@@ -2,6 +2,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
 
+// CSP (report-only until verified with the real map providers; switch the header key back to Content-Security-Policy to enforce).
 // CSP: Next injects inline bootstrap scripts, hence 'unsafe-inline' (no nonce). Map providers and
 // Unsplash images are the only third-party origins.
 const csp = [
@@ -20,7 +21,7 @@ const csp = [
 ].join('; ');
 
 const securityHeaders = [
-  { key: 'Content-Security-Policy', value: csp },
+  { key: 'Content-Security-Policy-Report-Only', value: csp },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },

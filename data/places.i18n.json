@@ -23,7 +23,7 @@
  },
  "panteon-heroes": {
   "en": {
-   "name": "National Pantheon of the Heroes",
+   "name": "National Pantheon of Heroes",
    "description": "Historic mausoleum and national monument paying tribute to the heroes of the homeland.",
    "hours": "Every day 06:00 - 18:00",
    "tags": [
@@ -706,7 +706,7 @@
  "costanera-encarnacion": {
   "en": {
    "name": "Costanera and San José Beach",
-   "description": "The country's most famous river beach and seaside promenade, on the banks of the vast Paraná River in Encarnación.",
+   "description": "The country's most famous river beach and riverside promenade, on the banks of the vast Paraná River in Encarnación.",
    "hours": "Free access",
    "tags": [
     "beach",
@@ -892,7 +892,7 @@
   },
   "pt": {
    "name": "Basílica da Virgem de Caacupé",
-   "description": "A capital espiritual do país, santuário nacional onde milhões de pessoas peregrinam todo dia 8 de dezembro.",
+   "description": "A capital espiritual do país, santuário nacional onde milhões de pessoas peregrinam todo 8 de dezembro.",
    "hours": "Todos os dias 06:00 - 20:00",
    "tags": [
     "igreja",
@@ -1271,11 +1271,11 @@
   },
   "pt": {
    "name": "Centro Histórico de Altos",
-   "description": "Cidade colonial em altitude na Cordilheira. Famosa por suas vistas do lago, seu ambiente tranquilo para expatriados e sua tradição da Semana Santa.",
+   "description": "Cidade colonial em altitude na Cordillera. Famosa por suas vistas do lago, seu ambiente tranquilo para expatriados e sua tradição da Semana Santa.",
    "hours": "Acesso livre",
    "tags": [
     "histórico",
-    "cordilheira",
+    "cordillera",
     "expatriados",
     "tranquilo"
    ]
@@ -1301,7 +1301,7 @@
     "artesanato",
     "couro",
     "limpeza",
-    "cordilheira"
+    "cordillera"
    ]
   }
  },
@@ -1592,7 +1592,7 @@
   },
   "pt": {
    "name": "Café del Lago",
-   "description": "Clássica confeitaria e restaurante de San Bernardino, com belas vistas do lago Ypacaraí e ideal para um lanche com facturas alemãs.",
+   "description": "Clássica confeitaria e restaurante de San Bernardino, com belas vistas do lago Ypacaraí e ideal para um lanche com doces alemães (facturas).",
    "hours": "Todos os dias 08:00 - 22:00",
    "tags": [
     "café",

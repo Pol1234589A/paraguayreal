@@ -56,6 +56,7 @@ export default function BlogIndexClient({ locale, articles }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={locale === 'en' ? "Search articles..." : locale === 'pt' ? "Buscar artigos..." : "Buscar artículos..."}
+            aria-label={locale === 'en' ? "Search articles" : locale === 'pt' ? "Buscar artigos" : "Buscar artículos"}
             className="w-full pl-9 pr-4 py-2.5 text-xs sm:text-sm bg-white border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-emerald-500 transition-all text-slate-800 shadow-xs"
           />
         </div>

@@ -22,6 +22,12 @@ export async function generateMetadata({ params }) {
   });
 }
 
+const H1 = {
+  es: 'Mapa Interactivo de Paraguay',
+  en: 'Interactive Map of Paraguay',
+  pt: 'Mapa Interativo do Paraguai'
+};
+
 export default function MapaPage({ params, searchParams }) {
   const { locale } = use(params);
   setRequestLocale(locale);
@@ -39,6 +45,7 @@ export default function MapaPage({ params, searchParams }) {
 
   return (
     <div className="h-[calc(100dvh-64px)] overflow-hidden w-full">
+      <h1 className="sr-only">{H1[locale] || H1.es}</h1>
       <SchemaOrg schema={mapSchema} />
       <InteractiveMap initialPlaces={getPlaces(locale)} locale={locale} searchParams={sp} />
     </div>

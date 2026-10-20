@@ -45,7 +45,8 @@ export function getPost(slug, locale = DEFAULT_LOCALE) {
     author: data.author || 'ParaguayReal',
     photo: data.photo,
     date: data.date ? new Date(data.date).toISOString().slice(0, 10) : undefined,
-    content
+    // The page renders the title as <h1>; drop a duplicate leading '# Title' from the MDX body
+    content: content.replace(/^\s*#\s+[^\n]*\n+/, '')
   };
 }
 

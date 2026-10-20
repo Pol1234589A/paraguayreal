@@ -125,6 +125,7 @@ export default function TourismClient({ placesFeatures, locale }) {
           <input
             type="text"
             placeholder={t('search')}
+            aria-label={t('search')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"

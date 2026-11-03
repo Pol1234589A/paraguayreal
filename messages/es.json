@@ -8,7 +8,9 @@
     "business": "Negocios",
     "cities": "Ciudades",
     "blog": "Blog",
-    "mapBadge": "NUEVO"
+    "mapBadge": "NUEVO",
+    "promote": "Tráfico Real",
+    "publish": "Publicar Anuncio"
   },
   "Hero": {
     "title": "Todo lo que necesitas saber sobre Paraguay. Sin filtros.",

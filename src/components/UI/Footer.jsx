@@ -29,6 +29,8 @@ export default function Footer({ locale = 'es' }) {
           <div className="space-y-3 text-xs">
             <span className="text-white font-black uppercase tracking-wider block">Menú Rápido</span>
             <ul className="space-y-2">
+              <li><Link href={`/${locale}/publicar`} className="hover:text-emerald-400 font-bold text-emerald-500 hover:underline transition">{translate("Navigation.publish", "Publicar Anuncio")} (0 ₲)</Link></li>
+              <li><Link href={`/${locale}/promocionar`} className="hover:text-emerald-400 font-bold text-emerald-500 hover:underline transition">{translate("Navigation.promote", "Tráfico Real")}</Link></li>
               <li><Link href={`/${locale}/mapa`} className="hover:text-emerald-500 hover:underline transition">Mapa Interactivo</Link></li>
               <li><Link href={`/${locale}/precios`} className="hover:text-emerald-500 hover:underline transition">Costo de Vida</Link></li>
               <li><Link href={`/${locale}/vivir/barrios`} className="hover:text-emerald-500 hover:underline transition">Barrios de Asunción</Link></li>

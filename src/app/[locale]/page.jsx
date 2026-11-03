@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import SearchBar from '../../components/UI/SearchBar';
 
 import CityMap from '../../components/Map/LazyCityMap';
+import PromoBanner from '../../components/UI/PromoBanner';
 import SchemaOrg from '../../components/SEO/SchemaOrg';
 import { getPlaces } from '../../lib/places';
 import { Map, DollarSign, UserCheck, Compass, Briefcase, Building, ShieldCheck, ArrowRight } from 'lucide-react';
@@ -198,6 +199,11 @@ export default function HomePage({ params }) {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Promoción con Tráfico Real */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <PromoBanner locale={locale} />
       </section>
 
       {/* Map Preview Section on Home */}

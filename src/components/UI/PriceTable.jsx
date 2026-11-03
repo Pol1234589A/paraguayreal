@@ -1,7 +1,7 @@
 import React from 'react';
 import pricesData from '../../../data/prices.json';
 
-export default function PriceTable({ t }) {
+export default function PriceTable({ t, locale = 'es' }) {
   const categories = ['rent', 'food', 'services', 'transport'];
 
   const getCategoryTitle = (cat) => {
@@ -52,17 +52,20 @@ export default function PriceTable({ t }) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-slate-700">
-                  {items.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-slate-50/50 transition">
-                      <td className="px-6 py-4 font-medium text-slate-900">{item.item}</td>
-                      <td className="px-6 py-4 font-mono font-semibold text-slate-800">
-                        {item.pyg.toLocaleString('es-PY')} ₲
-                      </td>
-                      <td className="px-6 py-4 font-mono font-extrabold text-emerald-600 text-right">
-                        ${item.usd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                      </td>
-                    </tr>
-                  ))}
+                  {items.map((item, idx) => {
+                    const displayName = item[`item_${locale}`] || item.item_es || item.item;
+                    return (
+                      <tr key={idx} className="hover:bg-slate-50/50 transition">
+                        <td className="px-6 py-4 font-medium text-slate-900">{displayName}</td>
+                        <td className="px-6 py-4 font-mono font-semibold text-slate-800">
+                          {item.pyg.toLocaleString('es-PY')} ₲
+                        </td>
+                        <td className="px-6 py-4 font-mono font-extrabold text-emerald-600 text-right">
+                          ${item.usd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

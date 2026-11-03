@@ -48,7 +48,6 @@ export default function NegociosPage({ params: { locale } }) {
     { label: t("Navigation.business") || "Negocios", url: "/negocios" }
   ];
 
-  // Raw localized content database to ensure maximum detail and high-fidelity copy
   const localizedData = {
     es: {
       heroTitle: "Negocios e Inversión en Paraguay",
@@ -57,7 +56,7 @@ export default function NegociosPage({ params: { locale } }) {
       investmentGradeDesc: "Garantiza seguridad jurídica, estabilidad macroeconómica y atracción de capital extranjero de mediano y largo plazo.",
       demographics: "Pirámide Poblacional Joven",
       demographicsDesc: "La edad media en Paraguay es de 26 años. El 70% de la población es menor de 40 años, asegurando una fuerza laboral productiva.",
-      
+      exchangeRateInfo: "Cotización Interbancaria: 6.112,62 PYG/USD",
       taxTitle: "El Sistema Fiscal: Regla del 10-10-10",
       taxDesc: "En Paraguay el esquema impositivo es extremadamente simple, plano y directo. El país se rige bajo el principio de territorialidad, eximiendo de impuestos los ingresos generados fuera del territorio nacional.",
       taxCards: [
@@ -83,7 +82,6 @@ export default function NegociosPage({ params: { locale } }) {
         }
       ],
       taxWarning: "Deducción Simplificada: Los profesionales independientes pueden deducir gran parte de sus gastos personales anuales (como supermercado, restaurantes, viajes y vehículos) si justifican su relación con la actividad productiva.",
-
       maquilaTitle: "Régimen de Maquila",
       maquilaSubtitle: "La puerta de acceso libre al Mercosur",
       maquilaDesc: "El régimen de maquila de Paraguay permite a empresas extranjeras importar materia prima y maquinaria bajo suspensión de aranceles, procesarlos o ensamblarlos localmente, y exportar los productos finales pagando un impuesto único del 1% sobre el valor exportado.",
@@ -93,14 +91,14 @@ export default function NegociosPage({ params: { locale } }) {
         "Certificación de Origen Mercosur, que permite ingresar a mercados gigantes como Brasil y Argentina con arancel cero (evitando las tarifas de hasta el 200% aplicadas a países fuera del bloque).",
         "Costos operativos sumamente bajos, con mano de obra calificada competitiva y el costo de energía eléctrica más barato de la región."
       ],
-
       investTitle: "Sectores Clave y Advertencias Sinceras",
       investDesc: "No todas las inversiones son fáciles ni seguras. Expatriados y asesores locales con experiencia nos entregan un panorama honesto.",
-      investSector1Title: "Mercado Inmobiliario: La Alerta de la Plusvalía",
-      investSector1Desc: "Muchos promotores venden terrenos y departamentos con promesas de rápida valorización o especulación rápida. Sin embargo, residentes experimentados advierten que el mercado de reventa a corto plazo en Paraguay no es dinámico. Debido a la inmensa cantidad de tierra disponible y nuevos desarrollos con financiación propia, revender rápido suele ser difícil. La recomendación es invertir pensando en renta por alquiler (rendimientos del 6% al 8% anual en el eje corporativo) o uso propio a largo plazo, no en especulación rápida.",
-      investSector2Title: "Sector Agropecuario y Ganadero",
-      investSector2Desc: "Paraguay es uno de los mayores exportadores mundiales de soja, maíz y carne vacuna. La inversión en el agro o tierras productivas del Chaco o la Región Oriental es altamente rentable si se hace a través de consorcios o administradores profesionales de confianza. La carne paraguaya es reconocida internacionalmente por su calidad de exportación y costos eficientes.",
-
+      investSector1Title: "Inversión Inmobiliaria y Carry Cost (Decreto 5181/2025)",
+      investSector1Desc: "La plusvalía a corto plazo no es fácil de realizar debido a la alta oferta de tierras. Sin embargo, Paraguay tiene el carry cost inmobiliario más bajo de la región: el impuesto inmobiliario se calcula sobre una valoración fiscal del ~20% del valor comercial (Decreto 5181/2025). Un departamento de USD 150.000 paga aproximadamente solo USD 300 anuales de impuesto, lo que lo hace idóneo para renta a largo plazo (6%-8% anual).",
+      investSector2Title: "Agronegocios y Ganadería",
+      investSector2Desc: "Paraguay es líder mundial en exportación de soja y carne vacuna. La inversión en tierras agrícolas del Chaco o la Región Oriental es altamente rentable, respaldada por la eficiencia de costos del país y su competitividad internacional. Es recomendable invertir mediante fondos o gestoras de confianza.",
+      investSector3Title: "Mercado de Oficinas Corporativas Clase A",
+      investSector3Desc: "El eje corporativo de Asunción muestra una baja tasa de vacancia (menor al 8%) impulsada por la radicación de multinacionales y nómadas corporativos. Los precios de alquiler de oficinas Clase A se mantienen estables entre USD 12 y USD 18 por metro cuadrado, siendo un sector de rendimiento sólido y estable.",
       infraTitle: "Megaproyectos que Transforman el País",
       infraDesc: "Paraguay está viviendo una revolución de conectividad continental que redefinirá la logística del Cono Sur.",
       infraGrid: [
@@ -116,11 +114,10 @@ export default function NegociosPage({ params: { locale } }) {
         },
         {
           title: "Energía 100% Renovable y Barata",
-          desc: "Paraguay posee un inmenso excedente de energía eléctrica hidroeléctrica gracias a las colosales represas de Itaipú y Yacyretá. Esto atrae de forma masiva centros de datos, granjas de minería y fábricas electrointensivas.",
+          desc: "Paraguay posee un inmenso excedente de energía eléctrica hidroeléctrica gracias a las colosales represas de Itaipú y Yacyretá. Con una de las tarifas industriales más competitivas del mundo (aprox. USD 0,059 por kWh), atrae de forma masiva centros de datos, granjas de minería y fábricas electrointensivas.",
           icon: <Zap className="w-8 h-8 text-emerald-600" />
         }
       ],
-
       cultureTitle: "La Cultura de Negocios: El 'País de los Amigos'",
       cultureDesc1: "En Paraguay, las relaciones personales y la confianza son el núcleo de todo trato comercial. El país funciona en gran medida bajo dinámicas de relaciones estrechas. Los pitches fríos o reuniones de negocios apuradas rara vez tienen éxito.",
       cultureDesc2: "Un negocio exitoso en Paraguay suele iniciarse compartiendo un tereré, conversando sobre la familia y conociéndose mutuamente. Además, existe una alta valoración por la transparencia: colocar el nombre real de los fundadores en las oficinas corporativas denota seriedad y compromiso con el mercado local.",
@@ -134,7 +131,7 @@ export default function NegociosPage({ params: { locale } }) {
       investmentGradeDesc: "Ensures legal security, macroeconomic stability, and attracts medium- and long-term foreign capital.",
       demographics: "Young Population Pyramid",
       demographicsDesc: "The median age in Paraguay is 26. Over 70% of the population is under 40, guaranteeing a highly productive workforce.",
-      
+      exchangeRateInfo: "Interbank Exchange Rate: 6,112.62 PYG/USD",
       taxTitle: "Tax System: The 10-10-10 Rule",
       taxDesc: "Paraguay's tax framework is extremely simple, flat, and direct. The country operates on a territorial tax basis, meaning any income generated outside of Paraguay is completely tax-exempt.",
       taxCards: [
@@ -160,7 +157,6 @@ export default function NegociosPage({ params: { locale } }) {
         }
       ],
       taxWarning: "Simplified Deductions: Independent professionals can deduct a large portion of their personal annual expenses (such as groceries, restaurants, travel, and vehicles) if linked to their productive activity.",
-
       maquilaTitle: "Maquila Regime",
       maquilaSubtitle: "The duty-free gateway to Mercosur",
       maquilaDesc: "Paraguay's Maquila regime allows foreign companies to import raw materials and machinery duty-free, process or assemble them locally, and re-export the final products paying a single flat tax of 1% on the export value.",
@@ -170,14 +166,14 @@ export default function NegociosPage({ params: { locale } }) {
         "Mercosur Certificate of Origin, enabling duty-free entry into Brazil and Argentina (bypassing tariffs up to 200% for non-block countries).",
         "Extremely competitive operating costs, skilled labor, and the lowest electricity rates in the region."
       ],
-
       investTitle: "Key Sectors & Honest Warnings",
       investDesc: "Not all investments are straightforward or safe. Experienced expats and local advisors share an honest outlook.",
-      investSector1Title: "Real Estate: The Capital Gains Warning",
-      investSector1Desc: "Many developers sell land and apartments promising quick appreciation. However, seasoned residents warn that the short-term resale market in Paraguay is slow. Due to massive land availability and continuous new developments with in-house developer financing, quick resales are difficult. The recommendation is to invest for rental yields (6% to 8% annually in Asunción's corporate hub) or long-term personal use, rather than quick speculation.",
-      investSector2Title: "Agriculture & Livestock",
+      investSector1Title: "Real Estate Investment & Carry Cost (Decreto 5181/2025)",
+      investSector1Desc: "Short-term capital gains are hard to realize due to high land supply. However, Paraguay has the lowest property carry costs in the region. Under Decreto 5181/2025, property tax is calculated on a fiscal valuation (~20% of commercial value). A USD 150,000 apartment pays only about USD 300 annually in taxes, making it excellent for long-term rental yields (6%-8% annually).",
+      investSector2Title: "Agribusiness & Livestock",
       investSector2Desc: "Paraguay is a leading global exporter of soy, corn, and beef. Investments in agricultural land in the Chaco or Eastern Region are highly lucrative when managed by trusted professional operators. Paraguayan beef is internationally praised for its export quality and cost-efficient production.",
-
+      investSector3Title: "Class A Corporate Office Market",
+      investSector3Desc: "Asunción's corporate axis features a low vacancy rate (under 8%) driven by incoming multinationals and corporate nomads. Rental prices for Class A office spaces remain stable between USD 12 and USD 18 per square meter, offering solid and steady yields.",
       infraTitle: "Megaprojects Transforming the Country",
       infraDesc: "Paraguay is undergoing a connectivity revolution that will redefine logistics in South America's Southern Cone.",
       infraGrid: [
@@ -193,11 +189,10 @@ export default function NegociosPage({ params: { locale } }) {
         },
         {
           title: "Cheap, 100% Renewable Energy",
-          desc: "Paraguay has an immense surplus of clean hydroelectric power from the Itaipú and Yacyretá dams, attracting data centers, crypto-mining farms, and power-intensive factories.",
+          desc: "Paraguay has an immense surplus of clean hydroelectric power from the Itaipú and Yacyretá dams. Offering some of the lowest commercial rates in the world (approx. USD 0,059 per kWh), it attracts data centers, crypto-mining farms, and power-intensive plants.",
           icon: <Zap className="w-8 h-8 text-emerald-600" />
         }
       ],
-
       cultureTitle: "Business Culture: The 'Country of Friends'",
       cultureDesc1: "In Paraguay, personal relationships and trust are at the core of every business transaction. The country runs heavily on close social circles. Cold pitches or rushed meetings rarely succeed.",
       cultureDesc2: "A successful venture in Paraguay often begins with sharing a tereré, talking about family, and building rapport. Transparency is highly valued: placing the actual names of the founders on corporate office doors signals serious long-term commitment.",
@@ -211,7 +206,7 @@ export default function NegociosPage({ params: { locale } }) {
       investmentGradeDesc: "Garante segurança jurídica, estabilidade macroeconômica e atração de capital estrangeiro de médio e longo prazo.",
       demographics: "Pirâmide Populacional Jovem",
       demographicsDesc: "A idade média no Paraguai é de 26 anos. Cerca de 70% da população tem menos de 40 anos, garantindo força de trabalho produtiva.",
-      
+      exchangeRateInfo: "Cotação Interbancária: 6.112,62 PYG/USD",
       taxTitle: "Sistema Tributário: Regra 10-10-10",
       taxDesc: "No Paraguai o esquema de impostos é extremamente simples, plano e direto. O país opera sob o princípio da territorialidade fiscal, isentando de tributos os rendimentos gerados fora do território nacional.",
       taxCards: [
@@ -237,7 +232,6 @@ export default function NegociosPage({ params: { locale } }) {
         }
       ],
       taxWarning: "Dedução Simplificada: Profissionais independentes podem deduzir grande parte das despesas pessoais anuais (supermercado, restaurantes, viagens e veículos) se relacionadas à sua atividade produtiva.",
-
       maquilaTitle: "Regime de Maquila",
       maquilaSubtitle: "A porta de acesso livre ao Mercosul",
       maquilaDesc: "O regime de maquila do Paraguai permite que empresas estrangeiras importem matérias-primas e maquinário com suspensão de tarifas, processem ou montem localmente e reexportem com imposto único de 1% sobre o valor exportado.",
@@ -247,19 +241,19 @@ export default function NegociosPage({ params: { locale } }) {
         "Certificado de Origem Mercosul, permitindo a entrada no Brasil e Argentina com tarifa zero (evitando impostos de até 200% para países fora do bloco).",
         "Custos operacionais baixos, mão de obra qualificada competitiva e a tarifa elétrica mais barata da região."
       ],
-
       investTitle: "Setores-Chave e Alertas Honestos",
       investDesc: "Nem todos os investimentos são fáceis ou seguros. Expatriados e consultores locais com experiência entregam uma perspectiva realista.",
-      investSector1Title: "Mercado Imobiliário: O Alerta da Valorização",
-      investSector1Desc: "Muitos corretores vendem lotes e apartamentos prometendo lucros rápidos com a valorização de mercado. No entanto, residentes alertam que o mercado de revenda a curto prazo no Paraguai não é dinâmico. Pela imensa oferta de terrenos e lançamentos com financiamento direto, revender rápido é difícil. A recomendação é investir focado em renda por aluguel (retornos de 6% a 8% ao ano no eixo corporativo) ou uso próprio de longo prazo, não em especulação rápida.",
-      investSector2Title: "Setor Agrícola e Pecuário",
-      investSector2Desc: "O Paraguai é um dos maiores exportadores globais de soja, milho e carne bovina. Investimentos em terras produtivas no Chaco ou Região Oriental são altamente lucrativos quando administrados por operadoras de confiança. A carne paraguaia é internacionalmente prestigiada pela alta qualidade e produção eficiente.",
-
+      investSector1Title: "Investimento Imobiliário e Carry Cost (Decreto 5181/2025)",
+      investSector1Desc: "Lucros rápidos com valorização imobiliária a curto prazo são difíceis de obter devido à alta oferta de terras. Contudo, o Paraguai oferece o carry cost mais baixo da região. Sob o Decreto 5181/2025, o imposto imobiliário incide sobre uma avaliação fiscal de apenas ~20% do valor comercial. Um apartamento de USD 150.000 paga aproximadamente apenas USD 300 anuais de imposto, ideal para locação de longo prazo (retorno de 6% a 8% ao ano).",
+      investSector2Title: "Agronegócio e Pecuária",
+      investSector2Desc: "O Paraguai é um dos maiores exportadores globais de soja, milho e carne bovina. O investimento em terras agrícolas no Chaco ou na Região Oriental é altamente rentável, impulsionado pela eficiência de custos e competitividade do país. Recomenda-se investir por meio de fundos ou operadoras locais de confiança.",
+      investSector3Title: "Mercado de Escritórios Corporativos Classe A",
+      investSector3Desc: "O eixo corporativo de Assunção apresenta uma taxa de vacância baixa (inferior a 8%), impulsionada pela chegada de multinacionais e profissionais nômades. Os preços de aluguel para escritórios Classe A mantêm-se estáveis entre USD 12 e USD 18 por metro quadrado, garantindo rendimentos sólidos e estáveis.",
       infraTitle: "Megaprojetos que Transformam o País",
       infraDesc: "O Paraguai está vivenciando uma revolução na infraestrutura de transportes que redefinirá a logística na América do Sul.",
       infraGrid: [
         {
-          title: "Corredor da Rota Biooceânica",
+          title: "Corredor da Rota Bioceânica",
           desc: "Rodovia que cruza o Chaco, conectando portos do Atlântico (Brasil) aos portos do Pacífico (Chile). Funcionará como um Canal do Panamá terrestre, valorizando terras logísticas estratégicas.",
           icon: <Compass className="w-8 h-8 text-emerald-600" />
         },
@@ -269,13 +263,12 @@ export default function NegociosPage({ params: { locale } }) {
           icon: <Train className="w-8 h-8 text-emerald-600" />
         },
         {
-          title: "Energia 100% Limpa e Barata",
-          desc: "O Paraguai possui excedente gigantesco de energia elétrica limpa gerada pelas hidrelétricas de Itaipu e Yacyretá, atraindo data centers, mineração de criptomoedas e indústrias.",
+          title: "Energía 100% Limpa e Barata",
+          desc: "O Paraguai possui excedente gigantesco de energia elétrica limpa gerada pelas hidrelétricas de Itaipu e Yacyretá. Com uma das tarifas comerciais mais competitivas do mundo (aprox. USD 0,059 por kWh), atrai data centers, mineração de criptomoedas e indústrias.",
           icon: <Zap className="w-8 h-8 text-emerald-600" />
         }
       ],
-
-      cultureTitle: "Cultura de Negócios: O 'País dos Amigos'",
+      cultureTitle: "Cultura de Negocios: O 'País dos Amigos'",
       cultureDesc1: "No Paraguai, as relações pessoais e a confiança mútua são a base de qualquer negócio. O país opera fortemente sob círculos sociais próximos. Reuniões rápidas ou propostas frias raramente dão resultado.",
       cultureDesc2: "Uma parceria de sucesso no Paraguai geralmente começa compartilhando um tereré, conversando sobre a família e estabelecendo conexões. A transparência é valorizada: colocar o nome real dos fundadores nas portas do escritório demonstra compromisso sério e de longo prazo.",
       ctaBlog: "Ler Guias de Negócios no Blog",
@@ -285,7 +278,6 @@ export default function NegociosPage({ params: { locale } }) {
 
   const data = localizedData[locale] || localizedData.es;
 
-  // JSON-LD business page schema for search engines
   const pageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -315,9 +307,7 @@ export default function NegociosPage({ params: { locale } }) {
           <Breadcrumb items={breadcrumbs} locale={locale} />
           
           <div className="space-y-3">
-            <span className="bg-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30 uppercase tracking-wider">
-              {data.updated}
-            </span>
+            <UpdatedBadge />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-white max-w-3xl">
               {data.heroTitle}
             </h1>
@@ -327,7 +317,7 @@ export default function NegociosPage({ params: { locale } }) {
           </p>
 
           {/* Quick indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 max-w-3xl border-t border-slate-700/50">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 max-w-4xl border-t border-slate-700/50">
             <div className="flex gap-3 bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition">
               <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
@@ -340,6 +330,13 @@ export default function NegociosPage({ params: { locale } }) {
               <div>
                 <h3 className="text-xs font-bold text-slate-100">{data.demographics}</h3>
                 <p className="text-[11px] text-slate-400 leading-normal mt-0.5">{data.demographicsDesc}</p>
+              </div>
+            </div>
+            <div className="flex gap-3 bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition">
+              <Coins className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <div>
+                <h3 className="text-xs font-bold text-slate-100">{locale === 'es' ? "Moneda y Cambio" : locale === 'pt' ? "Câmbio e Moeda" : "Currency & Exchange"}</h3>
+                <p className="text-[11px] text-slate-400 leading-normal mt-0.5">{data.exchangeRateInfo}</p>
               </div>
             </div>
           </div>
@@ -442,8 +439,8 @@ export default function NegociosPage({ params: { locale } }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-            {/* Warning 1: Real estate speculation */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            {/* Sector 1: Real estate Carry Cost */}
             <div className="bg-amber-50/20 border border-amber-200/50 p-6 rounded-xl space-y-3 hover:shadow-sm transition">
               <h3 className="text-base font-bold text-slate-900 font-display flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-amber-600" />
@@ -454,7 +451,7 @@ export default function NegociosPage({ params: { locale } }) {
               </p>
               <div className="flex items-center gap-1.5 text-xs text-amber-800 font-bold bg-amber-50 px-2.5 py-1 rounded w-fit">
                 <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
-                <span>{locale === 'es' ? "Advertencia de Plusvalía Rápida" : locale === 'pt' ? "Aviso de Lucro Rápido" : "Speculation Warning"}</span>
+                <span>{locale === 'es' ? "Carry Cost Muy Bajo" : locale === 'pt' ? "Custo de Manutenção Baixo" : "Very Low Carry Cost"}</span>
               </div>
             </div>
 
@@ -470,6 +467,21 @@ export default function NegociosPage({ params: { locale } }) {
               <div className="flex items-center gap-1.5 text-xs text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1 rounded w-fit">
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-600" />
                 <span>{locale === 'es' ? "Sector Altamente Productivo" : locale === 'pt' ? "Setor Altamente Produtivo" : "Highly Productive"}</span>
+              </div>
+            </div>
+
+            {/* Sector 3: Corporate Offices */}
+            <div className="bg-blue-50/25 border border-blue-100 p-6 rounded-xl space-y-3 hover:shadow-sm transition">
+              <h3 className="text-base font-bold text-slate-900 font-display flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-blue-700" />
+                <span>{data.investSector3Title}</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+                {data.investSector3Desc}
+              </p>
+              <div className="flex items-center gap-1.5 text-xs text-blue-800 font-bold bg-blue-50 px-2.5 py-1 rounded w-fit">
+                <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-blue-600" />
+                <span>{locale === 'es' ? "Baja Vacancia (<8%)" : locale === 'pt' ? "Vacância Baixa (<8%)" : "Low Vacancy (<8%)"}</span>
               </div>
             </div>
           </div>

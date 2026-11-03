@@ -10,7 +10,12 @@ export default function sitemap() {
     '/turismo'
   ];
 
-  const cities = ['asuncion', 'ciudad-del-este', 'encarnacion'];
+  const cities = [
+    'asuncion', 'ciudad-del-este', 'encarnacion',
+    'luque', 'san-lorenzo', 'fernando-de-la-mora',
+    'lambare', 'villa-elisa', 'limpio',
+    'hernandarias', 'villarrica', 'pilar'
+  ];
   
   const blogPosts = [
     'cuanto-cuesta-vivir-en-paraguay-2025',

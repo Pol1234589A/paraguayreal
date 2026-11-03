@@ -3,8 +3,21 @@ import GoogleMapsButton from './GoogleMapsButton';
 import DirectionsButton from './DirectionsButton';
 import { Star, Clock, MapPin } from 'lucide-react';
 
-export default function PlacePopup({ place }) {
+// Static dictionary — this component is rendered via createRoot() inside map
+// popups, which lives OUTSIDE the NextIntl provider tree, so useTranslations()
+// cannot be used here.
+const LABELS = {
+  es: { directions: "Cómo llegar", guide: "Ver Guía Geografía Sagrada" },
+  en: { directions: "Get Directions", guide: "View Sacred Geography Guide" },
+  pt: { directions: "Como chegar", guide: "Ver Guia de Geografia Sagrada" }
+};
+
+export default function PlacePopup({ place, locale = 'es' }) {
   if (!place) return null;
+
+  const labels = LABELS[locale] || LABELS.es;
+  const howToGetThere = labels.directions;
+  const viewGuide = labels.guide;
 
   return (
     <div className="w-64 p-1 text-slate-800 rounded-xl">
@@ -47,7 +60,7 @@ export default function PlacePopup({ place }) {
 
         <div className="flex flex-col gap-1.5 pt-2 border-t border-slate-100">
           <div className="flex gap-1.5">
-            <DirectionsButton url={place.googleMapsDirections} label="Cómo llegar" />
+            <DirectionsButton url={place.googleMapsDirections} label={howToGetThere} />
             <GoogleMapsButton url={place.googleMapsUrl} label="Google Maps" variant="outline" />
           </div>
           {place.website && (
@@ -57,7 +70,7 @@ export default function PlacePopup({ place }) {
               rel="noopener noreferrer"
               className="w-full mt-1 text-center text-emerald-600 hover:text-emerald-700 font-bold border border-emerald-100 hover:border-emerald-200 bg-emerald-50 hover:bg-emerald-100/50 rounded-lg py-1.5 px-3 transition text-[10px] flex items-center justify-center gap-1 shadow-sm"
             >
-              <span>Ver Guía Geografía Sagrada</span>
+              <span>{viewGuide}</span>
             </a>
           )}
         </div>

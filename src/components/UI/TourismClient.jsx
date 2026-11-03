@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import Breadcrumb from './Breadcrumb';
 import UpdatedBadge from './UpdatedBadge';
 import { Search, MapPin, Star, Calendar, Compass, ArrowRight, Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const CityMap = dynamic(
   () => import('../Map/CityMap'),
@@ -19,8 +20,17 @@ const CityMap = dynamic(
 );
 
 export default function TourismClient({ placesFeatures, locale }) {
+  const t = useTranslations();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState('all');
+
+  const translate = (key, fallback) => {
+    try {
+      return t ? (t(key) || fallback) : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  };
 
   // Filter features to keep only tourism places
   const allTourismPlaces = useMemo(() => {
@@ -47,7 +57,6 @@ export default function TourismClient({ placesFeatures, locale }) {
           !id.startsWith('atyra') &&
           !id.includes('caacupe') &&
           !id.includes('bernardino')) {
-        // Double check specifically for Cordillera cities under interior
         if (city === 'interior') {
           const lowerId = id.toLowerCase();
           const isCordillera = lowerId.includes('aregua') || 
@@ -61,7 +70,6 @@ export default function TourismClient({ placesFeatures, locale }) {
         }
       }
       if (activeTab === 'interior' && city !== 'interior') {
-        // Exclude cordillera/aregua if activeTab is strictly other interior
         const lowerId = id.toLowerCase();
         const isCordillera = lowerId.includes('aregua') || 
                              lowerId.includes('altos') || 
@@ -91,8 +99,18 @@ export default function TourismClient({ placesFeatures, locale }) {
   }, [allTourismPlaces, activeTab, searchQuery]);
 
   const breadcrumbs = [
-    { label: 'Turismo', url: '/turismo' }
+    { label: translate("Navigation.tourism", "Turismo"), url: '/turismo' }
   ];
+
+  const allTabsLabel = translate("Tourism.allTabs", "Todos");
+  const officialGuideLabel = translate("Tourism.officialGuide", "Guía Oficial");
+  const titleLabel = translate("Tourism.title", "Turismo y Lugares en Paraguay");
+  const subtitleLabel = translate("Tourism.subtitle", "Descubre los tesoros naturales, históricos y culturales de Paraguay. Desde la Costanera y museos coloniales de la capital hasta las imponentes ruinas jesuíticas, cascadas de la selva paranaense y lagos de Cordillera.");
+  const searchPlaceholderLabel = translate("Tourism.searchPlaceholder", "Buscar por nombre, etiquetas o ciudad...");
+  const showingFilteredLabel = translate("Tourism.showingFiltered", "Mostrando resultados filtrados");
+  const noResultsLabel = translate("Tourism.noResults", "No encontramos lugares turísticos con esos filtros. ¡Prueba buscando otro término!");
+  const viewMapLabel = translate("Tourism.viewInMap", "Ver Mapa");
+  const directionsLabel = translate("Map.howToGetThere", "Cómo Llegar");
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 select-none space-y-8">
@@ -103,15 +121,15 @@ export default function TourismClient({ placesFeatures, locale }) {
         <div className="flex items-center gap-2">
           <UpdatedBadge />
           <span className="bg-amber-100 text-amber-900 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
-            Guía Oficial
+            {officialGuideLabel}
           </span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold font-display leading-tight text-slate-900 flex items-center gap-3">
           <Compass className="w-10 h-10 text-emerald-600 animate-spin-slow" />
-          <span>Turismo y Lugares en Paraguay</span>
+          <span>{titleLabel}</span>
         </h1>
         <p className="text-slate-500 text-sm sm:text-base max-w-3xl leading-relaxed">
-          Descubre los tesoros naturales, históricos y culturales de Paraguay. Desde la Costanera y museos coloniales de la capital hasta las imponentes ruinas jesuíticas, cascadas de la selva paranaense y lagos de Cordillera.
+          {subtitleLabel}
         </p>
       </div>
 
@@ -122,7 +140,7 @@ export default function TourismClient({ placesFeatures, locale }) {
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Buscar por nombre, etiquetas o ciudad..."
+            placeholder={searchPlaceholderLabel}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
@@ -132,7 +150,7 @@ export default function TourismClient({ placesFeatures, locale }) {
         {/* Tab buttons */}
         <div className="flex flex-wrap gap-1.5 scrollbar-none overflow-x-auto">
           {[
-            { id: 'all', label: 'Todos' },
+            { id: 'all', label: allTabsLabel },
             { id: 'asuncion', label: 'Asunción' },
             { id: 'cordillera-aregua', label: 'Areguá & Cordillera' },
             { id: 'encarnacion-cde', label: 'Encarnación / CDE' },
@@ -157,10 +175,10 @@ export default function TourismClient({ placesFeatures, locale }) {
       <section className="space-y-6">
         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
           <h2 className="text-lg font-bold text-slate-900">
-            Atracciones Recomendadas ({filteredPlaces.length})
+            {translate("Tourism.recAttractions", "Atracciones Recomendadas ({count})").replace('{count}', filteredPlaces.length)}
           </h2>
           <span className="text-xs text-slate-400 font-medium">
-            Mostrando resultados filtrados
+            {showingFilteredLabel}
           </span>
         </div>
 
@@ -168,7 +186,7 @@ export default function TourismClient({ placesFeatures, locale }) {
           <div className="text-center py-20 bg-white border border-slate-100 rounded-3xl space-y-4">
             <Compass className="w-12 h-12 text-slate-300 mx-auto" />
             <p className="text-slate-500 font-semibold text-sm">
-              No encontramos lugares turísticos con esos filtros. ¡Prueba buscando otro término!
+              {noResultsLabel}
             </p>
           </div>
         ) : (
@@ -241,7 +259,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                           rel="noopener noreferrer"
                           className="flex-1 text-center py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold rounded-xl transition border border-emerald-100/60"
                         >
-                          Ver Mapa
+                          {viewMapLabel}
                         </a>
                         <a
                           href={p.googleMapsDirections || p.googleMapsUrl}
@@ -249,7 +267,7 @@ export default function TourismClient({ placesFeatures, locale }) {
                           rel="noopener noreferrer"
                           className="flex-1 text-center py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition shadow-sm"
                         >
-                          Cómo Llegar
+                          {directionsLabel}
                         </a>
                       </div>
                     </div>

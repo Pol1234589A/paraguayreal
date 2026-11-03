@@ -34,6 +34,7 @@ const CATEGORY_EMOJIS = {
 
 export default function CityMap({ cityKey, places = [], locale = 'es' }) {
   const mapContainerRef = useRef(null);
+  const mapRef = useRef(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const activeInfoWindowRef = useRef(null);
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
@@ -49,6 +50,26 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
     if (loading) return;
     if (!mapContainerRef.current) return;
     if (cityPlaces.length === 0) return;
+
+    // Guard: Prevent re-initialization if map is already created with the same engine and cityKey
+    if (mapRef.current) {
+      if (mapRef.current._initializedEngine === engine && mapRef.current._initializedCityKey === cityKey) {
+        return;
+      }
+      // Clean up old map if configuration changed
+      if (typeof mapRef.current.remove === 'function') {
+        try {
+          mapRef.current.remove();
+        } catch (e) {
+          console.warn('Map cleanup error:', e);
+        }
+      }
+      if (mapContainerRef.current) {
+        mapContainerRef.current.innerHTML = '';
+      }
+      mapRef.current = null;
+      setMapLoaded(false);
+    }
 
     let mapInstance = null;
     let cleanup = () => {};
@@ -74,6 +95,9 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
         dragRotate: false
       });
 
+      map._initializedEngine = 'mapbox';
+      map._initializedCityKey = cityKey;
+      mapRef.current = map;
       mapInstance = map;
 
       map.addControl(new mapboxgl.NavigationControl({ showCompass: true, showZoom: true }), 'bottom-right');
@@ -144,10 +168,14 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
           scrollwheel: true,
           zoomControl: true,
           mapId: 'DEMO_MAP_ID', // Enables AdvancedMarkerElement
-          mapTypeControl: false,
-          streetViewControl: false
+          mapTypeControl: true,
+          streetViewControl: true,
+          fullscreenControl: true
         });
 
+        map._initializedEngine = 'google';
+        map._initializedCityKey = cityKey;
+        mapRef.current = map;
         mapInstance = {
           remove: () => {}
         };
@@ -248,6 +276,9 @@ export default function CityMap({ cityKey, places = [], locale = 'es' }) {
           zoomControl: true
         }).setView(center, 13);
 
+        map._initializedEngine = 'leaflet';
+        map._initializedCityKey = cityKey;
+        mapRef.current = map;
         mapInstance = map;
         setMapLoaded(true);
 

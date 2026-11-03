@@ -11,12 +11,12 @@ import { db } from './firebase';
 export function getMapEngine() {
   if (typeof window === 'undefined') return 'none';
   
-  if (process.env.NEXT_PUBLIC_MAPBOX_TOKEN && process.env.NEXT_PUBLIC_MAPBOX_TOKEN.trim() !== '') {
-    return 'mapbox';
-  }
-  
   if (process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY && process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY.trim() !== '') {
     return 'google';
+  }
+  
+  if (process.env.NEXT_PUBLIC_MAPBOX_TOKEN && process.env.NEXT_PUBLIC_MAPBOX_TOKEN.trim() !== '') {
+    return 'mapbox';
   }
   
   return 'leaflet';
@@ -35,13 +35,13 @@ export function useMapKeys() {
     const defaultGoogleMapsKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
 
     const determineEngine = (mbToken, gKey) => {
-      if (mbToken && mbToken.trim() !== '') return 'mapbox';
       if (gKey && gKey.trim() !== '') return 'google';
+      if (mbToken && mbToken.trim() !== '') return 'mapbox';
       return 'leaflet';
     };
 
-    if (!db) {
-      // Fallback to environment variables if Firebase Firestore is not initialized
+    if (defaultMapboxToken || defaultGoogleMapsKey || !db) {
+      // Use environment variables directly when configured
       setKeys({
         mapboxToken: defaultMapboxToken,
         googleMapsApiKey: defaultGoogleMapsKey,
@@ -78,7 +78,7 @@ export function useMapKeys() {
           });
         }
       } catch (err) {
-        console.error('Error fetching map keys from Firestore:', err);
+        // Quiet fallback to env vars if Firestore rules block anonymous access
         if (active) {
           setKeys({
             mapboxToken: defaultMapboxToken,

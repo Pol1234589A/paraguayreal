@@ -8,12 +8,32 @@ import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/m
 
 export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
   const mapContainerRef = useRef(null);
+  const mapRef = useRef(null);
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
 
   useEffect(() => {
     if (loading) return;
     if (!mapContainerRef.current) return;
     if (!lat || !lng) return;
+
+    // Guard: Prevent re-initialization if map is already created with the same engine and coordinates
+    if (mapRef.current) {
+      if (mapRef.current._initializedEngine === engine && mapRef.current._initializedLat === lat && mapRef.current._initializedLng === lng) {
+        return;
+      }
+      // Clean up old map if configuration changed
+      if (typeof mapRef.current.remove === 'function') {
+        try {
+          mapRef.current.remove();
+        } catch (e) {
+          console.warn('Map cleanup error:', e);
+        }
+      }
+      if (mapContainerRef.current) {
+        mapContainerRef.current.innerHTML = '';
+      }
+      mapRef.current = null;
+    }
 
     let mapInstance = null;
 
@@ -29,6 +49,10 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
         dragRotate: false
       });
 
+      map._initializedEngine = 'mapbox';
+      map._initializedLat = lat;
+      map._initializedLng = lng;
+      mapRef.current = map;
       mapInstance = map;
 
       // Add navigation controls
@@ -62,11 +86,15 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
           scrollwheel: true,
           disableDoubleClickZoom: false,
           zoomControl: true,
-          mapTypeControl: false,
-          streetViewControl: false,
-          fullscreenControl: false
+          mapTypeControl: true,
+          streetViewControl: true,
+          fullscreenControl: true
         });
 
+        map._initializedEngine = 'google';
+        map._initializedLat = lat;
+        map._initializedLng = lng;
+        mapRef.current = map;
         mapInstance = {
           remove: () => {}
         };
@@ -110,6 +138,10 @@ export default function MiniMap({ lat, lng, name, address, googleMapsUrl }) {
           zoomControl: true
         }).setView([lat, lng], 14);
 
+        map._initializedEngine = 'leaflet';
+        map._initializedLat = lat;
+        map._initializedLng = lng;
+        mapRef.current = map;
         mapInstance = map;
 
         window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

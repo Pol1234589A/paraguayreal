@@ -26,18 +26,25 @@ export default function Footer({ locale = 'es' }) {
 
           {/* Site Sections */}
           <div className="space-y-3 text-xs">
-            <span className="text-white font-black uppercase tracking-wider block">Menú Rápido</span>
+            <span className="text-white font-black uppercase tracking-wider block">
+              {translate("Footer.quickMenu", "Menú Rápido")}
+            </span>
             <ul className="space-y-2">
-              <li><a href={`/${locale}/mapa`} className="hover:text-emerald-500 hover:underline transition">Mapa Interactivo</a></li>
-              <li><a href={`/${locale}/precios`} className="hover:text-emerald-500 hover:underline transition">Costo de Vida</a></li>
-              <li><a href={`/${locale}/vivir/barrios`} className="hover:text-emerald-500 hover:underline transition">Barrios de Asunción</a></li>
-              <li><a href={`/${locale}/ciudades/asuncion`} className="hover:text-emerald-500 hover:underline transition">Guía de Ciudades</a></li>
+              <li><a href={`/${locale}/publicar`} className="hover:text-emerald-400 font-bold text-emerald-500 hover:underline transition">{translate("Navigation.publish", "Publicar Anuncio")} (0 ₲)</a></li>
+              <li><a href={`/${locale}/promocionar`} className="hover:text-emerald-400 font-bold text-emerald-500 hover:underline transition">{translate("Navigation.promote", "Tráfico Real")}</a></li>
+              <li><a href={`/${locale}/mapa`} className="hover:text-emerald-500 hover:underline transition">{translate("Footer.interactiveMap", "Mapa Interactivo")}</a></li>
+              <li><a href={`/${locale}/precios`} className="hover:text-emerald-500 hover:underline transition">{translate("Footer.costOfLiving", "Costo de Vida")}</a></li>
+              <li><a href={`/${locale}/vivir/barrios`} className="hover:text-emerald-500 hover:underline transition">{translate("Footer.neighborhoods", "Guía de Barrios")}</a></li>
+              <li><a href={`/${locale}/vivir/seguridad`} className="hover:text-emerald-500 hover:underline transition">{translate("Footer.securityMatrix", "Portal de Seguridad")}</a></li>
+              <li><a href={`/${locale}/ciudades/asuncion`} className="hover:text-emerald-500 hover:underline transition">{translate("Footer.citiesGuide", "Guía de Ciudades")}</a></li>
             </ul>
           </div>
 
           {/* Suggest a Place */}
           <div className="space-y-3 text-xs">
-            <span className="text-white font-black uppercase tracking-wider block">Colabora</span>
+            <span className="text-white font-black uppercase tracking-wider block">
+              {translate("Footer.collaborate", "Colabora")}
+            </span>
             <p className="text-slate-400 leading-relaxed">
               {translate("Footer.suggestion", "¿Falta algún lugar clave en nuestro mapa?")}
             </p>
@@ -56,9 +63,9 @@ export default function Footer({ locale = 'es' }) {
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs gap-4 text-slate-500">
           <span>&copy; {new Date().getFullYear()} ParaguayReal. {translate("Footer.rights", "Todos los derechos reservados.")}</span>
           <div className="flex gap-4">
-            <a href={`/${locale}/privacidad`} className="hover:underline hover:text-slate-400">Privacidad</a>
-            <a href={`/${locale}/cookies`} className="hover:underline hover:text-slate-400">Cookies</a>
-            <a href={`/${locale}/legal`} className="hover:underline hover:text-slate-400">Aviso Legal</a>
+            <a href={`/${locale}/privacidad`} className="hover:underline hover:text-slate-400">{translate("Footer.privacy", "Privacidad")}</a>
+            <a href={`/${locale}/cookies`} className="hover:underline hover:text-slate-400">{translate("Footer.cookies", "Cookies")}</a>
+            <a href={`/${locale}/legal`} className="hover:underline hover:text-slate-400">{translate("Footer.legalNotice", "Aviso Legal")}</a>
           </div>
         </div>
 

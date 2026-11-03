@@ -4,6 +4,7 @@ import SearchBar from '../../components/UI/SearchBar';
 import CityMap from '../../components/Map/CityMap';
 import SchemaOrg from '../../components/SEO/SchemaOrg';
 import placesGeoJSON from '../../../data/places.json';
+import PromoBanner from '../../components/UI/PromoBanner';
 import { Map, DollarSign, UserCheck, Compass, Briefcase, Building, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export default function HomePage({ params: { locale } }) {
@@ -195,6 +196,11 @@ export default function HomePage({ params: { locale } }) {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Promoción con Tráfico Real Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <PromoBanner locale={locale} />
       </section>
 
       {/* Map Preview Section on Home */}

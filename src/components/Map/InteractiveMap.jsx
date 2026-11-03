@@ -7,6 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import MapSidebar from './MapSidebar';
 import PlacePopup from './PlacePopup';
 import { Compass, Menu, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useMapKeys, loadGoogleMapsScript, loadLeafletScript } from '../../lib/mapLoader';
 
 const CATEGORIES = {
@@ -21,7 +22,20 @@ const CATEGORIES = {
   transporte: { label: "Transporte", color: "#4b5563", icon: "🚌" }
 };
 
-export default function InteractiveMap({ initialPlaces = [], t, filterCity, searchParams }) {
+const GOOGLE_PLACES_MAPPING = {
+  turismo: { type: 'tourist_attraction' },
+  restaurantes: { type: 'restaurant' },
+  coworking: { keyword: 'coworking' },
+  hospitales: { type: 'hospital' },
+  supermercados: { type: 'supermarket' },
+  embajadas: { keyword: 'embassy' },
+  bancos: { type: 'bank' },
+  transporte: { type: 'transit_station' }
+};
+
+export default function InteractiveMap({ initialPlaces = [], t: tProp, filterCity, searchParams, locale = 'es' }) {
+  const tIntl = useTranslations();
+  const t = tProp || tIntl;
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
@@ -30,9 +44,21 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
   const { mapboxToken, googleMapsApiKey, engine, loading } = useMapKeys();
   const [searchQuery, setSearchQuery] = useState(searchParams?.q || '');
   const [selectedCategories, setSelectedCategories] = useState(Object.keys(CATEGORIES));
+  const [googlePlaces, setGooglePlaces] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [shareStatus, setShareStatus] = useState(false);
+
+  const selectedCategoriesRef = useRef(selectedCategories);
+  const filterCityRef = useRef(filterCity);
+
+  useEffect(() => {
+    selectedCategoriesRef.current = selectedCategories;
+  }, [selectedCategories]);
+
+  useEffect(() => {
+    filterCityRef.current = filterCity;
+  }, [filterCity]);
 
   // Handle URL parameters for initial map views (coordinates)
   useEffect(() => {
@@ -52,8 +78,21 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
     }
   }, [searchParams?.q]);
 
+  // Combine static initialPlaces and dynamically fetched googlePlaces
+  const allPlaces = React.useMemo(() => {
+    const merged = [...initialPlaces];
+    const names = new Set(merged.map(p => p.properties.name.toLowerCase()));
+    
+    googlePlaces.forEach(gp => {
+      if (!names.has(gp.properties.name.toLowerCase())) {
+        merged.push(gp);
+      }
+    });
+    return merged;
+  }, [initialPlaces, googlePlaces]);
+
   // Filter places based on search, categories, and city
-  const filteredPlaces = initialPlaces.filter((place) => {
+  const filteredPlaces = allPlaces.filter((place) => {
     const matchesSearch = place.properties.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       place.properties.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       place.properties.address.toLowerCase().includes(searchQuery.toLowerCase());
@@ -70,11 +109,119 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
         : [...prev, category]
     );
   };
+  const triggerPlacesSearch = (map) => {
+    if (!window.google || !window.google.maps || !window.google.maps.places) return;
+
+    const zoom = map.getZoom();
+    if (zoom < 13) {
+      // Don't search if zoomed out too far (to save Google API credits and keep map responsive)
+      return;
+    }
+
+    const center = map.getCenter();
+    const service = new window.google.maps.places.PlacesService(map);
+    const activeCats = selectedCategoriesRef.current.filter(cat => GOOGLE_PLACES_MAPPING[cat]);
+    const radius = Math.min(5000, 4000000 / Math.pow(2, zoom));
+
+    if (activeCats.length === 0) {
+      setGooglePlaces([]);
+      return;
+    }
+
+    let allFoundPlaces = [];
+    let completedRequests = 0;
+
+    activeCats.forEach(cat => {
+      const config = GOOGLE_PLACES_MAPPING[cat];
+      const request = {
+        location: center,
+        radius: radius,
+        ...config
+      };
+
+      service.nearbySearch(request, (results, status) => {
+        completedRequests++;
+        
+        if (status === window.google.maps.places.PlacesServiceStatus.OK && results) {
+          const geojsonFeatures = results.map(place => {
+            const lat = place.geometry.location.lat();
+            const lng = place.geometry.location.lng();
+            
+            // Format photo URL if present
+            const photoUrl = place.photos && place.photos.length > 0 
+              ? place.photos[0].getUrl({ maxWidth: 200, maxHeight: 150 }) 
+              : null;
+
+            return {
+              type: "Feature",
+              geometry: {
+                type: "Point",
+                coordinates: [lng, lat]
+              },
+              properties: {
+                id: `google-${place.place_id}`,
+                name: place.name,
+                category: cat,
+                description: `${place.vicinity || ''}. Calificación: ${place.rating || 'N/A'} ⭐`,
+                address: place.vicinity || '',
+                photo: photoUrl,
+                rating: place.rating || null,
+                googleMapsUrl: `https://www.google.com/maps/place/?q=place_id:${place.place_id}`,
+                googleMapsDirections: `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`,
+                hours: place.opening_hours ? (place.opening_hours.isOpen() ? "Abierto ahora" : "Cerrado") : "Ver detalles",
+                city: filterCityRef.current || "asuncion",
+                tags: [cat]
+              }
+            };
+          });
+          
+          allFoundPlaces = [...allFoundPlaces, ...geojsonFeatures];
+        }
+
+        if (completedRequests === activeCats.length) {
+          // Merge with unique keys
+          setGooglePlaces(prev => {
+            const existingMap = new Map(prev.map(p => [p.properties.id, p]));
+            allFoundPlaces.forEach(p => {
+              existingMap.set(p.properties.id, p);
+            });
+            return Array.from(existingMap.values());
+          });
+        }
+      });
+    });
+  };
+
+  // Trigger Places search when selected categories or city filters change
+  useEffect(() => {
+    if (!mapRef.current || !mapLoaded || engine !== 'google') return;
+    triggerPlacesSearch(mapRef.current);
+  }, [selectedCategories, filterCity, mapLoaded, engine]);
 
   // Initialize Map
   useEffect(() => {
     if (loading) return;
     if (!mapContainerRef.current) return;
+
+    // Guard: Prevent re-initialization if map is already created with the same engine and city
+    if (mapRef.current) {
+      if (mapRef.current._initializedEngine === engine && mapRef.current._initializedCity === filterCity) {
+        return;
+      }
+      // Clean up old map if configuration changed
+      if (typeof mapRef.current.remove === 'function') {
+        try {
+          mapRef.current.remove();
+        } catch (e) {
+          console.warn('Map cleanup error:', e);
+        }
+      }
+      if (mapContainerRef.current) {
+        mapContainerRef.current.innerHTML = '';
+      }
+      mapRef.current = null;
+      setMapLoaded(false);
+    }
 
     // Default center on Paraguay (or city if specified)
     let center = [-57.6362, -25.2867]; // Asuncion
@@ -137,6 +284,8 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
         dragRotate: false
       });
 
+      map._initializedEngine = 'mapbox';
+      map._initializedCity = filterCity;
       mapRef.current = map;
       mapInstance = map;
 
@@ -163,17 +312,41 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
       loadGoogleMapsScript(googleMapsApiKey, () => {
         if (!mapContainerRef.current) return;
         
+        // Guard against race conditions where another map got initialized while loading
+        if (mapRef.current && mapRef.current._initializedEngine === 'google') return;
+
         const gCenter = { lat: center[1], lng: center[0] };
         const map = new window.google.maps.Map(mapContainerRef.current, {
           center: gCenter,
           zoom: zoom,
           mapId: 'DEMO_MAP_ID',
-          mapTypeControl: false,
-          streetViewControl: false
+          zoomControl: true,
+          mapTypeControl: true,
+          streetViewControl: true,
+          fullscreenControl: true
         });
 
+        map._initializedEngine = 'google';
+        map._initializedCity = filterCity;
         mapRef.current = map;
+
+        // Set up dynamic places search on map idle with a debounce
+        let searchTimeout;
+        const idleListener = map.addListener('idle', () => {
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(() => {
+            triggerPlacesSearch(map);
+          }, 500);
+        });
+
         setMapLoaded(true);
+
+        cleanup = () => {
+          if (idleListener && typeof idleListener.remove === 'function') {
+            idleListener.remove();
+          }
+          clearTimeout(searchTimeout);
+        };
       });
     }
     // 3. LEAFLET INIT
@@ -190,6 +363,8 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
           zoomControl: true
         }).setView([center[1], center[0]], zoom);
 
+        map._initializedEngine = 'leaflet';
+        map._initializedCity = filterCity;
         mapRef.current = map;
         mapInstance = map;
 
@@ -281,7 +456,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} locale={locale} />);
 
         const popup = new mapboxgl.Popup({ offset: 25, closeButton: true, maxWidth: '280px' })
           .setDOMContent(popupNode);
@@ -337,7 +512,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} locale={locale} />);
 
         const infowindow = new window.google.maps.InfoWindow({
           content: popupNode,
@@ -415,7 +590,7 @@ export default function InteractiveMap({ initialPlaces = [], t, filterCity, sear
 
         const popupNode = document.createElement('div');
         const root = createRoot(popupNode);
-        root.render(<PlacePopup place={place.properties} />);
+        root.render(<PlacePopup place={place.properties} locale={locale} />);
 
         const marker = window.L.marker([coordinates[1], coordinates[0]], { icon: myIcon })
           .addTo(mapRef.current)

@@ -1,32 +1,164 @@
 {
   "rent": [
-    { "item": "Alquiler Monoambiente (Centro Asunción)", "pyg": 2200000, "usd": 300 },
-    { "item": "Alquiler Depto 2 Dormitorios (Villa Morra)", "pyg": 5100000, "usd": 700 },
-    { "item": "Alquiler Casa 3 Dormitorios (Gran Asunción/Luque)", "pyg": 4400000, "usd": 600 },
-    { "item": "Alquiler Casa/Depto (Altos - Cordillera)", "pyg": 2000000, "usd": 270 },
-    { "item": "Habitación en piso compartido (Estudiantes)", "pyg": 1100000, "usd": 150 }
+    {
+      "item_es": "Alquiler Monoambiente (Centro Asunción)",
+      "item_en": "Studio Apartment Rent (Asunción Downtown)",
+      "item_pt": "Aluguel de Quitinete (Centro de Assunção)",
+      "pyg": 2200000,
+      "usd": 300
+    },
+    {
+      "item_es": "Alquiler Depto 2 Dormitorios (Villa Morra)",
+      "item_en": "2-Bedroom Apartment Rent (Villa Morra)",
+      "item_pt": "Aluguel de Apto. 2 Dormitórios (Villa Morra)",
+      "pyg": 5100000,
+      "usd": 700
+    },
+    {
+      "item_es": "Alquiler Casa 3 Dormitorios (Gran Asunción/Luque)",
+      "item_en": "3-Bedroom House Rent (Greater Asunción/Luque)",
+      "item_pt": "Aluguel de Casa 3 Dormitórios (Grande Assunção/Luque)",
+      "pyg": 4400000,
+      "usd": 600
+    },
+    {
+      "item_es": "Alquiler Casa/Depto (Altos - Cordillera)",
+      "item_en": "House/Apartment Rent (Altos - Cordillera)",
+      "item_pt": "Aluguel de Casa/Apto. (Altos - Cordillera)",
+      "pyg": 2000000,
+      "usd": 270
+    },
+    {
+      "item_es": "Habitación en piso compartido (Estudiantes)",
+      "item_en": "Room in shared apartment (Students)",
+      "item_pt": "Quarto em apartamento compartilhado (Estudantes)",
+      "pyg": 1100000,
+      "usd": 150
+    }
   ],
   "food": [
-    { "item": "Menú del día en restaurante (Almuerzo Ejecutivo)", "pyg": 25000, "usd": 3.40 },
-    { "item": "Cena para 2 en restaurante de gama media", "pyg": 180000, "usd": 24.50 },
-    { "item": "Café con leche (Cafetería moderna)", "pyg": 25000, "usd": 3.40 },
-    { "item": "Cold Brew (Café de especialidad)", "pyg": 30000, "usd": 4.10 },
-    { "item": "Leche (1 Litro)", "pyg": 6500, "usd": 0.88 },
-    { "item": "Pan fresco (1 Kg)", "pyg": 9000, "usd": 1.22 },
-    { "item": "Carne Vacuna de primera (1 Kg)", "pyg": 45000, "usd": 6.10 },
-    { "item": "Arroz (1 Kg)", "pyg": 7000, "usd": 0.95 },
-    { "item": "Agua embotellada (1.5 Litros)", "pyg": 4000, "usd": 0.54 }
+    {
+      "item_es": "Menú del día en restaurante (Almuerzo Ejecutivo)",
+      "item_en": "Daily lunch menu (Executive Lunch)",
+      "item_pt": "Menu do dia em restaurante (Almoço Executivo)",
+      "pyg": 25000,
+      "usd": 3.40
+    },
+    {
+      "item_es": "Cena para 2 en restaurante de gama media",
+      "item_en": "Dinner for 2 in mid-range restaurant",
+      "item_pt": "Jantar para 2 em restaurante de gama média",
+      "pyg": 180000,
+      "usd": 24.50
+    },
+    {
+      "item_es": "Café con leche (Cafetería moderna)",
+      "item_en": "Coffee with milk (Modern Coffee Shop)",
+      "item_pt": "Café com leite (Cafeteria moderna)",
+      "pyg": 25000,
+      "usd": 3.40
+    },
+    {
+      "item_es": "Cold Brew (Café de especialidad)",
+      "item_en": "Cold Brew (Specialty Coffee)",
+      "item_pt": "Cold Brew (Café de especialidade)",
+      "pyg": 30000,
+      "usd": 4.10
+    },
+    {
+      "item_es": "Leche (1 Litro)",
+      "item_en": "Milk (1 Liter)",
+      "item_pt": "Leite (1 Litro)",
+      "pyg": 6500,
+      "usd": 0.88
+    },
+    {
+      "item_es": "Pan fresco (1 Kg)",
+      "item_en": "Fresh bread (1 Kg)",
+      "item_pt": "Pão fresco (1 Kg)",
+      "pyg": 9000,
+      "usd": 1.22
+    },
+    {
+      "item_es": "Carne Vacuna de primera (1 Kg)",
+      "item_en": "Premium beef (1 Kg)",
+      "item_pt": "Carne bovina de primeira (1 Kg)",
+      "pyg": 45000,
+      "usd": 6.10
+    },
+    {
+      "item_es": "Arroz (1 Kg)",
+      "item_en": "Rice (1 Kg)",
+      "item_pt": "Arroz (1 Kg)",
+      "pyg": 7000,
+      "usd": 0.95
+    },
+    {
+      "item_es": "Agua embotellada (1.5 Litros)",
+      "item_en": "Bottled water (1.5 Liters)",
+      "item_pt": "Água engarrafada (1.5 Litros)",
+      "pyg": 4000,
+      "usd": 0.54
+    }
   ],
   "services": [
-    { "item": "Electricidad (Gasto promedio mensual con A/C)", "pyg": 350000, "usd": 48.00 },
-    { "item": "Internet Fibra Óptica 100 Mbps", "pyg": 130000, "usd": 17.80 },
-    { "item": "Plan de datos móvil ilimitado", "pyg": 90000, "usd": 12.30 },
-    { "item": "Agua corriente básica tasa mínima", "pyg": 40000, "usd": 5.50 }
+    {
+      "item_es": "Electricidad (Gasto promedio mensual con A/C)",
+      "item_en": "Electricity (Average monthly bill with A/C)",
+      "item_pt": "Eletricidade (Gasto médio mensal com A/C)",
+      "pyg": 350000,
+      "usd": 48.00
+    },
+    {
+      "item_es": "Internet Fibra Óptica 100 Mbps",
+      "item_en": "Fiber Optic Internet 100 Mbps",
+      "item_pt": "Internet de Fibra Óptica 100 Mbps",
+      "pyg": 130000,
+      "usd": 17.80
+    },
+    {
+      "item_es": "Plan de datos móvil ilimitado",
+      "item_en": "Unlimited mobile data plan",
+      "item_pt": "Plano móvel com dados ilimitados",
+      "pyg": 90000,
+      "usd": 12.30
+    },
+    {
+      "item_es": "Agua corriente básica tasa mínima",
+      "item_en": "Basic tap water minimum fee",
+      "item_pt": "Água encanada taxa mínima básica",
+      "pyg": 40000,
+      "usd": 5.50
+    }
   ],
   "transport": [
-    { "item": "Litro de Nafta / Gasolina (95 Octanos)", "pyg": 7800, "usd": 1.06 },
-    { "item": "Boleto de Colectivo convencional", "pyg": 2300, "usd": 0.31 },
-    { "item": "Boleto de Colectivo diferenciado (con Aire)", "pyg": 3400, "usd": 0.46 },
-    { "item": "Viaje promedio en Uber/Bolt (5 km)", "pyg": 20000, "usd": 2.70 }
+    {
+      "item_es": "Litro de Nafta / Gasolina (95 Octanos)",
+      "item_en": "Gasoline / Petrol (95 Octanes) per Liter",
+      "item_pt": "Litro de Gasolina (95 Octanos)",
+      "pyg": 7800,
+      "usd": 1.06
+    },
+    {
+      "item_es": "Boleto de Colectivo convencional",
+      "item_en": "Conventional Bus ticket",
+      "item_pt": "Passagem de ônibus convencional",
+      "pyg": 2300,
+      "usd": 0.31
+    },
+    {
+      "item_es": "Boleto de Colectivo diferenciado (con Aire)",
+      "item_en": "Differentiated Bus ticket (with A/C)",
+      "item_pt": "Passagem de ônibus diferenciado (com ar-condicionado)",
+      "pyg": 3400,
+      "usd": 0.46
+    },
+    {
+      "item_es": "Viaje promedio en Uber/Bolt (5 km)",
+      "item_en": "Average ride in Uber/Bolt (5 km)",
+      "item_pt": "Corrida média de Uber/Bolt (5 km)",
+      "pyg": 20000,
+      "usd": 2.70
+    }
   ]
 }

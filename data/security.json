@@ -1,0 +1,146 @@
+[
+  {
+    "id": "distrito-capital",
+    "department": "Distrito Capital",
+    "red": ["Asunción (Sectores: Chacarita, Bañados, Mundo Aparte, Botánico, Varadero, Pelopincho)"],
+    "yellow": ["Asunción (Sectores: Microcentro, Sajonia de noche, San Vicente, Pettirossi, Terminal)"],
+    "green": ["Asunción (Sectores: Mariscal López, Ciudad Nueva, Las Mercedes, Gral. Díaz)"],
+    "dark_green": ["Asunción (Sectores: Manorá, Carmelitas, Villa Morra, Ycua Satí, Recoleta)"]
+  },
+  {
+    "id": "concepcion",
+    "department": "Concepción",
+    "red": ["Arroyito", "Azote'y", "Sargento José Félix López", "Paso Barreto"],
+    "yellow": ["Concepción", "Horqueta", "Yby Yaú"],
+    "green": ["Belén", "Loreto", "Paso Horqueta", "San Alfredo", "San Lázaro", "San Carlos del Apa", "Itacuá"],
+    "dark_green": []
+  },
+  {
+    "id": "san-pedro",
+    "department": "San Pedro",
+    "red": ["General Resquín", "Tacuatí", "Liberación"],
+    "yellow": ["San Estanislao", "Santa Rosa del Aguaray", "Choré", "Capiibary", "Guayaibí"],
+    "green": ["San Pedro de Ycuamandiyú", "Antequera", "Villa del Rosario", "Itacurubí del Rosario", "Nueva Germania", "San Pablo", "San Vicente Pancholo", "Unión", "Yataity del Norte", "Yrybucuá", "San José del Rosario", "25 de Diciembre"],
+    "dark_green": []
+  },
+  {
+    "id": "cordillera",
+    "department": "Cordillera",
+    "red": [],
+    "yellow": ["Caacupé", "Tobatí", "Eusebio Ayala"],
+    "green": ["Altos", "Arroyos y Esteros", "Atyrá", "Caraguatay", "Emboscada", "Isla Pucú", "Itacurubí de la Cordillera", "Juan de Mena", "Loma Grande", "Mbocayaty del Yhaguy", "Nueva Colombia", "Primero de Marzo", "San José Obrero", "Santa Elena", "Valenzuela"],
+    "dark_green": ["San Bernardino (Eje residencial veraniego)"]
+  },
+  {
+    "id": "guaira",
+    "department": "Guairá",
+    "red": ["Paso Yobai (Áreas mineras informales)"],
+    "yellow": ["Villarrica (Casco céntrico nocturno)"],
+    "green": ["Coronel Martínez", "Borja", "Doctor Botrell", "Eugenio A. Garay", "Félix Pérez Cardozo", "Independencia", "Itapé", "Iturbe", "José Fassardi", "Mauricio José Troche", "Mbocayaty del Guairá", "Natalicio Talavera", "Ñumi", "San Salvador", "Tebicuary", "Yataity"],
+    "dark_green": ["Villarrica (Barrios residenciales consolidados)"]
+  },
+  {
+    "id": "caaguazu",
+    "department": "Caaguazú",
+    "red": ["Mcal. Francisco Solano López"],
+    "yellow": ["Coronel Oviedo", "Caaguazú", "J. Eulogio Estigarribia"],
+    "green": ["3 de Febrero", "Carayao", "Dr. Cecilio Báez", "Dr. Juan Manuel Frutos", "José Domingo Ocampos", "La Pastora", "Nueva Londres", "Nueva Toledo", "R.I. 3 Corrales", "Raúl Arsenio Oviedo", "Repatriación", "San Joaquín", "San José de los Arroyos", "Santa Rosa del Mbutuy", "Simón Bolívar", "Tembiapora", "Vaquería", "Yhu"],
+    "dark_green": ["Coronel Oviedo (Zonas corporativas cerradas)"]
+  },
+  {
+    "id": "caazapa",
+    "department": "Caazapá",
+    "red": ["Tavaí (Frontera con áreas boscosas)"],
+    "yellow": ["San Juan Nepomuceno", "Yuty"],
+    "green": ["3 de Mayo", "Abai", "Buena Vista", "Caazapá", "Coronel Maciel", "Doctor Moisés S. Bertoni", "Fulgencio Yegros", "General Higinio Morínigo"],
+    "dark_green": ["Caazapá (Núcleo histórico residencial)"]
+  },
+  {
+    "id": "itapua",
+    "department": "Itapúa",
+    "red": [],
+    "yellow": ["Encarnación (Zona comercial nocturna)", "Mayor Otaño", "Natalio"],
+    "green": ["Alto Verá", "Bella Vista", "Cambyretá", "Capitán Meza", "Capitán Miranda", "Carlos Antonio López", "Carmen del Paraná", "Coronel Bogado", "Edelira", "Fram", "General José María Delgado", "General Artigas", "Hohenau", "Itapúa Poty", "Jesús", "José Leandro Oviedo", "La Paz", "Nueva Alborada", "Obligado", "Pirapó", "San Cosme y Damián", "San Juan del Paraná", "San Pedro del Paraná", "San Rafael del Paraná", "Tomás Romero Pereira", "Trinidad", "Yatytay"],
+    "dark_green": ["Encarnación (Eje costanera)", "Hohenau", "Obligado", "Bella Vista (Colonias Unidas residenciales)"]
+  },
+  {
+    "id": "misiones",
+    "department": "Misiones",
+    "red": [],
+    "yellow": ["Ayolas (Zonas ribereñas de noche)"],
+    "green": ["San Juan Bautista", "San Ignacio Guazú", "San Miguel", "San Patricio", "Santa María de Fe", "Santa Rosa", "Santiago", "Villa Florida", "Yabebyry"],
+    "dark_green": ["San Juan Bautista (Eje de baja densidad)"]
+  },
+  {
+    "id": "paraguari",
+    "department": "Paraguarí",
+    "red": [],
+    "yellow": ["Paraguarí (Casco urbano nocturno)", "Carapeguá"],
+    "green": ["Acahay", "Caapucú", "Escobar", "General Bernardino Caballero", "La Colmena", "María Antonia", "Mbuyapey", "Pirayú", "Quiindy", "Quyquyhó", "San Roque González de Santa Cruz", "Sapucai", "Tebicuarymí", "Yaguarón", "Ybycuí", "Ybytymí"],
+    "dark_green": ["Ybycuí (Zonas residenciales de ecoturismo)"]
+  },
+  {
+    "id": "alto-parana",
+    "department": "Alto Paraná",
+    "red": ["Ciudad del Este (Sectores: San Rafael, Remansito, San Agustín, San Antonio, Fátima, Belén, Santa Ana, Km 10)"],
+    "yellow": ["Ciudad del Este (Sectores: Microcentro nocturno, Che la Reina, La Blanca)", "Presidente Franco", "Minga Guazú"],
+    "green": ["Doctor Juan León Mallorquín", "Doctor Raúl Peña", "Domingo Martínez de Irala", "Iruña", "Itakyry", "Juan Emilio O'Leary", "Los Cedrales", "Mbaracayú", "Minga Porá", "Naranjal", "Ñacunday", "San Alberto", "San Cristóbal", "Santa Fe del Paraná", "Santa Rita", "Santa Rosa del Monday", "Tavapy", "Yguazú"],
+    "dark_green": ["Hernandarias (Paraná Country Club)"]
+  },
+  {
+    "id": "central",
+    "department": "Central",
+    "red": ["Luque (Nueva Asunción)", "Limpio (15 de Agosto)", "San Lorenzo (Calle'i)", "Lambaré (Pantanal, Ita Enramada)", "J.A. Saldívar (Villa Esperanza)", "Villa Elisa (Mbokajaty, Ypati)", "Mariano Roque Alonso (Universo)", "Ypané (Asentamientos)", "Villeta (Asentamientos)", "Villa Elisa (Villa Bonita hacia Ñande Tava)"],
+    "yellow": ["San Lorenzo (Centro)", "Luque (Centro)", "Lambaré (Centro)", "Capiatá", "Ñemby", "San Antonio", "Guarambaré", "Nueva Italia", "Ypacaraí", "Ypané (Centro)", "Villeta (Centro)", "Mariano Roque Alonso", "Limpio", "Itá"],
+    "green": ["Areguá", "Itá (Clase media)", "Itauguá"],
+    "dark_green": ["Luque (Urbanizaciones cerradas del este)", "Lambaré (Barrios colindantes al Yacht)"]
+  },
+  {
+    "id": "neembucu",
+    "department": "Ñeembucú",
+    "red": [],
+    "yellow": ["Pilar (Zonas de puerto nocturno)"],
+    "green": ["Alberdi", "Cerrito", "Desmochados", "General José Eduvigis Díaz", "Guazucuá", "Humaitá", "Isla Umbú", "Laureles", "Mayor José de Jesús Martínez", "Paso de Patria", "Pilar", "San Juan Bautista del Ñeembucú", "Tacuaras", "Villa Franca", "Villa Oliva", "Villalbín"],
+    "dark_green": ["Pilar (Casco histórico de baja densidad)"]
+  },
+  {
+    "id": "amambay",
+    "department": "Amambay",
+    "red": ["Capitán Bado", "Bella Vista Norte", "Karapaí", "Zanja Pytá", "Pedro Juan Caballero (Periferia y asentamientos)"],
+    "yellow": ["Pedro Juan Caballero (Casco céntrico nocturno)"],
+    "green": ["Cerro Corá (Área de reserva natural y parques)"],
+    "dark_green": []
+  },
+  {
+    "id": "canindeyu",
+    "department": "Canindeyú",
+    "red": ["Ypejhú", "Curuguaty", "Villa Ygatimí", "Corpus Christi", "Yasy Cañy", "Yby Pytá", "Ybyrarobaná", "Laurel", "Maracaná"],
+    "yellow": ["Saltos del Guairá", "Katueté", "La Paloma", "Nueva Esperanza"],
+    "green": ["Puerto Adela", "Itanará"],
+    "dark_green": []
+  },
+  {
+    "id": "presidente-hayes",
+    "department": "Presidente Hayes",
+    "red": ["Puerto Pinasco"],
+    "yellow": ["Nanawa", "José Falcón"],
+    "green": ["Villa Hayes", "Benjamín Aceval", "Campo Aceval", "General José María Bruguez", "Teniente Primero Manuel Irala Fernández", "Teniente Esteban Martínez", "Nueva Asunción"],
+    "dark_green": []
+  },
+  {
+    "id": "boqueron",
+    "department": "Boquerón",
+    "red": [],
+    "yellow": ["Mariscal José Félix Estigarribia"],
+    "green": ["Boquerón (Neuland)"],
+    "dark_green": ["Filadelfia", "Loma Plata"]
+  },
+  {
+    "id": "alto-paraguay",
+    "department": "Alto Paraguay",
+    "red": ["Bahía Negra", "Carmelo Peralta"],
+    "yellow": [],
+    "green": ["Fuerte Olimpo", "Puerto Casado"],
+    "dark_green": []
+  }
+]

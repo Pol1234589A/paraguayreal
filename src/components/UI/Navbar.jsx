@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X, Zap, PlusCircle } from 'lucide-react';
 
 export default function Navbar({ locale = 'es' }) {
   const pathname = usePathname();
@@ -38,7 +38,7 @@ export default function Navbar({ locale = 'es' }) {
   return (
     <header className="sticky top-0 z-[9999] bg-white border-b border-slate-100 shadow-sm w-full select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        
+
         {/* Logo */}
         <a href={`/${locale}`} className="flex items-center gap-2.5 group cursor-pointer">
           <div className="w-10 h-10 rounded-xl overflow-hidden border border-slate-100 shadow-sm flex items-center justify-center bg-white group-hover:border-emerald-200 transition">
@@ -67,8 +67,27 @@ export default function Navbar({ locale = 'es' }) {
           ))}
         </nav>
 
+        {/* Desktop CTAs */}
+        <div className="hidden lg:flex items-center gap-2.5">
+          <a
+            href={`/${locale}/promocionar`}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 text-xs font-bold transition"
+            title="Promoción activa con pauta pagada"
+          >
+            <Zap className="w-3.5 h-3.5 text-emerald-600 fill-emerald-600" />
+            <span>{translate("Navigation.promote", "Tráfico Real")}</span>
+          </a>
+          <a
+            href={`/${locale}/publicar`}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 text-xs font-extrabold shadow-sm transition"
+          >
+            <PlusCircle className="w-3.5 h-3.5" />
+            <span>{translate("Navigation.publish", "Publicar")}</span>
+          </a>
+        </div>
+
         {/* Desktop Locale Switcher */}
-        <div className="hidden lg:flex items-center gap-3 border-l border-slate-200 pl-6 text-xs font-bold text-slate-600">
+        <div className="hidden lg:flex items-center gap-3 border-l border-slate-200 pl-5 text-xs font-bold text-slate-600">
           <Globe className="w-4 h-4 text-slate-400" />
           <button
             onClick={() => switchLocale('es')}
@@ -104,7 +123,28 @@ export default function Navbar({ locale = 'es' }) {
       {/* Mobile menu panel */}
       {isMobileOpen && (
         <div className="lg:hidden border-t border-slate-100 bg-white px-4 py-6 space-y-4 animate-slideDown shadow-xl absolute top-16 left-0 right-0 z-[9999]">
-          <nav className="flex flex-col gap-3.5">
+
+          {/* Mobile Fast CTAs */}
+          <div className="grid grid-cols-2 gap-2 pb-2">
+            <a
+              href={`/${locale}/promocionar`}
+              onClick={() => setIsMobileOpen(false)}
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold text-center"
+            >
+              <Zap className="w-3.5 h-3.5 text-emerald-600 fill-emerald-600" />
+              <span>{translate("Navigation.promote", "Tráfico Real")}</span>
+            </a>
+            <a
+              href={`/${locale}/publicar`}
+              onClick={() => setIsMobileOpen(false)}
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-extrabold text-center shadow-sm"
+            >
+              <PlusCircle className="w-3.5 h-3.5" />
+              <span>{translate("Navigation.publish", "Publicar Gratis")}</span>
+            </a>
+          </div>
+
+          <nav className="flex flex-col gap-3.5 border-t border-slate-100 pt-3">
             {navLinks.map((link, idx) => (
               <a
                 key={idx}
